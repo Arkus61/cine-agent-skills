@@ -1,0 +1,98 @@
+{
+  "schema_version": "2.0",
+  "project_id": "PROJECT",
+  "source_context": {
+    "world_ids": ["PROJECT-LO001"],
+    "scene_ids": ["PROJECT-U01-S01"],
+    "shot_ids": ["PROJECT-U01-S01-SH001"]
+  },
+  "visual_concept": {
+    "story_function": "State the action, knowledge, relationship, tension, or scale change the design makes visible.",
+    "design_strategy": "State one economical system for delivering that function.",
+    "shape_language": ["State one spatial or formal relationship."],
+    "material_language": ["Describe one relevant surface behavior without inventing a product."],
+    "palette": ["State one color or value role and when it matters."],
+    "scale": "Separate supplied measurements, relative needs, proposals, and unknown dimensions.",
+    "wear": "Trace wear or cleanliness to use, exposure, and maintenance; state when none is supported.",
+    "cultural_logic": "Trace any cultural detail to bounded supplied evidence or label it proposed.",
+    "motifs": [],
+    "purpose": "State why this concept serves the supplied story and coverage.",
+    "provenance": {
+      "status": "proposed",
+      "source_refs": ["story-concept.json#premise"],
+      "basis": "Explain the supplied evidence and the new proposal separately."
+    }
+  },
+  "assets": [
+    {
+      "asset_id": "PROJECT-AS001",
+      "asset_type": "environment",
+      "name": "Story-facing environment",
+      "purpose": "State what action, knowledge, relationship, tension, or orientation this asset enables.",
+      "provenance": {
+        "status": "supplied",
+        "source_refs": ["world-bible.json#locations/PROJECT-LO001"],
+        "basis": "Trace the asset to a supplied location while keeping new design choices proposed."
+      },
+      "world_ids": ["PROJECT-LO001"],
+      "scene_ids": ["PROJECT-U01-S01"],
+      "shot_ids": ["PROJECT-U01-S01-SH001"],
+      "design": {
+        "purpose": "State why this proposed or approved treatment serves the supplied asset and shot coverage.",
+        "provenance": {
+          "status": "proposed",
+          "source_refs": ["screenplay-metadata.json#scenes/PROJECT-U01-S01"],
+          "basis": "Separate the supplied asset identity from new form, material, palette, scale, wear, cultural, graphic, or motif decisions."
+        },
+        "form": "State the spatial or object form needed for action and coverage.",
+        "materials": ["Describe required material behavior; keep exact material unconfirmed."],
+        "graphics": [],
+        "palette_roles": ["State what the palette must separate, reveal, or preserve."],
+        "scale": "Use relative relationships until dimensions are supplied.",
+        "wear": "State the causally supported wear or intentional absence of wear.",
+        "cultural_logic": "State bounded material or social logic without stereotyping.",
+        "motifs": []
+      },
+      "practical_digital": {
+        "claim_status": "assumption",
+        "method": "undetermined",
+        "rationale": "The visible requirement is known; the implementation method is not supplied.",
+        "dependencies": ["Name the departments that must test or decide the method."]
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "scene_id": "PROJECT-U01-S01",
+      "shot_id": "PROJECT-U01-S01-SH001",
+      "asset_ids": ["PROJECT-AS001"],
+      "purpose": "State why this minimum asset set is required in this shot."
+    }
+  ],
+  "continuity_states": [
+    {
+      "asset_id": "PROJECT-AS001",
+      "state_id": "PROJECT-AS001-ST01",
+      "scene_id": "PROJECT-U01-S01",
+      "shot_ids": ["PROJECT-U01-S01-SH001"],
+      "entry_state": "State the observable condition at the start.",
+      "exit_state": "State the observable condition after the action.",
+      "reset_to": "State the exact condition required for another take.",
+      "reset_actions": ["State one observable restoration or verification action."],
+      "purpose": "State the causal or matching reason this state matters."
+    }
+  ],
+  "cross_department_dependencies": [
+    {
+      "department": "camera",
+      "asset_ids": ["PROJECT-AS001"],
+      "scene_ids": ["PROJECT-U01-S01"],
+      "shot_ids": ["PROJECT-U01-S01-SH001"],
+      "need": "State the design behavior another department must test or preserve.",
+      "status": "unresolved",
+      "purpose": "State why this handoff matters to story, coverage, or continuity."
+    }
+  ],
+  "assumptions": ["State provisional design and implementation choices, or leave this array empty."],
+  "uncertainties": ["State missing facts, dimensions, materials, methods, approvals, or upstream decisions."]
+}

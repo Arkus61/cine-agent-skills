@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "scene_id": "NINEL-E01-SC001",
+  "scene_objective": "Ninel wakes and orients herself.",
+  "turn": "The quiet room becomes threatening.",
+  "assumptions": [],
+  "beats": [
+    {
+      "beat_id": "NINEL-E01-SC001-B01",
+      "evidence": "Ninel opens her eyes.",
+      "action": "She wakes.",
+      "tactic": "She listens.",
+      "value_shift": "calm to unease",
+      "visual_opportunity": "A close view of her eye."
+    }
+  ]
+}

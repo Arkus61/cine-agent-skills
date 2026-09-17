@@ -1,0 +1,145 @@
+{
+  "schema_version": "2.0",
+  "project_id": "PROJECT",
+  "project_format": "series",
+  "unit_id": "PROJECT-E01",
+  "runtime_seconds": 1800,
+  "runtime_basis": "The approved episode slot is 30 minutes.",
+  "unit_objective": "Complete the unit's assigned local task while advancing one approved season dependency.",
+  "structural_model": "Braided episodic and serial movement",
+  "source_event_ids": ["PROJECT-EV001", "PROJECT-EV002", "PROJECT-EV003"],
+  "source_plotline_ids": ["PROJECT-PL01", "PROJECT-PL02"],
+  "opening_hook": {
+    "scene_id": "PROJECT-E01-SC001",
+    "promise": "An ordinary assignment exposes a consequence the team cannot ignore.",
+    "function": "Orient the local task and its connection to the continuing pressure."
+  },
+  "scenes": [
+    {
+      "scene_id": "PROJECT-E01-SC001",
+      "scene_index": 1,
+      "start_seconds": 0,
+      "end_seconds": 420,
+      "title": "Assignment under changed conditions",
+      "summary": "The team begins the assigned task and recognizes the first concrete obstacle.",
+      "story_function": "Orient the unit objective and establish a testable problem.",
+      "event_ids": ["PROJECT-EV001"],
+      "plotline_ids": ["PROJECT-PL01"],
+      "evidence_status": "not-applicable",
+      "retention_function": "A specific task and consequence create anticipation without hiding orientation."
+    },
+    {
+      "scene_id": "PROJECT-E01-SC002",
+      "scene_index": 2,
+      "start_seconds": 420,
+      "end_seconds": 1200,
+      "title": "The first plan changes",
+      "summary": "The attempted solution exposes a second pressure and forces a choice between objectives.",
+      "story_function": "Turn information into changed strategy and relationship terms.",
+      "event_ids": ["PROJECT-EV002"],
+      "plotline_ids": ["PROJECT-PL01", "PROJECT-PL02"],
+      "evidence_status": "not-applicable",
+      "retention_function": "The choice narrows options while preserving a legible local goal."
+    },
+    {
+      "scene_id": "PROJECT-E01-SC003",
+      "scene_index": 3,
+      "start_seconds": 1200,
+      "end_seconds": 1800,
+      "title": "Local completion and carried consequence",
+      "summary": "The revised plan completes the task at a cost that changes the continuing plotline.",
+      "story_function": "Resolve the unit promise and establish durable consequence.",
+      "event_ids": ["PROJECT-EV003"],
+      "plotline_ids": ["PROJECT-PL01", "PROJECT-PL02"],
+      "evidence_status": "not-applicable",
+      "retention_function": "Earned completion makes the changed future condition meaningful."
+    }
+  ],
+  "event_coverage": [
+    {
+      "event_id": "PROJECT-EV001",
+      "scene_ids": ["PROJECT-E01-SC001"],
+      "outcome": "The assigned task and its first obstacle become actionable."
+    },
+    {
+      "event_id": "PROJECT-EV002",
+      "scene_ids": ["PROJECT-E01-SC002"],
+      "outcome": "The initial strategy changes under a second pressure."
+    },
+    {
+      "event_id": "PROJECT-EV003",
+      "scene_ids": ["PROJECT-E01-SC003"],
+      "outcome": "The local task closes and creates one durable consequence."
+    }
+  ],
+  "plotline_coverage": [
+    {
+      "plotline_id": "PROJECT-PL01",
+      "scene_ids": ["PROJECT-E01-SC001", "PROJECT-E01-SC002", "PROJECT-E01-SC003"],
+      "advancement": "The renewable task moves from assignment through changed strategy to local completion."
+    },
+    {
+      "plotline_id": "PROJECT-PL02",
+      "scene_ids": ["PROJECT-E01-SC002", "PROJECT-E01-SC003"],
+      "advancement": "The continuing pressure changes the cost and future operating condition."
+    }
+  ],
+  "emotional_turns": [
+    {
+      "scene_id": "PROJECT-E01-SC001",
+      "from_state": "routine confidence",
+      "to_state": "focused concern",
+      "change": "The obstacle makes the ordinary method insufficient."
+    },
+    {
+      "scene_id": "PROJECT-E01-SC002",
+      "from_state": "focused concern",
+      "to_state": "contested commitment",
+      "change": "The team accepts a costly revised plan without resolving every disagreement."
+    },
+    {
+      "scene_id": "PROJECT-E01-SC003",
+      "from_state": "contested commitment",
+      "to_state": "qualified trust",
+      "change": "The task succeeds, but its cost changes the next collaboration."
+    }
+  ],
+  "act_outs": [
+    {
+      "scene_id": "PROJECT-E01-SC002",
+      "turn": "The initial method becomes unavailable.",
+      "changed_pressure": "The team must choose a costlier plan before the task can continue."
+    }
+  ],
+  "midpoint": {
+    "scene_id": "PROJECT-E01-SC002",
+    "function": "The failed method changes both strategy and the meaning of success."
+  },
+  "climax": {
+    "scene_id": "PROJECT-E01-SC003",
+    "function": "The revised plan is tested through decisive action and consequence."
+  },
+  "resolution": {
+    "scene_id": "PROJECT-E01-SC003",
+    "outcome": "The episode-scale assignment is complete.",
+    "unit_change": "The team carries a new obligation into the continuing plotline."
+  },
+  "forward_hook": {
+    "scene_id": "PROJECT-E01-SC003",
+    "promise": "The next unit must address the obligation created by this success.",
+    "dependency": "Carry PROJECT-PL02 forward without reopening PROJECT-PL01's completed task."
+  },
+  "format_plan": {
+    "mode": "series-episode",
+    "episode_position": "nonfinal",
+    "local_resolution": "The assigned task is completed within this episode.",
+    "season_dependencies": [
+      {
+        "dependency": "The cost of the revised plan changes the team's available options.",
+        "carry_forward": "The next assigned episode inherits the reduced option set and qualified trust."
+      }
+    ]
+  },
+  "assumptions": [],
+  "uncertainties": ["Replace this generic uncertainty with the exact unresolved source fact."]
+}

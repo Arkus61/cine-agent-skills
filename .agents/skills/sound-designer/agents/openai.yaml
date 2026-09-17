@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sound Designer"
+  short_description: "Plan production sound and dramatic audio cues"
+  default_prompt: "Use $sound-designer to create a production sound plan for this scene."

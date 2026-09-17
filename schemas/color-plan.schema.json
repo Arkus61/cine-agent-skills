@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cine-agent-skills/color-plan.schema.json",
+  "title": "Evidence-aware color plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "project_id", "unit_id", "source_context", "color_management", "display_targets", "items", "story_arc", "assumptions", "uncertainties"],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*$"},
+    "ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+    "nullableId": {"type": ["string", "null"], "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*$"},
+    "segment": {"type": "object", "additionalProperties": false, "required": ["segment_id", "source_reference"], "properties": {"segment_id": {"$ref": "#/$defs/id"}, "source_reference": {"$ref": "#/$defs/text"}}},
+    "vfxItem": {"type": "object", "additionalProperties": false, "required": ["item_id", "source_reference"], "properties": {"item_id": {"$ref": "#/$defs/id"}, "source_reference": {"$ref": "#/$defs/text"}}},
+    "mediaVersion": {"type": "object", "additionalProperties": false, "required": ["media_id", "version_id", "roles", "segment_ids", "source_reference"], "properties": {"media_id": {"$ref": "#/$defs/id"}, "version_id": {"$ref": "#/$defs/id"}, "roles": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["source", "vfx-source", "graded-output"]}}, "segment_ids": {"$ref": "#/$defs/ids"}, "source_reference": {"$ref": "#/$defs/text"}}},
+    "metadata": {"type": "object", "additionalProperties": false, "required": ["metadata_id", "segment_id", "version_id", "field", "value", "source_reference"], "properties": {"metadata_id": {"$ref": "#/$defs/id"}, "segment_id": {"$ref": "#/$defs/id"}, "version_id": {"$ref": "#/$defs/id"}, "field": {"enum": ["input-encoding", "range", "camera-model", "baked-look", "render-space"]}, "value": {"$ref": "#/$defs/text"}, "source_reference": {"$ref": "#/$defs/text"}}},
+    "evidence": {"type": "object", "additionalProperties": false, "required": ["evidence_id", "evidence_type", "item_id", "segment_ids", "version_id", "claim", "value", "source_reference"], "properties": {"evidence_id": {"$ref": "#/$defs/id"}, "evidence_type": {"enum": ["inspection", "technical-measurement", "human-approval"]}, "item_id": {"$ref": "#/$defs/id"}, "segment_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}, "version_id": {"$ref": "#/$defs/id"}, "claim": {"enum": ["observed-input", "shot-match", "display-review", "approval"]}, "value": {"$ref": "#/$defs/text"}, "source_reference": {"$ref": "#/$defs/text"}}},
+    "spaceDecision": {"type": "object", "additionalProperties": false, "required": ["value", "state", "metadata_record_ids"], "properties": {"value": {"$ref": "#/$defs/text"}, "state": {"enum": ["unknown", "proposed", "declared"]}, "metadata_record_ids": {"$ref": "#/$defs/ids"}}},
+    "workingSpace": {"type": "object", "additionalProperties": false, "required": ["value", "state"], "properties": {"value": {"$ref": "#/$defs/text"}, "state": {"enum": ["unknown", "proposed"]}}},
+    "observation": {"type": "object", "additionalProperties": false, "required": ["state", "source_version_id", "findings", "evidence_ids"], "properties": {"state": {"enum": ["uninspected", "inspected"]}, "source_version_id": {"$ref": "#/$defs/nullableId"}, "findings": {"type": "array", "items": {"$ref": "#/$defs/text"}}, "evidence_ids": {"$ref": "#/$defs/ids"}}},
+    "displayTarget": {"type": "object", "additionalProperties": false, "required": ["target_id", "intent", "standard", "viewing_environment", "state", "source_reference"], "properties": {"target_id": {"$ref": "#/$defs/id"}, "intent": {"enum": ["SDR", "HDR", "cinema"]}, "standard": {"enum": ["rec709-gamma24", "p3-d65-st2084", "rec2020-st2084", "p3-dci", "other-declared"]}, "viewing_environment": {"$ref": "#/$defs/text"}, "state": {"enum": ["proposed", "declared"]}, "source_reference": {"$ref": "#/$defs/text"}}},
+    "item": {"type": "object", "additionalProperties": false, "required": ["item_id", "edit_segment_ids", "vfx_item_ids", "source_version_ids", "graded_version_id", "observed_input", "desired_look", "input_encoding", "balance_and_matching", "exposure_and_contrast", "palette", "vfx_handoff", "display_target_ids", "trim_assumptions", "match_state", "evidence_ids", "approval"], "properties": {
+      "item_id": {"$ref": "#/$defs/id"}, "edit_segment_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}, "vfx_item_ids": {"$ref": "#/$defs/ids"}, "source_version_ids": {"$ref": "#/$defs/ids"}, "graded_version_id": {"$ref": "#/$defs/nullableId"},
+      "observed_input": {"$ref": "#/$defs/observation"}, "desired_look": {"$ref": "#/$defs/text"}, "input_encoding": {"$ref": "#/$defs/spaceDecision"}, "balance_and_matching": {"$ref": "#/$defs/text"}, "exposure_and_contrast": {"$ref": "#/$defs/text"},
+      "palette": {"type": "object", "additionalProperties": false, "required": ["intent", "protected_colors", "selective_treatments"], "properties": {"intent": {"$ref": "#/$defs/text"}, "protected_colors": {"type": "array", "items": {"$ref": "#/$defs/text"}}, "selective_treatments": {"type": "array", "items": {"$ref": "#/$defs/text"}}}},
+      "vfx_handoff": {"$ref": "#/$defs/text"}, "display_target_ids": {"$ref": "#/$defs/ids"}, "trim_assumptions": {"type": "array", "items": {"$ref": "#/$defs/text"}}, "match_state": {"enum": ["planned", "awaiting-media", "candidate", "changes-requested", "approved"]}, "evidence_ids": {"$ref": "#/$defs/ids"},
+      "approval": {"type": "object", "additionalProperties": false, "required": ["state", "evidence_ids"], "properties": {"state": {"enum": ["not-requested", "pending", "changes-requested", "approved"]}, "evidence_ids": {"$ref": "#/$defs/ids"}}}
+    }}
+  },
+  "properties": {
+    "schema_version": {"const": "2.0"}, "project_id": {"$ref": "#/$defs/id"}, "unit_id": {"$ref": "#/$defs/id"},
+    "source_context": {"type": "object", "additionalProperties": false, "required": ["edit_segments", "vfx_items", "media_versions", "metadata_records", "evidence"], "properties": {"edit_segments": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/segment"}}, "vfx_items": {"type": "array", "items": {"$ref": "#/$defs/vfxItem"}}, "media_versions": {"type": "array", "items": {"$ref": "#/$defs/mediaVersion"}}, "metadata_records": {"type": "array", "items": {"$ref": "#/$defs/metadata"}}, "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}}}},
+    "color_management": {"type": "object", "additionalProperties": false, "required": ["input_policy", "working_space", "output_intent"], "properties": {"input_policy": {"$ref": "#/$defs/text"}, "working_space": {"$ref": "#/$defs/workingSpace"}, "output_intent": {"$ref": "#/$defs/text"}}},
+    "display_targets": {"type": "array", "items": {"$ref": "#/$defs/displayTarget"}}, "items": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/item"}}, "story_arc": {"$ref": "#/$defs/text"}, "assumptions": {"type": "array", "items": {"$ref": "#/$defs/text"}}, "uncertainties": {"type": "array", "items": {"$ref": "#/$defs/text"}}
+  }
+}

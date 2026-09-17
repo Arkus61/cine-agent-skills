@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "scene_id": "NINEL-E02-SC001",
+  "assumptions": [
+    "Final fixtures and exposure require prelight."
+  ],
+  "lighting_philosophy": "Let motivated chamber light reveal agency.",
+  "setups": [
+    {
+      "setup_id": "NINEL-E02-SC001-L01",
+      "beat_ids": [
+        "NINEL-E02-SC001-B01"
+      ],
+      "shot_ids": [
+        "NINEL-E02-SC001-SH001",
+        "NINEL-E02-SC001-SH002"
+      ],
+      "environment_time_basis": "Interior medical bay at scripted night; the chamber diagnostic remains the active environmental source.",
+      "motivation": "The chamber diagnostic source remains active.",
+      "sources": [
+        "chamber practical"
+      ],
+      "direction": "Top-side through chamber geometry.",
+      "quality": "Controlled and restrained.",
+      "color_intent": "Desaturated cool diagnostic light.",
+      "exposure_contrast": "Retain glass detail and deep background separation.",
+      "control": [
+        "Keep spill off the monitor."
+      ],
+      "continuity": [
+        "Record the approved practical state."
+      ],
+      "safety": [
+        "Qualified crew approve rigging and electrical work."
+      ],
+      "dramatic_purpose": "Make the first breath legible without announcing it."
+    }
+  ]
+}

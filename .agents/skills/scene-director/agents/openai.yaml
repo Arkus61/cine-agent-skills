@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scene Director"
+  short_description: "Build a unified directing concept"
+  default_prompt: "Use $scene-director to create a directing plan for this scene."

@@ -1,0 +1,66 @@
+{
+  "schema_version": "2.0",
+  "project_id": "PROJECT",
+  "unit_id": "PROJECT-U01",
+  "project_format": "short",
+  "source_context": {
+    "screenplay_metadata_reference": "scripts/PROJECT-U01/screenplay-metadata.json",
+    "production_plan_references": [],
+    "shots": [
+      {
+        "shot_id": "PROJECT-U01-S01-SH001",
+        "scene_id": "PROJECT-U01-S01",
+        "source_reference": "scripts/PROJECT-U01/scenes/PROJECT-U01-S01/shot-list.json#/shots/0"
+      }
+    ],
+    "media_items": [],
+    "timing_evidence": [],
+    "lock_decisions": []
+  },
+  "editorial_strategy": "Replace with the unit-level emotional, story, and rhythm strategy supported by supplied material.",
+  "segments": [
+    {
+      "segment_id": "PROJECT-U01-ED001",
+      "assembly_order": 1,
+      "source_shot_ids": ["PROJECT-U01-S01-SH001"],
+      "source_media_ids": [],
+      "dramatic_purpose": "Replace with the specific story or emotional work of this segment.",
+      "in_out_intent": {
+        "entry": "Describe the intended entry event without inventing source timecode.",
+        "exit": "Describe the intended exit event without inventing source timecode."
+      },
+      "cut_motivation": [
+        {
+          "dimension": "story",
+          "rationale": "Replace with the supplied story change that motivates this cut."
+        }
+      ],
+      "transition": {
+        "type": "cut",
+        "intent": "Replace with why this transition serves the supplied material."
+      },
+      "eye_trace": "State the intended attention path and leave uninspected screen position uncertain.",
+      "motion": "State the movement relationship as planned rather than observed.",
+      "continuity": {
+        "mode": "continuity",
+        "intent": "State the continuity rule or intentional discontinuity."
+      },
+      "rhythm": "Describe the information or emotion that should trigger the next cut, not an invented duration.",
+      "dialogue_sound_bridge": {
+        "type": "none",
+        "intent": "State whether supplied dialogue or sound motivates a bridge."
+      },
+      "temporal_treatment": {
+        "mode": "real-time",
+        "intent": "State how screen time relates to story time."
+      },
+      "alternatives": [],
+      "evidence_status": "planned",
+      "lock_status": "unlocked"
+    }
+  ],
+  "assumptions": [],
+  "uncertainties": [
+    "No inspected media or exact source timecode is established by this template."
+  ]
+}

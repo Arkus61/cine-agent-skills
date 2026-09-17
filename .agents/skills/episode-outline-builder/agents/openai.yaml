@@ -1,0 +1,4 @@
+interface:
+  display_name: "Episode Outline Builder"
+  short_description: "Build format-aware episode and unit outlines"
+  default_prompt: "Use $episode-outline-builder to create a validated scene-by-scene unit outline."

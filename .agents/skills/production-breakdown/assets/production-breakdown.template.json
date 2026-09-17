@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "scene_id": "SCENE01",
+  "assumptions": [
+    "Unconfirmed implementation requires department review."
+  ],
+  "breakdown_scope": "Scene-level production requirements traceable to approved artifacts.",
+  "items": [
+    {
+      "item_id": "SCENE01-PD001",
+      "category": "props",
+      "source_basis": "The source scene and shot list require the performer to handle the object in the reveal shot.",
+      "beat_ids": ["SCENE01-B01"],
+      "shot_ids": ["SCENE01-SH001"],
+      "requirement": "Provide a safe, camera-readable, repeatable object state for the scripted action.",
+      "continuity_reset": "Record hero orientation and restore position and action start state for each take.",
+      "assumptions": [
+        "Material, fabrication, and duplicate strategy are not yet confirmed."
+      ],
+      "risk_level": "medium"
+    }
+  ]
+}

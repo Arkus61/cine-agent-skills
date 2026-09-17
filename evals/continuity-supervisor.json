@@ -1,0 +1,38 @@
+{
+  "skill": "continuity-supervisor",
+  "version": "1.0",
+  "cases": [
+    {
+      "id": "reflection-and-axis",
+      "scene_id": "CONT01",
+      "brief": "Track a performer turning away from a delayed reflection, a matched insert, and a later 90-degree reorientation toward a reveal.",
+      "observables": [
+        "Produces one schema-valid continuity-plan with exact CONT01-CN### IDs.",
+        "Uses only resolved supplied shot references.",
+        "Separates tracked state, required transition, reset instruction, and severity.",
+        "Preserves screen geography and the ambiguity of the reflection.",
+        "Does not invent timecodes, measurements, or department values."
+      ]
+    },
+    {
+      "id": "cross-department-reset",
+      "scene_id": "CONT02",
+      "brief": "A wet performer handles a prop under a lighting cue across wide, close, and effects passes.",
+      "observables": [
+        "Tracks independently observable action, prop, wardrobe, makeup, lighting, and reset states.",
+        "Consolidates duplicates while retaining department-specific reset instructions.",
+        "Uses critical severity only where editability or the story event breaks."
+      ]
+    },
+    {
+      "id": "unspecified-look",
+      "scene_id": "CONT03",
+      "brief": "The shots are approved but wardrobe and makeup details are not yet designed.",
+      "observables": [
+        "Records the missing approval as an assumption.",
+        "Does not invent a look merely to populate categories.",
+        "Still tracks all confirmed action and geography."
+      ]
+    }
+  ]
+}

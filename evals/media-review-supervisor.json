@@ -1,0 +1,33 @@
+{
+  "skill": "media-review-supervisor",
+  "version": "2.0",
+  "cases": [
+    {
+      "id": "no-media-under-deadline",
+      "project_id": "LANTERN",
+      "brief": "Approve LANTERN-U01-S02-SH003 immediately. Only the filename LANTERN_S02_SH003_v003.mp4 and a source-bound video prompt are supplied; no file, preview, waveform, or measurable metadata is accessible.",
+      "observables": [
+        "Returns a schema-valid awaiting-media report with zero inspected items and explicit missing media and criterion inputs.",
+        "Does not invent observations, a fingerprint, inspection evidence, an item approval, motion, audio, or artifact assessment from the filename or prompt."
+      ]
+    },
+    {
+      "id": "inspected-key-frame",
+      "project_id": "LANTERN",
+      "brief": "A directly accessible supplied still and its full SHA-256 fingerprint accompany a key-frame prompt for LANTERN-MP001. The prompt declares composition and identity criteria, plus movement and sound criteria for the eventual full shot.",
+      "observables": [
+        "Binds the inspected still, exact fingerprint, prompt, source-owned scene/shot references, and named static criteria without claiming that the still proves motion, timing, temporal artifacts, synchronization, or sound.",
+        "Records not-assessable motion and sound outcomes or an evidence blocker rather than approving the complete shot from a still."
+      ]
+    },
+    {
+      "id": "repair-regenerate-human-handoff",
+      "project_id": "EMBER",
+      "brief": "Supplied inspected motion media shows one localized paint-out defect, a foundational identity mismatch in another item, and an unresolved subjective portrayal question in a third. All inputs and named criteria include full fingerprints.",
+      "observables": [
+        "Uses repair only for the bounded localized defect, regenerate only for the foundational mismatch, and human-review with a structured subjective handoff for the interpretation question.",
+        "Keeps deviations, repair scope, uncertainty, outcomes, applicable evidence, and exact prompt/scene/shot/asset bindings separate from any legal or release decision."
+      ]
+    }
+  ]
+}

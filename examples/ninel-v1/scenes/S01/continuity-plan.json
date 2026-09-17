@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "scene_id": "S01",
+  "assumptions": [
+    "Take-level notes, photographs, and approved department values will be recorded during photography.",
+    "Wardrobe and makeup states are not supplied and require department confirmation before matched coverage.",
+    "Planet implementation and the final reflection and clean-pass strategy remain unconfirmed."
+  ],
+  "continuity_strategy": "Track Ninel's breath, chamber position, monitor test, shown axis turn, and planet reveal across coverage and clean passes while preserving the reflection anomaly as unresolved.",
+  "items": [
+    {
+      "continuity_id": "S01-CN001",
+      "shot_ids": ["S01-SH001", "S01-SH002"],
+      "category": "action",
+      "tracked_state": "Ninel opens her eyes without breathing and begins her voluntary inhale when the countdown reaches seven after frost moves.",
+      "required_transition": "The inhale and subsequent rise in S01-SH002 continue from the choice established in S01-SH001.",
+      "reset_instruction": "Log the eye-open, frost-movement, countdown, inhale, and rise sequence and restore its starting state.",
+      "severity": "critical"
+    },
+    {
+      "continuity_id": "S01-CN002",
+      "shot_ids": ["S01-SH001", "S01-SH002"],
+      "category": "environment",
+      "tracked_state": "The chamber-glass frost pattern seen close remains identifiable in the wider view.",
+      "required_transition": "Visible frost coverage and its pre-inhale movement state match between the two shots.",
+      "reset_instruction": "Photograph the approved frost pattern and restore the glass and frost start state.",
+      "severity": "warning"
+    },
+    {
+      "continuity_id": "S01-CN003",
+      "shot_ids": ["S01-SH002", "S01-SH003"],
+      "category": "position",
+      "tracked_state": "Ninel remains seated at the chamber edge with her right hand planted through the reflection beat.",
+      "required_transition": "Her body, hand placement, and head angle carry from S01-SH002 into the monitor insert and passes.",
+      "reset_instruction": "Record the seated pose, right hand, shoulders, and head angle and restore them before matched coverage.",
+      "severity": "critical"
+    },
+    {
+      "continuity_id": "S01-CN004",
+      "shot_ids": ["S01-SH002", "S01-SH003"],
+      "category": "eyeline",
+      "tracked_state": "Ninel finds the monitor, turns away, and tests whether the reflected gaze continues after her movement.",
+      "required_transition": "The insert begins from the gaze and head relationship established in S01-SH002 without making the anomaly objectively true.",
+      "reset_instruction": "Log the real gaze, head turn, held stillness, and corresponding reflection-pass start states.",
+      "severity": "critical"
+    },
+    {
+      "continuity_id": "S01-CN005",
+      "shot_ids": ["S01-SH002", "S01-SH003"],
+      "category": "reset",
+      "tracked_state": "Monitor coverage includes matched performance, clean monitor, and reflection states under the established setup.",
+      "required_transition": "The delayed reflection and clearing align with Ninel's action while retaining perceptual ambiguity.",
+      "reset_instruction": "Restore and log camera, monitor, lighting, performer, head-angle, and eyeline states before every pass.",
+      "severity": "critical"
+    },
+    {
+      "continuity_id": "S01-CN006",
+      "shot_ids": ["S01-SH002", "S01-SH004"],
+      "category": "axis",
+      "tracked_state": "Ninel moves from the monitor relationship to the observation-slit relationship through a visible body turn.",
+      "required_transition": "S01-SH004 continues from her half-turned state and shows the reorientation rather than presenting an axis jump.",
+      "reset_instruction": "Log the ending orientation in S01-SH002 and the start, path, and end orientation in S01-SH004.",
+      "severity": "critical"
+    },
+    {
+      "continuity_id": "S01-CN007",
+      "shot_ids": ["S01-SH001", "S01-SH002", "S01-SH003", "S01-SH004"],
+      "category": "lighting",
+      "tracked_state": "Emergency light pulses across the bay; planet light grows behind Ninel during Argo's pause in S01-SH004.",
+      "required_transition": "Emergency state matches across coverage while planet light changes only with the final turn and reveal.",
+      "reset_instruction": "Log the approved pulse and planet-reveal states and restore the applicable start state for each take and pass.",
+      "severity": "warning"
+    },
+    {
+      "continuity_id": "S01-CN008",
+      "shot_ids": ["S01-SH004"],
+      "category": "action",
+      "tracked_state": "Ninel questions Argo, follows the changing light, and completes her turn as the planet appears before Argo says failure.",
+      "required_transition": "Her turn, camera arc, ship rotation, planet reveal, pause, and final line preserve this story order.",
+      "reset_instruction": "Log performer, camera, slit, planet, dialogue, and reveal start/end states and restore them before matched takes.",
+      "severity": "critical"
+    },
+    {
+      "continuity_id": "S01-CN009",
+      "shot_ids": ["S01-SH001", "S01-SH002", "S01-SH003", "S01-SH004"],
+      "category": "sound",
+      "tracked_state": "Countdown and inhale lead to chamber release and room hum; hum thins during the insert; Argo's pause precedes rotation and answer.",
+      "required_transition": "Dialogue, breath, release, hum, pause, and rotation retain story order without a sting confirming the anomaly.",
+      "reset_instruction": "Log each approved sound cue and room state by take and restore controllable practical noise before matched recording.",
+      "severity": "warning"
+    }
+  ]
+}

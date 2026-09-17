@@ -1,0 +1,283 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/cine-agent-skills/script-revision-plan.schema.json",
+  "title": "Script Revision Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "unit_id",
+    "draft_version",
+    "project_format",
+    "revision_scope",
+    "source_element_ids",
+    "approved_constraints",
+    "diagnosis_items",
+    "assumptions",
+    "uncertainties"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "project_id": {"$ref": "#/$defs/projectId"},
+    "unit_id": {"$ref": "#/$defs/identifier"},
+    "draft_version": {"$ref": "#/$defs/nonEmpty"},
+    "project_format": {
+      "enum": [
+        "feature",
+        "short",
+        "series",
+        "documentary",
+        "commercial",
+        "music-video",
+        "short-form"
+      ]
+    },
+    "revision_scope": {"$ref": "#/$defs/nonEmpty"},
+    "source_element_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/identifier"}
+    },
+    "approved_constraints": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/approvedConstraint"}
+    },
+    "diagnosis_items": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/diagnosisItem"}
+    },
+    "assumptions": {"$ref": "#/$defs/stringArray"},
+    "uncertainties": {"$ref": "#/$defs/stringArray"}
+  },
+  "$defs": {
+    "projectId": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)*$"
+    },
+    "identifier": {
+      "type": "string",
+      "pattern": "^[A-Z0-9][A-Z0-9._:-]*(?:-[A-Z0-9._:-]+)*$"
+    },
+    "nonEmpty": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1200,
+      "pattern": "^[^\\r\\n]+$"
+    },
+    "stringArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/nonEmpty"}
+    },
+    "approvedConstraint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "constraint_id",
+        "constraint_type",
+        "statement",
+        "protected_source_ids",
+        "preservation_test"
+      ],
+      "properties": {
+        "constraint_id": {"$ref": "#/$defs/identifier"},
+        "constraint_type": {
+          "enum": ["canon", "approved-ambiguity", "format", "production"]
+        },
+        "statement": {"$ref": "#/$defs/nonEmpty"},
+        "protected_source_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/identifier"}
+        },
+        "preservation_test": {"$ref": "#/$defs/nonEmpty"}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "observation", "effect"],
+      "properties": {
+        "source_id": {"$ref": "#/$defs/identifier"},
+        "observation": {"$ref": "#/$defs/nonEmpty"},
+        "effect": {"$ref": "#/$defs/nonEmpty"}
+      }
+    },
+    "preservationCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "constraint_id",
+        "protected_source_ids",
+        "invariant",
+        "verification_assertion"
+      ],
+      "properties": {
+        "constraint_id": {"$ref": "#/$defs/identifier"},
+        "protected_source_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/identifier"}
+        },
+        "invariant": {"$ref": "#/$defs/nonEmpty"},
+        "verification_assertion": {"$ref": "#/$defs/nonEmpty"}
+      }
+    },
+    "decisionRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "conflicting_constraint_ids",
+        "decision_question",
+        "uncertainty"
+      ],
+      "properties": {
+        "conflicting_constraint_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/identifier"}
+        },
+        "decision_question": {"$ref": "#/$defs/nonEmpty"},
+        "uncertainty": {"$ref": "#/$defs/nonEmpty"}
+      }
+    },
+    "diagnosisItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "diagnosis_id",
+        "category",
+        "affected_ids",
+        "evidence",
+        "diagnosis",
+        "priority",
+        "dependency_impact",
+        "dependency_rationale",
+        "proposed_change",
+        "change_target_ids",
+        "execution_mode",
+        "preserved_constraint_ids",
+        "preservation_checks",
+        "decision_request",
+        "downstream_impact",
+        "status",
+        "assumptions",
+        "uncertainties"
+      ],
+      "properties": {
+        "diagnosis_id": {"$ref": "#/$defs/identifier"},
+        "category": {
+          "enum": [
+            "structure",
+            "causality",
+            "agency",
+            "stakes",
+            "setup-payoff",
+            "subtext",
+            "dialogue",
+            "exposition",
+            "pace",
+            "tone",
+            "continuity",
+            "format",
+            "production-feasibility"
+          ]
+        },
+        "affected_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/identifier"}
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/evidence"}
+        },
+        "diagnosis": {"$ref": "#/$defs/nonEmpty"},
+        "priority": {"type": "integer", "minimum": 1},
+        "dependency_impact": {
+          "enum": [
+            "upstream-story",
+            "scene-engine",
+            "line-craft",
+            "presentation-production"
+          ]
+        },
+        "dependency_rationale": {"$ref": "#/$defs/nonEmpty"},
+        "proposed_change": {"$ref": "#/$defs/nonEmpty"},
+        "change_target_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/identifier"}
+        },
+        "execution_mode": {
+          "enum": ["executable-change", "blocked-upstream-decision"]
+        },
+        "preserved_constraint_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/identifier"}
+        },
+        "preservation_checks": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/preservationCheck"}
+        },
+        "decision_request": {
+          "oneOf": [
+            {"type": "null"},
+            {"$ref": "#/$defs/decisionRequest"}
+          ]
+        },
+        "downstream_impact": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/nonEmpty"}
+        },
+        "status": {
+          "enum": ["proposed", "approved", "deferred", "rejected", "blocked"]
+        },
+        "assumptions": {"$ref": "#/$defs/stringArray"},
+        "uncertainties": {"$ref": "#/$defs/stringArray"}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"execution_mode": {"const": "executable-change"}},
+            "required": ["execution_mode"]
+          },
+          "then": {
+            "properties": {
+              "decision_request": {"type": "null"},
+              "status": {
+                "enum": ["proposed", "approved", "deferred", "rejected"]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "execution_mode": {"const": "blocked-upstream-decision"}
+            },
+            "required": ["execution_mode"]
+          },
+          "then": {
+            "properties": {
+              "decision_request": {"$ref": "#/$defs/decisionRequest"},
+              "status": {"const": "blocked"}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "2.0",
+  "project_id": "EXAMPLE",
+  "unit_id": "EXAMPLE-U01",
+  "source_context": {
+    "edit_segments": [{"segment_id": "EXAMPLE-U01-ED001", "source_reference": "post/edit-plan.json#/segments/0"}],
+    "edit_versions": [],
+    "text_sources": [{"text_source_id": "EXAMPLE-TS001", "kind": "supplied-dialogue", "text": "We begin today.", "source_reference": "story/screenplay.fountain#dialogue-1"}],
+    "timing_records": [],
+    "evidence": []
+  },
+  "items": [{
+    "item_id": "EXAMPLE-U01-TT001",
+    "type": "accessibility-caption",
+    "edit_segment_id": "EXAMPLE-U01-ED001",
+    "text": {"content": "We begin today.", "content_kind": "dialogue", "state": "supplied", "text_source_id": "EXAMPLE-TS001"},
+    "placement": {"region": "Lower active picture, adjusted around important action and anticipated interface overlays.", "safe_area_state": "proposed", "exception_rationale": null},
+    "timing": {"mode": "creative-intent", "intent": "Enter with the spoken phrase; set exact bounds only from the locked output timeline.", "timing_record_id": null},
+    "typography_intent": "Use clear hierarchy, sufficient weight, and spacing tested at the actual aspect ratio.",
+    "readability": {"contrast_strategy": "Review the complete interval across changing backgrounds and add restrained support only where needed.", "line_break_intent": "Break at semantic phrase boundaries.", "reading_speed_target": null, "line_length_target": null, "specification_reference": null},
+    "language": "en",
+    "speaker_identification": {"state": "not-required", "value": null},
+    "sound_description": {"state": "not-applicable", "value": null},
+    "presentation": {"mode": "either", "assumption": "Choose burn-in or sidecar after the delivery specification is supplied."},
+    "revision": "r001",
+    "approval": {"state": "not-requested", "evidence_ids": []}
+  }],
+  "hierarchy_and_rhythm": "Keep dialogue primary and give separate title or sound-description events enough perceptual space.",
+  "credits_scope": {"state": "unresolved", "entries": [], "clearance_note": "Use only supplied billing and legal text; ordering, organizations, and rights clearance remain unresolved."},
+  "assumptions": ["No locked edit, output-timeline cue metadata, media, or delivery specification was supplied."],
+  "uncertainties": ["Exact timing, placement limits, typeface, reading targets, delivery form, and approval remain unresolved."]
+}

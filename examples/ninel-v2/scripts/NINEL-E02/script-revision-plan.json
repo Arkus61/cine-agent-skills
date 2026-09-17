@@ -1,0 +1,48 @@
+{
+  "schema_version": "2.0",
+  "project_id": "NINEL",
+  "unit_id": "NINEL-E02",
+  "draft_version": "first",
+  "project_format": "series",
+  "revision_scope": "One scene pass.",
+  "source_element_ids": [
+    "NINEL-E02-SC001-A01"
+  ],
+  "approved_constraints": [],
+  "diagnosis_items": [
+    {
+      "diagnosis_id": "NINEL-E02-RV001",
+      "category": "pace",
+      "affected_ids": [
+        "NINEL-E02-SC001-A01"
+      ],
+      "evidence": [
+        {
+          "source_id": "NINEL-E02-SC001-A01",
+          "observation": "The turn arrives late.",
+          "effect": "The outcome is compressed."
+        }
+      ],
+      "diagnosis": "The scene delays its turn.",
+      "priority": 1,
+      "dependency_impact": "scene-engine",
+      "dependency_rationale": "Scene order controls the turn.",
+      "proposed_change": "Move the turn earlier.",
+      "change_target_ids": [
+        "NINEL-E02-SC001-A01"
+      ],
+      "execution_mode": "executable-change",
+      "preserved_constraint_ids": [],
+      "preservation_checks": [],
+      "decision_request": null,
+      "downstream_impact": [
+        "Recheck dialogue."
+      ],
+      "status": "proposed",
+      "assumptions": [],
+      "uncertainties": []
+    }
+  ],
+  "assumptions": [],
+  "uncertainties": []
+}

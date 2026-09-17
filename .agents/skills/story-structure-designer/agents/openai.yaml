@@ -1,0 +1,4 @@
+interface:
+  display_name: "Story Structure Designer"
+  short_description: "Design adaptive story structure and events"
+  default_prompt: "Use $story-structure-designer to compare fitting models and create a validated story structure."

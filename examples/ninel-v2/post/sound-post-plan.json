@@ -1,0 +1,255 @@
+{
+  "schema_version": "2.0",
+  "project_id": "NINEL",
+  "unit_id": "NINEL-E01",
+  "project_format": "short",
+  "source_context": {
+    "edit_plan_reference": "post/NINEL-E01/edit-plan.json",
+    "edit_segments": [
+      {
+        "segment_id": "NINEL-E01-ED001",
+        "source_reference": "post/NINEL-E01/edit-plan.json#/segments/0"
+      },
+      {
+        "segment_id": "NINEL-E01-ED002",
+        "source_reference": "post/edit-plan.json#/segments/1"
+      }
+    ],
+    "measurement_evidence": [],
+    "inspection_evidence": []
+  },
+  "items": [
+    {
+      "sound_post_item_id": "NINEL-E01-PS001",
+      "responsibility": "dialogue-edit",
+      "edit_segment_ids": [
+        "NINEL-E01-ED001",
+        "NINEL-E01-ED002"
+      ],
+      "dramatic_purpose": "Protect the scene's quiet technical tension.",
+      "perspective": {
+        "mode": "dialogue-focus",
+        "intent": "Keep story-critical speech intelligible in the intended space."
+      },
+      "state": "planned",
+      "instruction": "Complete this work only after the named source inputs are supplied."
+    },
+    {
+      "sound_post_item_id": "NINEL-E01-PS002",
+      "responsibility": "repair",
+      "edit_segment_ids": [
+        "NINEL-E01-ED001",
+        "NINEL-E01-ED002"
+      ],
+      "dramatic_purpose": "Protect the scene's quiet technical tension.",
+      "perspective": {
+        "mode": "dialogue-focus",
+        "intent": "Keep story-critical speech intelligible in the intended space."
+      },
+      "state": "planned",
+      "instruction": "Complete this work only after the named source inputs are supplied."
+    },
+    {
+      "sound_post_item_id": "NINEL-E01-PS003",
+      "responsibility": "adr",
+      "edit_segment_ids": [
+        "NINEL-E01-ED001",
+        "NINEL-E01-ED002"
+      ],
+      "dramatic_purpose": "Protect the scene's quiet technical tension.",
+      "perspective": {
+        "mode": "dialogue-focus",
+        "intent": "Keep story-critical speech intelligible in the intended space."
+      },
+      "state": "planned",
+      "instruction": "Complete this work only after the named source inputs are supplied."
+    },
+    {
+      "sound_post_item_id": "NINEL-E01-PS004",
+      "responsibility": "foley",
+      "edit_segment_ids": [
+        "NINEL-E01-ED001",
+        "NINEL-E01-ED002"
+      ],
+      "dramatic_purpose": "Protect the scene's quiet technical tension.",
+      "perspective": {
+        "mode": "spatial-focus",
+        "intent": "Keep the listener inside the confined interior."
+      },
+      "state": "planned",
+      "instruction": "Complete this work only after the named source inputs are supplied."
+    },
+    {
+      "sound_post_item_id": "NINEL-E01-PS005",
+      "responsibility": "ambience",
+      "edit_segment_ids": [
+        "NINEL-E01-ED001",
+        "NINEL-E01-ED002"
+      ],
+      "dramatic_purpose": "Protect the scene's quiet technical tension.",
+      "perspective": {
+        "mode": "spatial-focus",
+        "intent": "Keep the listener inside the confined interior."
+      },
+      "state": "planned",
+      "instruction": "Complete this work only after the named source inputs are supplied."
+    },
+    {
+      "sound_post_item_id": "NINEL-E01-PS006",
+      "responsibility": "effects",
+      "edit_segment_ids": [
+        "NINEL-E01-ED001",
+        "NINEL-E01-ED002"
+      ],
+      "dramatic_purpose": "Protect the scene's quiet technical tension.",
+      "perspective": {
+        "mode": "spatial-focus",
+        "intent": "Keep the listener inside the confined interior."
+      },
+      "state": "planned",
+      "instruction": "Complete this work only after the named source inputs are supplied."
+    },
+    {
+      "sound_post_item_id": "NINEL-E01-PS007",
+      "responsibility": "sound-design",
+      "edit_segment_ids": [
+        "NINEL-E01-ED001",
+        "NINEL-E01-ED002"
+      ],
+      "dramatic_purpose": "Protect the scene's quiet technical tension.",
+      "perspective": {
+        "mode": "spatial-focus",
+        "intent": "Keep the listener inside the confined interior."
+      },
+      "state": "planned",
+      "instruction": "Complete this work only after the named source inputs are supplied."
+    },
+    {
+      "sound_post_item_id": "NINEL-E01-PS008",
+      "responsibility": "transition",
+      "edit_segment_ids": [
+        "NINEL-E01-ED001",
+        "NINEL-E01-ED002"
+      ],
+      "dramatic_purpose": "Protect the scene's quiet technical tension.",
+      "perspective": {
+        "mode": "spatial-focus",
+        "intent": "Keep the listener inside the confined interior."
+      },
+      "state": "planned",
+      "instruction": "Complete this work only after the named source inputs are supplied."
+    },
+    {
+      "sound_post_item_id": "NINEL-E01-PS009",
+      "responsibility": "intentional-silence",
+      "edit_segment_ids": [
+        "NINEL-E01-ED001",
+        "NINEL-E01-ED002"
+      ],
+      "dramatic_purpose": "Create a held breath before the subjective reveal.",
+      "perspective": {
+        "mode": "subjective",
+        "intent": "Hold the listener in the character's narrowed attention."
+      },
+      "state": "planned",
+      "instruction": "Complete this work only after the named source inputs are supplied."
+    },
+    {
+      "sound_post_item_id": "NINEL-E01-PS010",
+      "responsibility": "premix-group",
+      "edit_segment_ids": [
+        "NINEL-E01-ED001",
+        "NINEL-E01-ED002"
+      ],
+      "dramatic_purpose": "Protect the scene's quiet technical tension.",
+      "perspective": {
+        "mode": "spatial-focus",
+        "intent": "Keep the listener inside the confined interior."
+      },
+      "state": "planned",
+      "instruction": "Complete this work only after the named source inputs are supplied."
+    },
+    {
+      "sound_post_item_id": "NINEL-E01-PS011",
+      "responsibility": "automation",
+      "edit_segment_ids": [
+        "NINEL-E01-ED001",
+        "NINEL-E01-ED002"
+      ],
+      "dramatic_purpose": "Protect the scene's quiet technical tension.",
+      "perspective": {
+        "mode": "spatial-focus",
+        "intent": "Keep the listener inside the confined interior."
+      },
+      "state": "planned",
+      "instruction": "Complete this work only after the named source inputs are supplied."
+    },
+    {
+      "sound_post_item_id": "NINEL-E01-PS012",
+      "responsibility": "mix-priority",
+      "edit_segment_ids": [
+        "NINEL-E01-ED001",
+        "NINEL-E01-ED002"
+      ],
+      "dramatic_purpose": "Protect the scene's quiet technical tension.",
+      "perspective": {
+        "mode": "dialogue-focus",
+        "intent": "Keep story-critical speech intelligible in the intended space."
+      },
+      "state": "planned",
+      "instruction": "Complete this work only after the named source inputs are supplied."
+    },
+    {
+      "sound_post_item_id": "NINEL-E01-PS013",
+      "responsibility": "accessibility",
+      "edit_segment_ids": [
+        "NINEL-E01-ED001",
+        "NINEL-E01-ED002"
+      ],
+      "dramatic_purpose": "Protect the scene's quiet technical tension.",
+      "perspective": {
+        "mode": "accessibility",
+        "intent": "Identify the sound information an access handoff must preserve."
+      },
+      "state": "planned",
+      "instruction": "Complete this work only after the named source inputs are supplied."
+    },
+    {
+      "sound_post_item_id": "NINEL-E01-PS014",
+      "responsibility": "loudness-assumption",
+      "edit_segment_ids": [
+        "NINEL-E01-ED001",
+        "NINEL-E01-ED002"
+      ],
+      "dramatic_purpose": "Protect the scene's quiet technical tension.",
+      "perspective": {
+        "mode": "spatial-focus",
+        "intent": "Keep the listener inside the confined interior."
+      },
+      "state": "planned",
+      "instruction": "Complete this work only after the named source inputs are supplied.",
+      "delivery_assumption": "Confirm the distributor's target loudness specification before mixing."
+    },
+    {
+      "sound_post_item_id": "NINEL-E01-PS015",
+      "responsibility": "mastering",
+      "edit_segment_ids": [
+        "NINEL-E01-ED001",
+        "NINEL-E01-ED002"
+      ],
+      "dramatic_purpose": "Protect the scene's quiet technical tension.",
+      "perspective": {
+        "mode": "spatial-focus",
+        "intent": "Keep the listener inside the confined interior."
+      },
+      "state": "planned",
+      "instruction": "Complete this work only after the named source inputs are supplied."
+    }
+  ],
+  "assumptions": [
+    "No production audio, mix session, or delivery specification is supplied."
+  ],
+  "uncertainties": [
+    "Repair, ADR, sync, and compliance remain unresolved until source material is supplied."
+  ]
+}

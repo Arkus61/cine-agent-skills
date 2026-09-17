@@ -1,0 +1,83 @@
+{
+  "schema_version": "2.0",
+  "project_id": "NINEL",
+  "unit_id": "NINEL-E01",
+  "source_context": {
+    "edit_segments": [
+      {
+        "segment_id": "NINEL-E01-ED001",
+        "source_reference": "post/edit-plan.json#/segments/0"
+      },
+      {
+        "segment_id": "NINEL-E01-ED002",
+        "source_reference": "post/edit-plan.json#/segments/1"
+      }
+    ],
+    "vfx_items": [],
+    "media_versions": [],
+    "metadata_records": [],
+    "evidence": []
+  },
+  "color_management": {
+    "input_policy": "Identify each source encoding from applicable metadata; do not infer it from filenames.",
+    "working_space": {
+      "value": "scene-referred wide-gamut working space",
+      "state": "proposed"
+    },
+    "output_intent": "Select an output transform only after the display target and viewing conditions are supplied."
+  },
+  "display_targets": [],
+  "items": [
+    {
+      "item_id": "NINEL-E01-CL001",
+      "edit_segment_ids": [
+        "NINEL-E01-ED001",
+        "NINEL-E01-ED002"
+      ],
+      "vfx_item_ids": [],
+      "source_version_ids": [],
+      "graded_version_id": null,
+      "observed_input": {
+        "state": "uninspected",
+        "source_version_id": null,
+        "findings": [],
+        "evidence_ids": []
+      },
+      "desired_look": "Warm, welcoming daylight with credible separation between direct sun and open shade.",
+      "input_encoding": {
+        "value": "unknown",
+        "state": "unknown",
+        "metadata_record_ids": []
+      },
+      "balance_and_matching": "Balance neutrals first, then match skin, foliage, sky, and shadow density while preserving motivated differences.",
+      "exposure_and_contrast": "Retain shadow texture and shape gentle highlight roll-off after inspection.",
+      "palette": {
+        "intent": "Warm midtones with restrained highlight saturation.",
+        "protected_colors": [
+          "Natural complexion and neutral whites"
+        ],
+        "selective_treatments": [
+          "If inspection supports it, isolate facial shaping without flattening environmental coolness."
+        ]
+      },
+      "vfx_handoff": "Verify VFX and camera-source encodings independently before normalization.",
+      "display_target_ids": [],
+      "trim_assumptions": [
+        "Numeric trims remain pending image and target-display inspection."
+      ],
+      "match_state": "planned",
+      "evidence_ids": [],
+      "approval": {
+        "state": "not-requested",
+        "evidence_ids": []
+      }
+    }
+  ],
+  "story_arc": "Move from neutral orientation toward restrained warmth without implying an observed result.",
+  "assumptions": [
+    "No source media, camera metadata, or display specification was supplied."
+  ],
+  "uncertainties": [
+    "Input encodings, measured exposure, and final display intent remain unknown."
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "schema_version": "2.0",
+  "project_id": "EXAMPLE",
+  "source_context": {
+    "character_ids": ["EXAMPLE-CH001"],
+    "scene_ids": ["EXAMPLE-U01-S01"],
+    "timing": {
+      "unit": "frames",
+      "frames_per_second": 24,
+      "range_end": "exclusive"
+    },
+    "shots": [
+      {
+        "scene_id": "EXAMPLE-U01-S01",
+        "shot_id": "EXAMPLE-U01-S01-SH001",
+        "duration": 48,
+        "character_ids": ["EXAMPLE-CH001"],
+        "camera_intent": {
+          "intent_id": "EXAMPLE-CI001",
+          "value": "Keep the supplied medium composition and contact point readable.",
+          "provenance": {
+            "status": "supplied",
+            "basis": "The shot list supplies this camera intent.",
+            "source_reference": "shot-list.json#/shots/EXAMPLE-U01-S01-SH001"
+          }
+        },
+        "performance_intents": [
+          {
+            "intent_id": "EXAMPLE-PI001",
+            "character_id": "EXAMPLE-CH001",
+            "value": "Pause to assess, then complete the action with controlled resolve.",
+            "provenance": {
+              "status": "supplied",
+              "basis": "The directing plan supplies this performance intent.",
+              "source_reference": "directing-plan.json#/performance/EXAMPLE-CH001"
+            }
+          }
+        ],
+        "supplied_facts": [
+          {
+            "scope": "shot-character",
+            "character_id": "EXAMPLE-CH001",
+            "value": "No supplied dialogue occurs in this shot.",
+            "source_reference": "directing-plan.json#/performance/EXAMPLE-CH001"
+          },
+          {
+            "scope": "shot",
+            "character_id": null,
+            "value": "Preserve the supplied camera and keep the contact point readable throughout.",
+            "source_reference": "shot-list.json#/shots/EXAMPLE-U01-S01-SH001"
+          }
+        ]
+      }
+    ]
+  },
+  "shot_character_plans": [
+    {
+      "animation_plan_id": "EXAMPLE-AP001",
+      "scene_id": "EXAMPLE-U01-S01",
+      "shot_id": "EXAMPLE-U01-S01-SH001",
+      "character_id": "EXAMPLE-CH001",
+      "source_bindings": {
+        "camera_intent_id": "EXAMPLE-CI001",
+        "performance_intent_id": "EXAMPLE-PI001"
+      },
+      "acting_beats": [
+        {
+          "acting_beat_id": "EXAMPLE-AP001-AB001",
+          "timing": {"start": 0, "end": 48},
+          "action": "Assess the contact point, decide, and complete the controlled action.",
+          "performance": "Attention leads the body; resolve appears through economy rather than speed.",
+          "purpose": "Preserve the supplied assess-then-act performance turn.",
+          "provenance": {
+            "status": "proposed",
+            "basis": "This beat makes the supplied performance playable across the shot.",
+            "source_reference": "directing-plan.json#/performance/EXAMPLE-CH001"
+          }
+        }
+      ],
+      "key_poses": [
+        {
+          "key_pose_id": "EXAMPLE-AP001-KP001",
+          "acting_beat_id": "EXAMPLE-AP001-AB001",
+          "at": 0,
+          "pose": "Balanced entry pose with attention oriented toward the contact point.",
+          "readability": "The attention line, support, and contact point remain distinct.",
+          "purpose": "Establish the supplied entry state clearly.",
+          "provenance": {
+            "status": "inferred",
+            "basis": "The entry pose follows from supplied continuity and camera intent.",
+            "source_reference": "shot-list.json#/shots/EXAMPLE-U01-S01-SH001"
+          }
+        }
+      ],
+      "staging": {
+        "value": "Protect the attention line and contact point in the supplied frame.",
+        "purpose": "Keep the action readable without revising camera intent.",
+        "provenance": {
+          "status": "inferred",
+          "basis": "The staging follows from the supplied composition.",
+          "source_reference": "shot-list.json#/shots/EXAMPLE-U01-S01-SH001"
+        }
+      },
+      "timing_intent": {
+        "value": "Allocate the opening hold to assessment and the remainder to controlled completion.",
+        "purpose": "Make the decision precede the action.",
+        "provenance": {
+          "status": "proposed",
+          "basis": "This timing interpretation preserves the supplied performance turn.",
+          "source_reference": "directing-plan.json#/performance/EXAMPLE-CH001"
+        }
+      },
+      "spacing": {
+        "value": "Use close spacing during assessment and a measured ease into the action.",
+        "purpose": "Prevent an unsupplied startle or snap.",
+        "provenance": {
+          "status": "proposed",
+          "basis": "Spacing is bounded animation direction derived from the supplied intent.",
+          "source_reference": "directing-plan.json#/performance/EXAMPLE-CH001"
+        }
+      },
+      "arcs": {
+        "value": "Follow the shortest readable path permitted by supplied anatomy or mechanics.",
+        "purpose": "Keep the action controlled and legible.",
+        "provenance": {
+          "status": "proposed",
+          "basis": "The path interprets controlled resolve without inventing mechanics.",
+          "source_reference": "directing-plan.json#/performance/EXAMPLE-CH001"
+        }
+      },
+      "weight": {
+        "value": "Maintain visible support and settle after the contact change.",
+        "purpose": "Keep the subject grounded through the action.",
+        "provenance": {
+          "status": "proposed",
+          "basis": "Support and settling are required for readable weight.",
+          "source_reference": "shot-list.json#/shots/EXAMPLE-U01-S01-SH001"
+        }
+      },
+      "anticipation": {
+        "value": "Use the attention shift as the smallest readable preparation.",
+        "purpose": "Prepare the action without broadening it.",
+        "provenance": {
+          "status": "proposed",
+          "basis": "The supplied controlled performance calls for restrained preparation.",
+          "source_reference": "directing-plan.json#/performance/EXAMPLE-CH001"
+        }
+      },
+      "follow_through_overlap": {
+        "value": "Let balance and any supplied secondary elements settle after contact.",
+        "purpose": "Avoid a frozen stop while retaining control.",
+        "provenance": {
+          "status": "proposed",
+          "basis": "A bounded settling response supports the supplied action.",
+          "source_reference": "shot-list.json#/shots/EXAMPLE-U01-S01-SH001"
+        }
+      },
+      "holds": [
+        {
+          "hold_id": "EXAMPLE-AP001-HD001",
+          "acting_beat_id": "EXAMPLE-AP001-AB001",
+          "key_pose_id": "EXAMPLE-AP001-KP001",
+          "timing": {"start": 0, "end": 12},
+          "intent": "Sustain the assessment with only subject-appropriate residual response.",
+          "purpose": "Make the decision readable before movement.",
+          "provenance": {
+            "status": "proposed",
+            "basis": "The hold expresses the supplied pause without adding noise.",
+            "source_reference": "directing-plan.json#/performance/EXAMPLE-CH001"
+          }
+        }
+      ],
+      "facial_performance": {
+        "applicability": "specified",
+        "intent": {
+          "value": "Use supplied expressive anatomy only; let attention change before effort.",
+          "purpose": "Support the beat without over-animation.",
+          "provenance": {
+            "status": "proposed",
+            "basis": "This bounded facial direction preserves the supplied intent.",
+            "source_reference": "directing-plan.json#/performance/EXAMPLE-CH001"
+          }
+        }
+      },
+      "lip_sync": {
+        "applicability": "none",
+        "intent": {
+          "value": "No supplied dialogue occurs in this shot.",
+          "purpose": "Prevent invented mouth synchronization.",
+          "provenance": {
+            "status": "supplied",
+            "basis": "The supplied scene contains no dialogue for this character.",
+            "source_reference": "directing-plan.json#/performance/EXAMPLE-CH001"
+          }
+        }
+      },
+      "camera_relationship": {
+        "value": "Preserve the supplied camera and keep the contact point readable throughout.",
+        "purpose": "Coordinate performance with composition.",
+        "provenance": {
+          "status": "supplied",
+          "basis": "The shot list supplies this camera relationship.",
+          "source_reference": "shot-list.json#/shots/EXAMPLE-U01-S01-SH001"
+        }
+      },
+      "motion_model": {
+        "physical_realism": {
+          "value": "Keep support, contact, transfer, and settling physically coherent.",
+          "purpose": "Preserve credible weight and contact.",
+          "provenance": {
+            "status": "proposed",
+            "basis": "These physical cues support the supplied action.",
+            "source_reference": "shot-list.json#/shots/EXAMPLE-U01-S01-SH001"
+          }
+        },
+        "intentional_stylization": {
+          "value": "Compression or simplification is allowed only when it preserves the supplied turn.",
+          "purpose": "Separate intentional style from accidental physical error.",
+          "provenance": {
+            "status": "proposed",
+            "basis": "This is a bounded style choice for review.",
+            "source_reference": "directing-plan.json#/performance/EXAMPLE-CH001"
+          }
+        }
+      },
+      "simulations": [
+        {
+          "simulation_id": "EXAMPLE-AP001-SM001",
+          "element": "secondary response",
+          "method": "undetermined",
+          "method_confirmation": "unconfirmed",
+          "certainty": "assumption",
+          "assumption": {
+            "value": "Any secondary-motion method remains undetermined until supplied and confirmed.",
+            "purpose": "Keep method uncertainty visible for review.",
+            "provenance": {
+              "status": "inferred",
+              "basis": "No simulation method is supplied.",
+              "source_reference": "character-look-bible.json#/characters/EXAMPLE-CH001"
+            }
+          }
+        }
+      ],
+      "continuity": {
+        "continuity_id": "EXAMPLE-AP001-CT001",
+        "order": 1,
+        "previous_continuity_id": null,
+        "entry_state": "Balanced assessment at the supplied contact point.",
+        "exit_state": "Controlled action complete with support settled.",
+        "purpose": "Make entry and exit state explicit for adjacent shots.",
+        "provenance": {
+          "status": "inferred",
+          "basis": "The states follow from the supplied shot action and performance intent.",
+          "source_reference": "shot-list.json#/shots/EXAMPLE-U01-S01-SH001"
+        }
+      },
+      "acceptance_criteria": [
+        {
+          "value": "Assessment reads before action, the contact remains clear, and the exit settles.",
+          "purpose": "Protect the supplied performance, camera, and continuity intent at review.",
+          "provenance": {
+            "status": "proposed",
+            "basis": "This criterion converts the supplied intent into observable review evidence.",
+            "source_reference": "directing-plan.json#/performance/EXAMPLE-CH001"
+          }
+        }
+      ]
+    }
+  ],
+  "assumptions": [
+    "The template's animation and secondary-motion methods are unconfirmed."
+  ],
+  "uncertainties": [
+    "Replace template anatomy, mechanics, articulation, and contact assumptions with supplied facts."
+  ]
+}

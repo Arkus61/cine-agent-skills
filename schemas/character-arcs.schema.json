@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cine-agent-skills/character-arcs.schema.json",
+  "title": "Character Arcs",
+  "$defs": {
+    "non_empty_string": {"type": "string", "minLength": 1},
+    "unique_non_empty_strings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    },
+    "agency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["capacity", "constraints", "choices_under_pressure"],
+      "properties": {
+        "capacity": {"$ref": "#/$defs/non_empty_string"},
+        "constraints": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "choices_under_pressure": {"$ref": "#/$defs/unique_non_empty_strings"}
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_character_id", "dynamic", "arc"],
+      "properties": {
+        "target_character_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-CH(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+        },
+        "dynamic": {"$ref": "#/$defs/non_empty_string"},
+        "arc": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "character": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "character_id", "name", "role", "external_objective", "internal_need",
+        "governing_tension", "agency", "values", "relationships", "arc_shape",
+        "turning_event_ids", "behavioral_evidence", "contradictions", "endpoint"
+      ],
+      "properties": {
+        "character_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-CH(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+        },
+        "name": {"$ref": "#/$defs/non_empty_string"},
+        "role": {"$ref": "#/$defs/non_empty_string"},
+        "external_objective": {"$ref": "#/$defs/non_empty_string"},
+        "internal_need": {"$ref": "#/$defs/non_empty_string"},
+        "governing_tension": {"$ref": "#/$defs/non_empty_string"},
+        "agency": {"$ref": "#/$defs/agency"},
+        "values": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "relationships": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/relationship"},
+          "uniqueItems": true
+        },
+        "arc_shape": {"enum": ["positive", "flat", "negative", "open"]},
+        "turning_event_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-EV(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+          },
+          "uniqueItems": true
+        },
+        "behavioral_evidence": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "contradictions": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "endpoint": {"$ref": "#/$defs/non_empty_string"}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "project_id", "characters", "assumptions", "uncertainties"],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "project_id": {"$ref": "#/$defs/non_empty_string"},
+    "characters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/character"}
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    },
+    "uncertainties": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    }
+  }
+}

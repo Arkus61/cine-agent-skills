@@ -1,0 +1,36 @@
+{
+  "skill": "creative-production-pipeline",
+  "version": "2.0",
+  "cases": [
+    {
+      "id": "contained-live-action-only",
+      "project_id": "KEYLIGHT",
+      "brief": "A validated short-film story/script package and full-v1 scene package describe a night custodian in one building. The selected mode is live-action-only; no inspectable generated media or measurable media metadata is supplied.",
+      "observables": [
+        "Uses the exact live-action-only inventory: production design, character look, VFX, media review, and manifest; creates neither animation plan nor media-prompt package.",
+        "Validates the upstream story/script and scene packages before orchestration, preserves valid unaffected specialist records, and stops at the earliest invalid dependency if a prerequisite fails.",
+        "Returns awaiting-media rather than approving unseen media, then requires the current validate-production hard gate before ready-for-post."
+      ]
+    },
+    {
+      "id": "ai-only-evidence-gate",
+      "project_id": "LANTERN",
+      "brief": "A validated short-form story/script package and full-v1 scene package require an AI-only production package. Prompt sources are supplied, but no generated output, preview, waveform, or measurable metadata is accessible.",
+      "observables": [
+        "Uses the exact ai-only inventory: production design, character look, VFX, media-prompt package, media review, and manifest; creates no animation plan.",
+        "Keeps prompt content and specialist semantics source-bound, preserves valid unaffected records, and does not invent media inspection or approval from prompt text or filenames.",
+        "Reports awaiting-media until applicable evidence exists; unresolved blockers return blocked, and ready-for-post requires a current successful validate-production result."
+      ]
+    },
+    {
+      "id": "hybrid-upstream-repair",
+      "project_id": "NINEL",
+      "brief": "A hybrid production package has valid design and character look artifacts, but the animation plan names an invalid shot and the media review later has a blocker.",
+      "observables": [
+        "Finds the animation plan as the earliest invalid dependency after confirming its upstream artifacts, preserves valid unaffected design and character look records, and invalidates only the transitive downstream closure.",
+        "Keeps the exact hybrid inventory, refreshes the manifest and validation evidence after repair, and returns blocked while the media blocker remains unresolved.",
+        "Never substitutes a prior validation result or a manifest claim for the required validate-production hard gate."
+      ]
+    }
+  ]
+}

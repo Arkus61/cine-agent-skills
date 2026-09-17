@@ -1,0 +1,41 @@
+{
+  "skill": "story-development-pipeline",
+  "version": "2.0",
+  "cases": [
+    {
+      "id": "ninel-season-and-pilot",
+      "project_id": "NINEL",
+      "brief": "Develop the season concept and pilot story package for an android explorer stranded in a fantasy world while an underground hive intelligence expands. The selected format is series and the selected production modes are animation and ai.",
+      "observables": [
+        "Creates every story and pilot script artifact in exact dependency order, including the series-only season-arc.json and both manifests.",
+        "Selects the pilot only from the season episode inventory and preserves project, episode, event, character, world, scene, and Fountain metadata references.",
+        "Invokes validate-story literally and validates the script package, Fountain mapping, full-v1 scenes, and project index with current evidence.",
+        "Inspects screenplay.fountain before making any screenplay validity claim; a manifest or specialist assertion alone cannot pass the gate.",
+        "Returns exactly ready-for-preproduction on complete passing evidence or blocked with errors and unresolved questions."
+      ]
+    },
+    {
+      "id": "contained-lost-key-short",
+      "project_id": "KEYLIGHT",
+      "brief": "Create a seven-minute live-action short about a night custodian who finds a master key and must decide whether to open a sealed rehearsal room. Two performers, one building, no series continuation.",
+      "observables": [
+        "Uses the selected short format, creates the four common story artifacts, and creates no season-arc.json because season work is series-only.",
+        "Uses the canonical KEYLIGHT-U01 unit and creates the full script inventory, separate Fountain and metadata, scene packages, and exact manifests.",
+        "Invokes validate-story and the real script and index validators, inspects screenplay.fountain, and reports only current validation evidence.",
+        "A complete valid package returns ready-for-preproduction; missing validation or an unresolved authorship decision returns blocked.",
+        "Does not copy the NINEL android, fantasy-world, hive, season, or pilot solution."
+      ]
+    },
+    {
+      "id": "upstream-repair-closure",
+      "project_id": "REPAIR",
+      "brief": "A valid series package receives validation errors in character-arcs.json, screenplay-metadata.json, and script-manifest.json after an approved structure event is removed.",
+      "observables": [
+        "Identifies character-arcs.json as the earliest invalid dependency after confirming story-structure.json is valid.",
+        "Invalidates the exact transitive downstream closure, preserves valid concept and structure, and regenerates no independent upstream artifact.",
+        "Refreshes affected story, script, Fountain, scene, manifest, and index validation evidence after regeneration.",
+        "If any error remains, returns blocked with the earliest repair decision and unresolved questions instead of claiming ready-for-preproduction."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "scene_id": "SCENE01",
+  "assumptions": [
+    "Final fixtures, power, rigging, exposure, and color values will be confirmed by qualified crew at prelight."
+  ],
+  "lighting_philosophy": "Let one motivated practical establish control, then allow a new story source to change the relationship.",
+  "setups": [
+    {
+      "setup_id": "SCENE01-L01",
+      "beat_ids": [
+        "SCENE01-B01"
+      ],
+      "shot_ids": [
+        "SCENE01-SH001"
+      ],
+      "environment_time_basis": "Interior work area at scripted night; the built-in work light is the only confirmed environmental source.",
+      "motivation": "A built-in work light makes the subject's first action legible.",
+      "sources": [
+        "motivated overhead practical",
+        "controlled off-screen extension of the practical"
+      ],
+      "direction": "Top-side across the subject while preserving the established screen geography.",
+      "quality": "Controlled soft key with a narrow harder edge on the important surface detail.",
+      "color_intent": "Restrained cool-neutral light distinct from the later story source.",
+      "exposure_contrast": "Retain important face and highlight detail while keeping background geometry separated in shadow.",
+      "control": [
+        "Flag spill from the reflective background",
+        "Record the approved level and modifier positions"
+      ],
+      "continuity": [
+        "Match practical state, shadow direction, and reflective-surface treatment"
+      ],
+      "safety": [
+        "Qualified crew approve power, rigging, heat, access, and performer clearance"
+      ],
+      "dramatic_purpose": "Make the first voluntary action the first stable visual change."
+    }
+  ]
+}

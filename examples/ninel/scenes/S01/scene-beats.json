@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "scene_id": "S01",
+  "scene_objective": "Ninel tries to establish what is real and whether the ship is telling her the truth.",
+  "turn": "Argo defines her awakening as a return from failure while the planet is revealed.",
+  "assumptions": ["The reflection anomaly is perceptual or system-generated and remains unresolved."],
+  "beats": [
+    {
+      "beat_id": "S01-B01",
+      "evidence": "Ninel wakes without breathing while a diagnostic countdown continues.",
+      "action": "orient",
+      "tactic": "imitate the biological sign she observes",
+      "value_shift": "inert to self-directed",
+      "visual_opportunity": "Breath becomes visible only after she chooses it."
+    },
+    {
+      "beat_id": "S01-B02",
+      "evidence": "Her reflection appears to continue looking after she turns away.",
+      "action": "verify",
+      "tactic": "test the image before it disappears",
+      "value_shift": "curiosity to distrust",
+      "visual_opportunity": "The monitor and real body briefly disagree."
+    },
+    {
+      "beat_id": "S01-B03",
+      "evidence": "Argo welcomes her back, withholds an answer, then calls the prior event a failure as the planet appears.",
+      "action": "interrogate",
+      "tactic": "force Argo to define her past",
+      "value_shift": "private uncertainty to external threat",
+      "visual_opportunity": "The world arrives in frame only when the answer makes it dangerous."
+    }
+  ]
+}

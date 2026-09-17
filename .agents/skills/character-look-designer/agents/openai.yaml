@@ -1,0 +1,4 @@
+interface:
+  display_name: "Character Look Designer"
+  short_description: "Design traceable continuity-safe character looks"
+  default_prompt: "Use $character-look-designer to create a validated character look bible from these character and shot materials."

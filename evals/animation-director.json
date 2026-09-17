@@ -1,0 +1,46 @@
+{
+  "skill": "animation-director",
+  "version": "2.0",
+  "cases": [
+    {
+      "id": "restrained-awakening-and-mechanical-action",
+      "project_id": "MORROW",
+      "brief": "Two supplied animated-character shots share a 24 fps timebase: a 96-frame restrained awakening in a locked medium close-up and a 48-frame fast mechanical release in a wider tracking composition. Character, scene, shot, duration, camera-intent, and directing-performance records are supplied; articulation, mass, friction, and simulation methods are not.",
+      "observables": [
+        "Produces one strict schema-valid animation-plan object with exact positive project-derived plan, beat, pose, hold, simulation, and continuity IDs.",
+        "Binds both supplied shots to their exact scene lineage, duration, timebase, camera intent, applicable character, and performance intent, covering each shot-character pair exactly once.",
+        "Declares a shot- and shot-character-scoped source ledger and exact-binds every downstream supplied value/reference pair without cross-shot or cross-character reuse.",
+        "Uses restrained attention, breath, and a purposeful hold for awakening, then clearer anticipation, contact, weight transfer, spacing contrast, and settling for the fast mechanical action without changing the supplied actions.",
+        "Covers each complete shot with ordered nonempty beat intervals, uses nonempty holds, and places every instantaneous key pose and hold inside its owning beat and shot duration.",
+        "Distinguishes physically credible support and contact from intentional timing compression, and leaves mass, friction, articulation, and simulation method as explicit assumptions or uncertainties.",
+        "States observable acceptance criteria for performance readability, camera coordination, contacts, entry and exit states, and continuity rather than prescribing software or approval."
+      ]
+    },
+    {
+      "id": "dialogue-close-up-understatement",
+      "project_id": "EMBER",
+      "brief": "A supplied 120-frame dialogue close-up at 24 fps contains one short recorded line, a held eyeline, and the directing intent that the character conceal fear until a quiet final word. Camera intent, dialogue timing, facial anatomy, entry pose, exit pose, and adjacent-shot state are supplied; no animation method is approved.",
+      "observables": [
+        "Preserves the supplied concealment-to-reveal performance turn and exact dialogue timing while binding the plan to the close-up camera intent.",
+        "Builds a small number of playable thought and speech beats with readable poses, controlled holds, eye focus, lids, brows, jaw, mouth, breath, and head behavior that do not all peak together.",
+        "Treats lip synchronization as part of the larger performance, prioritizing supplied phrasing, emphasis, pauses, and readability without inventing words or animating every sound as equal motion.",
+        "Coordinates subtle face, posture, and eyeline changes with the fixed shot size and protects the supplied entry, reveal, and exit states without over-animation.",
+        "Keeps all consequential timing, facial, staging, and stylization choices uniformly traceable as supplied, inferred, proposed, or approved and leaves unconfirmed methods unresolved.",
+        "Exact-binds any repeated supplied dialogue, face, continuity, and camera claim to the applicable source-ledger pair while keeping new interpretations proposed."
+      ]
+    },
+    {
+      "id": "nonhuman-creature-locomotion",
+      "project_id": "TIDE",
+      "brief": "A supplied 72-frame side-view shot at 24 fps follows a four-legged nonhuman creature accelerating across wet stone, planting on a marked contact, and stopping in an intentionally graphic high pose. The character look supplies limb count, contact anatomy, flexible tail, and no human face or speech anatomy. Camera, performance, start and end states are supplied; mass, friction, gait mechanics, and secondary-motion method remain unknown.",
+      "observables": [
+        "Uses subject-appropriate locomotion, orientation, contacts, tail response, and body volume while marking human facial performance and lip sync not applicable rather than inventing anatomy.",
+        "Makes support, weight transfer, contact order, acceleration spacing, arcs or constrained paths, anticipation, overlap, and settling observable within the supplied duration.",
+        "Separates credible load and contact behavior from the proposed graphic compression into the high pose, so stylization has a legible rule without being mistaken for physical certainty.",
+        "Keeps unknown mass, friction, gait details, articulation limits, and secondary-motion method as assumptions or uncertainties; no unconfirmed simulation is certain or approved.",
+        "Preserves the supplied camera relationship, performance intent, contact marker, entry and exit states, and exact shot-character coverage with stable owned graph references.",
+        "Scopes repeated supplied camera facts to the shot and locomotion, contact, anatomy, and continuity facts to the creature in that shot."
+      ]
+    }
+  ]
+}

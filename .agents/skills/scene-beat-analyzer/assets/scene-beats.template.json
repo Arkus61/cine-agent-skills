@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "scene_id": "S01",
+  "scene_objective": "",
+  "turn": "",
+  "assumptions": [],
+  "beats": [
+    {
+      "beat_id": "S01-B01",
+      "evidence": "",
+      "action": "",
+      "tactic": "",
+      "value_shift": "",
+      "visual_opportunity": ""
+    }
+  ]
+}

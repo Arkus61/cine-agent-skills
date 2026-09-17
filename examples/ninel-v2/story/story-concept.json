@@ -1,0 +1,40 @@
+{
+  "schema_version": "2.0",
+  "project_id": "NINEL",
+  "project_format": "series",
+  "production_modes": [
+    "animation",
+    "ai"
+  ],
+  "runtime_intent": "Two short demonstration units; not an approved season length.",
+  "audience_promise": "A clear mystery with a consequential answer.",
+  "premise": "Ninel wakes aboard an autonomous research ship and questions Argo about her return.",
+  "logline": "An android learns to breathe, then asks the ship intelligence what she has returned from.",
+  "central_dramatic_question": "What does Argo mean by a return from failure?",
+  "themes": [
+    "truth has a cost"
+  ],
+  "genres": [
+    "mystery"
+  ],
+  "tone": [
+    "tense"
+  ],
+  "world_scope": "Medical bay of a research ship orbiting an unknown world.",
+  "protagonist_focus": "Ninel chooses to breathe and asks for an explanation.",
+  "supplied_constraints": [
+    {
+      "statement": "Ninel awakens; Argo is voice-only; chamber, monitor and observation slit define the scene.",
+      "source_reference": "examples/ninel-v1/scenes/S01/source-scene.md"
+    }
+  ],
+  "success_criteria": [
+    "Every episode advances the diagnostic response mystery."
+  ],
+  "assumptions": [
+    "The two-unit split and all v2 expansions are demonstration proposals; see examples/ninel-v2-notes.md."
+  ],
+  "uncertainties": [
+    "The diagnostic response source is intentionally unresolved."
+  ]
+}

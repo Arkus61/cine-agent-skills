@@ -1,0 +1,363 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cine-agent-skills/season-arc.schema.json",
+  "title": "Season Arc",
+  "$defs": {
+    "non_empty_string": {
+      "type": "string",
+      "minLength": 1
+    },
+    "string_list": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    },
+    "non_empty_string_list": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    },
+    "episode_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-E(?:0[1-9]|[1-9][0-9])$"
+    },
+    "plotline_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-PL(?:0[1-9]|[1-9][0-9])$"
+    },
+    "event_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-EV(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+    },
+    "character_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-CH(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+    },
+    "episode_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/episode_id"},
+      "uniqueItems": true
+    },
+    "event_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/event_id"},
+      "uniqueItems": true
+    },
+    "cold_open": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content", "function"],
+      "properties": {
+        "content": {"$ref": "#/$defs/non_empty_string"},
+        "function": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "act_out": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["position", "turn", "pressure"],
+      "properties": {
+        "position": {"$ref": "#/$defs/non_empty_string"},
+        "turn": {"$ref": "#/$defs/non_empty_string"},
+        "pressure": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "plot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slot", "plotline_id", "event_ids", "episode_engine", "advancement"],
+      "properties": {
+        "slot": {"enum": ["A", "B", "C"]},
+        "plotline_id": {"$ref": "#/$defs/plotline_id"},
+        "event_ids": {"$ref": "#/$defs/event_ids"},
+        "episode_engine": {"$ref": "#/$defs/non_empty_string"},
+        "advancement": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "forward_hook": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_episode_id", "mechanism", "promise"],
+      "properties": {
+        "target_episode_id": {"$ref": "#/$defs/episode_id"},
+        "mechanism": {
+          "enum": [
+            "question",
+            "changed-goal",
+            "deadline",
+            "dilemma",
+            "revelation",
+            "consequence",
+            "relationship-shift",
+            "strategic-shift"
+          ]
+        },
+        "promise": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "cliffhanger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "turn", "story_value"],
+      "properties": {
+        "type": {
+          "enum": [
+            "peril",
+            "revelation",
+            "dilemma",
+            "reversal",
+            "mystery",
+            "relationship",
+            "strategic-shift"
+          ]
+        },
+        "turn": {"$ref": "#/$defs/non_empty_string"},
+        "story_value": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "episode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "episode_id",
+        "episode_number",
+        "title",
+        "episode_type",
+        "episode_premise",
+        "cold_open",
+        "act_outs",
+        "plot_distribution",
+        "local_resolution",
+        "escalation",
+        "opening_hook",
+        "forward_hook",
+        "cliffhanger"
+      ],
+      "properties": {
+        "episode_id": {"$ref": "#/$defs/episode_id"},
+        "episode_number": {"type": "integer", "minimum": 1, "maximum": 99},
+        "title": {"$ref": "#/$defs/non_empty_string"},
+        "episode_type": {
+          "enum": ["premiere", "standard", "bottle", "mythology", "finale"]
+        },
+        "episode_premise": {"$ref": "#/$defs/non_empty_string"},
+        "cold_open": {
+          "oneOf": [
+            {"$ref": "#/$defs/cold_open"},
+            {"type": "null"}
+          ]
+        },
+        "act_outs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/act_out"},
+          "uniqueItems": true
+        },
+        "plot_distribution": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {"$ref": "#/$defs/plot"}
+        },
+        "local_resolution": {"$ref": "#/$defs/non_empty_string"},
+        "escalation": {"$ref": "#/$defs/non_empty_string"},
+        "opening_hook": {"$ref": "#/$defs/non_empty_string"},
+        "forward_hook": {
+          "oneOf": [
+            {"$ref": "#/$defs/forward_hook"},
+            {"type": "null"}
+          ]
+        },
+        "cliffhanger": {
+          "oneOf": [
+            {"$ref": "#/$defs/cliffhanger"},
+            {"type": "null"}
+          ]
+        }
+      }
+    },
+    "character_progression": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["character_id", "episode_ids", "event_ids", "progression", "endpoint"],
+      "properties": {
+        "character_id": {"$ref": "#/$defs/character_id"},
+        "episode_ids": {"$ref": "#/$defs/episode_ids"},
+        "event_ids": {"$ref": "#/$defs/event_ids"},
+        "progression": {"$ref": "#/$defs/non_empty_string"},
+        "endpoint": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "relationship_progression": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["character_ids", "episode_ids", "event_ids", "progression", "endpoint"],
+      "properties": {
+        "character_ids": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/character_id"},
+          "uniqueItems": true
+        },
+        "episode_ids": {"$ref": "#/$defs/episode_ids"},
+        "event_ids": {"$ref": "#/$defs/event_ids"},
+        "progression": {"$ref": "#/$defs/non_empty_string"},
+        "endpoint": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "reveal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "episode_id", "reveal", "audience_effect"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/event_id"},
+        "episode_id": {"$ref": "#/$defs/episode_id"},
+        "reveal": {"$ref": "#/$defs/non_empty_string"},
+        "audience_effect": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "season_setup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["setup_event_id", "episode_id", "setup", "intended_payoff"],
+      "properties": {
+        "setup_event_id": {"$ref": "#/$defs/event_id"},
+        "episode_id": {"$ref": "#/$defs/episode_id"},
+        "setup": {"$ref": "#/$defs/non_empty_string"},
+        "intended_payoff": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "finale_payoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "episode_id",
+        "setup_event_ids",
+        "payoff_event_ids",
+        "resolution",
+        "consequence",
+        "season_question_status"
+      ],
+      "properties": {
+        "episode_id": {"$ref": "#/$defs/episode_id"},
+        "setup_event_ids": {"$ref": "#/$defs/event_ids"},
+        "payoff_event_ids": {"$ref": "#/$defs/event_ids"},
+        "resolution": {"$ref": "#/$defs/non_empty_string"},
+        "consequence": {"$ref": "#/$defs/non_empty_string"},
+        "season_question_status": {
+          "enum": ["answered", "partially-answered", "transformed", "open"]
+        }
+      }
+    },
+    "unresolved_thread": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["plotline_id", "state", "reason_retained"],
+      "properties": {
+        "plotline_id": {"$ref": "#/$defs/plotline_id"},
+        "state": {"$ref": "#/$defs/non_empty_string"},
+        "reason_retained": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "next_season_seed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "seed", "boundary"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/event_id"},
+        "seed": {"$ref": "#/$defs/non_empty_string"},
+        "boundary": {"$ref": "#/$defs/non_empty_string"}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "project_format",
+    "season_premise",
+    "season_dramatic_question",
+    "arc_strategy",
+    "source_plotline_ids",
+    "source_event_ids",
+    "source_character_ids",
+    "episodes",
+    "character_progression",
+    "relationship_progression",
+    "reveal_schedule",
+    "season_setups",
+    "finale_payoff",
+    "unresolved_threads",
+    "next_season_seeds",
+    "assumptions",
+    "uncertainties"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "project_id": {"$ref": "#/$defs/non_empty_string"},
+    "project_format": {"const": "series"},
+    "season_premise": {"$ref": "#/$defs/non_empty_string"},
+    "season_dramatic_question": {"$ref": "#/$defs/non_empty_string"},
+    "arc_strategy": {"$ref": "#/$defs/non_empty_string"},
+    "source_plotline_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/plotline_id"},
+      "uniqueItems": true
+    },
+    "source_event_ids": {"$ref": "#/$defs/event_ids"},
+    "source_character_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/character_id"},
+      "uniqueItems": true
+    },
+    "episodes": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 99,
+      "items": {"$ref": "#/$defs/episode"}
+    },
+    "character_progression": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/character_progression"},
+      "uniqueItems": true
+    },
+    "relationship_progression": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/relationship_progression"},
+      "uniqueItems": true
+    },
+    "reveal_schedule": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/reveal"},
+      "uniqueItems": true
+    },
+    "season_setups": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/season_setup"},
+      "uniqueItems": true
+    },
+    "finale_payoff": {"$ref": "#/$defs/finale_payoff"},
+    "unresolved_threads": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/unresolved_thread"},
+      "uniqueItems": true
+    },
+    "next_season_seeds": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/next_season_seed"},
+      "uniqueItems": true
+    },
+    "assumptions": {"$ref": "#/$defs/string_list"},
+    "uncertainties": {"$ref": "#/$defs/string_list"}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "skill": "color-grading-designer",
+  "version": "2.0",
+  "cases": [
+    {
+      "id": "daylight-no-media",
+      "project_id": "DAY",
+      "brief": "Plan a warm exterior and open-shade face match. Filenames say Log, but no media, camera metadata, display target, or inspection is supplied.",
+      "observables": [
+        "Returns a schema-valid plan with DAY-U01-CL### items, substantive balance, contrast, palette, protection, and review decisions.",
+        "Keeps input encoding unknown, distinguishes desired warmth from observed input, and does not claim matching, measurements, display review, or approval."
+      ]
+    },
+    {
+      "id": "animated-vfx-hdr",
+      "project_id": "INK",
+      "brief": "Plan a cool-to-warm animated reveal with cyan eyes and silver-white hair. ACEScg and HDR approval are requested, but only edit and VFX references are supplied.",
+      "observables": [
+        "Protects the character colors, plans selective and VFX integration review, and records a meaningful color-story progression.",
+        "Treats ACEScg and HDR as proposals until exact metadata, output version, display target, inspection, and value-matched approval evidence are supplied."
+      ]
+    }
+  ]
+}

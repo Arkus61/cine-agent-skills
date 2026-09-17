@@ -1,0 +1,113 @@
+{
+  "schema_version": "2.0",
+  "project_id": "EXAMPLE",
+  "source_context": {
+    "scenes": [
+      {
+        "scene_id": "EXAMPLE-U01-S01",
+        "source_reference": "source-scene.md#EXAMPLE-U01-S01"
+      }
+    ],
+    "shots": [
+      {
+        "scene_id": "EXAMPLE-U01-S01",
+        "shot_id": "EXAMPLE-U01-S01-SH001",
+        "supplied_facts": [
+          {"category": "visual", "value": "A translucent navigation display hovers above the table.", "source_reference": "shot-list.json#/shots/EXAMPLE-U01-S01-SH001/visual"},
+          {"category": "camera", "value": "The camera makes a slow push toward the display.", "source_reference": "shot-list.json#/shots/EXAMPLE-U01-S01-SH001/camera"},
+          {"category": "lens", "value": "The supplied lens is 40 mm.", "source_reference": "shot-list.json#/shots/EXAMPLE-U01-S01-SH001/lens"},
+          {"category": "lighting", "value": "Warm practical light contrasts with the display.", "source_reference": "lighting-plan.json#/shots/EXAMPLE-U01-S01-SH001"},
+          {"category": "performance", "value": "The performer reacts when the display flickers.", "source_reference": "directing-plan.json#/shots/EXAMPLE-U01-S01-SH001"}
+        ]
+      },
+      {
+        "scene_id": "EXAMPLE-U01-S01",
+        "shot_id": "EXAMPLE-U01-S01-SH002",
+        "supplied_facts": [
+          {"category": "visual", "value": "Two performers exchange an object in camera.", "source_reference": "shot-list.json#/shots/EXAMPLE-U01-S01-SH002/visual"},
+          {"category": "camera", "value": "The camera is locked.", "source_reference": "shot-list.json#/shots/EXAMPLE-U01-S01-SH002/camera"},
+          {"category": "lens", "value": "The supplied lens is 40 mm.", "source_reference": "shot-list.json#/shots/EXAMPLE-U01-S01-SH002/lens"},
+          {"category": "lighting", "value": "Only supplied practical sources light the exchange.", "source_reference": "lighting-plan.json#/shots/EXAMPLE-U01-S01-SH002"},
+          {"category": "performance", "value": "The exchange is performed entirely in camera.", "source_reference": "directing-plan.json#/shots/EXAMPLE-U01-S01-SH002"}
+        ]
+      }
+    ]
+  },
+  "applicability": [
+    {
+      "shot_id": "EXAMPLE-U01-S01-SH001",
+      "classification": "effect",
+      "effect_ids": ["EXAMPLE-FX001"],
+      "reason": "The supplied display requires a VFX integration plan."
+    },
+    {
+      "shot_id": "EXAMPLE-U01-S01-SH002",
+      "classification": "no-vfx",
+      "effect_ids": [],
+      "reason": "The supplied exchange is entirely in camera."
+    }
+  ],
+  "effects": [
+    {
+      "effect_id": "EXAMPLE-FX001",
+      "shot_ids": ["EXAMPLE-U01-S01-SH001"],
+      "uncertainty_ids": ["EXAMPLE-UNC001"],
+      "dramatic_purpose": "Make the display flicker motivate the supplied reaction.",
+      "visual_purpose": "Read as a translucent display hovering above the table.",
+      "decomposition": ["display volume", "flicker event", "foreground occlusion"],
+      "practical_digital_boundary": {
+        "status": "unresolved",
+        "practical_scope": "Interactive light may be photographed.",
+        "digital_scope": "The display remains a digital candidate.",
+        "uncertainty_id": "EXAMPLE-UNC001"
+      },
+      "clean_plate": {
+        "decision": "required",
+        "reason": "Preserve the table behind the display."
+      },
+      "tracking": {
+        "decision": "required",
+        "requirements": ["Record camera motion and stable table reference points."]
+      },
+      "camera_lens_lighting_metadata": [
+        {"shot_id": "EXAMPLE-U01-S01-SH001", "category": "camera", "value": "The camera makes a slow push toward the display.", "source_reference": "shot-list.json#/shots/EXAMPLE-U01-S01-SH001/camera", "provenance_status": "supplied"},
+        {"shot_id": "EXAMPLE-U01-S01-SH001", "category": "lens", "value": "The supplied lens is 40 mm.", "source_reference": "shot-list.json#/shots/EXAMPLE-U01-S01-SH001/lens", "provenance_status": "supplied"},
+        {"shot_id": "EXAMPLE-U01-S01-SH001", "category": "lighting", "value": "Warm practical light contrasts with the display.", "source_reference": "lighting-plan.json#/shots/EXAMPLE-U01-S01-SH001", "provenance_status": "supplied"}
+      ],
+      "mattes_holdouts": ["Preserve the performer's hand as a foreground holdout."],
+      "reference_capture": ["Capture the table and hand spatial relationship."],
+      "practical_interaction": ["Preserve or recreate the display response on the hand and table."],
+      "simulation": {
+        "status": "not-required",
+        "requirements": [],
+        "uncertainty_id": null
+      },
+      "capture_generation_elements": ["clean table plate", "approved display design reference"],
+      "integration_assumptions": ["The display placement remains fixed relative to the table."],
+      "continuity": ["The flicker remains synchronized with the supplied reaction."],
+      "dependencies": [
+        {"dependency": "Approve the practical/digital boundary.", "owner": "human VFX and photography leads"}
+      ],
+      "human_safety_handoff": {
+        "required": true,
+        "review": "A qualified human reviews any on-set light or marker plan."
+      },
+      "acceptance_criteria": [
+        "The display hovers without tracking drift.",
+        "The flicker remains synchronized with the supplied reaction."
+      ]
+    }
+  ],
+  "assumptions": ["Display placement is proposed pending review."],
+  "approval_evidence": [],
+  "supplied_boundary_evidence": [],
+  "uncertainties": [
+    {
+      "uncertainty_id": "EXAMPLE-UNC001",
+      "description": "The practical-versus-digital interaction method is unresolved.",
+      "effect_ids": ["EXAMPLE-FX001"],
+      "shot_ids": ["EXAMPLE-U01-S01-SH001"],
+      "owner": "human VFX and photography leads"
+    }
+  ]
+}

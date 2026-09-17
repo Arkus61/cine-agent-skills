@@ -1,0 +1,205 @@
+{
+  "schema_version": "2.0",
+  "project_id": "NINEL",
+  "source_context": {
+    "registries": {
+      "character_ids": [
+        "NINEL-CH001"
+      ],
+      "scene_ids": [
+        "NINEL-E01-SC001",
+        "NINEL-E02-SC001"
+      ],
+      "shot_ids": [
+        "NINEL-E01-SC001-SH001",
+        "NINEL-E01-SC001-SH002",
+        "NINEL-E02-SC001-SH001",
+        "NINEL-E02-SC001-SH002"
+      ],
+      "asset_ids": []
+    },
+    "source_facts": [
+      {
+        "fact_id": "NINEL-SF001",
+        "scope": "shot",
+        "subject_id": "NINEL-E02-SC001-SH001",
+        "value": "Ninel opens the greenhouse latch and crosses right.",
+        "source_reference": "shot-list.json#/shots/NINEL-E02-SC001-SH001"
+      }
+    ],
+    "supplied_constraints": [],
+    "approval_evidence": [],
+    "consent_evidence": []
+  },
+  "prompts": [
+    {
+      "prompt_id": "NINEL-MP001",
+      "category": "video",
+      "upstream_references": [
+        {
+          "kind": "character",
+          "id": "NINEL-CH001"
+        },
+        {
+          "kind": "scene",
+          "id": "NINEL-E01-SC001"
+        },
+        {
+          "kind": "shot",
+          "id": "NINEL-E01-SC001-SH001"
+        },
+        {
+          "kind": "shot",
+          "id": "NINEL-E01-SC001-SH002"
+        },
+        {
+          "kind": "shot",
+          "id": "NINEL-E02-SC001-SH001"
+        },
+        {
+          "kind": "shot",
+          "id": "NINEL-E02-SC001-SH002"
+        }
+      ],
+      "creative_content": [
+        {
+          "value": "Ninel opens the greenhouse latch and crosses right.",
+          "provenance": {
+            "status": "supplied",
+            "source_id": "NINEL-SF001"
+          }
+        }
+      ],
+      "immutable_anchors": [
+        {
+          "value": "Keep Ninel's supplied recognition anchors stable.",
+          "provenance": {
+            "status": "proposed",
+            "source_id": "NINEL-SF001"
+          }
+        }
+      ],
+      "allowed_variation": [
+        {
+          "value": "Minor reflection variation is allowed.",
+          "provenance": {
+            "status": "proposed",
+            "source_id": "NINEL-SF001"
+          }
+        }
+      ],
+      "technical_assumptions": [
+        {
+          "value": "Duration is an unresolved planning assumption.",
+          "provenance": {
+            "status": "assumption",
+            "source_id": "NINEL-SF001"
+          }
+        }
+      ],
+      "negative_constraints": [
+        "No vendor parameters or artist imitation."
+      ],
+      "continuity_anchors": [
+        "Maintain coat, brooch, and lighting relationship."
+      ],
+      "acceptance_criteria": [
+        "The supplied start composition remains observable.",
+        "The supplied identity anchors remain observable."
+      ],
+      "video": {
+        "scene_action": {
+          "value": "Ninel opens the latch and crosses to the doorway.",
+          "provenance": {
+            "status": "proposed",
+            "source_id": "NINEL-SF001"
+          }
+        },
+        "identity_lock": {
+          "value": "Retain Ninel's supplied anchors for the full shot.",
+          "provenance": {
+            "status": "proposed",
+            "source_id": "NINEL-SF001"
+          }
+        },
+        "start_composition": {
+          "value": "Ninel begins frame left at shoulder height.",
+          "provenance": {
+            "status": "proposed",
+            "source_id": "NINEL-SF001"
+          }
+        },
+        "end_composition": {
+          "value": "Ninel finishes beside the doorway frame right.",
+          "provenance": {
+            "status": "proposed",
+            "source_id": "NINEL-SF001"
+          }
+        },
+        "camera_movement": {
+          "value": "lateral track",
+          "provenance": {
+            "status": "proposed",
+            "source_id": "NINEL-SF001"
+          }
+        },
+        "trajectory": {
+          "value": "left-to-right lateral path",
+          "provenance": {
+            "status": "proposed",
+            "source_id": "NINEL-SF001"
+          }
+        },
+        "direction": {
+          "value": "left-to-right",
+          "provenance": {
+            "status": "proposed",
+            "source_id": "NINEL-SF001"
+          }
+        },
+        "speed": {
+          "value": "slow",
+          "provenance": {
+            "status": "proposed",
+            "source_id": "NINEL-SF001"
+          }
+        },
+        "subject_retention": {
+          "value": "Ninel remains visible during the crossing.",
+          "provenance": {
+            "status": "proposed",
+            "source_id": "NINEL-SF001"
+          }
+        },
+        "lens_depth_light_texture_mood": {
+          "value": "50 mm, controlled depth, amber/cool wet-glass tension.",
+          "provenance": {
+            "status": "proposed",
+            "source_id": "NINEL-SF001"
+          }
+        },
+        "performance_timing": {
+          "value": "Latch release precedes crossing.",
+          "provenance": {
+            "status": "proposed",
+            "source_id": "NINEL-SF001"
+          }
+        },
+        "duration_assumption": {
+          "value": "Duration is not supplied; confirm before generation.",
+          "provenance": {
+            "status": "proposed",
+            "source_id": "NINEL-SF001"
+          }
+        }
+      },
+      "real_person_use": "none"
+    }
+  ],
+  "assumptions": [
+    "Duration is not supplied."
+  ],
+  "uncertainties": [
+    "Exact duration needs confirmation."
+  ]
+}

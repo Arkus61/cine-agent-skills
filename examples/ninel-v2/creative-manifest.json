@@ -1,0 +1,22 @@
+{
+  "schema_version": "2.0",
+  "release_version": "2.0.0",
+  "profile": "full-creative-v2",
+  "project_id": "NINEL",
+  "project_format": "series",
+  "production_modes": [
+    "animation",
+    "ai"
+  ],
+  "units": [
+    "NINEL-E01",
+    "NINEL-E02"
+  ],
+  "layers": {
+    "story": "story",
+    "production": "production",
+    "post": "post"
+  },
+  "validation_status": "valid",
+  "unresolved_questions": []
+}

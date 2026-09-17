@@ -1,0 +1,84 @@
+{
+  "schema_version": "2.0",
+  "project_id": "PROJECT",
+  "unit_id": "PROJECT-U01",
+  "draft_version": "current-draft",
+  "project_format": "short",
+  "revision_scope": "Diagnosis-only revision pass for the complete short screenplay.",
+  "source_element_ids": [
+    "PROJECT-U01-SC001-A01",
+    "PROJECT-U01-SC001-D01"
+  ],
+  "approved_constraints": [
+    {
+      "constraint_id": "PROJECT-CON001",
+      "constraint_type": "canon",
+      "statement": "The supplied story fact remains unchanged.",
+      "protected_source_ids": [
+        "PROJECT-U01-SC001-D01"
+      ],
+      "preservation_test": "The later rewrite retains the supplied fact and does not change its established timing."
+    }
+  ],
+  "diagnosis_items": [
+    {
+      "diagnosis_id": "PROJECT-U01-RV001",
+      "category": "causality",
+      "affected_ids": [
+        "PROJECT-U01-SC001-A01",
+        "PROJECT-U01-SC001-D01"
+      ],
+      "evidence": [
+        {
+          "source_id": "PROJECT-U01-SC001-A01",
+          "observation": "The action establishes an object but no character uses it before the disclosure.",
+          "effect": "The later information arrives without a present cause."
+        },
+        {
+          "source_id": "PROJECT-U01-SC001-D01",
+          "observation": "The dialogue explains the disclosure after the unused setup.",
+          "effect": "The choice pauses for information instead of resulting from behavior."
+        }
+      ],
+      "diagnosis": "The setup and disclosure do not form a causal action-and-consequence chain.",
+      "priority": 1,
+      "dependency_impact": "upstream-story",
+      "dependency_rationale": "The disclosure mechanism controls later agency and line-level exposition.",
+      "proposed_change": "Make a character's attempt to use or conceal the established object cause the disclosure before revising the explanatory line.",
+      "change_target_ids": [
+        "PROJECT-U01-SC001-A01"
+      ],
+      "execution_mode": "executable-change",
+      "preserved_constraint_ids": [
+        "PROJECT-CON001"
+      ],
+      "preservation_checks": [
+        {
+          "constraint_id": "PROJECT-CON001",
+          "protected_source_ids": [
+            "PROJECT-U01-SC001-D01"
+          ],
+          "invariant": "The supplied story fact and its established timing remain unchanged.",
+          "verification_assertion": "The later rewrite retains the supplied fact as prior action."
+        }
+      ],
+      "decision_request": null,
+      "downstream_impact": [
+        "Recheck the scene's tactics, dialogue exposition, and setup/payoff mapping."
+      ],
+      "status": "proposed",
+      "assumptions": [
+        "The established object remains available in the approved location."
+      ],
+      "uncertainties": [
+        "The preferred character tactic has not been approved."
+      ]
+    }
+  ],
+  "assumptions": [
+    "The supplied draft is the current revision target."
+  ],
+  "uncertainties": [
+    "No additional delivery requirements were supplied."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "skill": "scene-preproduction-pipeline",
+  "version": "1.0",
+  "cases": [
+    {
+      "id": "dialogue-pressure",
+      "scene_id": "DIALOGUE01",
+      "brief": "INT. UNION OFFICE — NIGHT. Across a desk, JUN says the audit closes at midnight. LEON holds the only signed receipt and says it will disappear unless Jun withdraws the complaint. Jun notices Leon's phone recording. She reads the receipt number aloud; Leon ends the call and locks the door.",
+      "observables": [
+        "Creates all thirteen canonical files in one package and follows the exact dependency order.",
+        "Uses stable scene-prefixed identifiers and labels missing layout, camera, and context details as assumptions.",
+        "Builds pressure, counter-pressure, discovery, and locked-door beats without losing cross-artifact references.",
+        "Validates the complete package with the full-v1 profile and reports valid true before handoff.",
+        "If validation fails, repairs the earliest invalid artifact and regenerates only affected downstream files.",
+        "Returns a handoff with the command, result, repairs, assumptions, conflicts, and human-review readiness."
+      ]
+    },
+    {
+      "id": "action-geography",
+      "scene_id": "ACTION02",
+      "brief": "EXT. FERRY DECK — DAWN. A cargo crane blocks the center deck. IRENE starts port-side by a life ring; TOM starts starboard at the wheelhouse door with a waterproof drive. When the ferry lurches, the drive slides under the crane. Irene circles aft, Tom cuts forward, and they meet at the bow rail. Tom tosses the drive into a rescue boat as a horn sounds.",
+      "observables": [
+        "Creates all thirteen canonical files in one package and follows the exact dependency order.",
+        "Defines port, starboard, aft, bow, crane, and rescue-boat geography before coverage.",
+        "Keeps blocking, shots, department needs, and continuity consistent with travel paths and the prop handoff.",
+        "Validates the complete package with the full-v1 profile and reports valid true before handoff.",
+        "If validation fails, repairs the earliest invalid artifact and regenerates only affected downstream files.",
+        "Returns a handoff with safety assumptions, validation evidence, repairs, conflicts, and human-review readiness."
+      ]
+    },
+    {
+      "id": "intentional-ambiguity",
+      "scene_id": "AMBIG03",
+      "brief": "INT. OBSERVATORY CORRIDOR — PRE-DAWN. ELI finds a child's glove on a bench outside a locked dome. A radio voice says, 'Leave it.' Eli pockets the glove. The dome light clicks on behind frosted glass; a small handprint appears, then fades. Eli does not open the door and walks away as the radio repeats his name.",
+      "observables": [
+        "Creates all thirteen canonical files in one package and follows the exact dependency order.",
+        "Preserves the radio voice and handprint ambiguity across every creative and production artifact.",
+        "Labels unknown causes, layout, lighting method, and practical effects as assumptions or uncertainties.",
+        "Validates the complete package with the full-v1 profile and reports valid true before handoff.",
+        "If validation fails, repairs the earliest invalid artifact and regenerates only affected downstream files.",
+        "Returns a handoff with the command, result, repairs, assumptions, conflicts, and human-review readiness."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "2.0",
+  "project_id": "PROJECT",
+  "source_context": {
+    "registries": {"character_ids": ["PROJECT-CH001"], "scene_ids": ["PROJECT-U01-S01"], "shot_ids": ["PROJECT-U01-S01-SH001"], "asset_ids": []},
+    "source_facts": [{"fact_id": "PROJECT-SF001", "scope": "shot", "subject_id": "PROJECT-U01-S01-SH001", "value": "Copy the supplied action without inventing facts.", "source_reference": "shot-list.json#/shots/PROJECT-U01-S01-SH001"}],
+    "supplied_constraints": [],
+    "approval_evidence": [],
+    "consent_evidence": []
+  },
+  "prompts": [{
+    "prompt_id": "PROJECT-MP001",
+    "category": "video",
+    "real_person_use": "none",
+    "upstream_references": [{"kind": "character", "id": "PROJECT-CH001"}, {"kind": "scene", "id": "PROJECT-U01-S01"}, {"kind": "shot", "id": "PROJECT-U01-S01-SH001"}],
+    "creative_content": [{"value": "Copy the supplied action without inventing facts.", "provenance": {"status": "supplied", "source_id": "PROJECT-SF001"}}],
+    "immutable_anchors": [{"value": "State supplied identity or place anchors.", "provenance": {"status": "proposed", "source_id": "PROJECT-SF001"}}],
+    "allowed_variation": [{"value": "State one bounded variation.", "provenance": {"status": "proposed", "source_id": "PROJECT-SF001"}}],
+    "technical_assumptions": [{"value": "State an unresolved technical assumption.", "provenance": {"status": "assumption", "source_id": "PROJECT-SF001"}}],
+    "negative_constraints": ["No vendor controls, artist imitation, or identity drift."],
+    "continuity_anchors": ["Preserve the supplied entry and exit state."],
+    "acceptance_criteria": ["The supplied action and anchors remain observable."],
+    "video": {"scene_action": {"value": "State the supplied action.", "provenance": {"status": "proposed", "source_id": "PROJECT-SF001"}}, "identity_lock": {"value": "State what remains stable.", "provenance": {"status": "proposed", "source_id": "PROJECT-SF001"}}, "start_composition": {"value": "State the supplied start frame.", "provenance": {"status": "proposed", "source_id": "PROJECT-SF001"}}, "end_composition": {"value": "State the supplied end frame.", "provenance": {"status": "proposed", "source_id": "PROJECT-SF001"}}, "camera_movement": {"value": "State a named movement.", "provenance": {"status": "proposed", "source_id": "PROJECT-SF001"}}, "trajectory": {"value": "State the camera path.", "provenance": {"status": "proposed", "source_id": "PROJECT-SF001"}}, "direction": {"value": "State direction.", "provenance": {"status": "proposed", "source_id": "PROJECT-SF001"}}, "speed": {"value": "State speed.", "provenance": {"status": "proposed", "source_id": "PROJECT-SF001"}}, "subject_retention": {"value": "State retention requirement.", "provenance": {"status": "proposed", "source_id": "PROJECT-SF001"}}, "lens_depth_light_texture_mood": {"value": "State supplied or qualified image conditions.", "provenance": {"status": "proposed", "source_id": "PROJECT-SF001"}}, "performance_timing": {"value": "State action timing.", "provenance": {"status": "proposed", "source_id": "PROJECT-SF001"}}, "duration_assumption": {"value": "State duration as supplied, assumed, or unresolved.", "provenance": {"status": "assumption", "source_id": "PROJECT-SF001"}}}
+  }],
+  "assumptions": ["Keep unsupplied method and duration details provisional."],
+  "uncertainties": ["Confirm any unavailable duration, consent, or approval evidence."]
+}

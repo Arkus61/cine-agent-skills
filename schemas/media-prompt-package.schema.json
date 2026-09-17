@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cine-agent-skills/media-prompt-package.schema.json",
+  "title": "Vendor-neutral media prompt package",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "project_id", "source_context", "prompts", "assumptions", "uncertainties"],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "texts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "source_id"],
+      "properties": {
+        "status": {"enum": ["supplied", "constraint", "proposed", "assumption", "uncertainty", "approved"]},
+        "source_id": {"$ref": "#/$defs/text"}
+      }
+    },
+    "claim": {
+      "type": "object", "additionalProperties": false,
+      "required": ["value", "provenance"],
+      "properties": {"value": {"$ref": "#/$defs/text"}, "provenance": {"$ref": "#/$defs/provenance"}}
+    },
+    "reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "id"],
+      "properties": {
+        "kind": {"enum": ["character", "scene", "shot", "asset", "world", "beat", "sound"]},
+        "id": {"$ref": "#/$defs/text"}
+      }
+    },
+    "source_fact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fact_id", "scope", "subject_id", "value", "source_reference"],
+      "properties": {
+        "fact_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-SF(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"},
+        "scope": {"enum": ["project", "character", "scene", "shot", "asset", "world", "beat", "sound"]},
+        "subject_id": {"$ref": "#/$defs/text"},
+        "value": {"$ref": "#/$defs/text"},
+        "source_reference": {"$ref": "#/$defs/text"}
+      }
+    },
+    "constraint_record": {
+      "type": "object", "additionalProperties": false,
+      "required": ["record_id", "value", "source_reference"],
+      "properties": {
+        "record_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-SC(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"},
+        "value": {"$ref": "#/$defs/text"}, "source_reference": {"$ref": "#/$defs/text"}
+      }
+    },
+    "approval_record": {
+      "type": "object", "additionalProperties": false,
+      "required": ["record_id", "value", "source_reference"],
+      "properties": {"record_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-APR(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"}, "value": {"$ref": "#/$defs/text"}, "source_reference": {"$ref": "#/$defs/text"}}
+    },
+    "consent_record": {
+      "type": "object", "additionalProperties": false,
+      "required": ["record_id", "value", "source_reference"],
+      "properties": {"record_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-CON(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"}, "value": {"$ref": "#/$defs/text"}, "source_reference": {"$ref": "#/$defs/text"}}
+    },
+    "human_review_handoff": {
+      "type": "object", "additionalProperties": false,
+      "required": ["handoff_id", "prompt_id", "review_action", "review_status", "review", "consent_evidence_ids"],
+      "properties": {
+        "handoff_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-HR(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"},
+        "prompt_id": {"$ref": "#/$defs/text"}, "review": {"$ref": "#/$defs/text"},
+        "review_action": {"const": "require-qualified-human-consent-rights-review"},
+        "review_status": {"const": "pending-qualified-human-review"},
+        "consent_evidence_ids": {"type": "array", "items": {"$ref": "#/$defs/text"}, "uniqueItems": true}
+      }
+    },
+    "video": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scene_action", "identity_lock", "start_composition", "end_composition", "camera_movement", "trajectory", "direction", "speed", "subject_retention", "lens_depth_light_texture_mood", "performance_timing", "duration_assumption"],
+      "properties": {
+        "scene_action": {"$ref": "#/$defs/claim"}, "identity_lock": {"$ref": "#/$defs/claim"}, "start_composition": {"$ref": "#/$defs/claim"}, "end_composition": {"$ref": "#/$defs/claim"}, "camera_movement": {"$ref": "#/$defs/claim"}, "trajectory": {"$ref": "#/$defs/claim"}, "direction": {"$ref": "#/$defs/claim"}, "speed": {"$ref": "#/$defs/claim"}, "subject_retention": {"$ref": "#/$defs/claim"}, "lens_depth_light_texture_mood": {"$ref": "#/$defs/claim"}, "performance_timing": {"$ref": "#/$defs/claim"}, "duration_assumption": {"$ref": "#/$defs/claim"}
+      }
+    },
+    "image": {"type": "object", "additionalProperties": false, "required": ["subject_or_place", "composition", "view_or_scale", "light_material_mood", "identity_or_environment_lock"], "properties": {"subject_or_place": {"$ref": "#/$defs/claim"}, "composition": {"$ref": "#/$defs/claim"}, "view_or_scale": {"$ref": "#/$defs/claim"}, "light_material_mood": {"$ref": "#/$defs/claim"}, "identity_or_environment_lock": {"$ref": "#/$defs/claim"}}},
+    "voice": {"type": "object", "additionalProperties": false, "required": ["speaker_or_source", "performance_intent", "delivery_timing", "originality_boundary"], "properties": {"speaker_or_source": {"$ref": "#/$defs/claim"}, "performance_intent": {"$ref": "#/$defs/claim"}, "delivery_timing": {"$ref": "#/$defs/claim"}, "originality_boundary": {"$ref": "#/$defs/claim"}}},
+    "music": {"type": "object", "additionalProperties": false, "required": ["dramatic_function", "dialogue_policy", "entry_exit_shape", "instrumental_texture", "originality_boundary"], "properties": {"dramatic_function": {"$ref": "#/$defs/claim"}, "dialogue_policy": {"$ref": "#/$defs/claim"}, "entry_exit_shape": {"$ref": "#/$defs/claim"}, "instrumental_texture": {"$ref": "#/$defs/claim"}, "originality_boundary": {"$ref": "#/$defs/claim"}}},
+    "sound": {"type": "object", "additionalProperties": false, "required": ["sound_source", "event_or_bed", "perspective", "timing_and_decay"], "properties": {"sound_source": {"$ref": "#/$defs/claim"}, "event_or_bed": {"$ref": "#/$defs/claim"}, "perspective": {"$ref": "#/$defs/claim"}, "timing_and_decay": {"$ref": "#/$defs/claim"}}}
+  },
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "project_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*$"},
+    "source_context": {
+      "type": "object", "additionalProperties": false,
+      "required": ["registries", "source_facts", "supplied_constraints", "approval_evidence", "consent_evidence"],
+      "properties": {
+        "registries": {"type": "object", "additionalProperties": false, "required": ["character_ids", "scene_ids", "shot_ids", "asset_ids"], "properties": {"character_ids": {"type": "array", "items": {"$ref": "#/$defs/text"}, "uniqueItems": true}, "scene_ids": {"type": "array", "items": {"$ref": "#/$defs/text"}, "uniqueItems": true}, "shot_ids": {"type": "array", "items": {"$ref": "#/$defs/text"}, "uniqueItems": true}, "asset_ids": {"type": "array", "items": {"$ref": "#/$defs/text"}, "uniqueItems": true}, "world_ids": {"type": "array", "items": {"$ref": "#/$defs/text"}, "uniqueItems": true}, "beat_ids": {"type": "array", "items": {"$ref": "#/$defs/text"}, "uniqueItems": true}, "sound_ids": {"type": "array", "items": {"$ref": "#/$defs/text"}, "uniqueItems": true}}},
+        "source_facts": {"type": "array", "items": {"$ref": "#/$defs/source_fact"}, "uniqueItems": true},
+        "supplied_constraints": {"type": "array", "items": {"$ref": "#/$defs/constraint_record"}, "uniqueItems": true},
+        "approval_evidence": {"type": "array", "items": {"$ref": "#/$defs/approval_record"}, "uniqueItems": true},
+        "consent_evidence": {"type": "array", "items": {"$ref": "#/$defs/consent_record"}, "uniqueItems": true}
+      }
+    },
+    "prompts": {
+      "type": "array", "minItems": 1, "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["prompt_id", "category", "real_person_use", "upstream_references", "creative_content", "immutable_anchors", "allowed_variation", "technical_assumptions", "negative_constraints", "continuity_anchors", "acceptance_criteria"],
+        "properties": {
+          "prompt_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-MP(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"},
+          "category": {"enum": ["character-image", "environment-image", "key-frame", "video", "voice", "dialogue", "music", "ambience", "foley", "effect"]},
+          "real_person_use": {"enum": ["none", "likeness", "voice", "likeness-and-voice"]},
+          "upstream_references": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference"}, "uniqueItems": true},
+          "creative_content": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/claim"}}, "immutable_anchors": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/claim"}}, "allowed_variation": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/claim"}}, "technical_assumptions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/claim"}},
+          "negative_constraints": {"$ref": "#/$defs/texts"}, "continuity_anchors": {"$ref": "#/$defs/texts"}, "acceptance_criteria": {"$ref": "#/$defs/texts"},
+          "video": {"$ref": "#/$defs/video"}, "image": {"$ref": "#/$defs/image"}, "voice": {"$ref": "#/$defs/voice"}, "music": {"$ref": "#/$defs/music"}, "sound": {"$ref": "#/$defs/sound"}
+        },
+        "allOf": [
+          {"if": {"properties": {"category": {"const": "video"}}}, "then": {"required": ["video"]}},
+          {"if": {"properties": {"category": {"enum": ["character-image", "environment-image", "key-frame"]}}}, "then": {"required": ["image"]}},
+          {"if": {"properties": {"category": {"enum": ["voice", "dialogue"]}}}, "then": {"required": ["voice"]}},
+          {"if": {"properties": {"category": {"const": "music"}}}, "then": {"required": ["music"]}},
+          {"if": {"properties": {"category": {"enum": ["ambience", "foley", "effect"]}}}, "then": {"required": ["sound"]}}
+        ]
+      }
+    },
+    "assumptions": {"type": "array", "items": {"$ref": "#/$defs/text"}}, "uncertainties": {"type": "array", "items": {"$ref": "#/$defs/text"}},
+    "human_review_handoffs": {"type": "array", "items": {"$ref": "#/$defs/human_review_handoff"}, "uniqueItems": true}
+  }
+}

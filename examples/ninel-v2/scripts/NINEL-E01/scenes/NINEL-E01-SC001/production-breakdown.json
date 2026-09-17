@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "scene_id": "NINEL-E01-SC001",
+  "assumptions": [
+    "Chamber implementation requires department review."
+  ],
+  "breakdown_scope": "Scene-level requirements only.",
+  "items": [
+    {
+      "item_id": "NINEL-E01-SC001-PD001",
+      "category": "props",
+      "source_basis": "The scene and shot require a repeatable chamber edge.",
+      "beat_ids": [
+        "NINEL-E01-SC001-B01"
+      ],
+      "shot_ids": [
+        "NINEL-E01-SC001-SH001"
+      ],
+      "requirement": "Provide a repeatable chamber action state.",
+      "continuity_reset": "Restore the chamber, frost, and hand start state.",
+      "assumptions": [
+        "The practical method is unconfirmed."
+      ],
+      "risk_level": "medium"
+    }
+  ]
+}

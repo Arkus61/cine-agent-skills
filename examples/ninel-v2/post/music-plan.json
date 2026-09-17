@@ -1,0 +1,99 @@
+{
+  "schema_version": "2.0",
+  "project_id": "NINEL",
+  "unit_id": "NINEL-E01",
+  "project_format": "short",
+  "source_context": {
+    "edit_plan_reference": "post/edit-plan.json",
+    "edit_segments": [
+      {
+        "segment_id": "NINEL-E01-ED001",
+        "source_reference": "post/edit-plan.json#/segments/0"
+      },
+      {
+        "segment_id": "NINEL-E01-ED002",
+        "source_reference": "post/edit-plan.json#/segments/1"
+      }
+    ],
+    "characters": [
+      {
+        "character_id": "NINEL-CH001",
+        "source_reference": "story/character-arcs.json#/characters/0"
+      }
+    ],
+    "themes": [
+      {
+        "theme_id": "NINEL-TH001",
+        "source_reference": "story/story-concept.json#/theme"
+      }
+    ],
+    "protected_dialogue": [
+      {
+        "dialogue_id": "NINEL-DG001",
+        "edit_segment_id": "NINEL-E01-ED001",
+        "source_reference": "post/edit-plan.json#/segments/0"
+      }
+    ],
+    "locked_duration_evidence": [],
+    "review_rights_evidence": []
+  },
+  "spotting": [
+    {
+      "spotting_id": "NINEL-E01-MU001",
+      "edit_segment_id": "NINEL-E01-ED001",
+      "decision": "scored",
+      "narrative_purpose": "Hold tension below the protected reveal.",
+      "cue_id": "NINEL-E01-MU001"
+    },
+    {
+      "spotting_id": "NINEL-E01-MU002",
+      "edit_segment_id": "NINEL-E01-ED002",
+      "decision": "unscored",
+      "narrative_purpose": "Let the aftermath remain exposed and unresolved."
+    }
+  ],
+  "cues": [
+    {
+      "cue_id": "NINEL-E01-MU001",
+      "edit_segment_ids": [
+        "NINEL-E01-ED001"
+      ],
+      "thematic_role": "Withhold the inherited-guilt idea as unstable texture.",
+      "leitmotif_bindings": [
+        {
+          "binding_type": "character",
+          "binding_id": "NINEL-CH001",
+          "transformation": "Fragmented, non-melodic interval."
+        },
+        {
+          "binding_type": "theme",
+          "binding_id": "NINEL-TH001",
+          "transformation": "Deferred harmonic implication."
+        }
+      ],
+      "entry_exit_logic": {
+        "entry": "Enter after the image establishes space.",
+        "exit": "Thin to silence before the last consonant."
+      },
+      "energy_curve": "Low and suspended; no impact accent.",
+      "instrumentation_intent": "Proposed bowed-metal and low-string texture, not a recording claim.",
+      "diegetic_status": "nondiegetic",
+      "dialogue_interaction": {
+        "dialogue_id": "NINEL-DG001",
+        "priority": "dialogue",
+        "approach": "Duck and thin the texture around intelligible phrases."
+      },
+      "transition": "Dissolve the texture into room tone.",
+      "silence_alternative": "Use complete silence if the whisper loses intelligibility.",
+      "source_assumption": "Planned original score; composer, rights, and recording remain awaiting input.",
+      "state": "planned",
+      "approval_boundary": "Requires composer and editorial approval before commitment."
+    }
+  ],
+  "assumptions": [
+    "Picture timing, composer, rights, and approval are not supplied."
+  ],
+  "uncertainties": [
+    "Conform entries and exits after a locked edit is supplied."
+  ]
+}

@@ -1,0 +1,352 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cine-agent-skills/vfx-plan.schema.json",
+  "title": "VFX Plan",
+  "$defs": {
+    "non_empty_string": {"type": "string", "minLength": 1},
+    "string_array": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    },
+    "non_empty_string_array": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    },
+    "effect_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-FX(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+    },
+    "uncertainty_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-UNC(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+    },
+    "approval_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-APR(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+    },
+    "supplied_boundary_evidence_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-SBE(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+    },
+    "source_fact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["category", "value", "source_reference"],
+      "properties": {
+        "category": {"enum": ["visual", "camera", "lens", "lighting", "performance", "other"]},
+        "value": {"$ref": "#/$defs/non_empty_string"},
+        "source_reference": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "source_shot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scene_id", "shot_id", "supplied_facts"],
+      "properties": {
+        "scene_id": {"$ref": "#/$defs/non_empty_string"},
+        "shot_id": {"$ref": "#/$defs/non_empty_string"},
+        "supplied_facts": {
+          "type": "array",
+          "minItems": 5,
+          "items": {"$ref": "#/$defs/source_fact"}
+        }
+      }
+    },
+    "source_scene": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scene_id", "source_reference"],
+      "properties": {
+        "scene_id": {"$ref": "#/$defs/non_empty_string"},
+        "source_reference": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "source_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scenes", "shots"],
+      "properties": {
+        "scenes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/source_scene"}
+        },
+        "shots": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/source_shot"}
+        }
+      }
+    },
+    "applicability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shot_id", "classification", "effect_ids", "reason"],
+      "properties": {
+        "shot_id": {"$ref": "#/$defs/non_empty_string"},
+        "classification": {"enum": ["effect", "no-vfx"]},
+        "effect_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/effect_id"},
+          "uniqueItems": true
+        },
+        "reason": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision", "reason"],
+      "properties": {
+        "decision": {"enum": ["required", "waived", "unresolved"]},
+        "reason": {"$ref": "#/$defs/non_empty_string"},
+        "uncertainty_id": {
+          "oneOf": [
+            {"$ref": "#/$defs/uncertainty_id"},
+            {"type": "null"}
+          ]
+        }
+      }
+    },
+    "tracking": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision", "requirements"],
+      "properties": {
+        "decision": {"enum": ["required", "not-required", "unresolved"]},
+        "requirements": {"$ref": "#/$defs/string_array"},
+        "uncertainty_id": {
+          "oneOf": [
+            {"$ref": "#/$defs/uncertainty_id"},
+            {"type": "null"}
+          ]
+        }
+      }
+    },
+    "metadata_claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shot_id", "category", "value", "source_reference", "provenance_status"],
+      "properties": {
+        "shot_id": {"$ref": "#/$defs/non_empty_string"},
+        "category": {"enum": ["camera", "lens", "lighting"]},
+        "value": {"$ref": "#/$defs/non_empty_string"},
+        "source_reference": {"$ref": "#/$defs/non_empty_string"},
+        "provenance_status": {"enum": ["supplied", "inferred", "proposed", "approved"]},
+        "approval_id": {
+          "oneOf": [
+            {"$ref": "#/$defs/approval_id"},
+            {"type": "null"}
+          ]
+        }
+      }
+    },
+    "boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "practical_scope", "digital_scope", "uncertainty_id"],
+      "properties": {
+        "status": {"enum": ["confirmed", "unresolved"]},
+        "practical_scope": {"$ref": "#/$defs/non_empty_string"},
+        "digital_scope": {"$ref": "#/$defs/non_empty_string"},
+        "uncertainty_id": {
+          "oneOf": [
+            {"$ref": "#/$defs/uncertainty_id"},
+            {"type": "null"}
+          ]
+        },
+        "approval_id": {
+          "oneOf": [
+            {"$ref": "#/$defs/approval_id"},
+            {"type": "null"}
+          ]
+        },
+        "supplied_evidence_id": {
+          "oneOf": [
+            {"$ref": "#/$defs/supplied_boundary_evidence_id"},
+            {"type": "null"}
+          ]
+        }
+      }
+    },
+    "simulation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "requirements", "uncertainty_id"],
+      "properties": {
+        "status": {"enum": ["confirmed", "not-required", "unresolved"]},
+        "requirements": {"$ref": "#/$defs/string_array"},
+        "uncertainty_id": {
+          "oneOf": [
+            {"$ref": "#/$defs/uncertainty_id"},
+            {"type": "null"}
+          ]
+        },
+        "approval_id": {
+          "oneOf": [
+            {"$ref": "#/$defs/approval_id"},
+            {"type": "null"}
+          ]
+        }
+      }
+    },
+    "approval_metadata_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "approval_id", "kind", "effect_id", "shot_id", "category",
+        "value", "source_reference"
+      ],
+      "properties": {
+        "approval_id": {"$ref": "#/$defs/approval_id"},
+        "kind": {"const": "metadata"},
+        "effect_id": {"$ref": "#/$defs/effect_id"},
+        "shot_id": {"$ref": "#/$defs/non_empty_string"},
+        "category": {"enum": ["camera", "lens", "lighting"]},
+        "value": {"$ref": "#/$defs/non_empty_string"},
+        "source_reference": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "approval_boundary_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "approval_id", "kind", "effect_id", "shot_ids", "practical_scope",
+        "digital_scope", "source_reference"
+      ],
+      "properties": {
+        "approval_id": {"$ref": "#/$defs/approval_id"},
+        "kind": {"const": "practical-digital-boundary"},
+        "effect_id": {"$ref": "#/$defs/effect_id"},
+        "shot_ids": {"$ref": "#/$defs/non_empty_string_array"},
+        "practical_scope": {"$ref": "#/$defs/non_empty_string"},
+        "digital_scope": {"$ref": "#/$defs/non_empty_string"},
+        "source_reference": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "approval_simulation_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "approval_id", "kind", "effect_id", "shot_ids", "requirements",
+        "source_reference"
+      ],
+      "properties": {
+        "approval_id": {"$ref": "#/$defs/approval_id"},
+        "kind": {"const": "simulation"},
+        "effect_id": {"$ref": "#/$defs/effect_id"},
+        "shot_ids": {"$ref": "#/$defs/non_empty_string_array"},
+        "requirements": {"$ref": "#/$defs/non_empty_string_array"},
+        "source_reference": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "approval_evidence": {
+      "oneOf": [
+        {"$ref": "#/$defs/approval_metadata_evidence"},
+        {"$ref": "#/$defs/approval_boundary_evidence"},
+        {"$ref": "#/$defs/approval_simulation_evidence"}
+      ]
+    },
+    "supplied_boundary_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "supplied_evidence_id", "effect_id", "shot_ids", "practical_scope",
+        "digital_scope", "source_reference"
+      ],
+      "properties": {
+        "supplied_evidence_id": {"$ref": "#/$defs/supplied_boundary_evidence_id"},
+        "effect_id": {"$ref": "#/$defs/effect_id"},
+        "shot_ids": {"$ref": "#/$defs/non_empty_string_array"},
+        "practical_scope": {"$ref": "#/$defs/non_empty_string"},
+        "digital_scope": {"$ref": "#/$defs/non_empty_string"},
+        "source_reference": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dependency", "owner"],
+      "properties": {
+        "dependency": {"$ref": "#/$defs/non_empty_string"},
+        "owner": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "safety_handoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "review"],
+      "properties": {
+        "required": {"type": "boolean"},
+        "review": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "effect_id", "shot_ids", "uncertainty_ids", "dramatic_purpose", "visual_purpose",
+        "decomposition", "practical_digital_boundary", "clean_plate",
+        "tracking", "camera_lens_lighting_metadata", "mattes_holdouts",
+        "reference_capture", "practical_interaction", "simulation",
+        "capture_generation_elements", "integration_assumptions", "continuity",
+        "dependencies", "human_safety_handoff", "acceptance_criteria"
+      ],
+      "properties": {
+        "effect_id": {"$ref": "#/$defs/effect_id"},
+        "shot_ids": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/non_empty_string"}, "uniqueItems": true},
+        "uncertainty_ids": {"$ref": "#/$defs/string_array"},
+        "dramatic_purpose": {"$ref": "#/$defs/non_empty_string"},
+        "visual_purpose": {"$ref": "#/$defs/non_empty_string"},
+        "decomposition": {"$ref": "#/$defs/non_empty_string_array"},
+        "practical_digital_boundary": {"$ref": "#/$defs/boundary"},
+        "clean_plate": {"$ref": "#/$defs/decision"},
+        "tracking": {"$ref": "#/$defs/tracking"},
+        "camera_lens_lighting_metadata": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/metadata_claim"}},
+        "mattes_holdouts": {"$ref": "#/$defs/non_empty_string_array"},
+        "reference_capture": {"$ref": "#/$defs/non_empty_string_array"},
+        "practical_interaction": {"$ref": "#/$defs/non_empty_string_array"},
+        "simulation": {"$ref": "#/$defs/simulation"},
+        "capture_generation_elements": {"$ref": "#/$defs/non_empty_string_array"},
+        "integration_assumptions": {"$ref": "#/$defs/non_empty_string_array"},
+        "continuity": {"$ref": "#/$defs/non_empty_string_array"},
+        "dependencies": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/dependency"}},
+        "human_safety_handoff": {"$ref": "#/$defs/safety_handoff"},
+        "acceptance_criteria": {"$ref": "#/$defs/non_empty_string_array"}
+      }
+    },
+    "uncertainty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["uncertainty_id", "description", "effect_ids", "shot_ids", "owner"],
+      "properties": {
+        "uncertainty_id": {"$ref": "#/$defs/uncertainty_id"},
+        "description": {"$ref": "#/$defs/non_empty_string"},
+        "effect_ids": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/effect_id"}, "uniqueItems": true},
+        "shot_ids": {"$ref": "#/$defs/non_empty_string_array"},
+        "owner": {"$ref": "#/$defs/non_empty_string"}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "project_id", "source_context", "applicability",
+    "effects", "assumptions", "uncertainties", "approval_evidence",
+    "supplied_boundary_evidence"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "project_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*$"},
+    "source_context": {"$ref": "#/$defs/source_context"},
+    "applicability": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/applicability"}},
+    "effects": {"type": "array", "items": {"$ref": "#/$defs/effect"}},
+    "assumptions": {"$ref": "#/$defs/string_array"},
+    "uncertainties": {"type": "array", "items": {"$ref": "#/$defs/uncertainty"}},
+    "approval_evidence": {"type": "array", "items": {"$ref": "#/$defs/approval_evidence"}},
+    "supplied_boundary_evidence": {"type": "array", "items": {"$ref": "#/$defs/supplied_boundary_evidence"}}
+  }
+}

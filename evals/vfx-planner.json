@@ -1,0 +1,47 @@
+{
+  "skill": "vfx-planner",
+  "version": "2.0",
+  "cases": [
+    {
+      "id": "hologram-cleanup-and-no-vfx",
+      "project_id": "ORBIT",
+      "brief": "Three supplied shots have exact scene lineage and visual, camera, lens, lighting, and performance records. One contains a cyan holographic map with unresolved interaction-light method, one requires invisible support-cable cleanup while preserving a hard contact shadow, and one is explicitly entirely in camera with no VFX requested.",
+      "observables": [
+        "Produces one strict schema-valid vfx-plan object with exact positive ORBIT-FX###, ORBIT-UNC###, ORBIT-APR###, and ORBIT-SBE### IDs where applicable, and only declared fields.",
+        "Copies every supplied scene with its source reference and every project-owned scene-derived shot into source_context, with exact shot-scoped visual, camera, lens, lighting, and performance category/value/source_reference triples.",
+        "Uses exactly one camera, lens, and lighting metadata claim for each effect shot, exact-binds supplied claims, and links any approved claim or confirmed decision to structured source-bound approval evidence with the exact approved metadata triple, simulation requirements, or boundary scopes.",
+        "Classifies every shot exactly once, inverse-links effect shots and effect IDs, and keeps the no-VFX shot separate with no collision.",
+        "Plans purpose, decomposition, boundary, clean plate, tracking, metadata, mattes or holdouts, reference, interaction, simulation, elements, integration, continuity, dependencies, human-safety handoff, and observable acceptance criteria for both effects.",
+        "Keeps the hologram boundary unresolved and bidirectionally linked to its owned uncertainty; it does not confirm an emitter, digital treatment, simulation, or capture method without exact approval or supplied-boundary evidence.",
+        "Preserves the cleanup shot's key, still hand, locked 75 mm framing, warm desk light, and hard contact shadow while requiring invisible, temporally stable support removal.",
+        "Contains no vendor, software, generated or embedded media, URL, credential, NLE/DCC control, budget, schedule, casting, procurement, legal decision, or safety approval."
+      ]
+    },
+    {
+      "id": "live-action-creature-extension",
+      "project_id": "TIDELINE",
+      "brief": "A supplied live-action shoreline shot extends a practical creature torso below the waterline. Camera move, 50 mm lens, overcast side light, performer eyeline, contact point, wet response, and safety-sensitive water interaction are supplied. Limb anatomy, marker plan, clean-plate availability, displacement, and simulation method are unresolved.",
+      "observables": [
+        "Preserves exact project-owned shot lineage and exact-binds supplied camera, lens, light, performance, contact, and surface facts.",
+        "Decomposes photographed torso, created lower anatomy, waterline occlusion, contact, reflection, wet response, displacement, and continuity without inventing anatomy or physical certainty.",
+        "Makes live-action-appropriate plate, tracking, reference, matte or holdout, practical interaction, lens/light metadata, and capture-element decisions.",
+        "Lists each unresolved plate, marker, anatomy, boundary, displacement, and simulation question on both its effect and owned uncertainty, and never marks it confirmed without exact approval or supplied-boundary evidence.",
+        "Routes marker placement, performer proximity, and water interaction to qualified human-safety review without declaring a method safe or approved.",
+        "Uses observable acceptance criteria for contact, waterline integration, tracking, lens/light coherence, eyeline, and continuity without prescribing software or a vendor."
+      ]
+    },
+    {
+      "id": "fully-animated-energy-effect",
+      "project_id": "EMBER",
+      "brief": "A fully animated energy ribbon crosses a character, separates into three streams, illuminates a matte surface, passes between holdouts, then reforms in the next supplied shot. Camera, lens language, palette, performance timing, entry/exit state, and continuity are supplied. Flow behavior is approved; density variation remains unresolved.",
+      "observables": [
+        "Creates a schema-valid two-shot effect graph with exact project lineage, structured scene provenance, exact source binding, inverse applicability, and continuity ownership.",
+        "Waives photographic clean plates and live reference capture with reasons while using authored design, motion, lighting, and style references.",
+        "Plans supplied stylization, stream separation, matte/holdout ordering, authored light response, confirmed flow requirements, integration, and cross-shot reforming state.",
+        "Uses exact supplied-boundary evidence for an already supplied all-authored/no-practical boundary, retaining density as the only boundary-independent uncertainty; confirmed flow requirements carry no uncertainty and source-bound approval evidence with the identical approved requirements array.",
+        "Uses observable acceptance criteria for shape, timing, occlusion, illumination, simulation, and continuity without forcing live-action plates, markers, capture, or physical realism.",
+        "Remains vendor-neutral and includes no generated media, URLs, credentials, budgets, schedules, procurement, legal decisions, or safety claims."
+      ]
+    }
+  ]
+}

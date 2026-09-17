@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "scene_id": "S01",
+  "assumptions": [],
+  "shots": [
+    {
+      "shot_id": "S01-SH001",
+      "beat_ids": ["S01-B01"],
+      "size": "medium",
+      "angle": "eye-level",
+      "lens_mm": 50,
+      "camera_support": "tripod",
+      "movement": "static",
+      "subject": "",
+      "action": "",
+      "composition": "",
+      "dramatic_purpose": "",
+      "audio": "",
+      "continuity": []
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "schema_version": "2.0",
+  "project_id": "PROJECT",
+  "source_context": {
+    "character_ids": ["PROJECT-CH001"],
+    "scene_ids": ["PROJECT-E01-SC001"],
+    "shots": [
+      {
+        "scene_id": "PROJECT-E01-SC001",
+        "shot_id": "PROJECT-E01-SC001-SH001"
+      }
+    ],
+    "identity_statements": [
+      {
+        "character_id": "PROJECT-CH001",
+        "claim": {
+          "value": "Copy the bounded supplied identity.",
+          "provenance": {
+            "status": "supplied",
+            "basis": "The upstream character record states this identity.",
+            "source_reference": "character-arcs.json#characters/PROJECT-CH001"
+          }
+        }
+      },
+      {
+        "character_id": "PROJECT-CH001",
+        "claim": {
+          "value": "State one immutable supplied recognition anchor.",
+          "provenance": {
+            "status": "supplied",
+            "basis": "The upstream character record states this feature.",
+            "source_reference": "character-arcs.json#characters/PROJECT-CH001"
+          }
+        }
+      },
+      {
+        "character_id": "PROJECT-CH001",
+        "claim": {
+          "value": "State one bounded scene-specific change or allowed range.",
+          "provenance": {
+            "status": "supplied",
+            "basis": "The supplied scene action establishes this variation.",
+            "source_reference": "screenplay-metadata.json#scenes/PROJECT-E01-SC001"
+          }
+        }
+      },
+      {
+        "character_id": "PROJECT-CH001",
+        "claim": {
+          "value": "Describe only supplied subject-appropriate features.",
+          "provenance": {
+            "status": "supplied",
+            "basis": "The upstream character record supplies this descriptor.",
+            "source_reference": "character-arcs.json#characters/PROJECT-CH001"
+          }
+        }
+      },
+      {
+        "character_id": "PROJECT-CH001",
+        "claim": {
+          "value": "State supplied hair or makeup continuity, or mark not applicable.",
+          "provenance": {
+            "status": "supplied",
+            "basis": "The supplied subject description establishes this category.",
+            "source_reference": "character-arcs.json#characters/PROJECT-CH001"
+          }
+        }
+      },
+      {
+        "character_id": "PROJECT-CH001",
+        "claim": {
+          "value": "State the minimum supplied pose range.",
+          "provenance": {
+            "status": "supplied",
+            "basis": "The shot material supplies this pose.",
+            "source_reference": "shot-list.json#shots/PROJECT-E01-SC001-SH001"
+          }
+        }
+      },
+      {
+        "character_id": "PROJECT-CH001",
+        "claim": {
+          "value": "State the supplied clean, wet, dusty, damaged, or repaired condition.",
+          "provenance": {
+            "status": "supplied",
+            "basis": "The scene action supplies this material state.",
+            "source_reference": "screenplay-metadata.json#scenes/PROJECT-E01-SC001"
+          }
+        }
+      },
+      {
+        "character_id": "PROJECT-CH001",
+        "claim": {
+          "value": "State the observable entry condition or change.",
+          "provenance": {
+            "status": "supplied",
+            "basis": "The shot material supplies this state.",
+            "source_reference": "shot-list.json#shots/PROJECT-E01-SC001-SH001"
+          }
+        }
+      }
+    ]
+  },
+  "characters": [
+    {
+      "character_id": "PROJECT-CH001",
+      "name": "Supplied character name",
+      "supplied_identity": {
+        "value": "Copy the bounded supplied identity.",
+        "provenance": {
+          "status": "supplied",
+          "basis": "The upstream character record states this identity.",
+          "source_reference": "character-arcs.json#characters/PROJECT-CH001"
+        }
+      },
+      "visual_treatment": {
+        "value": "Propose only the treatment needed for recognition and coverage.",
+        "provenance": {
+          "status": "proposed",
+          "basis": "The proposal serves the supplied identity and shot.",
+          "source_reference": "shot-list.json#shots/PROJECT-E01-SC001-SH001"
+        }
+      },
+      "immutable_anchors": [
+        {
+          "anchor_id": "PROJECT-CH001-AN001",
+          "aspect": "supplied recognition feature",
+          "claim": {
+            "value": "State one immutable supplied recognition anchor.",
+            "provenance": {
+              "status": "supplied",
+              "basis": "The upstream character record states this feature.",
+              "source_reference": "character-arcs.json#characters/PROJECT-CH001"
+            }
+          }
+        }
+      ],
+      "permitted_variations": [
+        {
+          "value": "State one bounded scene-specific change or allowed range.",
+          "provenance": {
+            "status": "supplied",
+            "basis": "The supplied scene action establishes this variation.",
+            "source_reference": "screenplay-metadata.json#scenes/PROJECT-E01-SC001"
+          }
+        }
+      ],
+      "proportions": [
+        {
+          "value": "Preserve supplied relationships; exact ratios remain unknown.",
+          "provenance": {
+            "status": "inferred",
+            "basis": "Continuity needs a bounded relationship while measurements are absent.",
+            "source_reference": "character-arcs.json#characters/PROJECT-CH001"
+          }
+        }
+      ],
+      "face_body_descriptors": {
+        "applicability": "specified",
+        "details": [
+          {
+            "value": "Describe only supplied subject-appropriate features.",
+            "provenance": {
+              "status": "supplied",
+              "basis": "The upstream character record supplies this descriptor.",
+              "source_reference": "character-arcs.json#characters/PROJECT-CH001"
+            }
+          }
+        ]
+      },
+      "silhouette": [
+        {
+          "value": "State one recognition relationship visible in supplied coverage.",
+          "provenance": {
+            "status": "proposed",
+            "basis": "The proposed silhouette preserves the supplied anchor.",
+            "source_reference": "shot-list.json#shots/PROJECT-E01-SC001-SH001"
+          }
+        }
+      ],
+      "palette": [
+        {
+          "value": "State supplied color roles and leave unsupported values unknown.",
+          "provenance": {
+            "status": "inferred",
+            "basis": "Only a bounded palette role follows from the supplied material.",
+            "source_reference": "visual-language-plan.json#palette"
+          }
+        }
+      ],
+      "hair_makeup": {
+        "applicability": "specified",
+        "details": [
+          {
+            "value": "State supplied hair or makeup continuity, or mark not applicable.",
+            "provenance": {
+              "status": "supplied",
+              "basis": "The supplied subject description establishes this category.",
+              "source_reference": "character-arcs.json#characters/PROJECT-CH001"
+            }
+          }
+        ]
+      },
+      "expression_range": [
+        {
+          "value": "State the minimum subject-appropriate expression range.",
+          "provenance": {
+            "status": "proposed",
+            "basis": "The range supports the supplied performance without changing identity.",
+            "source_reference": "directing-plan.json#performance"
+          }
+        }
+      ],
+      "pose_range": [
+        {
+          "value": "State the minimum supplied pose range.",
+          "provenance": {
+            "status": "supplied",
+            "basis": "The shot material supplies this pose.",
+            "source_reference": "shot-list.json#shots/PROJECT-E01-SC001-SH001"
+          }
+        }
+      ],
+      "prohibited_drift": [
+        {
+          "drift_id": "PROJECT-CH001-DR001",
+          "anchor_ids": ["PROJECT-CH001-AN001"],
+          "claim": {
+            "value": "Prevent mirroring, relocation, count change, or scale drift of the anchor.",
+            "provenance": {
+              "status": "proposed",
+              "basis": "This rule protects the supplied recognition feature.",
+              "source_reference": "character-arcs.json#characters/PROJECT-CH001"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "continuity_states": [
+    {
+      "state_id": "PROJECT-CH001-ST001",
+      "character_id": "PROJECT-CH001",
+      "order": 1,
+      "previous_state_id": null,
+      "scene_id": "PROJECT-E01-SC001",
+      "shot_ids": ["PROJECT-E01-SC001-SH001"],
+      "anchor_effects": [
+        {
+          "anchor_id": "PROJECT-CH001-AN001",
+          "effect": "preserve"
+        }
+      ],
+      "wardrobe": {
+        "value": "State supplied wardrobe or explicit not-applicable handling.",
+        "provenance": {
+          "status": "inferred",
+          "basis": "The shot needs an explicit state while unsupplied detail remains unknown.",
+          "source_reference": "shot-list.json#shots/PROJECT-E01-SC001-SH001"
+        }
+      },
+      "hair_makeup": {
+        "value": "State supplied hair/makeup or explicit not-applicable handling.",
+        "provenance": {
+          "status": "inferred",
+          "basis": "The shot needs an explicit category state without adding identity detail.",
+          "source_reference": "shot-list.json#shots/PROJECT-E01-SC001-SH001"
+        }
+      },
+      "material_surface": {
+        "value": "State the supplied clean, wet, dusty, damaged, or repaired condition.",
+        "provenance": {
+          "status": "supplied",
+          "basis": "The scene action supplies this material state.",
+          "source_reference": "screenplay-metadata.json#scenes/PROJECT-E01-SC001"
+        }
+      },
+      "change": {
+        "value": "State the observable entry condition or change.",
+        "provenance": {
+          "status": "supplied",
+          "basis": "The shot material supplies this state.",
+          "source_reference": "shot-list.json#shots/PROJECT-E01-SC001-SH001"
+        }
+      }
+    }
+  ],
+  "reference_needs": [
+    {
+      "reference_id": "PROJECT-CH001-RF001",
+      "character_id": "PROJECT-CH001",
+      "state_ids": ["PROJECT-CH001-ST001"],
+      "view": "front-turnaround",
+      "purpose": {
+        "value": "Resolve the supplied identity, state, or drift question for this view.",
+        "provenance": {
+          "status": "proposed",
+          "basis": "The supplied coverage needs a repeatable recognition reference.",
+          "source_reference": "shot-list.json#shots/PROJECT-E01-SC001-SH001"
+        }
+      }
+    }
+  ],
+  "shot_coverage": [
+    {
+      "scene_id": "PROJECT-E01-SC001",
+      "shot_id": "PROJECT-E01-SC001-SH001",
+      "character_id": "PROJECT-CH001",
+      "state_id": "PROJECT-CH001-ST001",
+      "reference_ids": ["PROJECT-CH001-RF001"]
+    }
+  ],
+  "assumptions": [
+    "State bounded continuity implications that remain open to correction."
+  ],
+  "uncertainties": [
+    "State missing views, measurements, colors, finishes, states, or approvals."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "scene_id": "NINEL-E01-SC001",
+  "assumptions": [],
+  "shots": [
+    {
+      "shot_id": "NINEL-E01-SC001-SH001",
+      "beat_ids": [
+        "NINEL-E01-SC001-B01"
+      ],
+      "size": "medium",
+      "angle": "eye-level",
+      "lens_mm": 50,
+      "camera_support": "slider",
+      "movement": "slow dolly out",
+      "subject": "Ninel",
+      "action": "opens her eyes and sits",
+      "composition": "centered within chamber geometry",
+      "dramatic_purpose": "establish chosen agency",
+      "audio": "low ship hum and first inhale",
+      "continuity": [
+        "preserve chamber-to-monitor axis"
+      ]
+    },
+    {
+      "shot_id": "NINEL-E01-SC001-SH002",
+      "beat_ids": [
+        "NINEL-E01-SC001-B01"
+      ],
+      "size": "medium",
+      "angle": "eye-level",
+      "lens_mm": 50,
+      "camera_support": "slider",
+      "movement": "slow dolly out",
+      "subject": "Ninel",
+      "action": "studies the room",
+      "composition": "centered within chamber geometry",
+      "dramatic_purpose": "establish chosen agency",
+      "audio": "low ship hum and first inhale",
+      "continuity": [
+        "preserve chamber-to-monitor axis"
+      ]
+    }
+  ]
+}

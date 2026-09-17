@@ -1,0 +1,30 @@
+{
+  "skill": "season-arc-designer",
+  "version": "2.0",
+  "cases": [
+    {
+      "id": "six-episode-observatory-mystery",
+      "project_id": "ORBIT",
+      "brief": "Plan six episodes for a serialized mystery series. Night staff at a mountain observatory receive six minutes of telemetry from the following day. The supplied structure declares ORBIT-PL01 through ORBIT-PL03 and ORBIT-EV001 through ORBIT-EV012; the supplied ensemble declares ORBIT-CH001 through ORBIT-CH004.",
+      "observables": [
+        "Produces one schema-valid season-arc object with exactly ORBIT-E01 through ORBIT-E06 in number order and only declared plotline, event, character, and episode references.",
+        "Uses fair clue and reveal scheduling, cumulative inference, changed strategy, and a finale payoff tied only to declared season setups.",
+        "Gives every episode an A plot, local resolution, and cross-episode escalation, and gives every nonfinal episode a forward hook while varying or omitting cliffhangers according to story value.",
+        "Uses bottle or mythology function only when it materially changes evidence, rules, choice, or relationships.",
+        "Does not reproduce the Ninel premise, hive, android, stranded-world, or route-home material."
+      ]
+    },
+    {
+      "id": "mostly-episodic-city-services-procedural",
+      "project_id": "CIVIC",
+      "brief": "Plan six episodes for a mostly episodic procedural about a municipal after-hours crew resolving urgent failures in public spaces. Each episode closes one incident; a new supervisor, aging infrastructure, and the crew's disclosure policy change cumulatively. The supplied structure declares CIVIC-PL01 through CIVIC-PL03 and CIVIC-EV001 through CIVIC-EV012; the supplied ensemble declares CIVIC-CH001 through CIVIC-CH004.",
+      "observables": [
+        "Produces one schema-valid season-arc object with exactly CIVIC-E01 through CIVIC-E06 and fully resolved references.",
+        "Uses complete case-of-the-week resolutions and rotating A/B/C emphasis while accumulating trust, operating knowledge, authority, and policy consequence.",
+        "Keeps serial mythology subordinate to the renewable service engine and does not manufacture a conspiracy or one season-long quest.",
+        "Uses nonfinal forward hooks without forcing cliffhangers, and gives the finale responsibility for both its local incident and the accumulated disclosure question.",
+        "Selects an arc strategy materially different from the observatory mystery and does not copy its telemetry, clue, reveal, or finale design."
+      ]
+    }
+  ]
+}

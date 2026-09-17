@@ -1,0 +1,33 @@
+{
+  "skill": "full-creative-pipeline",
+  "version": "2.0",
+  "cases": [
+    {
+      "id": "series-ai",
+      "project_id": "SERIES-AI",
+      "brief": "A series project selects a supported format and AI production mode.",
+      "observables": [
+        "Routes story, every required scene, production, and post in dependency order.",
+        "Runs validate-project after assembly and returns an honest handoff state such as awaiting-media."
+      ]
+    },
+    {
+      "id": "documentary",
+      "project_id": "DOC",
+      "brief": "A documentary has incomplete media evidence but valid creative packages.",
+      "observables": [
+        "Preserves planned and evidence states without inventing approvals.",
+        "Repairs the earliest-invalid dependency and preserves unaffected records."
+      ]
+    },
+    {
+      "id": "commercial-hybrid",
+      "project_id": "COMM-HYBRID",
+      "brief": "A commercial uses a supported format with hybrid production modes.",
+      "observables": [
+        "Uses only mode-appropriate specialists and preserves supplied IDs.",
+        "Never generates, renders, encodes, uploads, distributes, or approves media."
+      ]
+    }
+  ]
+}

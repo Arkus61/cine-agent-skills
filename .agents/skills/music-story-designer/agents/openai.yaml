@@ -1,0 +1,4 @@
+interface:
+  display_name: "Music Story Designer"
+  short_description: "Spot source-bound music with restraint and evidence"
+  default_prompt: "Use $music-story-designer to create a validated music plan from this edit plan and supplied music evidence."

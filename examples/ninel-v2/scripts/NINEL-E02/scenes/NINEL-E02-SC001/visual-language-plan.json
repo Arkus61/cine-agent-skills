@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "scene_id": "NINEL-E02-SC001",
+  "assumptions": [
+    "Delivery ratio requires confirmation."
+  ],
+  "aspect_ratio": "Unconfirmed; preserve central safe composition.",
+  "point_of_view": "Show only what Ninel can perceive.",
+  "palette": [
+    "charcoal",
+    "desaturated cyan"
+  ],
+  "contrast": "Deep blacks with retained subject detail.",
+  "texture": "Controlled glass and condensation texture.",
+  "lens_strategy": "Move from compressed detail to a neutral spatial view.",
+  "visual_motifs": [
+    "breath on glass",
+    "machine rectangles"
+  ],
+  "prohibited_defaults": [
+    "unmotivated handheld"
+  ],
+  "exceptions": [],
+  "rules": [
+    {
+      "rule_id": "NINEL-E02-SC001-V01",
+      "beat_ids": [
+        "NINEL-E02-SC001-B01"
+      ],
+      "composition": "Hold Ninel within the chamber geometry.",
+      "camera_height": "Stay aligned with Ninel's eye line.",
+      "dramatic_purpose": "Make her first choice visually legible."
+    }
+  ]
+}

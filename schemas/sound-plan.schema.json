@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cine-agent-skills/sound-plan.schema.json",
+  "title": "Sound Plan",
+  "$defs": {
+    "beat_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+-B[0-9]{2,}(?![\\s\\S])"},
+    "shot_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+-SH[0-9]{3,}(?![\\s\\S])"},
+    "cue_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+-A[0-9]{2,}(?![\\s\\S])"},
+    "non_empty_string": {"type": "string", "minLength": 1}
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "scene_id", "assumptions", "sound_philosophy", "cues"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "scene_id": {"$ref": "#/$defs/non_empty_string"},
+    "assumptions": {"type": "array", "items": {"$ref": "#/$defs/non_empty_string"}},
+    "sound_philosophy": {"$ref": "#/$defs/non_empty_string"},
+    "cues": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "cue_id",
+          "beat_ids",
+          "shot_ids",
+          "category",
+          "source",
+          "perspective",
+          "timing",
+          "requirement",
+          "dramatic_purpose"
+        ],
+        "properties": {
+          "cue_id": {"$ref": "#/$defs/cue_id"},
+          "beat_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"$ref": "#/$defs/beat_id"},
+            "uniqueItems": true
+          },
+          "shot_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"$ref": "#/$defs/shot_id"},
+            "uniqueItems": true
+          },
+          "category": {
+            "enum": ["dialogue", "effects", "ambience", "silence", "transition", "music-intent"]
+          },
+          "source": {"$ref": "#/$defs/non_empty_string"},
+          "perspective": {"$ref": "#/$defs/non_empty_string"},
+          "timing": {"$ref": "#/$defs/non_empty_string"},
+          "requirement": {"$ref": "#/$defs/non_empty_string"},
+          "dramatic_purpose": {"$ref": "#/$defs/non_empty_string"}
+        }
+      }
+    }
+  }
+}

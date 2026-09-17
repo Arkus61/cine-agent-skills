@@ -1,0 +1,59 @@
+{
+  "schema_version": "2.0",
+  "release_version": "2.0.0",
+  "project_id": "NINEL",
+  "layer": "post",
+  "profile": "post-v2",
+  "artifacts": [
+    {
+      "filename": "edit-plan.json",
+      "schema_name": "edit-plan",
+      "schema_version": "2.0",
+      "dependency_order": 1
+    },
+    {
+      "filename": "sound-post-plan.json",
+      "schema_name": "sound-post-plan",
+      "schema_version": "2.0",
+      "dependency_order": 2
+    },
+    {
+      "filename": "music-plan.json",
+      "schema_name": "music-plan",
+      "schema_version": "2.0",
+      "dependency_order": 3
+    },
+    {
+      "filename": "vfx-post-plan.json",
+      "schema_name": "vfx-post-plan",
+      "schema_version": "2.0",
+      "dependency_order": 4
+    },
+    {
+      "filename": "color-plan.json",
+      "schema_name": "color-plan",
+      "schema_version": "2.0",
+      "dependency_order": 5
+    },
+    {
+      "filename": "titles-captions-plan.json",
+      "schema_name": "titles-captions-plan",
+      "schema_version": "2.0",
+      "dependency_order": 6
+    },
+    {
+      "filename": "mastering-qc-plan.json",
+      "schema_name": "mastering-qc-plan",
+      "schema_version": "2.0",
+      "dependency_order": 7
+    },
+    {
+      "filename": "post-manifest.json",
+      "schema_name": "layer-manifest",
+      "schema_version": "2.0",
+      "dependency_order": 8
+    }
+  ],
+  "validation_status": "valid",
+  "unresolved_questions": []
+}

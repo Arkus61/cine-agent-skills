@@ -1,0 +1,89 @@
+{
+  "schema_version": "2.0",
+  "project_id": "NINEL",
+  "unit_id": "NINEL-E01",
+  "source_context": {
+    "edit_segments": [
+      {
+        "segment_id": "NINEL-E01-ED001",
+        "source_reference": "post/edit-plan.json#/segments/0"
+      },
+      {
+        "segment_id": "NINEL-E01-ED002",
+        "source_reference": "post/edit-plan.json#/segments/1"
+      }
+    ],
+    "edit_versions": [],
+    "text_sources": [
+      {
+        "text_source_id": "NINEL-TS001",
+        "kind": "supplied-dialogue",
+        "text": "We begin today.",
+        "source_reference": "story/screenplay.fountain#dialogue-12"
+      }
+    ],
+    "timing_records": [],
+    "evidence": []
+  },
+  "items": [
+    {
+      "item_id": "NINEL-E01-TT001",
+      "type": "accessibility-caption",
+      "edit_segment_id": "NINEL-E01-ED001",
+      "text": {
+        "content": "We begin today.",
+        "content_kind": "dialogue",
+        "state": "supplied",
+        "text_source_id": "NINEL-TS001"
+      },
+      "placement": {
+        "region": "lower-center above anticipated platform UI",
+        "safe_area_state": "proposed",
+        "exception_rationale": null
+      },
+      "timing": {
+        "mode": "creative-intent",
+        "intent": "Enter with the spoken phrase and leave enough room for the following sound description.",
+        "timing_record_id": null
+      },
+      "typography_intent": "Use a clear sans serif with weight and size chosen after testing on the actual vertical frame.",
+      "readability": {
+        "contrast_strategy": "Test across every changing background; add a restrained backing treatment when needed.",
+        "line_break_intent": "Break at semantic phrase boundaries.",
+        "reading_speed_target": null,
+        "line_length_target": null,
+        "specification_reference": null
+      },
+      "language": "en",
+      "speaker_identification": {
+        "state": "not-required",
+        "value": null
+      },
+      "sound_description": {
+        "state": "not-applicable",
+        "value": null
+      },
+      "presentation": {
+        "mode": "sidecar",
+        "assumption": "Sidecar remains proposed until the delivery specification is supplied."
+      },
+      "revision": "r001",
+      "approval": {
+        "state": "not-requested",
+        "evidence_ids": []
+      }
+    }
+  ],
+  "hierarchy_and_rhythm": "Keep the spoken caption primary and separate a later phone-ring description as its own readable event.",
+  "credits_scope": {
+    "state": "unresolved",
+    "entries": [],
+    "clearance_note": "Names, ordering, organizations, and rights language require supplied billing and legal review."
+  },
+  "assumptions": [
+    "No locked edit, output-timeline metadata, media, platform specification, or review was supplied."
+  ],
+  "uncertainties": [
+    "Exact cue bounds, safe area, typeface, reading speed, line length, and delivery format remain unresolved."
+  ]
+}

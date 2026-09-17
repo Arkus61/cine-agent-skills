@@ -1,0 +1,4 @@
+interface:
+  display_name: "Titles and Captions Designer"
+  short_description: "Plan source-bound titles, captions, timing, and review"
+  default_prompt: "Use $titles-captions-designer to create a validated titles and captions plan from the current edit and supplied text, timing, and review records."

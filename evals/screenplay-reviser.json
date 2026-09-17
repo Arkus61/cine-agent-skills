@@ -1,0 +1,33 @@
+{
+  "skill": "screenplay-reviser",
+  "version": "2.0",
+  "cases": [
+    {
+      "id": "contained-comedy-short",
+      "project_id": "KETTLE",
+      "brief": "Diagnose an eight-minute live-action comedy short in which two rival bakers must share one failing competition oven. The draft explains their history, repeats the sabotage attempt, and pays off a mislabeled salt jar without making either rival choose the consequence. Preserve the approved fact that both secretly entered the same recipe and the approved ambiguity over which baker first swapped the jar. Use only the bakery set, two performers, practical food, and the supplied oven effect.",
+      "observables": [
+        "Produces only a schema-valid script-revision-plan.json with exact KETTLE source, constraint, and diagnosis references; it does not include rewritten scenes, action, sample dialogue, or a Fountain screenplay.",
+        "Uses evidence-linked comedy-specific notes about premise orientation, changed tactics, setup/payoff, reaction timing, escalation, consequence, and the final button rather than generic joke-count advice.",
+        "Ranks causal and agency repairs before line craft and production polish, with unique consecutive priorities and explicit downstream impact.",
+        "Uses exact positional diagnosis IDs, truthful change_target_ids, and one preservation_check per referenced constraint with an exact protected-source snapshot, invariant, and verification assertion.",
+        "Preserves the shared-recipe canon and jar-swap ambiguity; no executable target touches their protected IDs, and any requested direct contradiction is blocked with an exact structured decision conflict.",
+        "Keeps the contained two-performer bakery boundary and proposes no budget, schedule, vendor, equipment-availability, or safety claim.",
+        "Uses original English-only material and does not reproduce Ninel or a proprietary screenplay."
+      ]
+    },
+    {
+      "id": "serialized-family-drama-scene",
+      "project_id": "MARROW",
+      "brief": "Diagnose a scene from episode four of a serialized family drama. During a hospital archive inventory, an estranged brother and sister find an unsigned consent form tied to their father's disputed treatment. The draft makes both siblings state their shared history and ends before either chooses what to do. Preserve the season fact that the father signed a different form earlier and the approved mystery of who placed this unsigned copy in the file. The scene must create local consequence without resolving the season mystery.",
+      "observables": [
+        "Produces only a valid diagnosis plan with exact MARROW episode, scene-element, evidence, constraint, and diagnosis IDs; generic notes without affected IDs or evidence are absent.",
+        "Separates the scene turn, episode responsibility, and continuing season dependency; it recommends a local choice or changed relationship without solving the unsigned-form mystery.",
+        "Diagnoses causality, agency, stakes, subtext, exposition, pace, tone, continuity, format, and feasible archive staging only where supported by exact page evidence.",
+        "Ranks upstream story and scene-engine dependencies before dialogue polish and states which screenplay metadata, setup/payoff, continuity, or downstream scene work must be rechecked.",
+        "Explicitly preserves the earlier signed-form canon and unsigned-copy ambiguity through exact structured checks; proposed or approved executable targets cannot retcon their protected sources merely by retaining a constraint ID.",
+        "Uses a materially serialized-drama strategy rather than copying the comedy case, Ninel, or proprietary script language."
+      ]
+    }
+  ]
+}

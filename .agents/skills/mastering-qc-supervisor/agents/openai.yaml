@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mastering and QC Supervisor"
+  short_description: "Plan version-bound mastering checks and delivery readiness"
+  default_prompt: "Use $mastering-qc-supervisor to create a validated mastering and QC plan from delivery specifications, the current post package, and supplied evidence."

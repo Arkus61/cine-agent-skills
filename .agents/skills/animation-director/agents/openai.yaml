@@ -1,0 +1,4 @@
+interface:
+  display_name: "Animation Director"
+  short_description: "Direct traceable shot-level animation performance"
+  default_prompt: "Use $animation-director to create a validated animation plan from these character, directing, and shot materials."

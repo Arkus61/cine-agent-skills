@@ -1,0 +1,4 @@
+interface:
+  display_name: "Creative Production Pipeline"
+  short_description: "Orchestrate validated creative production packages"
+  default_prompt: "Use $creative-production-pipeline to assemble and validate a mode-selected creative production package."

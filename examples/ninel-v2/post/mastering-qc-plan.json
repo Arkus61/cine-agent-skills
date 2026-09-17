@@ -1,0 +1,768 @@
+{
+  "schema_version": "2.0",
+  "project_id": "NINEL",
+  "unit_id": "NINEL-E01",
+  "source_context": {
+    "master_versions": [],
+    "current_master_version_id": null,
+    "title_items": [
+      {
+        "item_id": "NINEL-E01-TT001",
+        "source_reference": "post/titles-captions-plan.json#/items/0"
+      }
+    ],
+    "sound_items": [
+      {
+        "item_id": "NINEL-E01-PS001",
+        "source_reference": "post/sound-post-plan.json#/items/0"
+      }
+    ],
+    "color_items": [
+      {
+        "item_id": "NINEL-E01-CL001",
+        "source_reference": "post/color-plan.json#/items/0"
+      }
+    ],
+    "vfx_items": [
+      {
+        "item_id": "NINEL-E01-FX001",
+        "source_reference": "post/vfx-post-plan.json#/items/0"
+      }
+    ],
+    "evidence": []
+  },
+  "checks": [
+    {
+      "check_id": "NINEL-E01-QC001",
+      "category": "video-resolution",
+      "required": true,
+      "criterion": {
+        "metric": "video-resolution",
+        "state": "supplied",
+        "operator": "equals",
+        "expected_value": "1920x1080",
+        "units": "pixels",
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC002",
+      "category": "frame-rate",
+      "required": true,
+      "criterion": {
+        "metric": "frame-rate",
+        "state": "supplied",
+        "operator": "equals",
+        "expected_value": 24,
+        "units": "fps",
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC003",
+      "category": "aspect-ratio",
+      "required": true,
+      "criterion": {
+        "metric": "aspect-ratio",
+        "state": "supplied",
+        "operator": "equals",
+        "expected_value": "16:9",
+        "units": "ratio",
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC004",
+      "category": "duration",
+      "required": true,
+      "criterion": {
+        "metric": "duration",
+        "state": "supplied",
+        "operator": "equals",
+        "expected_value": 60,
+        "units": "seconds",
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC005",
+      "category": "audio-channel-count",
+      "required": true,
+      "criterion": {
+        "metric": "audio-channel-count",
+        "state": "supplied",
+        "operator": "equals",
+        "expected_value": 2,
+        "units": "channels",
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [
+          "NINEL-E01-PS001"
+        ],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC006",
+      "category": "audio-channel-layout",
+      "required": true,
+      "criterion": {
+        "metric": "audio-channel-layout",
+        "state": "supplied",
+        "operator": "equals",
+        "expected_value": "L,R",
+        "units": "layout",
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [
+          "NINEL-E01-PS001"
+        ],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC007",
+      "category": "av-sync",
+      "required": true,
+      "criterion": {
+        "metric": "av-sync",
+        "state": "supplied",
+        "operator": "review",
+        "expected_value": "synchronous",
+        "units": null,
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [
+          "NINEL-E01-PS001"
+        ],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC008",
+      "category": "missing-frames",
+      "required": true,
+      "criterion": {
+        "metric": "missing-frames",
+        "state": "supplied",
+        "operator": "absent",
+        "expected_value": false,
+        "units": null,
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC009",
+      "category": "duplicate-frames",
+      "required": true,
+      "criterion": {
+        "metric": "duplicate-frames",
+        "state": "supplied",
+        "operator": "absent",
+        "expected_value": false,
+        "units": null,
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC010",
+      "category": "black-frames",
+      "required": true,
+      "criterion": {
+        "metric": "black-frames",
+        "state": "supplied",
+        "operator": "review",
+        "expected_value": "Only intentional black is present",
+        "units": null,
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC011",
+      "category": "video-levels",
+      "required": true,
+      "criterion": {
+        "metric": "video-levels",
+        "state": "supplied",
+        "operator": "review",
+        "expected_value": "Conforms to the supplied delivery specification",
+        "units": null,
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [
+          "NINEL-E01-CL001"
+        ],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC012",
+      "category": "audio-clipping",
+      "required": true,
+      "criterion": {
+        "metric": "audio-clipping",
+        "state": "supplied",
+        "operator": "absent",
+        "expected_value": false,
+        "units": null,
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [
+          "NINEL-E01-PS001"
+        ],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC013",
+      "category": "audio-sample-peak",
+      "required": true,
+      "criterion": {
+        "metric": "audio-sample-peak",
+        "state": "supplied",
+        "operator": "less-than-or-equal",
+        "expected_value": -2,
+        "units": "dBFS",
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [
+          "NINEL-E01-PS001"
+        ],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC014",
+      "category": "audio-true-peak",
+      "required": true,
+      "criterion": {
+        "metric": "audio-true-peak",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply the delivery threshold",
+        "units": "dBTP",
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [
+          "NINEL-E01-PS001"
+        ],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC015",
+      "category": "audio-loudness",
+      "required": true,
+      "criterion": {
+        "metric": "audio-loudness",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply the delivery target",
+        "units": "LUFS",
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [
+          "NINEL-E01-PS001"
+        ],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC016",
+      "category": "captions-presence",
+      "required": true,
+      "criterion": {
+        "metric": "captions-presence",
+        "state": "supplied",
+        "operator": "present",
+        "expected_value": true,
+        "units": null,
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [
+          "NINEL-E01-TT001"
+        ],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC017",
+      "category": "captions-accuracy",
+      "required": true,
+      "criterion": {
+        "metric": "captions-accuracy",
+        "state": "supplied",
+        "operator": "review",
+        "expected_value": "RU captions match speech and relevant nonspeech audio",
+        "units": null,
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [
+          "NINEL-E01-TT001"
+        ],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC018",
+      "category": "titles-presence",
+      "required": true,
+      "criterion": {
+        "metric": "titles-presence",
+        "state": "supplied",
+        "operator": "present",
+        "expected_value": true,
+        "units": null,
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [
+          "NINEL-E01-TT001"
+        ],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC019",
+      "category": "title-safe",
+      "required": true,
+      "criterion": {
+        "metric": "title-safe",
+        "state": "supplied",
+        "operator": "review",
+        "expected_value": "Opening title is readable within the supplied safe area",
+        "units": null,
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [
+          "NINEL-E01-TT001"
+        ],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC020",
+      "category": "title-readability",
+      "required": true,
+      "criterion": {
+        "metric": "title-readability",
+        "state": "supplied",
+        "operator": "review",
+        "expected_value": "Opening title is legible at intended display size",
+        "units": null,
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [
+          "NINEL-E01-TT001"
+        ],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC021",
+      "category": "compression-artifacts",
+      "required": true,
+      "criterion": {
+        "metric": "compression-artifacts",
+        "state": "supplied",
+        "operator": "absent",
+        "expected_value": false,
+        "units": null,
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": [
+          "NINEL-E01-FX001"
+        ]
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC022",
+      "category": "vfx-completion",
+      "required": true,
+      "criterion": {
+        "metric": "vfx-completion",
+        "state": "supplied",
+        "operator": "review",
+        "expected_value": "No temporary or incomplete VFX remains",
+        "units": null,
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": [
+          "NINEL-E01-FX001"
+        ]
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC023",
+      "category": "color-completion",
+      "required": true,
+      "criterion": {
+        "metric": "color-completion",
+        "state": "supplied",
+        "operator": "review",
+        "expected_value": "Current color output is reviewed for the delivery display",
+        "units": null,
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [
+          "NINEL-E01-CL001"
+        ],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "NINEL-E01-QC024",
+      "category": "deliverable-integrity",
+      "required": true,
+      "criterion": {
+        "metric": "deliverable-integrity",
+        "state": "supplied",
+        "operator": "review",
+        "expected_value": "Required deliverables open and correspond to the current master",
+        "units": null,
+        "source_reference": "delivery/NINEL-specification.md"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    }
+  ],
+  "deliverables": [
+    {
+      "deliverable_id": "NINEL-E01-DL001",
+      "kind": "picture-sound-master",
+      "required": true,
+      "status": "planned",
+      "master_version_id": null,
+      "source_reference": null,
+      "evidence_ids": []
+    },
+    {
+      "deliverable_id": "NINEL-E01-DL002",
+      "kind": "captions",
+      "required": true,
+      "status": "planned",
+      "master_version_id": null,
+      "source_reference": null,
+      "evidence_ids": []
+    },
+    {
+      "deliverable_id": "NINEL-E01-DL003",
+      "kind": "qc-report",
+      "required": true,
+      "status": "planned",
+      "master_version_id": null,
+      "source_reference": null,
+      "evidence_ids": []
+    }
+  ],
+  "approval": {
+    "state": "pending",
+    "master_version_id": null,
+    "scope": "delivery-master-and-qc",
+    "evidence_ids": []
+  },
+  "readiness": {
+    "state": "not-ready",
+    "required_check_ids": [
+      "NINEL-E01-QC001",
+      "NINEL-E01-QC002",
+      "NINEL-E01-QC003",
+      "NINEL-E01-QC004",
+      "NINEL-E01-QC005",
+      "NINEL-E01-QC006",
+      "NINEL-E01-QC007",
+      "NINEL-E01-QC008",
+      "NINEL-E01-QC009",
+      "NINEL-E01-QC010",
+      "NINEL-E01-QC011",
+      "NINEL-E01-QC012",
+      "NINEL-E01-QC013",
+      "NINEL-E01-QC014",
+      "NINEL-E01-QC015",
+      "NINEL-E01-QC016",
+      "NINEL-E01-QC017",
+      "NINEL-E01-QC018",
+      "NINEL-E01-QC019",
+      "NINEL-E01-QC020",
+      "NINEL-E01-QC021",
+      "NINEL-E01-QC022",
+      "NINEL-E01-QC023",
+      "NINEL-E01-QC024"
+    ],
+    "required_deliverable_ids": [
+      "NINEL-E01-DL001",
+      "NINEL-E01-DL002",
+      "NINEL-E01-DL003"
+    ],
+    "rationale": "No master or applicable QC evidence was supplied; every check remains planned."
+  },
+  "assumptions": [
+    "Stereo means the supplied L,R layout requirement; channel count alone will not establish this layout."
+  ],
+  "uncertainties": [
+    "True-peak, loudness, safe-area, codec, container, and other vendor thresholds remain supplied-specification decisions."
+  ]
+}

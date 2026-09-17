@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cine-agent-skills/package-manifest.schema.json",
+  "title": "Full v1 Package Manifest",
+  "$defs": {
+    "non_empty_string": {"type": "string", "minLength": 1}
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "release_version",
+    "profile",
+    "scene_id",
+    "source_file",
+    "artifacts",
+    "validation_status",
+    "unresolved_questions"
+  ],
+  "properties": {
+    "release_version": {"const": "1.0.0"},
+    "profile": {"const": "full-v1"},
+    "scene_id": {"$ref": "#/$defs/non_empty_string"},
+    "source_file": {"const": "source-scene.md"},
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["filename", "schema_version", "dependency_order"],
+        "properties": {
+          "filename": {"$ref": "#/$defs/non_empty_string"},
+          "schema_version": {"const": "1.0"},
+          "dependency_order": {"type": "integer", "minimum": 1}
+        }
+      }
+    },
+    "validation_status": {"const": "valid"},
+    "unresolved_questions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    }
+  }
+}

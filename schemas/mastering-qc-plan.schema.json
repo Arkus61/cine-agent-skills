@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cine-agent-skills/mastering-qc-plan.schema.json",
+  "title": "Version- and evidence-bound mastering and QC plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "project_id", "unit_id", "source_context", "checks", "deliverables", "approval", "readiness", "assumptions", "uncertainties"],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "nullableText": {"type": ["string", "null"], "minLength": 1},
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*$"},
+    "nullableId": {"type": ["string", "null"], "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*$"},
+    "scalar": {"type": ["string", "number", "boolean"]},
+    "nullableScalar": {"type": ["string", "number", "boolean", "null"]},
+    "strings": {"type": "array", "items": {"$ref": "#/$defs/text"}},
+    "ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+    "sourceItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["item_id", "source_reference"],
+      "properties": {"item_id": {"$ref": "#/$defs/id"}, "source_reference": {"$ref": "#/$defs/text"}}
+    },
+    "masterVersion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["master_version_id", "label", "source_reference", "checksum"],
+      "properties": {
+        "master_version_id": {"$ref": "#/$defs/id"},
+        "label": {"$ref": "#/$defs/text"},
+        "source_reference": {"$ref": "#/$defs/text"},
+        "checksum": {"$ref": "#/$defs/nullableText"}
+      }
+    },
+    "criterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["metric", "state", "operator", "expected_value", "units", "source_reference"],
+      "properties": {
+        "metric": {"$ref": "#/$defs/text"},
+        "state": {"enum": ["supplied", "unresolved"]},
+        "operator": {"enum": ["equals", "less-than-or-equal", "greater-than-or-equal", "present", "absent", "review"]},
+        "expected_value": {"$ref": "#/$defs/scalar"},
+        "units": {"$ref": "#/$defs/nullableText"},
+        "source_reference": {"$ref": "#/$defs/text"}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_id", "kind", "source_kind", "applicability", "target_check_id", "target_deliverable_id", "criterion", "observed_value", "units", "master_version_id", "scope", "source_reference"],
+      "properties": {
+        "evidence_id": {"$ref": "#/$defs/id"},
+        "kind": {"enum": ["measurement", "inspection", "deliverable-verification", "human-approval"]},
+        "source_kind": {"enum": ["supplied-measurement-report", "supplied-inspection-record", "supplied-deliverable-record", "supplied-human-decision"]},
+        "applicability": {"enum": ["applicable", "historical", "superseded"]},
+        "target_check_id": {"$ref": "#/$defs/nullableId"},
+        "target_deliverable_id": {"$ref": "#/$defs/nullableId"},
+        "criterion": {"anyOf": [{"$ref": "#/$defs/criterion"}, {"type": "null"}]},
+        "observed_value": {"$ref": "#/$defs/nullableScalar"},
+        "units": {"$ref": "#/$defs/nullableText"},
+        "master_version_id": {"$ref": "#/$defs/id"},
+        "scope": {"$ref": "#/$defs/text"},
+        "source_reference": {"$ref": "#/$defs/text"}
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "units", "master_version_id", "evidence_ids"],
+      "properties": {
+        "value": {"$ref": "#/$defs/nullableScalar"},
+        "units": {"$ref": "#/$defs/nullableText"},
+        "master_version_id": {"$ref": "#/$defs/nullableId"},
+        "evidence_ids": {"$ref": "#/$defs/ids"}
+      }
+    },
+    "upstreamReferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title_item_ids", "sound_item_ids", "color_item_ids", "vfx_item_ids"],
+      "properties": {
+        "title_item_ids": {"$ref": "#/$defs/ids"},
+        "sound_item_ids": {"$ref": "#/$defs/ids"},
+        "color_item_ids": {"$ref": "#/$defs/ids"},
+        "vfx_item_ids": {"$ref": "#/$defs/ids"}
+      }
+    },
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["check_id", "category", "required", "criterion", "observed", "upstream_references", "result"],
+      "properties": {
+        "check_id": {"$ref": "#/$defs/id"},
+        "category": {"enum": ["video-resolution", "frame-rate", "aspect-ratio", "duration", "audio-channel-count", "audio-channel-layout", "av-sync", "missing-frames", "duplicate-frames", "black-frames", "video-levels", "audio-clipping", "audio-sample-peak", "audio-true-peak", "audio-loudness", "captions-presence", "captions-accuracy", "titles-presence", "title-safe", "title-readability", "compression-artifacts", "vfx-completion", "color-completion", "deliverable-integrity"]},
+        "required": {"type": "boolean"},
+        "criterion": {"$ref": "#/$defs/criterion"},
+        "observed": {"$ref": "#/$defs/observation"},
+        "upstream_references": {"$ref": "#/$defs/upstreamReferences"},
+        "result": {"enum": ["planned", "pass", "fail", "human-review"]}
+      }
+    },
+    "deliverable": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["deliverable_id", "kind", "required", "status", "master_version_id", "source_reference", "evidence_ids"],
+      "properties": {
+        "deliverable_id": {"$ref": "#/$defs/id"},
+        "kind": {"enum": ["picture-sound-master", "caption-file", "captions", "title-file", "audio-stem", "qc-report", "checksum", "other"]},
+        "required": {"type": "boolean"},
+        "status": {"enum": ["planned", "present", "verified", "human-review"]},
+        "master_version_id": {"$ref": "#/$defs/nullableId"},
+        "source_reference": {"$ref": "#/$defs/nullableText"},
+        "evidence_ids": {"$ref": "#/$defs/ids"}
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "master_version_id", "scope", "evidence_ids"],
+      "properties": {
+        "state": {"enum": ["not-requested", "pending", "changes-requested", "approved"]},
+        "master_version_id": {"$ref": "#/$defs/nullableId"},
+        "scope": {"$ref": "#/$defs/text"},
+        "evidence_ids": {"$ref": "#/$defs/ids"}
+      }
+    },
+    "readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "required_check_ids", "required_deliverable_ids", "rationale"],
+      "properties": {
+        "state": {"enum": ["not-ready", "ready"]},
+        "required_check_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "required_deliverable_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "rationale": {"$ref": "#/$defs/text"}
+      }
+    }
+  },
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "project_id": {"$ref": "#/$defs/id"},
+    "unit_id": {"$ref": "#/$defs/id"},
+    "source_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["master_versions", "current_master_version_id", "title_items", "sound_items", "color_items", "vfx_items", "evidence"],
+      "properties": {
+        "master_versions": {"type": "array", "items": {"$ref": "#/$defs/masterVersion"}},
+        "current_master_version_id": {"$ref": "#/$defs/nullableId"},
+        "title_items": {"type": "array", "items": {"$ref": "#/$defs/sourceItem"}},
+        "sound_items": {"type": "array", "items": {"$ref": "#/$defs/sourceItem"}},
+        "color_items": {"type": "array", "items": {"$ref": "#/$defs/sourceItem"}},
+        "vfx_items": {"type": "array", "items": {"$ref": "#/$defs/sourceItem"}},
+        "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}}
+      }
+    },
+    "checks": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/check"}},
+    "deliverables": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/deliverable"}},
+    "approval": {"$ref": "#/$defs/approval"},
+    "readiness": {"$ref": "#/$defs/readiness"},
+    "assumptions": {"$ref": "#/$defs/strings"},
+    "uncertainties": {"$ref": "#/$defs/strings"}
+  }
+}

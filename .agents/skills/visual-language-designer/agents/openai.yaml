@@ -1,0 +1,4 @@
+interface:
+  display_name: "Visual Language Designer"
+  short_description: "Define a coherent visual language for a scene"
+  default_prompt: "Use $visual-language-designer to define the visual language for this scene."

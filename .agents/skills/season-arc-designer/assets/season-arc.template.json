@@ -1,0 +1,199 @@
+{
+  "schema_version": "2.0",
+  "project_id": "SERIES",
+  "project_format": "series",
+  "season_premise": "A coastal rescue team must keep serving the town while evidence shows that familiar currents are changing.",
+  "season_dramatic_question": "Can the team preserve public trust while admitting that its established rescue methods no longer predict the sea?",
+  "arc_strategy": "Mostly episodic rescues close locally while evidence, trust, and operating rules accumulate toward a shared finale decision.",
+  "source_plotline_ids": [
+    "SERIES-PL01",
+    "SERIES-PL02",
+    "SERIES-PL03"
+  ],
+  "source_event_ids": [
+    "SERIES-EV001",
+    "SERIES-EV002",
+    "SERIES-EV003",
+    "SERIES-EV004"
+  ],
+  "source_character_ids": [
+    "SERIES-CH001",
+    "SERIES-CH002"
+  ],
+  "episodes": [
+    {
+      "episode_id": "SERIES-E01",
+      "episode_number": 1,
+      "title": "The False Channel",
+      "episode_type": "premiere",
+      "episode_premise": "The team completes a difficult harbor rescue after its trusted channel marker gives a false reading.",
+      "cold_open": {
+        "content": "A routine marker drifts against the measured current before dawn.",
+        "function": "Orient the local anomaly before it becomes a rescue problem."
+      },
+      "act_outs": [
+        {
+          "position": "mid-unit turn",
+          "turn": "The team learns that the marker is anchored correctly.",
+          "pressure": "The rescue plan must change without a reliable explanation for the current."
+        }
+      ],
+      "plot_distribution": [
+        {
+          "slot": "A",
+          "plotline_id": "SERIES-PL01",
+          "event_ids": [
+            "SERIES-EV001"
+          ],
+          "episode_engine": "Reach a stranded boat despite the false channel reading.",
+          "advancement": "The team proves it can improvise, but its standard navigation rule loses authority."
+        },
+        {
+          "slot": "B",
+          "plotline_id": "SERIES-PL02",
+          "event_ids": [
+            "SERIES-EV002"
+          ],
+          "episode_engine": "Decide whether to disclose the unexplained reading during the rescue briefing.",
+          "advancement": "A private disagreement about transparency becomes part of the team's public responsibility."
+        }
+      ],
+      "local_resolution": "The stranded crew returns safely and the harbor reopens under temporary visual navigation.",
+      "escalation": "A technical anomaly now changes the team's operating rules and public explanation.",
+      "opening_hook": "Why is a correctly anchored marker contradicting the measured current?",
+      "forward_hook": {
+        "target_episode_id": "SERIES-E02",
+        "mechanism": "consequence",
+        "promise": "The team must test the anomaly before deciding whether to suspend the harbor's normal route."
+      },
+      "cliffhanger": null
+    },
+    {
+      "episode_id": "SERIES-E02",
+      "episode_number": 2,
+      "title": "Sounding Line",
+      "episode_type": "finale",
+      "episode_premise": "A final rescue forces the team to choose between preserving the published route and acting on incomplete but converging evidence.",
+      "cold_open": null,
+      "act_outs": [
+        {
+          "position": "finale crisis",
+          "turn": "Independent depth readings confirm that the safe channel has moved.",
+          "pressure": "The team must close the official route while a vessel is already approaching it."
+        }
+      ],
+      "plot_distribution": [
+        {
+          "slot": "A",
+          "plotline_id": "SERIES-PL01",
+          "event_ids": [
+            "SERIES-EV003",
+            "SERIES-EV004"
+          ],
+          "episode_engine": "Divert the approaching vessel and establish a temporary route.",
+          "advancement": "The team replaces inherited certainty with a transparent provisional protocol."
+        },
+        {
+          "slot": "B",
+          "plotline_id": "SERIES-PL03",
+          "event_ids": [
+            "SERIES-EV004"
+          ],
+          "episode_engine": "Ask the town to accept disruption before the evidence is complete.",
+          "advancement": "Public trust shifts from confident prediction to accountable revision."
+        }
+      ],
+      "local_resolution": "The vessel follows the temporary route safely and the false channel closes pending a full survey.",
+      "escalation": "Acting on the anomaly now changes town access and makes uncertainty a public obligation.",
+      "opening_hook": "Will the team close a familiar route before it can prove exactly why the route changed?",
+      "forward_hook": null,
+      "cliffhanger": {
+        "type": "strategic-shift",
+        "turn": "The town authorizes continuous local sounding instead of relying on the seasonal chart.",
+        "story_value": "The season closes its rescue while establishing a changed operating condition."
+      }
+    }
+  ],
+  "character_progression": [
+    {
+      "character_id": "SERIES-CH001",
+      "episode_ids": [
+        "SERIES-E01",
+        "SERIES-E02"
+      ],
+      "event_ids": [
+        "SERIES-EV002",
+        "SERIES-EV004"
+      ],
+      "progression": "The team lead moves from protecting confidence through certainty to protecting trust through disclosed uncertainty.",
+      "endpoint": "The lead adopts a public provisional protocol and accepts review."
+    }
+  ],
+  "relationship_progression": [
+    {
+      "character_ids": [
+        "SERIES-CH001",
+        "SERIES-CH002"
+      ],
+      "episode_ids": [
+        "SERIES-E01",
+        "SERIES-E02"
+      ],
+      "event_ids": [
+        "SERIES-EV002",
+        "SERIES-EV003"
+      ],
+      "progression": "Disagreement over disclosure becomes a working rule that either person may demand a retest.",
+      "endpoint": "Authority remains unequal, but evidence challenges now receive a recorded response."
+    }
+  ],
+  "reveal_schedule": [
+    {
+      "event_id": "SERIES-EV003",
+      "episode_id": "SERIES-E02",
+      "reveal": "The safe channel has physically moved rather than merely being misread.",
+      "audience_effect": "Turns a technical doubt into the finale's public responsibility choice."
+    }
+  ],
+  "season_setups": [
+    {
+      "setup_event_id": "SERIES-EV001",
+      "episode_id": "SERIES-E01",
+      "setup": "The correctly anchored marker gives a false channel reading.",
+      "intended_payoff": "The finale confirms a moved channel and replaces the old navigation rule."
+    }
+  ],
+  "finale_payoff": {
+    "episode_id": "SERIES-E02",
+    "setup_event_ids": [
+      "SERIES-EV001"
+    ],
+    "payoff_event_ids": [
+      "SERIES-EV003",
+      "SERIES-EV004"
+    ],
+    "resolution": "The team acts on converging evidence, diverts the vessel, and closes the obsolete route.",
+    "consequence": "Town access becomes less convenient, but navigation decisions become continuously testable and publicly accountable.",
+    "season_question_status": "answered"
+  },
+  "unresolved_threads": [
+    {
+      "plotline_id": "SERIES-PL03",
+      "state": "The immediate route is safe, but the cause and extent of the changing current remain unknown.",
+      "reason_retained": "Preserves a changed environmental inquiry without undoing the completed rescue and policy decision."
+    }
+  ],
+  "next_season_seeds": [
+    {
+      "event_id": "SERIES-EV004",
+      "seed": "Continuous sounding may reveal whether the channel shift is local or part of a wider pattern.",
+      "boundary": "This is a proposed line of inquiry, not proof of a cause or an approved continuation."
+    }
+  ],
+  "assumptions": [
+    "Two episodes demonstrate the contract rather than prescribe a season length."
+  ],
+  "uncertainties": [
+    "The cause and geographic extent of the current change remain unconfirmed."
+  ]
+}

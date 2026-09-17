@@ -1,0 +1,361 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cine-agent-skills/world-bible.schema.json",
+  "title": "World Bible",
+  "$defs": {
+    "non_empty_string": {
+      "type": "string",
+      "minLength": 1
+    },
+    "string_array": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    },
+    "unique_non_empty_strings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    },
+    "provenance": {
+      "enum": ["supplied", "inferred", "proposed", "approved"]
+    },
+    "canon_status": {
+      "enum": ["canon", "proposal"]
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["story_boundary", "scales", "excluded_or_unknown"],
+      "properties": {
+        "story_boundary": {"$ref": "#/$defs/non_empty_string"},
+        "scales": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "excluded_or_unknown": {"$ref": "#/$defs/string_array"}
+      }
+    },
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "location_id",
+        "name",
+        "scale",
+        "story_function",
+        "material_conditions",
+        "access_constraints",
+        "canon_status",
+        "provenance",
+        "basis"
+      ],
+      "properties": {
+        "location_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-LO(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+        },
+        "name": {"$ref": "#/$defs/non_empty_string"},
+        "scale": {"$ref": "#/$defs/non_empty_string"},
+        "story_function": {"$ref": "#/$defs/non_empty_string"},
+        "material_conditions": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "access_constraints": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "canon_status": {"$ref": "#/$defs/canon_status"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "basis": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "faction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "objective",
+        "resources",
+        "constraints",
+        "social_consequence",
+        "canon_status",
+        "provenance",
+        "basis"
+      ],
+      "properties": {
+        "name": {"$ref": "#/$defs/non_empty_string"},
+        "objective": {"$ref": "#/$defs/non_empty_string"},
+        "resources": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "constraints": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "social_consequence": {"$ref": "#/$defs/non_empty_string"},
+        "canon_status": {"$ref": "#/$defs/canon_status"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "basis": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "institution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "authority",
+        "dependencies",
+        "beneficiaries",
+        "burdened_groups",
+        "social_consequence",
+        "canon_status",
+        "provenance",
+        "basis"
+      ],
+      "properties": {
+        "name": {"$ref": "#/$defs/non_empty_string"},
+        "authority": {"$ref": "#/$defs/non_empty_string"},
+        "dependencies": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "beneficiaries": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "burdened_groups": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "social_consequence": {"$ref": "#/$defs/non_empty_string"},
+        "canon_status": {"$ref": "#/$defs/canon_status"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "basis": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "history_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event",
+        "legacy",
+        "evidence",
+        "canon_status",
+        "provenance",
+        "basis"
+      ],
+      "properties": {
+        "event": {"$ref": "#/$defs/non_empty_string"},
+        "legacy": {"$ref": "#/$defs/non_empty_string"},
+        "evidence": {"$ref": "#/$defs/non_empty_string"},
+        "canon_status": {"$ref": "#/$defs/canon_status"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "basis": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "culture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "values",
+        "norms",
+        "material_practices",
+        "internal_variation",
+        "social_consequence",
+        "canon_status",
+        "provenance",
+        "basis"
+      ],
+      "properties": {
+        "name": {"$ref": "#/$defs/non_empty_string"},
+        "values": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "norms": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "material_practices": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "internal_variation": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "social_consequence": {"$ref": "#/$defs/non_empty_string"},
+        "canon_status": {"$ref": "#/$defs/canon_status"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "basis": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "system": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "system_type",
+        "inputs",
+        "outputs",
+        "dependencies",
+        "rule_ids",
+        "canon_status",
+        "provenance",
+        "basis"
+      ],
+      "properties": {
+        "name": {"$ref": "#/$defs/non_empty_string"},
+        "system_type": {
+          "enum": ["technology", "magic", "hybrid", "social", "ecological", "material"]
+        },
+        "inputs": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "outputs": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "dependencies": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "rule_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-WR(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+          },
+          "uniqueItems": true
+        },
+        "canon_status": {"$ref": "#/$defs/canon_status"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "basis": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "contradiction_check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scenario", "expected_behavior", "resolution"],
+      "properties": {
+        "scenario": {"$ref": "#/$defs/non_empty_string"},
+        "expected_behavior": {"$ref": "#/$defs/non_empty_string"},
+        "resolution": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rule_id",
+        "name",
+        "system_type",
+        "statement",
+        "cost",
+        "limit",
+        "contradiction_checks",
+        "provenance",
+        "canon_status",
+        "basis",
+        "story_consequence"
+      ],
+      "properties": {
+        "rule_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-WR(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+        },
+        "name": {"$ref": "#/$defs/non_empty_string"},
+        "system_type": {
+          "enum": ["technology", "magic", "hybrid", "social", "ecological", "material"]
+        },
+        "statement": {"$ref": "#/$defs/non_empty_string"},
+        "cost": {"$ref": "#/$defs/non_empty_string"},
+        "limit": {"$ref": "#/$defs/non_empty_string"},
+        "contradiction_checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/contradiction_check"},
+          "uniqueItems": true
+        },
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "canon_status": {"$ref": "#/$defs/canon_status"},
+        "basis": {"$ref": "#/$defs/non_empty_string"},
+        "story_consequence": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "term",
+        "definition",
+        "usage_boundary",
+        "canon_status",
+        "provenance",
+        "basis"
+      ],
+      "properties": {
+        "term": {"$ref": "#/$defs/non_empty_string"},
+        "definition": {"$ref": "#/$defs/non_empty_string"},
+        "usage_boundary": {"$ref": "#/$defs/non_empty_string"},
+        "canon_status": {"$ref": "#/$defs/canon_status"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "basis": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "production_asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "asset_id",
+        "name",
+        "asset_type",
+        "world_function",
+        "production_use",
+        "canon_status",
+        "provenance",
+        "basis"
+      ],
+      "properties": {
+        "asset_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-AS(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+        },
+        "name": {"$ref": "#/$defs/non_empty_string"},
+        "asset_type": {
+          "enum": ["prop", "creature", "device", "vehicle", "costume", "set-element", "environment", "other"]
+        },
+        "world_function": {"$ref": "#/$defs/non_empty_string"},
+        "production_use": {"$ref": "#/$defs/non_empty_string"},
+        "canon_status": {"$ref": "#/$defs/canon_status"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "basis": {"$ref": "#/$defs/non_empty_string"}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "scope",
+    "locations",
+    "factions",
+    "institutions",
+    "history",
+    "cultures",
+    "systems",
+    "rules",
+    "terminology",
+    "production_assets",
+    "assumptions",
+    "uncertainties"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "project_id": {"$ref": "#/$defs/non_empty_string"},
+    "scope": {"$ref": "#/$defs/scope"},
+    "locations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/location"}
+    },
+    "factions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/faction"}
+    },
+    "institutions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/institution"}
+    },
+    "history": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/history_entry"}
+    },
+    "cultures": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/culture"}
+    },
+    "systems": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/system"}
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/rule"}
+    },
+    "terminology": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/term"}
+    },
+    "production_assets": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/production_asset"}
+    },
+    "assumptions": {"$ref": "#/$defs/string_array"},
+    "uncertainties": {"$ref": "#/$defs/string_array"}
+  }
+}

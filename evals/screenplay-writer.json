@@ -1,0 +1,30 @@
+{
+  "skill": "screenplay-writer",
+  "version": "2.0",
+  "cases": [
+    {
+      "id": "fantasy-crossing-bargain",
+      "project_id": "EMBER",
+      "brief": "Draft one fantasy scene in which a courier must cross a flooded salt road before a storm. The gatekeeper delays her because he fears what follows her, but cannot say so directly. The courier gives up the map needed for her return to gain passage.",
+      "observables": [
+        "Produces separate screenplay.fountain and schema-valid screenplay-metadata.json rather than embedding IDs or JSON in screenplay prose.",
+        "Uses an anchored EXT. heading, visible weather and gate behavior, playable delaying and bargaining tactics, economical dialogue, and a clear costly turn.",
+        "Maps exact EMBER unit, scene, event, character, location, objective, conflict, turn, and setup/payoff references with a heading present in the Fountain summary.",
+        "Lets the gatekeeper's protective fear operate as subtext instead of explanatory dialogue.",
+        "Uses original characters and language and does not reproduce Ninel or a proprietary screenplay."
+      ]
+    },
+    {
+      "id": "interview-led-water-inquiry",
+      "project_id": "HARBOR",
+      "brief": "Draft an interview-led documentary sequence comparing a public promise about harbor cleanup with one supplied water-quality report. An engineer interview is confirmed, but answers, continued access, and causal attribution are unknown.",
+      "observables": [
+        "Uses documentary evidence logic materially different from the fantasy scene: sourced narration, document handling, interview questions, follow-ups, and explicit unknowns.",
+        "Does not fabricate engineer answers, a confession, environmental causation, villainy, access, or a predetermined reveal.",
+        "Creates pressure through comparison and verification while preserving interview context and a bounded next reporting step.",
+        "Produces separate valid Fountain and metadata files with exact HARBOR IDs, heading mappings, participant cues, evidence events, and locations.",
+        "Records unresolved access, outcome, and attribution in uncertainties rather than screenplay facts."
+      ]
+    }
+  ]
+}

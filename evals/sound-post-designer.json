@@ -1,0 +1,33 @@
+{
+  "skill": "sound-post-designer",
+  "version": "2.0",
+  "cases": [
+    {
+      "id": "interior-dialogue-and-subjective-reveal",
+      "project_id": "LANTERN",
+      "brief": "An edit plan declares ED001, an interior dialogue, and ED002, a subjective reveal. No production audio, takes, AAF/OMF, measurements, ADR decision, Foley recording, picture lock, or distributor specification is supplied.",
+      "observables": [
+        "Returns a schema-valid plan with unique LANTERN-U01-PS### IDs, every declared ED segment covered, and typed dialogue, repair, ADR, Foley, ambience, effects, design, transition, silence, premix, automation, mix-priority, accessibility, loudness-assumption, and mastering ownership.",
+        "Gives ED001 dialogue priority and an ED002 objective-to-subjective perspective change with a structured mode and real intent; treats repair, ADR, sync, measurements, target specification, mastering, approval, and compliance as planned, conditional, or unresolved rather than facts."
+      ]
+    },
+    {
+      "id": "dialogue-free-animated-short",
+      "project_id": "ORBIT",
+      "brief": "A dialogue-free animated short has three registered edit segments, visual action descriptions, and no supplied audio assets or delivery specification.",
+      "observables": [
+        "Keeps dialogue and ADR as conditional assessment or explicitly not applicable from supplied material while assigning motivated Foley, ambience, effects, design, transitions, silence, premix, automation, accessibility, and mastering work to every registered segment.",
+        "Does not invent a narrator, dialogue track, recorded performance, selected effect, numeric mix value, measured loudness, or delivery compliance; it registers no inspection evidence when none was supplied."
+      ]
+    },
+    {
+      "id": "interview-led-documentary",
+      "project_id": "TIDEWAY",
+      "brief": "An interview-led documentary edit has two registered interview segments and one contextual map segment. No interview audio, transcript, attribution approval, or final delivery specification is supplied.",
+      "observables": [
+        "Protects speech intelligibility and attribution context, records caption and transcript coordination, and preserves uncertainty rather than writing an interview answer, repair defect, ADR need, measured value, completed access service, or approved master.",
+        "Uses listener perspective and mix priority to support participant speech without manufacturing causal emphasis through sound design."
+      ]
+    }
+  ]
+}

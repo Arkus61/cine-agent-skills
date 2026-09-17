@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cine-agent-skills"
+version = "2.0.0"
+description = "Portable film-production Agent Skills and validation tooling"
+requires-python = ">=3.11"
+dependencies = ["PyYAML>=6.0", "jsonschema>=4.20"]
+
+[project.scripts]
+cine-skills = "cine_skills.__main__:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

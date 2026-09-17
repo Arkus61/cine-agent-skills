@@ -1,0 +1,4 @@
+interface:
+  display_name: "Postproduction Pipeline"
+  short_description: "Orchestrate evidence-backed postproduction handoffs"
+  default_prompt: "Use $postproduction-pipeline to coordinate and validate a postproduction package."

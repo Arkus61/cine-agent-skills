@@ -1,0 +1,23 @@
+from tests.test_titles_captions import planned_titles_plan, approved_titles_plan, errors
+
+def test_honest_nonspeech_proposal(repository_root):
+    p=planned_titles_plan()
+    p['source_context']['text_sources'].append({'text_source_id':'SPARK-TS002','kind':'editorial-proposal','text':'[doorbell rings]','source_reference':'editorial/proposals.json#/0'})
+    p['items'][0]['text']={'content':'[doorbell rings]','state':'proposed','text_source_id':'SPARK-TS002'}
+    p['items'][0]['sound_description']={'state':'proposed','value':'doorbell rings'}
+    assert errors(p,repository_root)==[]
+
+def test_changed_accessibility_invalidates_review(repository_root):
+    p=approved_titles_plan();p['items'][0]['language']='fr'
+    assert errors(p,repository_root)
+
+def test_unused_timing_cannot_target_other_segment(repository_root):
+    p=approved_titles_plan();c=p['source_context']
+    c['edit_segments'].append({'segment_id':'SPARK-U01-ED002','source_reference':'post/edit-plan.json#/segments/1'})
+    c['edit_versions'][0]['segment_ids'].append('SPARK-U01-ED002')
+    r=dict(c['timing_records'][0]);r['timing_record_id']='SPARK-TM002';r['segment_id']='SPARK-U01-ED002';c['timing_records'].append(r)
+    assert errors(p,repository_root)
+
+def test_invalid_frame_component(repository_root):
+    p=approved_titles_plan();p['source_context']['timing_records'][0]['start_timecode']='00:00:00:24'
+    assert errors(p,repository_root)

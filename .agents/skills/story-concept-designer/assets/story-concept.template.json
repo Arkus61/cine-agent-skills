@@ -1,0 +1,25 @@
+{
+  "schema_version": "2.0",
+  "project_id": "PROJECT",
+  "project_format": "short",
+  "production_modes": ["live-action"],
+  "runtime_intent": "State the intended runtime or the provisional runtime decision.",
+  "audience_promise": "State the experience the concept intends to deliver.",
+  "premise": "State the situation, central pressure, and stakes without summarizing the plot.",
+  "logline": "State the concept in one concise sentence.",
+  "central_dramatic_question": "State the question the finished work can sustain.",
+  "themes": ["State one thematic tension."],
+  "genres": ["State one useful genre expectation."],
+  "tone": ["State one execution quality."],
+  "world_scope": "Bound the story arena, place, institution, or subject field.",
+  "protagonist_focus": "Name the primary person, group, place, process, or inquiry in focus.",
+  "supplied_constraints": [
+    {
+      "statement": "Copy one constraint supplied by the user or source without relabeling it.",
+      "source_reference": "Identify the exact user message, brief section, or supplied document location."
+    }
+  ],
+  "success_criteria": ["State one observable criterion for downstream development."],
+  "assumptions": ["State one genuinely provisional decision, not a supplied fact or constraint."],
+  "uncertainties": ["State one unresolved question, evidence gap, access gap, or confirmation need."]
+}

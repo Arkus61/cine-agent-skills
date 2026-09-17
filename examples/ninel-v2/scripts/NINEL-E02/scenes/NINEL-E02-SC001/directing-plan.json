@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "scene_id": "NINEL-E02-SC001",
+  "concept": "A waking mind tests whether the room is safe.",
+  "point_of_view": "Stay with Ninel's incomplete perception.",
+  "performance_notes": [
+    "Keep the awakening restrained."
+  ],
+  "visual_strategy": [
+    "Begin close and reveal space only with her attention."
+  ],
+  "rhythm": "Slow observation, then one clear turn.",
+  "assumptions": []
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "2.0",
+  "project_id": "PROJECT",
+  "characters": [
+    {
+      "character_id": "PROJECT-CH001",
+      "name": "Primary character",
+      "role": "State the character's story and ensemble function.",
+      "external_objective": "State the concrete result this character pursues.",
+      "internal_need": "State the deeper capacity, value, or relationship under test.",
+      "governing_tension": "State the viable pressures that pull the character in different directions.",
+      "agency": {
+        "capacity": "State what this character can decide or do that can affect an outcome.",
+        "constraints": ["State one real limit on the character's options."],
+        "choices_under_pressure": ["State a choice, its pressure, and its cost or consequence."]
+      },
+      "values": ["State one value demonstrated or tested by action."],
+      "relationships": [
+        {
+          "target_character_id": "PROJECT-CH002",
+          "dynamic": "State the current trust, power, obligation, knowledge, intimacy, or distance.",
+          "arc": "State how mutual choices can change the relationship."
+        }
+      ],
+      "arc_shape": "open",
+      "turning_event_ids": ["PROJECT-EV001"],
+      "behavioral_evidence": ["State one observable action tied to a declared event."],
+      "contradictions": ["Contrast a stated value or strategy with observable conduct under pressure."],
+      "endpoint": "State the observable endpoint supported by the supplied scope."
+    },
+    {
+      "character_id": "PROJECT-CH002",
+      "name": "Relationship character",
+      "role": "State a distinct story and ensemble function.",
+      "external_objective": "State this character's own concrete objective.",
+      "internal_need": "State the capacity, value, or relationship under test for this character.",
+      "governing_tension": "State the pressures this character must navigate.",
+      "agency": {
+        "capacity": "State how this character can affect events or another character's options.",
+        "constraints": ["State one real constraint."],
+        "choices_under_pressure": ["State one consequential choice under pressure."]
+      },
+      "values": ["State one value demonstrated or tested by action."],
+      "relationships": [
+        {
+          "target_character_id": "PROJECT-CH001",
+          "dynamic": "State this character's direction of the relationship.",
+          "arc": "State how this character's choices change the relationship."
+        }
+      ],
+      "arc_shape": "flat",
+      "turning_event_ids": ["PROJECT-EV001"],
+      "behavioral_evidence": ["State one observable action tied to a declared event."],
+      "contradictions": ["State a playable contradiction between value and behavior."],
+      "endpoint": "State this character's observable endpoint."
+    }
+  ],
+  "assumptions": [],
+  "uncertainties": []
+}

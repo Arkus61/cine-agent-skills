@@ -1,0 +1,7 @@
+{
+  "skill": "music-story-designer", "version": "2.0",
+  "cases": [
+    {"id": "horror-restraint", "project_id": "LANTERN", "brief": "Four edit segments include a protected whispered reveal. No locked edit, composer, recording, rights, approval, or delivery evidence is supplied.", "observables": ["Returns a schema-valid plan that spots all segments and makes at least one purposeful unscored decision.", "Protects the whisper through structured dialogue priority, proposes restraint without exact timing, and leaves recording, rights, and approval conditional."]},
+    {"id": "performance-led-commercial", "project_id": "PULSE", "brief": "A commercial contains preparation, a dialogue-free performance montage, a protected product line, and a logo card; no track, platform duration, rights, or approval evidence is supplied.", "observables": ["Maps modular rhythmic and branding intent to registered segments while leaving cutdown duration and source selection as assumptions.", "Protects the product line and does not claim a cleared track, artist attachment, final sting, recording, approval, or delivery."]}
+  ]
+}

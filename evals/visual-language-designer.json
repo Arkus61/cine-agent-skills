@@ -1,0 +1,39 @@
+{
+  "skill": "visual-language-designer",
+  "version": "1.0",
+  "cases": [
+    {
+      "id": "subjective-ambiguity",
+      "scene_id": "VIS01",
+      "brief": "A technician sees her reflection turn a fraction late, but the script never confirms whether the delay is real.",
+      "observables": [
+        "Produces one schema-valid visual-language-plan object.",
+        "Uses exact VIS01-V## rule IDs and resolves all VIS01-B## references.",
+        "Defines the point-of-view information boundary without explaining the ambiguity.",
+        "Defines aspect ratio, palette, contrast, texture, lens strategy, composition, and camera-height behavior.",
+        "Lists prohibited defaults and a motivated exception instead of unrelated attractive techniques.",
+        "Labels unconfirmed camera format, location, and reflection method as assumptions."
+      ]
+    },
+    {
+      "id": "dialogue-power-shift",
+      "scene_id": "VIS02",
+      "brief": "Across a desk, a witness begins intimidated and ends by revealing that she recorded the threat.",
+      "observables": [
+        "Maps visual rules to the intimidation, discovery, and reversal beats.",
+        "Uses composition and camera-height changes only when the power shift earns them.",
+        "Keeps lens behavior consistent enough for blocking and shot-list departments to apply."
+      ]
+    },
+    {
+      "id": "constrained-location",
+      "scene_id": "VIS03",
+      "brief": "Two performers cross in a narrow service corridor with fixed overhead practicals and no room for a dolly.",
+      "observables": [
+        "Treats the corridor, practicals, and lack of dolly space as supplied constraints.",
+        "Does not invent unavailable lenses, rigs, or lighting positions.",
+        "Separates visual-language rules from physical camera-movement instructions."
+      ]
+    }
+  ]
+}

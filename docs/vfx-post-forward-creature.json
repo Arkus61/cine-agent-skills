@@ -1,0 +1,57 @@
+{
+  "schema_version": "2.0",
+  "project_id": "WOOD",
+  "unit_id": "WOOD-U01",
+  "source_context": {
+    "preproduction_effects": [
+      {"effect_id": "WOOD-FX001", "source_reference": "production/vfx-plan.json#/effects/0"}
+    ],
+    "edit_segments": [
+      {"segment_id": "WOOD-U01-ED001", "source_reference": "post/edit-plan.json#/segments/0"}
+    ],
+    "media_versions": [],
+    "evidence": [],
+    "delivery_targets": []
+  },
+  "items": [
+    {
+      "item_id": "WOOD-U01-FX001",
+      "preproduction_effect_ids": ["WOOD-FX001"],
+      "edit_segment_ids": ["WOOD-U01-ED001"],
+      "purpose": "Integrate a creature crossing behind branches and making credible contact with wet ground in shot WOOD-U01-S01-SH001.",
+      "source_version_ids": [],
+      "current_output_version_id": null,
+      "workstreams": [
+        {"type": "plate", "applicability": "awaiting-input", "action": "Obtain and identify the source plate, creature source or render, cut frame range, pull range, handles, clean plates, and reference photography for WOOD-U01-S01-SH001.", "assumption": "No source versions, plates, frame metadata, handles, or supporting elements have been supplied."},
+        {"type": "tracking", "applicability": "awaiting-input", "action": "Obtain the artist's tracking version and data, then inspect the solve for branch parallax, ground plane, scale, drift, and lens distortion before accepting or continuing it.", "assumption": "The artist's verbal statement that tracking is done is not version-bound inspection evidence and does not establish completion."},
+        {"type": "rotoscoping", "applicability": "planned", "action": "Isolate foreground branches and any crossing foliage with temporally stable mattes so the creature passes at the intended depth.", "assumption": "Branch occlusion is required by the brief, but edge complexity, motion blur, and frame coverage await plate inspection."},
+        {"type": "compositing", "applicability": "planned", "action": "Integrate the creature with branch occlusion, scene light, atmospheric depth, ground contact, wet reflections, displaced water or mud cues, shadows, and consistent black levels.", "assumption": "Creature lighting, render passes, branch geometry, and the visible wet-ground response have not been supplied or inspected."},
+        {"type": "simulation", "applicability": "planned", "action": "Plan and review any required footfall interaction, splash, ripple, mud displacement, or secondary debris so contact timing and weight follow the creature performance.", "assumption": "Wet-ground contact is specified, but the creature performance, contact frames, surface behavior, and available simulation passes are unknown."},
+        {"type": "lens-integration", "applicability": "awaiting-input", "action": "Confirm camera and lens data or derive and verify lens distortion from the plate before final integration.", "assumption": "No camera or lens data and no inspected plate are available."},
+        {"type": "defocus-integration", "applicability": "awaiting-input", "action": "Match creature, branch mattes, contact effects, and reflections to plate depth of field and motion blur after plate inspection.", "assumption": "Focus behavior and motion-blur characteristics are unmeasured."},
+        {"type": "grain-integration", "applicability": "awaiting-input", "action": "Measure plate texture and grain, then apply a matching treatment to the creature and interaction elements.", "assumption": "No plate or grain sample has been supplied."},
+        {"type": "color-handoff", "applicability": "awaiting-input", "action": "Confirm source color encoding, viewing transform, outgoing version, mattes or utility passes, naming, and finishing target for tonight's handoff.", "assumption": "No color metadata or delivery target specification has been supplied."},
+        {"type": "final-verification", "applicability": "awaiting-input", "action": "Inspect a named output version in shot and edit context for tracking, branch occlusion, contact timing, weight, reflections, shadows, defocus, grain, color, and adjacent-cut continuity; then request version-specific approval and delivery verification.", "assumption": "No output version, media inspection, human approval, declared target, or delivery-verification evidence exists."}
+      ],
+      "dependency_ids": [],
+      "review_status": "awaiting-media",
+      "review_evidence_ids": [],
+      "delivery": {"status": "not-planned", "target_id": null, "evidence_ids": []},
+      "handoff_assumptions": [
+        "Tonight is the requested planning deadline, but readiness depends on receiving and inspecting the necessary sources and tracking deliverables.",
+        "No workstream can be marked complete from an unrecorded verbal report.",
+        "Delivery remains not planned until a target specification and candidate output version are declared."
+      ]
+    }
+  ],
+  "dependencies": [],
+  "assumptions": [
+    "The creature effect applies to shot WOOD-U01-S01-SH001 within edit segment WOOD-U01-ED001.",
+    "Branch occlusion and visible wet-ground contact are creative requirements from the supplied brief."
+  ],
+  "uncertainties": [
+    "Source and output versions, plates, camera and lens data, frame ranges, handles, color encoding, grain, and delivery target are unresolved.",
+    "The identity, version, method, and quality of the verbally reported tracking work are unknown.",
+    "The required wet-ground interaction passes and creature render passes are unknown."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "skill": "production-designer",
+  "version": "2.0",
+  "cases": [
+    {
+      "id": "ninel-medical-bay",
+      "project_id": "NINEL",
+      "brief": "Design the compact Ninel pilot medical bay for four supplied shots. The world supplies one autonomous chamber, black monitor, narrow slit, and an ambiguity rule for the reflection; construction, materials, reflection, and planet methods are unknown.",
+      "observables": [
+        "Produces one schema-valid production-design-plan object with exact unique positive NINEL-AS### identifiers and only declared fields.",
+        "Leads with the awakening, ambiguous reflection, and scale-reveal story functions before choosing shape, material, palette, scale, wear, graphics, cultural logic, or motifs.",
+        "Gives every concept and asset identity purpose plus supplied, inferred, proposed, or approved provenance with source references and basis; every asset design block separately carries purpose and provenance for its treatment.",
+        "Requires supplied source context, keeps each shot in its supplied scene, covers every supplied shot, and makes asset-shot declarations exactly match coverage asset links.",
+        "Labels every practical, digital, hybrid, or undetermined implementation as an assumption rather than prescribing an unconfirmed build, plate, playback, or VFX workflow.",
+        "Tracks chamber, frost, monitor, and reveal changes through asset-linked entry, exit, reset target, reset actions, and shot references without proving the anomaly's cause."
+      ]
+    },
+    {
+      "id": "contained-contemporary-room",
+      "project_id": "ROOM",
+      "brief": "A contemporary one-room drama has two people at a plain kitchen table during a difficult disclosure. The room, table, two chairs, one sealed envelope, three scene shots, and ordinary present-day setting are supplied. No symbolic decor, renovation, brand, vendor, build, or digital method is supplied.",
+      "observables": [
+        "Uses the minimum environment, furniture, and causal envelope assets needed for blocking, disclosure, coverage, and reset continuity.",
+        "Does not add symbolic clutter, invented family history, architecture, branded graphics, conspicuous palette motifs, deterioration, or speculative technology.",
+        "May keep motifs and graphics empty while still describing bounded form, material behavior, palette roles, scale, wear, and cultural logic.",
+        "Keeps the supplied room, furniture, and envelope identities distinct from separately proposed design treatments through nested design purpose and provenance.",
+        "Records the envelope's position, sealed/open state, transfer, and take reset against supplied shot IDs.",
+        "Does not name vendors, costs, schedules, procurement, products, or confirmed construction and digital methods."
+      ]
+    },
+    {
+      "id": "multi-scene-prop-progression",
+      "project_id": "TRACE",
+      "brief": "A supplied transit card appears intact in one scene, is visibly bent in the next, and fails at a gate in the third. World, scene, and shot inventories are supplied; fabrication material and effect method are not.",
+      "observables": [
+        "Uses one stable TRACE-AS### prop identity with distinct scene-linked continuity states rather than inventing unrelated replacements.",
+        "Explains how availability, recognition, handling, changed state, and gate failure create causal story progression.",
+        "Covers every supplied shot and records entry, exit, hold, and reset needs with declared asset references.",
+        "Keeps material composition, duplicate quantity, breakaway construction, gate interaction, and digital intervention as explicit assumptions or uncertainties.",
+        "Routes camera, art, continuity, sound, and effects needs through ID-linked dependencies without solving those departments' methods."
+      ]
+    }
+  ]
+}

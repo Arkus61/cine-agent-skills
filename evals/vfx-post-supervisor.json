@@ -1,0 +1,24 @@
+{
+  "skill": "vfx-post-supervisor",
+  "version": "2.0",
+  "cases": [
+    {
+      "id": "screen-replacement",
+      "project_id": "GLASS",
+      "brief": "Plan a moving-phone screen replacement with finger occlusions. A v07 filename and notes approving v06 are supplied, but no media is available for inspection.",
+      "observables": [
+        "Returns a schema-valid plan with distinct GLASS-FX### preproduction and GLASS-U01-FX### post IDs, concrete tracking, roto, compositing, lens, defocus, and grain actions.",
+        "Does not treat the filename as inspection or the v06 evidence as approval of v07; leaves exact pulls, handles, approval, and delivery conditional."
+      ]
+    },
+    {
+      "id": "creature-composite",
+      "project_id": "WOOD",
+      "brief": "Plan a creature composite spanning dependent body, contact-shadow, and atmosphere items. Tracking completion is reported verbally; no inspected output or delivery target is supplied.",
+      "observables": [
+        "Uses ordered acyclic dependencies with every edge bound back to its downstream item and gives each applicable workstream a concrete action.",
+        "Treats verbal completion as unresolved, does not mark a workstream complete or the item approved, and does not claim delivery readiness."
+      ]
+    }
+  ]
+}

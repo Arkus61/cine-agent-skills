@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "scene_id": "S01",
+  "assumptions": [
+    "Emergency, chamber, monitor, and observation-slit states can be controlled and repeated, but their practical construction is unconfirmed.",
+    "The planet source can remain concealed from the set and reflective surfaces until S01-B03.",
+    "Final fixtures, power, rigging, exposure, color values, glass treatment, and playback method require qualified department testing and approval."
+  ],
+  "lighting_philosophy": "Begin with restrained mechanical emergency and chamber sources, keep the reflection dependent on credible room light, and reserve the strongest color-and-value separation for the blue-green planet during Argo's pause.",
+  "setups": [
+    {
+      "setup_id": "S01-L01",
+      "beat_ids": ["S01-B01"],
+      "shot_ids": ["S01-SH001"],
+      "environment_time_basis": "Interior medical bay at scripted night; emergency and chamber systems are active while daylight and planet light remain absent.",
+      "motivation": "The bay's emergency system and chamber diagnostics provide the only opening illumination.",
+      "sources": ["motivated emergency pulse", "motivated chamber diagnostic source"],
+      "direction": "Carry the emergency pulse across the glass while a shallow top-side chamber source retains Ninel's eye and frost.",
+      "quality": "Restrained shaped ambience with a firmer periodic interruption and controlled glass highlights.",
+      "color_intent": "Low-saturation cold-neutral base with restrained emergency red; avoid horror-coded alternation.",
+      "exposure_contrast": "Retain eye, breath, frost, and diagnostic reflection while leaving the wider bay incomplete and preserving headroom for the planet.",
+      "control": ["Walk the dolly path for reflections and spill", "Keep the pulse mechanically repeatable rather than synchronized to breath", "Record approved source and frost states"],
+      "continuity": ["Match frost, glass, chamber level, shadow direction, and pulse state into S01-SH002"],
+      "safety": ["Qualified crew approve power, mounting, heat, access, glass treatment, pulse comfort, and performer clearance"],
+      "dramatic_purpose": "Let the room supply evidence while Ninel's chosen breath creates the story change."
+    },
+    {
+      "setup_id": "S01-L02",
+      "beat_ids": ["S01-B01", "S01-B02"],
+      "shot_ids": ["S01-SH002"],
+      "environment_time_basis": "The same interior and scripted moments later; the chamber is open, emergency state continues, and planet contribution remains withheld.",
+      "motivation": "Opening the chamber redirects its existing service light into the bay while the monitor only reflects established sources.",
+      "sources": ["opened-chamber service source", "continuing emergency pulse", "controlled bay ambience and negative fill"],
+      "direction": "Extend chamber light across Ninel's face and right hand while keeping the monitor a near-black secondary plane.",
+      "quality": "Controlled soft facial shaping with restrained specular definition on chamber edge and monitor.",
+      "color_intent": "Continue the cold-neutral chamber and subdued emergency-red relationship without introducing an anomaly color.",
+      "exposure_contrast": "Hold Ninel and the disputed reflection at readable but unequal values while keeping the observation slit concealed.",
+      "control": ["Prevent monitor and glass reflections from exposing crew", "Lock practical states for hero, reflection, and clean passes", "Keep planet-colored spill absent"],
+      "continuity": ["Carry the opening state from S01-SH001", "Match Ninel's head, hand, monitor, and source states for S01-SH003"],
+      "safety": ["Qualified crew approve chamber movement, pinch points, camera path, flags, cables, heat, and electrical work"],
+      "dramatic_purpose": "Establish credible geography and make the reflection disagreement possible without lighting it as proof."
+    },
+    {
+      "setup_id": "S01-L03",
+      "beat_ids": ["S01-B02"],
+      "shot_ids": ["S01-SH003"],
+      "environment_time_basis": "The same scripted night and monitor-facing position; only the already established interior sources may form reflections.",
+      "motivation": "The black monitor receives only controlled reflections from the established chamber and emergency sources.",
+      "sources": ["established chamber reflection", "established emergency reflection", "negative fill for surface control"],
+      "direction": "Preserve the seated eye-height reflection vector and enough oblique room light for the disputed face and edge spill.",
+      "quality": "Naturalistic reflected softness with no brightness jump, halo, or hard accent tied to the delay.",
+      "color_intent": "Match S01-L02; the anomaly introduces no new hue and the cleared monitor returns to near-black.",
+      "exposure_contrast": "Keep reflected eyes at the threshold of legibility and match density across hero, anomaly, and clean passes.",
+      "control": ["Lock monitor angle, surface, head mark, negative fill, and source state", "Capture matched monitor and reflection passes without an effect-light cue"],
+      "continuity": ["Match head angle, monitor reflectivity, chamber level, and pulse state from S01-SH002"],
+      "safety": ["Keep monitor, flags, support, cables, and reflection controls clear of performer movement and egress"],
+      "dramatic_purpose": "Offer fragile evidence using existing light so the monitor never gains objective authority."
+    },
+    {
+      "setup_id": "S01-L04",
+      "beat_ids": ["S01-B03"],
+      "shot_ids": ["S01-SH004"],
+      "environment_time_basis": "The same bay moments later as ship rotation reveals the blue-green planet through the observation slit for the first time.",
+      "motivation": "Ship rotation brings reflected blue-green planet light through the observation slit while established bay systems continue.",
+      "sources": ["continuing chamber and emergency sources", "motivated planet image in the slit", "controlled extension of planet bounce"],
+      "direction": "Grow the planet contribution from behind and slit-side as Ninel turns, while established chamber ambience keeps her face accessible.",
+      "quality": "Broad gradual planet ambience with a defined slit edge; keep the world contained rather than washing the bay.",
+      "color_intent": "Let blue-green separate gradually from the neutral base and reserve its fullest approved relationship for the final answer.",
+      "exposure_contrast": "Retain Ninel's eyes, readable bay blacks, slit containment, and planet detail in one frame without spending the reveal early.",
+      "control": ["Conceal planet image and spill until Argo's pause", "Coordinate performer, camera, light, ship, planet, and dialogue cues", "Walk the complete arc for reflections, flare, clearance, and changing contrast"],
+      "continuity": ["Carry the chamber and emergency relationship forward", "Planet reaches its final mark before the word failure", "Match face, slit, source, and cue states for resets"],
+      "safety": ["Qualified lighting, electrical, rigging, playback, camera, and safety personnel approve implementation and rehearse moving paths with clear stop communication"],
+      "dramatic_purpose": "Let the world claim the frame's withheld space while Ninel remains the anchor of an enlarged uncertainty."
+    }
+  ]
+}

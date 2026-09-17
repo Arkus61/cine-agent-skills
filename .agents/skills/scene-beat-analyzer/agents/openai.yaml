@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scene Beat Analyzer"
+  short_description: "Map dramatic beats and turning points"
+  default_prompt: "Use $scene-beat-analyzer to break this scene into playable dramatic beats."

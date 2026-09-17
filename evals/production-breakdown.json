@@ -1,0 +1,38 @@
+{
+  "skill": "production-breakdown",
+  "version": "1.0",
+  "cases": [
+    {
+      "id": "reflective-medical-bay",
+      "scene_id": "BREAK01",
+      "brief": "Break down a compact chamber scene with frost, a reflection pass, voice-only dialogue, camera movement, and a planet reveal.",
+      "observables": [
+        "Produces one schema-valid production-breakdown with exact BREAK01-PD### IDs.",
+        "Traces every item to source basis and at least one resolved beat or shot.",
+        "Separates requirements from unconfirmed implementation.",
+        "Records continuity/reset and qualitative risk for each item.",
+        "Does not invent cost, price, vendor, hire, shoot date, or schedule fields."
+      ]
+    },
+    {
+      "id": "department-overlap",
+      "scene_id": "BREAK02",
+      "brief": "A rain effect touches costume, makeup, sound, camera, lighting, safety, and practical effects.",
+      "observables": [
+        "Routes each independently resettable result to a normalized category.",
+        "Names collaboration without duplicating one vague requirement across departments.",
+        "Rates safety-sensitive and hard-to-reset work for priority review."
+      ]
+    },
+    {
+      "id": "missing-method",
+      "scene_id": "BREAK03",
+      "brief": "The script requires a wall to open, but no practical or visual-effects method is approved.",
+      "observables": [
+        "Preserves the observable requirement.",
+        "Routes the unresolved method to assumptions or an open-question item.",
+        "Does not invent machinery, vendor, price, or schedule."
+      ]
+    }
+  ]
+}
