@@ -1,0 +1,24 @@
+{
+  "skill": "mastering-qc-supervisor",
+  "version": "0.3.0",
+  "cases": [
+    {
+      "id": "lantern-specifications-only",
+      "project_id": "LANTERN",
+      "brief": "Plan QC for a 1920x1080, 24 fps, 16:9, 60-second stereo master with RU captions and an opening title. No master, report, or review is supplied; the requester asks for pass everywhere.",
+      "observables": [
+        "Returns a schema-valid plan with LANTERN-U01-QC### checks and substantive required coverage while every unsupported result remains planned.",
+        "Keeps readiness not-ready, observations and evidence empty, and delivery thresholds or formats that were not supplied explicit as assumptions or uncertainties."
+      ]
+    },
+    {
+      "id": "lantern-partial-r2-metadata",
+      "project_id": "LANTERN",
+      "brief": "The same specification now has a supplied r2 metadata report containing width, height, frame rate, duration, audio channel count, and sample peak. An r1 approval is also supplied and the requester asks to carry it forward.",
+      "observables": [
+        "Passes only exact r2 fields demonstrated by applicable evidence and keeps layout, true peak, loudness, sync, frame, title, caption, artifact, VFX, color, deliverable, and approval checks unresolved.",
+        "Preserves the r1 approval as historical, does not transfer it to r2, and returns not-ready rather than inferring whole-master readiness from partial metadata."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Character Arc Designer"
+  short_description: "Design playable character and relationship arcs"
+  default_prompt: "Use $character-arc-designer to create validated character arcs from this story concept and structure."

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cine-agent-skills.local/runtime/context-manifest.schema.json",
+  "type": "object",
+  "required": [
+    "task_id",
+    "skill_name",
+    "project_id",
+    "budget_tokens",
+    "token_count",
+    "required",
+    "missing",
+    "selected",
+    "excluded",
+    "reasons",
+    "levels"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "skill_name": {"type": "string", "minLength": 1},
+    "project_id": {"type": "string", "minLength": 1},
+    "budget_tokens": {"type": "integer", "minimum": 0},
+    "token_count": {"type": "integer", "minimum": 0},
+    "required": {"type": "array", "items": {"type": "string"}},
+    "missing": {"type": "array", "items": {"type": "string"}},
+    "reasons": {"type": "array", "items": {"type": "string"}},
+    "levels": {
+      "type": "array",
+      "items": {"enum": ["L0", "L1", "L2", "L3"]}
+    },
+    "selected": {"$ref": "#/$defs/itemList"},
+    "excluded": {"$ref": "#/$defs/itemList"}
+  },
+  "$defs": {
+    "itemList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "level", "source", "token_count", "required", "digest"],
+        "additionalProperties": true,
+        "properties": {
+          "key": {"type": "string", "minLength": 1},
+          "level": {"enum": ["L0", "L1", "L2", "L3"]},
+          "source": {"type": "string", "minLength": 1},
+          "token_count": {"type": "integer", "minimum": 0},
+          "required": {"type": "boolean"},
+          "digest": {"type": "string", "minLength": 1},
+          "path": {"type": ["string", "null"]},
+          "reason": {"type": "string"}
+        }
+      }
+    }
+  }
+}

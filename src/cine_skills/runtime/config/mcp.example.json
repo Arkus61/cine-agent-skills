@@ -1,0 +1,13 @@
+{
+  "transport": "streamable-http",
+  "url": "http://127.0.0.1:8000/mcp",
+  "allowed_tools": [
+    "scene.read"
+  ],
+  "required_tools": [
+    "scene.read"
+  ],
+  "timeout_seconds": 30,
+  "max_output_bytes": 65536,
+  "state_dir": ".film-os-state/mcp"
+}

@@ -1,0 +1,16 @@
+{
+  "source_commit": "a7d2e0a8babe862d854be03b0e46acfb6092e3ca",
+  "files": {
+    ".agents/skills/titles-captions-designer/SKILL.md": "60a32ebbce73f275d45578d3e15f29ad950615d606ded45cf349a6d19d9fad6e",
+    ".agents/skills/titles-captions-designer/assets/titles-captions-plan.template.json": "34086b749668c5cbbb2ec6cc47f24d4b6d00681f8eb117a4c75a9169638ad1b0",
+    ".agents/skills/titles-captions-designer/references/captions-readability-accessibility.md": "3b0683c5c4588835c0563990a70ff6d52188a8caee545d411053a3e895474c7f",
+    ".agents/skills/titles-captions-designer/references/title-design-timing.md": "9128e317087278aa9fc634752de79746fc0ff4ec339146d15b000706acfec254",
+    "docs/mastering-baseline-2026-09-08.md": "c1151266be2abc7347ccb4fffc19070289bcdaeb8fc5dbf92871bc0c24d5fb59",
+    "docs/mastering-task-7-brief.md": "d981b5bf3c48a88a543e53a6a915e9b88057b145a03c340bc3d9bfd39475bd9c",
+    "docs/titles-task-6-review.md": "c7b2e40f93e072422d302330a24a4d0fe1a40169d2dcfc82ce335605b041ec89",
+    "schemas/titles-captions-plan.schema.json": "6429d67c7c04ae32005c78a81332c86896882ac645adcd43793e09e92021fe72",
+    "src/cine_skills/titles_captions.py": "fd9e2935784faef1cd9dfc23d432153c7bcb7ba90f57205b2d9a1cb5cab4f08b",
+    "tests/test_titles_captions.py": "bae1bb17bac9517213aef3667d0aec546347cbc738a4881e40838ff200fcf1ea",
+    "uv.lock": "0b0b1d3c73b95ac7e48e935c35aa5801a6d0adeed0be269beb4d9f2cd166e180"
+  }
+}

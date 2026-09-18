@@ -1,0 +1,19 @@
+{
+  "schema_version": "0.3.0",
+  "scene_id": "SCENE01",
+  "assumptions": [
+    "Take-level records and approved department values will be added during photography."
+  ],
+  "continuity_strategy": "Track story-critical action, geography, and department states across coverage and matched passes.",
+  "items": [
+    {
+      "continuity_id": "SCENE01-CN001",
+      "shot_ids": ["SCENE01-SH001", "SCENE01-SH002"],
+      "category": "action",
+      "tracked_state": "The performer's right hand remains on the object through the turn.",
+      "required_transition": "The insert begins from the hand and head state established in the wider shot.",
+      "reset_instruction": "Record the approved hand, shoulder, head, and object states and restore them before matched coverage.",
+      "severity": "critical"
+    }
+  ]
+}

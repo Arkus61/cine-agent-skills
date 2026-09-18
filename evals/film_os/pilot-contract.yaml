@@ -1,0 +1,43 @@
+system_version: "0.3.0"
+contract_id: film-os-ninel-pilot-v1
+status: blocked
+recipe: src/cine_skills/runtime/recipes/ninel-blocking.yaml
+scope: >-
+  A disposable two-shot blocking and camera pilot. This contract is a
+  preparation record only until the configured Blender MCP is inspected.
+
+acceptance_checks:
+  - id: source-package
+    status: pending
+    evidence_required: source artifact digests and stable shot IDs
+    on_missing: block
+  - id: mcp-identity
+    status: blocked
+    evidence_required: server name, package/version, protocol and transport receipt
+    on_missing: block
+  - id: numeric-scene-contract
+    status: blocked
+    evidence_required: reviewed units, axis, scale, frame rate, frame range and transforms
+    on_missing: block
+  - id: disposable-output
+    status: pending
+    evidence_required: pre-operation copy and output path outside source package
+    on_missing: block
+  - id: read-only-observation
+    status: blocked
+    evidence_required: observed scene/camera metadata and bounded read-only receipt
+    on_missing: block
+  - id: selective-revision
+    status: blocked
+    evidence_required: one-camera revision with unchanged independent branch digests
+    on_missing: block
+  - id: resume
+    status: blocked
+    evidence_required: interruption and resume receipt with no duplicate external action
+    on_missing: block
+
+not_claimed:
+  - live Blender evidence
+  - creative approval
+  - finished media or render quality
+  - arbitrary Python execution through MCP

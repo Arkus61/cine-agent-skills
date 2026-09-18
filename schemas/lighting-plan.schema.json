@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cine-agent-skills/lighting-plan.schema.json",
+  "title": "Lighting Plan",
+  "$defs": {
+    "beat_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+-B[0-9]{2,}(?![\\s\\S])"},
+    "shot_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+-SH[0-9]{3,}(?![\\s\\S])"},
+    "setup_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+-L[0-9]{2,}(?![\\s\\S])"},
+    "non_empty_string": {"type": "string", "minLength": 1},
+    "non_empty_strings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "scene_id", "assumptions", "lighting_philosophy", "setups"],
+  "properties": {
+    "schema_version": {"const": "0.3.0"},
+    "scene_id": {"$ref": "#/$defs/non_empty_string"},
+    "assumptions": {"type": "array", "items": {"$ref": "#/$defs/non_empty_string"}},
+    "lighting_philosophy": {"$ref": "#/$defs/non_empty_string"},
+    "setups": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "setup_id",
+          "beat_ids",
+          "shot_ids",
+          "environment_time_basis",
+          "motivation",
+          "sources",
+          "direction",
+          "quality",
+          "color_intent",
+          "exposure_contrast",
+          "control",
+          "continuity",
+          "safety",
+          "dramatic_purpose"
+        ],
+        "properties": {
+          "setup_id": {"$ref": "#/$defs/setup_id"},
+          "beat_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"$ref": "#/$defs/beat_id"},
+            "uniqueItems": true
+          },
+          "shot_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"$ref": "#/$defs/shot_id"},
+            "uniqueItems": true
+          },
+          "environment_time_basis": {"$ref": "#/$defs/non_empty_string"},
+          "motivation": {"$ref": "#/$defs/non_empty_string"},
+          "sources": {"$ref": "#/$defs/non_empty_strings"},
+          "direction": {"$ref": "#/$defs/non_empty_string"},
+          "quality": {"$ref": "#/$defs/non_empty_string"},
+          "color_intent": {"$ref": "#/$defs/non_empty_string"},
+          "exposure_contrast": {"$ref": "#/$defs/non_empty_string"},
+          "control": {"$ref": "#/$defs/non_empty_strings"},
+          "continuity": {"$ref": "#/$defs/non_empty_strings"},
+          "safety": {"$ref": "#/$defs/non_empty_strings"},
+          "dramatic_purpose": {"$ref": "#/$defs/non_empty_string"}
+        }
+      }
+    }
+  }
+}

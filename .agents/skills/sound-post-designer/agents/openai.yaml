@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sound Post Designer"
+  short_description: "Plan source-bound dialogue, design, mix, and delivery"
+  default_prompt: "Use $sound-post-designer to create a validated sound post plan from this edit plan and supplied audio evidence."

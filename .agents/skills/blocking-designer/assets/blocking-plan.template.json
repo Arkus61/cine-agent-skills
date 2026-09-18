@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.3.0",
+  "scene_id": "S01",
+  "space": "",
+  "axis": "",
+  "positions": [],
+  "moves": [
+    {
+      "beat_id": "S01-B01",
+      "character": "",
+      "start": "",
+      "end": "",
+      "motivation": ""
+    }
+  ],
+  "continuity_rules": [],
+  "assumptions": []
+}

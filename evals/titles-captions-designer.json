@@ -1,0 +1,24 @@
+{
+  "skill": "titles-captions-designer",
+  "version": "0.3.0",
+  "cases": [
+    {
+      "id": "vertical-short-no-media",
+      "project_id": "SPARK",
+      "brief": "Plan Russian dialogue captions and a phone-ring description for a vertical short. The screenplay source is supplied, but no media, locked timeline, delivery specification, or review exists.",
+      "observables": [
+        "Returns a schema-valid plan with SPARK-U01-TT### items, source-bound Russian dialogue, a distinct nonspeech proposal, and substantive vertical placement, typography, contrast, line-break, and delivery assumptions.",
+        "Uses creative timing intent without timestamp-shaped placeholders and claims no performed speech, safe-area specification, inspection, or approval."
+      ]
+    },
+    {
+      "id": "widescreen-feature-titles",
+      "project_id": "QUIET",
+      "brief": "Plan opening titles and end-credit scope for a 2.39:1 feature. The title is supplied, but names, billing order, organizations, rights language, locked edit, and clearance are not.",
+      "observables": [
+        "Returns a schema-valid plan with QUIET-U01-TT### items and useful hierarchy, rhythm, typography, changing-background contrast, and widescreen placement decisions.",
+        "Preserves unknown credits and clearance as unresolved, keeps exact timing absent, and does not invent names, legal text, specifications, review, or approval."
+      ]
+    }
+  ]
+}

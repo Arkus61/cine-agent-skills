@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.3.0",
+  "project_id": "EXAMPLE",
+  "unit_id": "EXAMPLE-U01",
+  "source_context": {
+    "edit_segments": [{"segment_id": "EXAMPLE-U01-ED001", "source_reference": "post/edit-plan.json#/segments/0"}],
+    "vfx_items": [],
+    "media_versions": [],
+    "metadata_records": [],
+    "evidence": []
+  },
+  "color_management": {
+    "input_policy": "Identify each source encoding from applicable metadata; do not infer it from filenames.",
+    "working_space": {"value": "scene-referred wide-gamut working space", "state": "proposed"},
+    "output_intent": "Choose an output transform after the display target and viewing conditions are declared."
+  },
+  "display_targets": [],
+  "items": [{
+    "item_id": "EXAMPLE-U01-CL001",
+    "edit_segment_ids": ["EXAMPLE-U01-ED001"],
+    "vfx_item_ids": [],
+    "source_version_ids": [],
+    "graded_version_id": null,
+    "observed_input": {"state": "uninspected", "source_version_id": null, "findings": [], "evidence_ids": []},
+    "desired_look": "Create restrained warmth while preserving neutral anchors and source credibility.",
+    "input_encoding": {"value": "unknown", "state": "unknown", "metadata_record_ids": []},
+    "balance_and_matching": "Balance neutrals before matching faces, environment anchors, shadow density, and highlight behavior.",
+    "exposure_and_contrast": "Retain shadow texture and shape highlight roll-off after image inspection.",
+    "palette": {
+      "intent": "Keep warm and cool regions distinct rather than applying a uniform wash.",
+      "protected_colors": ["Protect recognition-critical complexion, costume, product, or character colors."],
+      "selective_treatments": ["Use local shaping only after inspection establishes its need and boundaries."]
+    },
+    "vfx_handoff": "Verify camera and VFX render encodings independently and review integration on the exact output version.",
+    "display_target_ids": [],
+    "trim_assumptions": ["Display-specific numeric trims remain pending a declared target and review."],
+    "match_state": "planned",
+    "evidence_ids": [],
+    "approval": {"state": "not-requested", "evidence_ids": []}
+  }],
+  "story_arc": "Develop the palette in step with the unit's emotional progression while retaining continuity anchors.",
+  "assumptions": ["No media, metadata, measurement, or display specification was supplied."],
+  "uncertainties": ["Input encoding, measured image state, and final display intent remain unknown."]
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.3.0",
+  "scene_id": "S01",
+  "movement_philosophy": "",
+  "assumptions": [],
+  "moves": [
+    {
+      "move_id": "S01-M01",
+      "beat_ids": ["S01-B01"],
+      "name_ru": "",
+      "name_en": "",
+      "movement": "",
+      "direction": "",
+      "speed": "",
+      "framing": "",
+      "start": "",
+      "end": "",
+      "purpose": "",
+      "ai_video_prompt": ""
+    }
+  ]
+}

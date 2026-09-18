@@ -1,0 +1,85 @@
+{
+  "schema_version": "2.0",
+  "project_id": "ESTUARY",
+  "unit_id": "ESTUARY-U01",
+  "source_context": {
+    "edit_segments": [
+      {"segment_id": "ESTUARY-U01-ED001", "source_reference": "docs/titles-forward-inputs.md#widescreen — supplied opening-landscape segment"},
+      {"segment_id": "ESTUARY-U01-ED002", "source_reference": "docs/titles-forward-inputs.md#widescreen — supplied end-credit segment"}
+    ],
+    "edit_versions": [],
+    "text_sources": [
+      {"text_source_id": "ESTUARY-TS001", "kind": "supplied-title", "text": "После прилива", "source_reference": "Director-supplied Russian title in docs/titles-forward-inputs.md#widescreen"},
+      {"text_source_id": "ESTUARY-TS002", "kind": "editorial-proposal", "text": "After the Tide", "source_reference": "Unapproved English translation proposal derived from ESTUARY-TS001"},
+      {"text_source_id": "ESTUARY-TS003", "kind": "editorial-proposal", "text": "[END CREDITS AWAIT SUPPLIED BILLING AND LEGAL TEXT]", "source_reference": "Structural placeholder prompted by docs/titles-forward-inputs.md#widescreen; not a name, credit, clearance, or legal claim"}
+    ],
+    "timing_records": [],
+    "evidence": []
+  },
+  "items": [
+    {
+      "item_id": "ESTUARY-U01-TT001",
+      "type": "main-title",
+      "edit_segment_id": "ESTUARY-U01-ED001",
+      "text": {"content": "После прилива", "content_kind": "title", "state": "supplied", "text_source_id": "ESTUARY-TS001"},
+      "placement": {"region": "Optically centered within the reviewed active 2.39:1 image, adjusted around primary landscape detail and confirmed display boundaries.", "safe_area_state": "proposed", "exception_rationale": null},
+      "timing": {"mode": "creative-intent", "intent": "Let the landscape establish, hold for a calm read, and release near a natural transition; exact bounds require a locked output timeline.", "timing_record_id": null},
+      "typography_intent": "Restrained white Russian title, quiet weight, generous spacing, and measured scale; typeface selection and licensing remain unresolved.",
+      "readability": {"contrast_strategy": "Review the whole interval over the changing landscape and add minimal tonal support only when needed.", "line_break_intent": "Keep the short Russian title on one line if actual-picture review confirms legibility.", "reading_speed_target": null, "line_length_target": null, "specification_reference": null},
+      "language": "ru",
+      "speaker_identification": {"state": "not-applicable", "value": null},
+      "sound_description": {"state": "not-applicable", "value": null},
+      "presentation": {"mode": "burn-in", "assumption": "Designed-title burn-in is provisional until delivery requirements are supplied."},
+      "revision": "r001",
+      "approval": {"state": "pending", "evidence_ids": []}
+    },
+    {
+      "item_id": "ESTUARY-U01-TT002",
+      "type": "main-title",
+      "edit_segment_id": "ESTUARY-U01-ED001",
+      "text": {"content": "After the Tide", "content_kind": "title", "state": "proposed", "text_source_id": "ESTUARY-TS002"},
+      "placement": {"region": "A secondary title line associated with the Russian title, preserving Russian-first hierarchy and avoiding reviewed landscape detail.", "safe_area_state": "proposed", "exception_rationale": null},
+      "timing": {"mode": "creative-intent", "intent": "Present with or just after the Russian title as a subordinate translation proposal; decide the relationship in review and derive exact bounds from the locked output timeline.", "timing_record_id": null},
+      "typography_intent": "Use the same restrained family at smaller scale or lighter weight, clearly subordinate to the Russian title.",
+      "readability": {"contrast_strategy": "Test throughout the changing landscape and maintain separation from both picture detail and the Russian title.", "line_break_intent": "Keep the proposed English title on one line if actual-picture review permits.", "reading_speed_target": null, "line_length_target": null, "specification_reference": null},
+      "language": "en",
+      "speaker_identification": {"state": "not-applicable", "value": null},
+      "sound_description": {"state": "not-applicable", "value": null},
+      "presentation": {"mode": "burn-in", "assumption": "Designed-title burn-in remains provisional pending translation approval and delivery requirements."},
+      "revision": "r001",
+      "approval": {"state": "pending", "evidence_ids": []}
+    },
+    {
+      "item_id": "ESTUARY-U01-TT003",
+      "type": "credit",
+      "edit_segment_id": "ESTUARY-U01-ED002",
+      "text": {"content": "[END CREDITS AWAIT SUPPLIED BILLING AND LEGAL TEXT]", "content_kind": "credit", "state": "proposed", "text_source_id": "ESTUARY-TS003"},
+      "placement": {"region": "Proposed 2.39:1 credit grid or centered-card zone; final margins, density, and background treatment require actual-picture and delivery review.", "safe_area_state": "proposed", "exception_rationale": null},
+      "timing": {"mode": "creative-intent", "intent": "Group supplied credits into readable cards or a restrained roll; exact order, density, dwell, and timing await authoritative billing and a locked output timeline.", "timing_record_id": null},
+      "typography_intent": "Plan a Russian-first credit structure with names prominent and roles subordinate; do not populate names, roles, marks, or legal language until authoritative text is supplied.",
+      "readability": {"contrast_strategy": "Test every future card or roll interval and use a controlled backing when picture variation compromises legibility.", "line_break_intent": "Keep each supplied name with its role, break long lines semantically, and add cards instead of compressing dense text.", "reading_speed_target": null, "line_length_target": null, "specification_reference": null},
+      "language": "ru/en",
+      "speaker_identification": {"state": "not-applicable", "value": null},
+      "sound_description": {"state": "not-applicable", "value": null},
+      "presentation": {"mode": "burn-in", "assumption": "Picture-credit burn-in is provisional until the delivery specification is supplied."},
+      "revision": "r001",
+      "approval": {"state": "pending", "evidence_ids": []}
+    }
+  ],
+  "hierarchy_and_rhythm": "Lead with the supplied Russian title and treat the English wording as an explicitly unapproved subordinate proposal. Keep motion quiet over the landscape. Build the end-credit sequence only after authoritative billing and legal content arrive, distributing verified entries into readable groupings.",
+  "credits_scope": {"state": "unresolved", "entries": [], "clearance_note": "Participant names, roles, billing order, companies, marks, rights holders, copyright notice, legal text, and clearance evidence were not supplied; none are invented or marked cleared."},
+  "assumptions": [
+    "The brief is supplied provenance, not inspected media.",
+    "The intended 2.39:1 format informs creative planning but is not a delivery specification.",
+    "Restrained white typography and burn-in presentation are creative assumptions pending review.",
+    "All placement guidance is proposed; no universal safe area is asserted."
+  ],
+  "uncertainties": [
+    "The proposed English title requires translation and editorial approval.",
+    "No picture is available to verify composition, contrast, existing graphics, or the end-credit background.",
+    "No locked edit, frame rate, output-timeline timing record, or lock decision supports exact timing.",
+    "Authoritative participant, billing, rights-holder, copyright, legal, mark, and clearance information remains missing.",
+    "No exact current-item review and human-approval evidence exists, so every item remains pending.",
+    "Handoff requires picture and locked-edit metadata, delivery requirements, licensed typography, approved translation, authoritative credit/legal text, and item-bound review and approval evidence."
+  ]
+}

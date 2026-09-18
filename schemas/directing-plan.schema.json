@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cine-agent-skills/directing-plan.schema.json",
+  "title": "Directing Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "scene_id", "concept", "point_of_view", "performance_notes", "visual_strategy", "rhythm", "assumptions"],
+  "properties": {
+    "schema_version": {"const": "0.3.0"},
+    "scene_id": {"type": "string", "minLength": 1},
+    "concept": {"type": "string", "minLength": 1},
+    "point_of_view": {"type": "string", "minLength": 1},
+    "performance_notes": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "visual_strategy": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "rhythm": {"type": "string", "minLength": 1},
+    "assumptions": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Camera Movement Designer"
+  short_description: "Design motivated cinematic camera moves"
+  default_prompt: "Use $camera-movement-designer to design camera movement for this blocked scene."

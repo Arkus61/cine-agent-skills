@@ -1,0 +1,77 @@
+{
+  "schema_version": "0.3.0",
+  "project_id": "PROJECT",
+  "candidate_models": [
+    {
+      "name": "Candidate A",
+      "fit": "Explain its fit against observable concept evidence.",
+      "benefits": ["State one project-specific benefit."],
+      "risks": ["State one project-specific risk."]
+    },
+    {
+      "name": "Candidate B",
+      "fit": "Explain its different fit against the same criteria.",
+      "benefits": ["State one project-specific benefit."],
+      "risks": ["State one project-specific risk."]
+    }
+  ],
+  "selection_criteria": [
+    {
+      "criterion": "Name an observable format, genre, event, or audience-promise need.",
+      "brief_evidence": "Cite the concept field that establishes the need.",
+      "priority": "high"
+    }
+  ],
+  "selected_model": "Candidate A",
+  "hybrid_components": [],
+  "selection_rationale": "Explain why the selection fits better than the other candidate.",
+  "intentional_deviations": ["State one convention intentionally changed, omitted, or relocated and why."],
+  "plotlines": [
+    {
+      "plotline_id": "PROJECT-PL01",
+      "title": "Primary change track",
+      "function": "State the track's structural job.",
+      "progression": "State how pressure, information, or relationship changes across it."
+    }
+  ],
+  "sequences": [
+    {
+      "sequence_id": "PROJECT-SQ01",
+      "title": "Opening movement",
+      "purpose": "State the coherent event movement.",
+      "plotline_ids": ["PROJECT-PL01"],
+      "event_ids": ["PROJECT-EV001", "PROJECT-EV002"]
+    }
+  ],
+  "events": [
+    {
+      "event_id": "PROJECT-EV001",
+      "order": 1,
+      "sequence_id": "PROJECT-SQ01",
+      "plotline_ids": ["PROJECT-PL01"],
+      "description": "State the observable event.",
+      "story_function": "setup",
+      "causal_change": "State what becomes different because this occurs.",
+      "retention_effect": "State the resulting expectation, information, rhythm, or emotion."
+    },
+    {
+      "event_id": "PROJECT-EV002",
+      "order": 2,
+      "sequence_id": "PROJECT-SQ01",
+      "plotline_ids": ["PROJECT-PL01"],
+      "description": "State the later observable event.",
+      "story_function": "payoff",
+      "causal_change": "State how it transforms or answers the setup.",
+      "retention_effect": "State the earned closure or enlarged expectation."
+    }
+  ],
+  "setup_payoffs": [
+    {
+      "setup_event_id": "PROJECT-EV001",
+      "payoff_event_id": "PROJECT-EV002",
+      "relationship": "Explain how the payoff transforms or answers the setup."
+    }
+  ],
+  "assumptions": [],
+  "uncertainties": []
+}

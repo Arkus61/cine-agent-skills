@@ -1,0 +1,4 @@
+interface:
+  display_name: "Story Concept Designer"
+  short_description: "Define a format-aware story concept contract"
+  default_prompt: "Use $story-concept-designer to turn this brief into a validated story concept."

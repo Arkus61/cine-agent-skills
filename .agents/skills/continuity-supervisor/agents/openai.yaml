@@ -1,0 +1,4 @@
+interface:
+  display_name: "Continuity Supervisor"
+  short_description: "Track shot continuity states and required resets"
+  default_prompt: "Use $continuity-supervisor to create a continuity and reset plan for this scene."

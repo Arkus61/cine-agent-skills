@@ -1,0 +1,21 @@
+version: 1
+levels:
+  L0: kernel
+  L1: project
+  L2: task-and-selected-skill
+  L3: exact-references-and-skill-resources
+default_budget_tokens: 6000
+default_statuses:
+  ready: context is complete within budget
+  needs-context: required evidence is missing or exceeds budget
+  blocked: request, skill, or project authority is invalid
+pilot_tasks:
+  camera-movement-designer:
+    required_project_refs: [scene-beats, directing-plan, blocking-plan]
+    optional_refs: [shot-list, continuity-plan]
+  shot-list-builder:
+    required_project_refs: [scene-beats, directing-plan, blocking-plan, camera-movement-plan]
+    optional_refs: [continuity-plan]
+  storyboard-designer:
+    required_project_refs: [shot-list, camera-movement-plan]
+    optional_refs: [lighting-plan, sound-plan, continuity-plan]

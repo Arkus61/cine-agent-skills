@@ -1,0 +1,133 @@
+{
+  "schema_version": "2.0",
+  "project_id": "DAWN",
+  "unit_id": "DAWN-U01",
+  "source_context": {
+    "edit_segments": [
+      {
+        "segment_id": "DAWN-U01-ED001",
+        "source_reference": "post/edit-plan.json#/segments/0"
+      },
+      {
+        "segment_id": "DAWN-U01-ED002",
+        "source_reference": "post/edit-plan.json#/segments/1"
+      }
+    ],
+    "vfx_items": [],
+    "media_versions": [],
+    "metadata_records": [],
+    "evidence": []
+  },
+  "color_management": {
+    "input_policy": "Treat every source input encoding as unknown until metadata binds the input-encoding field and declared value to the exact source version and segment; a filename containing Log is not verification. Normalize only after each encoding is established.",
+    "working_space": {
+      "value": "scene-referred wide-gamut working space suitable for daylight balancing and reversible look development",
+      "state": "proposed"
+    },
+    "output_intent": "Select an output transform only after a constrained display target and viewing environment are supplied; conduct display review on the exact graded output version before any trim or approval claim."
+  },
+  "display_targets": [],
+  "items": [
+    {
+      "item_id": "DAWN-U01-CL001",
+      "edit_segment_ids": [
+        "DAWN-U01-ED001"
+      ],
+      "vfx_item_ids": [],
+      "source_version_ids": [],
+      "graded_version_id": null,
+      "observed_input": {
+        "state": "uninspected",
+        "source_version_id": null,
+        "findings": [],
+        "evidence_ids": []
+      },
+      "desired_look": "Shape the sunlit exterior as warm, open, and welcoming, with credible daylight color, natural skin, gentle highlight behavior, and retained shadow detail rather than a uniform amber wash.",
+      "input_encoding": {
+        "value": "unknown",
+        "state": "unknown",
+        "metadata_record_ids": []
+      },
+      "balance_and_matching": "After encoding identification and normalization, inspect imagery and scopes to balance neutral and skin anchors. Use the face, environmental neutrals, shadow density, and highlight behavior as continuity anchors into DAWN-U01-ED002 while preserving the motivated difference between direct sun and open shade.",
+      "exposure_and_contrast": "After inspection, shape an inviting contrast curve that keeps the exterior luminous without clipping highlight texture and keeps shadow information visible; all numeric corrections remain conditional on the image and scopes.",
+      "palette": {
+        "intent": "Favor believable sun warmth in highlights and lit surfaces while allowing cooler, clean shadows to maintain depth and daylight separation.",
+        "protected_colors": [
+          "Protect complexion hue, variation, and texture as the primary recognition-critical color.",
+          "Protect established costume and environmental colors from a global warm cast."
+        ],
+        "selective_treatments": [
+          "If inspection shows excessive warmth on skin, isolate only as needed to restore natural complexion without cooling the whole exterior.",
+          "If bright sun areas dominate, use local highlight shaping only after checking edges, texture, gamut, noise, and temporal stability."
+        ]
+      },
+      "vfx_handoff": "No VFX items are supplied. If VFX material is later introduced, register it, establish its render encoding independently, and review edges, premultiplication, grain, black level, highlight response, and protected colors on the exact graded version.",
+      "display_target_ids": [],
+      "trim_assumptions": [
+        "No display-specific trim is authorized until a destination and viewing environment are declared and the exact graded output is reviewed."
+      ],
+      "match_state": "awaiting-media",
+      "evidence_ids": [],
+      "approval": {
+        "state": "not-requested",
+        "evidence_ids": []
+      }
+    },
+    {
+      "item_id": "DAWN-U01-CL002",
+      "edit_segment_ids": [
+        "DAWN-U01-ED002"
+      ],
+      "vfx_item_ids": [],
+      "source_version_ids": [],
+      "graded_version_id": null,
+      "observed_input": {
+        "state": "uninspected",
+        "source_version_id": null,
+        "findings": [],
+        "evidence_ids": []
+      },
+      "desired_look": "Keep the face in open shade natural, dimensional, and welcoming, carrying forward the exterior's warmth through complexion and surrounding bounce while retaining the cooler character of shade and readable shadow detail.",
+      "input_encoding": {
+        "value": "unknown",
+        "state": "unknown",
+        "metadata_record_ids": []
+      },
+      "balance_and_matching": "After encoding identification and normalization, inspect the face, neutrals, background, shadow density, and highlight response. Match recognition-critical skin and the perceived daylight world to DAWN-U01-CL001, but retain the motivated cooler and softer open-shade relationship rather than forcing identical temperature or contrast.",
+      "exposure_and_contrast": "After inspection, prioritize facial readability and gentle tonal separation without flattening the shade; retain texture in the darkest facial and background regions and avoid unsupported exposure offsets.",
+      "palette": {
+        "intent": "Maintain a warm, natural complexion against subtly cooler open-shade surroundings so the emotional warmth continues while the lighting change remains credible.",
+        "protected_colors": [
+          "Protect complexion hue, variation, texture, and separation from the shaded environment.",
+          "Protect established costume and environmental colors used as continuity anchors across the cut."
+        ],
+        "selective_treatments": [
+          "If inspection reveals a cool or green facial bias, use the narrowest stable correction needed after neutral balance rather than applying a global warming wash.",
+          "Any face or background isolation must be checked for edges, texture, noise, gamut, and temporal stability."
+        ]
+      },
+      "vfx_handoff": "No VFX items are supplied. If VFX material is later introduced, register it, establish its render encoding independently, and review edges, premultiplication, grain, black level, highlight response, and protected colors on the exact graded version.",
+      "display_target_ids": [],
+      "trim_assumptions": [
+        "No display-specific trim is authorized until a destination and viewing environment are declared and the exact graded output is reviewed."
+      ],
+      "match_state": "awaiting-media",
+      "evidence_ids": [],
+      "approval": {
+        "state": "not-requested",
+        "evidence_ids": []
+      }
+    }
+  ],
+  "story_arc": "The unit moves from an open, sunlit welcome into closer human presence in open shade. Warmth remains emotionally continuous through credible complexion and daylight bounce, while the environment becomes subtly cooler and softer. Natural skin, environmental anchors, and retained shadow detail stay stable; the direct-sun versus shade difference remains motivated and is reviewed in sequence for unintended hue drift, saturation jumps, or lost detail.",
+  "assumptions": [
+    "No media, media versions, metadata records, VFX items, display specifications, inspection evidence, graded output, or human approval evidence were supplied.",
+    "The producer's statement that a filename containing Log verifies the input is treated as an unsupported assertion, not metadata or inspection evidence.",
+    "Creative choices are proposals to be evaluated after source encoding identification and image inspection."
+  ],
+  "uncertainties": [
+    "The input encoding, range, camera model, baked-look status, and source-version identity for both segments are unknown.",
+    "The actual exposure, white balance, complexion rendering, highlight headroom, shadow condition, noise, gamut behavior, and inter-segment match are uninspected.",
+    "The working space, output display standard, viewing environment, graded output versions, display trims, and approval status remain unresolved."
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lighting Designer"
+  short_description: "Plan motivated lighting for every scene shot"
+  default_prompt: "Use $lighting-designer to create a motivated lighting plan for this scene."

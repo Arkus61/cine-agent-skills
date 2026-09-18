@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cine-agent-skills/story-structure.schema.json",
+  "title": "Story Structure",
+  "$defs": {
+    "non_empty_string": {"type": "string", "minLength": 1},
+    "unique_non_empty_strings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "fit", "benefits", "risks"],
+      "properties": {
+        "name": {"$ref": "#/$defs/non_empty_string"},
+        "fit": {"$ref": "#/$defs/non_empty_string"},
+        "benefits": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "risks": {"$ref": "#/$defs/unique_non_empty_strings"}
+      }
+    },
+    "criterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["criterion", "brief_evidence", "priority"],
+      "properties": {
+        "criterion": {"$ref": "#/$defs/non_empty_string"},
+        "brief_evidence": {"$ref": "#/$defs/non_empty_string"},
+        "priority": {"enum": ["high", "medium", "low"]}
+      }
+    },
+    "hybrid_component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_model", "component", "purpose", "compatibility"],
+      "properties": {
+        "source_model": {"$ref": "#/$defs/non_empty_string"},
+        "component": {"$ref": "#/$defs/non_empty_string"},
+        "purpose": {"$ref": "#/$defs/non_empty_string"},
+        "compatibility": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "plotline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["plotline_id", "title", "function", "progression"],
+      "properties": {
+        "plotline_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-PL(?:0[1-9]|[1-9][0-9])$"},
+        "title": {"$ref": "#/$defs/non_empty_string"},
+        "function": {"$ref": "#/$defs/non_empty_string"},
+        "progression": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "sequence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sequence_id", "title", "purpose", "plotline_ids", "event_ids"],
+      "properties": {
+        "sequence_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-SQ(?:0[1-9]|[1-9][0-9])$"},
+        "title": {"$ref": "#/$defs/non_empty_string"},
+        "purpose": {"$ref": "#/$defs/non_empty_string"},
+        "plotline_ids": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "event_ids": {"$ref": "#/$defs/unique_non_empty_strings"}
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event_id", "order", "sequence_id", "plotline_ids", "description",
+        "story_function", "causal_change", "retention_effect"
+      ],
+      "properties": {
+        "event_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-EV(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"},
+        "order": {"type": "integer", "minimum": 1},
+        "sequence_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-SQ(?:0[1-9]|[1-9][0-9])$"},
+        "plotline_ids": {"$ref": "#/$defs/unique_non_empty_strings"},
+        "description": {"$ref": "#/$defs/non_empty_string"},
+        "story_function": {"$ref": "#/$defs/non_empty_string"},
+        "causal_change": {"$ref": "#/$defs/non_empty_string"},
+        "retention_effect": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "setup_payoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["setup_event_id", "payoff_event_id", "relationship"],
+      "properties": {
+        "setup_event_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-EV(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"},
+        "payoff_event_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-EV(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"},
+        "relationship": {"$ref": "#/$defs/non_empty_string"}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "project_id", "candidate_models", "selection_criteria",
+    "selected_model", "hybrid_components", "selection_rationale",
+    "intentional_deviations", "plotlines", "sequences", "events",
+    "setup_payoffs", "assumptions", "uncertainties"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.3.0"},
+    "project_id": {"$ref": "#/$defs/non_empty_string"},
+    "candidate_models": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/candidate"},
+      "uniqueItems": true
+    },
+    "selection_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/criterion"},
+      "uniqueItems": true
+    },
+    "selected_model": {"$ref": "#/$defs/non_empty_string"},
+    "hybrid_components": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/hybrid_component"},
+      "uniqueItems": true
+    },
+    "selection_rationale": {"$ref": "#/$defs/non_empty_string"},
+    "intentional_deviations": {"$ref": "#/$defs/unique_non_empty_strings"},
+    "plotlines": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/plotline"}
+    },
+    "sequences": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/sequence"}
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/event"}
+    },
+    "setup_payoffs": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/setup_payoff"},
+      "uniqueItems": true
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    },
+    "uncertainties": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    }
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Color Grading Designer"
+  short_description: "Plan source-bound color, matching, looks, and review"
+  default_prompt: "Use $color-grading-designer to create a validated color plan from this edit plan and supplied color evidence."

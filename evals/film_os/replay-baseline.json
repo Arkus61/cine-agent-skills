@@ -1,0 +1,70 @@
+{
+  "cases": [
+    {
+      "case_id": "task-capsule-one-scene",
+      "cost": null,
+      "input_tokens": 83,
+      "output_tokens": 71,
+      "raw_output_digest": "f12f11afb4bf4a21c8e160c65268d4ba1b17260ee656712f0e091fa7064be337",
+      "status": "passed",
+      "usage_source": "estimate",
+      "validator_errors": []
+    },
+    {
+      "case_id": "camera-revision",
+      "cost": null,
+      "input_tokens": 83,
+      "output_tokens": 82,
+      "raw_output_digest": "c33ab9ebe9273a0185ca6faa6dc58ebc6973b748bcfd25f0eb1af66c5b8368d3",
+      "status": "passed",
+      "usage_source": "estimate",
+      "validator_errors": []
+    },
+    {
+      "case_id": "character-look-two-scenes",
+      "cost": null,
+      "input_tokens": 93,
+      "output_tokens": 86,
+      "raw_output_digest": "605b3d624796d9d3ed1703872b0fff5458905e124c9d5aaae7b7c69c625f76b0",
+      "status": "passed",
+      "usage_source": "estimate",
+      "validator_errors": []
+    },
+    {
+      "case_id": "unchanged-rerun",
+      "cost": null,
+      "input_tokens": 86,
+      "output_tokens": 65,
+      "raw_output_digest": "32f286d0c5447a8f2435c8f2d3952669085628c25fffcc5eb6777b89a69d4e05",
+      "status": "passed",
+      "usage_source": "estimate",
+      "validator_errors": []
+    },
+    {
+      "case_id": "interrupted-run",
+      "cost": null,
+      "input_tokens": 86,
+      "output_tokens": 78,
+      "raw_output_digest": "07f63813db4511c5e3694910cdce324b51ca704e34156fde35fca78a7af9ba07",
+      "status": "passed",
+      "usage_source": "estimate",
+      "validator_errors": []
+    },
+    {
+      "case_id": "missing-media",
+      "cost": null,
+      "input_tokens": 84,
+      "output_tokens": 78,
+      "raw_output_digest": "bbbd6c6ded9bf751e1fe5b79a2fd3ddad643077884278bd0d26a9eccbf5ffae7",
+      "status": "passed",
+      "usage_source": "estimate",
+      "validator_errors": []
+    }
+  ],
+  "mode": "replay-estimate",
+  "provider_calls": 0,
+  "real_model_calls": 0,
+  "suite": "film-os-modernization",
+  "system_version": "0.3.0",
+  "token_savings_claimed": false
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Screenplay Reviser"
+  short_description: "Diagnose scripts with canon-safe revision plans"
+  default_prompt: "Use $screenplay-reviser to diagnose this screenplay and create an evidence-linked revision plan without rewriting it."

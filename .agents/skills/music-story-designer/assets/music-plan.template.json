@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.3.0",
+  "project_id": "PROJECT",
+  "unit_id": "PROJECT-U01",
+  "project_format": "short",
+  "source_context": {
+    "edit_plan_reference": "post/PROJECT-U01/edit-plan.json",
+    "edit_segments": [
+      {"segment_id": "PROJECT-U01-ED001", "source_reference": "post/PROJECT-U01/edit-plan.json#/segments/0"},
+      {"segment_id": "PROJECT-U01-ED002", "source_reference": "post/PROJECT-U01/edit-plan.json#/segments/1"}
+    ],
+    "characters": [],
+    "themes": [],
+    "protected_dialogue": [],
+    "locked_duration_evidence": [],
+    "review_rights_evidence": []
+  },
+  "spotting": [
+    {"spotting_id": "PROJECT-U01-MU001", "edit_segment_id": "PROJECT-U01-ED001", "decision": "scored", "narrative_purpose": "State the narrative change the proposed music supports.", "cue_id": "PROJECT-U01-MU001"},
+    {"spotting_id": "PROJECT-U01-MU002", "edit_segment_id": "PROJECT-U01-ED002", "decision": "unscored", "narrative_purpose": "Leave the consequence exposed until a supplied edit establishes another need."}
+  ],
+  "cues": [
+    {
+      "cue_id": "PROJECT-U01-MU001",
+      "edit_segment_ids": ["PROJECT-U01-ED001"],
+      "thematic_role": "Propose a story function rather than an observed musical fact.",
+      "leitmotif_bindings": [],
+      "entry_exit_logic": {"entry": "Enter only after the stated picture event earns the shift.", "exit": "Yield before speech or silence should carry the next turn."},
+      "energy_curve": "Proposed low-to-moderate energy with space for narrative attention.",
+      "instrumentation_intent": "Proposed original instrumental palette; no artist imitation or existing-song copying.",
+      "diegetic_status": "source-assumption",
+      "transition": "State the intended handoff to room tone, source sound, or the next cue.",
+      "silence_alternative": "Use silence if score competes with story-critical image or speech.",
+      "source_assumption": "Composer, source, rights, recording, and approval remain awaiting input.",
+      "state": "planned",
+      "approval_boundary": "Requires human editorial and music approval before any commitment."
+    }
+  ],
+  "assumptions": ["Timing, source music, rights, and approval inputs are not supplied by this template."],
+  "uncertainties": ["Conform all exact entries, exits, and duration claims only after picture-locked evidence is registered."]
+}

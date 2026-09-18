@@ -1,0 +1,4 @@
+interface:
+  display_name: "Film Editor"
+  short_description: "Plan source-bound edits with evidence-aware decisions"
+  default_prompt: "Use $film-editor to create a validated edit plan from these screenplay, shot-plan, production, and reviewed-media materials."

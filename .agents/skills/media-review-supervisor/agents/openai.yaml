@@ -1,0 +1,4 @@
+interface:
+  display_name: "Media Review Supervisor"
+  short_description: "Review supplied media with applicable evidence"
+  default_prompt: "Use $media-review-supervisor to create an evidence-based media review report from these supplied media and prompt materials."

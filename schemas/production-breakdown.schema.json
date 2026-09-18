@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cine-agent-skills/production-breakdown.schema.json",
+  "title": "Production Breakdown",
+  "$defs": {
+    "item_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+-PD[0-9]{3,}(?![\\s\\S])"},
+    "beat_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+-B[0-9]{2,}(?![\\s\\S])"},
+    "shot_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+-SH[0-9]{3,}(?![\\s\\S])"},
+    "non_empty_string": {"type": "string", "minLength": 1},
+    "string_array": {"type": "array", "items": {"$ref": "#/$defs/non_empty_string"}}
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "scene_id", "assumptions", "breakdown_scope", "items"],
+  "properties": {
+    "schema_version": {"const": "0.3.0"},
+    "scene_id": {"$ref": "#/$defs/non_empty_string"},
+    "assumptions": {"$ref": "#/$defs/string_array"},
+    "breakdown_scope": {"$ref": "#/$defs/non_empty_string"},
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "item_id",
+          "category",
+          "source_basis",
+          "beat_ids",
+          "shot_ids",
+          "requirement",
+          "continuity_reset",
+          "assumptions",
+          "risk_level"
+        ],
+        "properties": {
+          "item_id": {"$ref": "#/$defs/item_id"},
+          "category": {
+            "enum": [
+              "cast",
+              "location-set",
+              "props",
+              "wardrobe",
+              "hair-makeup",
+              "camera-grip",
+              "lighting",
+              "sound",
+              "practical-effects",
+              "visual-effects",
+              "art",
+              "safety",
+              "open-question"
+            ]
+          },
+          "source_basis": {"$ref": "#/$defs/non_empty_string"},
+          "beat_ids": {
+            "type": "array",
+            "items": {"$ref": "#/$defs/beat_id"},
+            "uniqueItems": true
+          },
+          "shot_ids": {
+            "type": "array",
+            "items": {"$ref": "#/$defs/shot_id"},
+            "uniqueItems": true
+          },
+          "requirement": {"$ref": "#/$defs/non_empty_string"},
+          "continuity_reset": {"$ref": "#/$defs/non_empty_string"},
+          "assumptions": {"$ref": "#/$defs/string_array"},
+          "risk_level": {"enum": ["low", "medium", "high"]}
+        },
+        "anyOf": [
+          {"properties": {"beat_ids": {"minItems": 1}}},
+          {"properties": {"shot_ids": {"minItems": 1}}}
+        ]
+      }
+    }
+  }
+}

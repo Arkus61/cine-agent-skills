@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.3.0",
+  "scene_id": "SCENE01",
+  "assumptions": [
+    "Location acoustics, practical noise, playback, and final capture methods require a sound survey."
+  ],
+  "sound_philosophy": "Keep the audience aligned with the character's changing access to the space.",
+  "cues": [
+    {
+      "cue_id": "SCENE01-A01",
+      "beat_ids": ["SCENE01-B01"],
+      "shot_ids": ["SCENE01-SH001"],
+      "category": "ambience",
+      "source": "The room's motivated environmental bed",
+      "perspective": "Close and restricted until the character enters the wider space",
+      "timing": "Establish at the opening and widen with the scripted threshold crossing",
+      "requirement": "Capture matched room states and protect clean dialogue through the move",
+      "dramatic_purpose": "Let access to the acoustic space track the character's agency"
+    }
+  ]
+}

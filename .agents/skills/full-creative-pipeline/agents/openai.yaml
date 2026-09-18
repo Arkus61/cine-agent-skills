@@ -1,0 +1,4 @@
+interface:
+  display_name: "Full Creative Pipeline"
+  short_description: "Orchestrate validated story production and post handoffs"
+  default_prompt: "Use $full-creative-pipeline to coordinate a format-selected creative project from story through postproduction."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shot List Builder"
+  short_description: "Turn scene plans into shootable coverage"
+  default_prompt: "Use $shot-list-builder to create a production-ready shot list for this scene."
