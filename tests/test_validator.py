@@ -26,12 +26,12 @@ def write(path: Path, content: str) -> None:
     path.write_text(content, encoding="utf-8")
 
 
-def test_release_version_is_2_0_0() -> None:
-    assert __version__ == "2.0.0"
-    assert version("cine-agent-skills") == "2.0.0"
+def test_release_version_is_0_3_0() -> None:
+    assert __version__ == "0.3.0"
+    assert version("cine-agent-skills") == "0.3.0"
 
 
-def test_v1_schema_catalog_is_preserved(repository_root: Path) -> None:
+def test_scene_schema_catalog_is_present(repository_root: Path) -> None:
     actual = {
         path.name for path in (repository_root / "schemas").glob("*.schema.json")
     }

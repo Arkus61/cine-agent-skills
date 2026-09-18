@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.3.0",
+  "release_version": "0.3.0",
+  "project_id": "NINEL",
+  "layer": "story",
+  "profile": "story",
+  "artifacts": [
+    {
+      "filename": "story-concept.json",
+      "schema_name": "story-concept",
+      "schema_version": "0.3.0",
+      "dependency_order": 1
+    },
+    {
+      "filename": "story-structure.json",
+      "schema_name": "story-structure",
+      "schema_version": "0.3.0",
+      "dependency_order": 2
+    },
+    {
+      "filename": "character-arcs.json",
+      "schema_name": "character-arcs",
+      "schema_version": "0.3.0",
+      "dependency_order": 3
+    },
+    {
+      "filename": "world-bible.json",
+      "schema_name": "world-bible",
+      "schema_version": "0.3.0",
+      "dependency_order": 4
+    },
+    {
+      "filename": "season-arc.json",
+      "schema_name": "season-arc",
+      "schema_version": "0.3.0",
+      "dependency_order": 5
+    },
+    {
+      "filename": "story-manifest.json",
+      "schema_name": "layer-manifest",
+      "schema_version": "0.3.0",
+      "dependency_order": 6
+    }
+  ],
+  "validation_status": "valid",
+  "unresolved_questions": []
+}

@@ -24,7 +24,7 @@ Create each selected script unit in this exact order:
 5. `scenes`
 6. `script-manifest.json`
 
-The story layer uses `profile: story-v2` and `layer: story`. Each script manifest also uses `profile: story-v2`, with `layer: script`. A layer manifest contains only its exact inventory; it is not evidence that the files passed validation.
+The story layer uses `profile: story` and `layer: story`. Each script manifest also uses `profile: story`, with `layer: script`. A layer manifest contains only its exact inventory; it is not evidence that the files passed validation.
 
 ## Specialist dependency graph
 
@@ -36,7 +36,7 @@ The story layer uses `profile: story-v2` and `layer: story`. Each script manifes
 - A unit outline consumes the complete valid story layer and, for a series, one selected declared episode.
 - The screenplay and metadata are one paired output that consumes the valid unit outline and applicable story artifacts.
 - The revision plan consumes the actual screenplay, metadata, outline, and applicable story artifacts.
-- Each full-v1 scene package consumes the corresponding metadata mapping and actual screenplay scene.
+- Each scene-full scene package consumes the corresponding metadata mapping and actual screenplay scene.
 - Each manifest depends on every entry it inventories. The project index depends on the valid story package and every selected valid script package.
 
 ## Validation evidence
@@ -47,9 +47,9 @@ After assembling the story manifest, run exactly this command shape from the rep
 .venv/bin/cine-skills validate-story <project-root>/story --project-format <format> --format json
 ```
 
-Require exit code 0 and a current JSON result with command `validate-story`, profile `story-v2`, `valid: true`, and no errors. If the executable is unavailable, use `.venv/bin/python -m cine_skills` with the same arguments and record the substitution.
+Require exit code 0 and a current JSON result with command `validate-story`, profile `story`, `valid: true`, and no errors. If the executable is unavailable, use `.venv/bin/python -m cine_skills` with the same arguments and record the substitution.
 
-After every selected script package exists, call `validate_script_package` for each exact unit directory and `build_story_index` for the story and scripts directories. Record the executed command or code invocation, exit code, and complete returned diagnostics. These validators inspect package membership, schemas, Fountain, metadata, full-v1 scene packages, episode or unit inventory, and cross-artifact references.
+After every selected script package exists, call `validate_script_package` for each exact unit directory and `build_story_index` for the story and scripts directories. Record the executed command or code invocation, exit code, and complete returned diagnostics. These validators inspect package membership, schemas, Fountain, metadata, scene-full scene packages, episode or unit inventory, and cross-artifact references.
 
 Never declare the screenplay package valid without inspecting `screenplay.fountain` and comparing the real summary with `screenplay-metadata.json`. Never infer success from file presence, specialist prose, a manifest field, a previous run, or validation of the story layer alone.
 
@@ -88,4 +88,4 @@ Return one handoff containing:
 - assumptions and unresolved questions;
 - the allowed status.
 
-Use `ready-for-preproduction` only when the current story validation, every script validation, Fountain/metadata comparison, every embedded full-v1 scene validation, and the project index all pass. Use `blocked` for any failure, absent evidence, missing approval, unresolved authorship decision, or unavailable validator. A blocked handoff states what can be decided next; it does not fabricate validation.
+Use `ready-for-preproduction` only when the current story validation, every script validation, Fountain/metadata comparison, every embedded scene-full scene validation, and the project index all pass. Use `blocked` for any failure, absent evidence, missing approval, unresolved authorship decision, or unavailable validator. A blocked handoff states what can be decided next; it does not fabricate validation.

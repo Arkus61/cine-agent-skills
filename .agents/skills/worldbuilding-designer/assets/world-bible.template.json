@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0",
+  "schema_version": "0.3.0",
   "project_id": "PROJECT",
   "scope": {
     "story_boundary": "State the smallest world boundary that can affect the supplied story.",

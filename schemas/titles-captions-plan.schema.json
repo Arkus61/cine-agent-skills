@@ -27,7 +27,7 @@
     "item": {"type": "object", "additionalProperties": false, "required": ["item_id", "type", "edit_segment_id", "text", "placement", "timing", "typography_intent", "readability", "language", "speaker_identification", "sound_description", "presentation", "revision", "approval"], "properties": {"item_id": {"$ref": "#/$defs/id"}, "type": {"enum": ["main-title", "intertitle", "lower-third", "credit", "subtitle", "accessibility-caption"]}, "edit_segment_id": {"$ref": "#/$defs/id"}, "text": {"$ref": "#/$defs/contentState"}, "placement": {"$ref": "#/$defs/placement"}, "timing": {"$ref": "#/$defs/timing"}, "typography_intent": {"$ref": "#/$defs/text"}, "readability": {"$ref": "#/$defs/readability"}, "language": {"$ref": "#/$defs/nullableText"}, "speaker_identification": {"$ref": "#/$defs/annotation"}, "sound_description": {"$ref": "#/$defs/annotation"}, "presentation": {"$ref": "#/$defs/presentation"}, "revision": {"type": "string", "pattern": "^r[0-9]{3,}$"}, "approval": {"$ref": "#/$defs/approval"}}}
   },
   "properties": {
-    "schema_version": {"const": "2.0"},
+    "schema_version": {"const": "0.3.0"},
     "project_id": {"$ref": "#/$defs/id"},
     "unit_id": {"$ref": "#/$defs/id"},
     "source_context": {"type": "object", "additionalProperties": false, "required": ["edit_segments", "edit_versions", "text_sources", "timing_records", "evidence"], "properties": {"edit_segments": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/segment"}}, "edit_versions": {"type": "array", "items": {"$ref": "#/$defs/editVersion"}}, "text_sources": {"type": "array", "items": {"$ref": "#/$defs/textSource"}}, "timing_records": {"type": "array", "items": {"$ref": "#/$defs/timingRecord"}}, "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}}}},

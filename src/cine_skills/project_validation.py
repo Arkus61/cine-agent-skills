@@ -1,4 +1,4 @@
-"""Shared validation primitives for v2 creative-layer packages."""
+"""Shared validation primitives for creative-layer packages."""
 
 from __future__ import annotations
 
@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from cine_skills.artifacts import load_json_object, validate_artifact
+from cine_skills import __version__
 from cine_skills.project_contracts import ArtifactContract
 
 
@@ -64,7 +65,7 @@ def validate_layer_manifest(
         {
             "filename": contract.filename,
             "schema_name": contract.schema_name,
-            "schema_version": "2.0",
+            "schema_version": __version__,
             "dependency_order": contract.dependency_order,
         }
         for contract in sorted(contracts, key=lambda item: item.dependency_order)

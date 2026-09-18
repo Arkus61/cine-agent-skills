@@ -46,7 +46,7 @@
     "uncertainties"
   ],
   "properties": {
-    "schema_version": {"const": "2.0"},
+    "schema_version": {"const": "0.3.0"},
     "project_id": {"$ref": "#/$defs/non_empty_string"},
     "project_format": {
       "enum": [

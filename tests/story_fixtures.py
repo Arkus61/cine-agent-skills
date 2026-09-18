@@ -4,7 +4,7 @@ import copy
 import json
 from pathlib import Path
 
-from tests.v1_fixtures import write_full_v1_package
+from tests.scene_full_fixtures import write_scene_full_package
 
 
 STORY_ARTIFACTS = (
@@ -21,23 +21,23 @@ SCRIPT_ARTIFACTS = (
     ("screenplay.fountain", "fountain"),
     ("screenplay-metadata.json", "screenplay-metadata"),
     ("script-revision-plan.json", "script-revision-plan"),
-    ("scenes", "full-v1"),
+    ("scenes", "scene-full"),
     ("script-manifest.json", "layer-manifest"),
 )
 
 
 def _manifest(project_id: str, layer: str, artifacts: tuple[tuple[str, str], ...]):
     return {
-        "schema_version": "2.0",
-        "release_version": "2.0.0",
+        "schema_version": "0.3.0",
+        "release_version": "0.3.0",
         "project_id": project_id,
         "layer": layer,
-        "profile": "story-v2",
+        "profile": "story",
         "artifacts": [
             {
                 "filename": filename,
                 "schema_name": schema_name,
-                "schema_version": "2.0",
+                "schema_version": "0.3.0",
                 "dependency_order": order,
             }
             for order, (filename, schema_name) in enumerate(artifacts, start=1)
@@ -49,7 +49,7 @@ def _manifest(project_id: str, layer: str, artifacts: tuple[tuple[str, str], ...
 
 STORY_PAYLOADS: dict[str, object] = {
     "story-concept.json": {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "EMBER",
         "project_format": "series",
         "production_modes": ["live-action"],
@@ -74,7 +74,7 @@ STORY_PAYLOADS: dict[str, object] = {
         "uncertainties": ["The signal source is intentionally unresolved."],
     },
     "story-structure.json": {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "EMBER",
         "candidate_models": [
             {"name": "Three Act", "fit": "Causal turns.", "benefits": ["Clear escalation."], "risks": ["Can feel rigid."]},
@@ -99,7 +99,7 @@ STORY_PAYLOADS: dict[str, object] = {
         "uncertainties": [],
     },
     "character-arcs.json": {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "EMBER",
         "characters": [
             {
@@ -117,7 +117,7 @@ STORY_PAYLOADS: dict[str, object] = {
         "uncertainties": [],
     },
     "world-bible.json": {
-        "schema_version": "2.0", "project_id": "EMBER",
+        "schema_version": "0.3.0", "project_id": "EMBER",
         "scope": {"story_boundary": "The salt road checkpoint.", "scales": ["local"], "excluded_or_unknown": []},
         "locations": [{"location_id": "EMBER-LO001", "name": "Salt checkpoint", "scale": "Roadside", "story_function": "Blocks passage.", "material_conditions": ["Salt wind corrodes metal."], "access_constraints": ["A keeper controls the gate."], "canon_status": "canon", "provenance": "supplied", "basis": "The brief supplies the checkpoint."}],
         "factions": [], "institutions": [], "history": [], "cultures": [],
@@ -142,7 +142,7 @@ def _episode(episode_id: str, number: int, event_id: str, next_id: str | None):
 
 
 STORY_PAYLOADS["season-arc.json"] = {
-    "schema_version": "2.0", "project_id": "EMBER", "project_format": "series", "season_premise": "A courier traces an answering road signal.", "season_dramatic_question": "What is beneath the road?", "arc_strategy": "Two linked signal events.",
+    "schema_version": "0.3.0", "project_id": "EMBER", "project_format": "series", "season_premise": "A courier traces an answering road signal.", "season_dramatic_question": "What is beneath the road?", "arc_strategy": "Two linked signal events.",
     "source_plotline_ids": ["EMBER-PL01"], "source_event_ids": ["EMBER-EV001", "EMBER-EV002"], "source_character_ids": ["EMBER-CH001", "EMBER-CH002"],
     "episodes": [_episode("EMBER-E01", 1, "EMBER-EV001", "EMBER-E02"), _episode("EMBER-E02", 2, "EMBER-EV002", None)],
     "character_progression": [{"character_id": "EMBER-CH001", "episode_ids": ["EMBER-E01", "EMBER-E02"], "event_ids": ["EMBER-EV001", "EMBER-EV002"], "progression": "Mara moves from concealment to disclosure.", "endpoint": "She shares the warning."}],
@@ -159,7 +159,7 @@ STORY_PAYLOADS["story-manifest.json"] = _manifest("EMBER", "story", STORY_ARTIFA
 def _unit_outline(unit_id: str, event_id: str, final: bool):
     scene_id = f"{unit_id}-SC001"
     return {
-        "schema_version": "2.0", "project_id": "EMBER", "project_format": "series", "unit_id": unit_id, "runtime_seconds": 600, "runtime_basis": "Ten-minute episode.", "unit_objective": "Resolve one signal event.", "structural_model": "Serial mystery", "source_event_ids": [event_id], "source_plotline_ids": ["EMBER-PL01"],
+        "schema_version": "0.3.0", "project_id": "EMBER", "project_format": "series", "unit_id": unit_id, "runtime_seconds": 600, "runtime_basis": "Ten-minute episode.", "unit_objective": "Resolve one signal event.", "structural_model": "Serial mystery", "source_event_ids": [event_id], "source_plotline_ids": ["EMBER-PL01"],
         "opening_hook": {"scene_id": scene_id, "promise": "A pulse interrupts the road.", "function": "Orient the episode."},
         "scenes": [{"scene_id": scene_id, "scene_index": 1, "start_seconds": 0, "end_seconds": 600, "title": "Checkpoint", "summary": "Mara confronts the signal.", "story_function": "Advance the mystery.", "event_ids": [event_id], "plotline_ids": ["EMBER-PL01"], "evidence_status": "not-applicable", "retention_function": "Resolve the episode question."}],
         "event_coverage": [{"event_id": event_id, "scene_ids": [scene_id], "outcome": "The event changes the road."}],
@@ -174,7 +174,7 @@ def _unit_outline(unit_id: str, event_id: str, final: bool):
 def _revision(unit_id: str, scene_id: str):
     source_id = f"{scene_id}-A01"
     return {
-        "schema_version": "2.0", "project_id": "EMBER", "unit_id": unit_id, "draft_version": "first", "project_format": "series", "revision_scope": "One scene pass.", "source_element_ids": [source_id], "approved_constraints": [],
+        "schema_version": "0.3.0", "project_id": "EMBER", "unit_id": unit_id, "draft_version": "first", "project_format": "series", "revision_scope": "One scene pass.", "source_element_ids": [source_id], "approved_constraints": [],
         "diagnosis_items": [{"diagnosis_id": f"{unit_id}-RV001", "category": "pace", "affected_ids": [source_id], "evidence": [{"source_id": source_id, "observation": "The turn arrives late.", "effect": "The outcome is compressed."}], "diagnosis": "The scene delays its turn.", "priority": 1, "dependency_impact": "scene-engine", "dependency_rationale": "Scene order controls the turn.", "proposed_change": "Move the turn earlier.", "change_target_ids": [source_id], "execution_mode": "executable-change", "preserved_constraint_ids": [], "preservation_checks": [], "decision_request": None, "downstream_impact": ["Recheck dialogue."], "status": "proposed", "assumptions": [], "uncertainties": []}],
         "assumptions": [], "uncertainties": [],
     }
@@ -195,7 +195,7 @@ def write_script_package(path: Path, unit_id: str, event_id: str, final: bool) -
     scene_id = f"{unit_id}-SC001"
     outline = _unit_outline(unit_id, event_id, final)
     metadata = {
-        "schema_version": "2.0", "project_id": "EMBER", "unit_id": unit_id, "source_event_ids": [event_id],
+        "schema_version": "0.3.0", "project_id": "EMBER", "unit_id": unit_id, "source_event_ids": [event_id],
         "scene_mappings": [{"scene_id": scene_id, "heading": "EXT. SALT ROAD - DUSK", "event_ids": [event_id], "character_ids": ["EMBER-CH001"], "location_id": "EMBER-LO001", "objective": "Mara secures passage.", "conflict": "The signal blocks the road.", "turn": "Mara shares the signal."}],
         "character_mappings": [{"character_id": "EMBER-CH001", "cue": "MARA"}], "location_mappings": [{"location_id": "EMBER-LO001", "name": "Salt checkpoint"}], "setup_payoffs": [], "assumptions": [], "uncertainties": [],
     }
@@ -212,7 +212,7 @@ def write_script_package(path: Path, unit_id: str, event_id: str, final: bool) -
     )
     scenes = path / "scenes"
     scenes.mkdir()
-    write_full_v1_package(scenes / scene_id, scene_id)
+    write_scene_full_package(scenes / scene_id, scene_id)
 
 
 def write_story_project(root: Path) -> tuple[Path, Path]:

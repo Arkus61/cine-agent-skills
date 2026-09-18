@@ -4,6 +4,36 @@ Accessed: 2026-08-04.
 
 This file records sources that inform repository architecture and future film-knowledge research. It does not authorize copying source text.
 
+## Runtime component sources
+
+Accessed: 2026-09-18. These references document maintained community interfaces
+used by the optional runtime. They do not establish a live provider, MCP
+server, Blender capability, or token-saving result.
+
+### LangGraph — Persistence and interrupts
+
+- Pages: `https://docs.langchain.com/oss/python/langgraph/persistence` and `https://docs.langchain.com/oss/python/langgraph/interrupts`
+- Applied principle: use a thread-scoped checkpointer for resumable graph state and the standard interrupt/resume mechanism for human review; keep application artifacts and receipts outside chat history.
+- Repository boundary: Film OS supplies task contracts and receipt reconciliation while reusing `langgraph==1.2.11` and `langgraph-checkpoint-sqlite==3.1.1`; no second scheduler is introduced.
+
+### Promptfoo — Python integration
+
+- Page: `https://www.promptfoo.dev/docs/integrations/python/`
+- Applied principle: reference Python providers, test generators, and assertions through Promptfoo's `file://` integration rather than inventing an evaluation runner.
+- Repository boundary: the checked-in suite is a labelled replay estimate until a provider is explicitly configured; validator-backed assertions do not convert prose observables into automatic passes.
+
+### OpenTelemetry — semantic conventions
+
+- Page: `https://opentelemetry.io/docs/specs/semconv/registry/attributes/gen-ai/`
+- Applied principle: keep model, usage, latency, call-count, and repair attributes separate from project text and export local evidence without raw prompts by default.
+- Repository boundary: the optional runtime uses `opentelemetry-api==1.44.0` and `opentelemetry-sdk==1.44.0`; the local JSONL export is evidence, not a claim that a remote collector is configured.
+
+### Model Context Protocol — official Python SDK
+
+- Pages: `https://github.com/modelcontextprotocol/python-sdk`, `https://py.sdk.modelcontextprotocol.io/`, and `https://modelcontextprotocol.io/docs/develop/build-client`
+- Applied principle: use the SDK's `Client` and standard stdio, Streamable HTTP, or SSE transports for one server connection, then discover tools and validate calls against the negotiated schemas.
+- Repository boundary: the optional runtime uses `mcp==2.2.0`; allowlists, output bounds, receipts, and filesystem scope are Film OS policy. The user's existing Blender MCP remains authoritative and is not replaced or wrapped in a custom protocol.
+
 ## Sound post sources
 
 ## Music story sources

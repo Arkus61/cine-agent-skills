@@ -1,6 +1,6 @@
 {
   "skill": "film-editor",
-  "version": "2.0",
+  "version": "0.3.0",
   "cases": [
     {
       "id": "dialogue-to-action-reveal",

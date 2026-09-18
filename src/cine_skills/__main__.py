@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
+from . import __version__
 from .artifacts import validate_artifact_file
 from .package import resolve_scene_package_profile, validate_scene_package
 from .project_contracts import PROJECT_FORMATS, PRODUCTION_MODES, PRODUCTION_PROFILE, STORY_PROFILE
@@ -21,6 +22,7 @@ def _add_output_format(parser: argparse.ArgumentParser) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="python -m cine_skills")
+    parser.add_argument("--version", action="version", version=__version__)
     subparsers = parser.add_subparsers(dest="command", required=True)
     validate = subparsers.add_parser("validate", help="validate a skills repository")
     validate.add_argument("root", nargs="?", default=".")
@@ -39,12 +41,12 @@ def build_parser() -> argparse.ArgumentParser:
     validate_package.add_argument("--root", default=".")
     validate_package.add_argument(
         "--profile",
-        choices=("auto", "core-v0.1", "full-v1"),
+        choices=("auto", "scene-core", "scene-full"),
         default="auto",
     )
     _add_output_format(validate_package)
     validate_story = subparsers.add_parser(
-        "validate-story", help="validate a v2 story package"
+        "validate-story", help="validate a story package"
     )
     validate_story.add_argument("story_dir")
     validate_story.add_argument(
@@ -52,7 +54,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     _add_output_format(validate_story)
     validate_production = subparsers.add_parser(
-        "validate-production", help="validate a v2 production package"
+        "validate-production", help="validate a production package"
     )
     validate_production.add_argument("package_dir")
     validate_production.add_argument("--root", default=".")
@@ -65,14 +67,14 @@ def build_parser() -> argparse.ArgumentParser:
         help="allow a manifest-selected production directory nested under a project",
     )
     _add_output_format(validate_production)
-    validate_post = subparsers.add_parser("validate-post", help="validate a v2 post package")
+    validate_post = subparsers.add_parser("validate-post", help="validate a post package")
     validate_post.add_argument("package_dir")
     validate_post.add_argument("--root", default=".")
     _add_output_format(validate_post)
-    validate_project_parser = subparsers.add_parser("validate-project", help="validate a complete v2 creative project")
+    validate_project_parser = subparsers.add_parser("validate-project", help="validate a complete creative project")
     validate_project_parser.add_argument("project_dir")
     validate_project_parser.add_argument("--root", default=".")
-    validate_project_parser.add_argument("--profile", default="full-creative-v2", choices=("full-creative-v2",))
+    validate_project_parser.add_argument("--profile", default="full-creative", choices=("full-creative",))
     _add_output_format(validate_project_parser)
     return parser
 
@@ -113,6 +115,7 @@ def main() -> int:
                         "command": args.command,
                         "errors": sorted(errors),
                         "profile": STORY_PROFILE,
+                        "system_version": __version__,
                         "valid": not errors,
                     },
                     ensure_ascii=False,
@@ -149,6 +152,7 @@ def main() -> int:
                         "command": args.command,
                         "errors": errors,
                         "profile": PRODUCTION_PROFILE,
+                        "system_version": __version__,
                         "valid": not errors,
                     },
                     ensure_ascii=False,
@@ -202,7 +206,7 @@ def main() -> int:
         errors.extend(validate_post_package(package, root, upstream))
         errors = sorted(set(errors))
         if args.format == "json":
-            print(json.dumps({"command": args.command, "errors": errors, "profile": POST_PROFILE, "valid": not errors}, ensure_ascii=False, sort_keys=True, separators=(",", ":")))
+            print(json.dumps({"command": args.command, "errors": errors, "profile": POST_PROFILE, "system_version": __version__, "valid": not errors}, ensure_ascii=False, sort_keys=True, separators=(",", ":")))
         elif errors:
             print(render_validation_report(args.command, errors, args.format))
         else:
@@ -210,7 +214,7 @@ def main() -> int:
         return 1 if errors else 0
     if args.command == "validate-project":
         errors = validate_project(Path(args.project_dir), Path(args.root), args.profile)
-        payload = {"command": args.command, "errors": sorted(errors), "profile": args.profile, "valid": not errors}
+        payload = {"command": args.command, "errors": sorted(errors), "profile": args.profile, "system_version": __version__, "valid": not errors}
         if args.format == "json":
             print(json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")))
         elif errors:

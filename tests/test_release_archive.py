@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from scripts.build_release_archive import build_archive
+from scripts.build_release_archive import build_archive, default_archive_output
 
 
 def test_release_archive_is_safe_and_reproducible(
@@ -73,3 +73,12 @@ def test_release_archive_works_from_a_git_archive_snapshot(tmp_path: Path) -> No
 
     with zipfile.ZipFile(output) as archive:
         assert archive.namelist() == ["cine-agent-skills/docs/README.md"]
+
+
+def test_default_archive_output_uses_pyproject_version(tmp_path: Path) -> None:
+    (tmp_path / "pyproject.toml").write_text(
+        '[project]\nname = "cine-agent-skills"\nversion = "0.3.0"\n',
+        encoding="utf-8",
+    )
+
+    assert default_archive_output(tmp_path) == Path("dist/cine-agent-skills-0.3.0.zip")

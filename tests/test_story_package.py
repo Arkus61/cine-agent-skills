@@ -43,7 +43,7 @@ def test_feature_story_membership_excludes_season_arc(repository_root: Path, tmp
     manifest = read_json(story / "story-manifest.json")
     feature_artifacts = tuple(item for item in STORY_ARTIFACTS if item[0] != "season-arc.json")
     manifest["artifacts"] = [
-        {"filename": filename, "schema_name": schema_name, "schema_version": "2.0", "dependency_order": order}
+        {"filename": filename, "schema_name": schema_name, "schema_version": "0.3.0", "dependency_order": order}
         for order, (filename, schema_name) in enumerate(feature_artifacts, start=1)
     ]
     write_json(story / "story-manifest.json", manifest)
@@ -54,8 +54,8 @@ def test_feature_story_membership_excludes_season_arc(repository_root: Path, tmp
 @pytest.mark.parametrize(
     ("entry", "expected"),
     [
-        ("notes", "notes: unexpected entry for story-v2 package"),
-        ("season-arc.json", "season-arc.json: unexpected entry for story-v2 package"),
+        ("notes", "notes: unexpected entry for story package"),
+        ("season-arc.json", "season-arc.json: unexpected entry for story package"),
     ],
 )
 def test_story_membership_rejects_unexpected_files_and_directories(
@@ -106,7 +106,7 @@ def test_story_directory_oserror_is_a_diagnostic(
     monkeypatch.setattr(Path, "iterdir", denied)
 
     assert validate_story_package(story, repository_root, "series") == [
-        f"{story}: unable to inspect story-v2 package directory: denied"
+        f"{story}: unable to inspect story package directory: denied"
     ]
 
 
@@ -242,7 +242,7 @@ def test_script_membership_is_exact(repository_root: Path, tmp_path: Path):
     script = scripts / "EMBER-E01"
     (script / "generated-media").mkdir()
 
-    assert "generated-media: unexpected entry for story-v2 script package" in validate_script_package(script, repository_root, "EMBER", "series")
+    assert "generated-media: unexpected entry for story script package" in validate_script_package(script, repository_root, "EMBER", "series")
 
 
 @pytest.mark.parametrize("entry", ["screenplay.fountain", "scenes"])
@@ -348,7 +348,7 @@ def test_script_scene_inventory_matches_metadata(repository_root: Path, tmp_path
     script = scripts / "EMBER-E01"
     (script / "scenes" / "unexpected").mkdir()
 
-    assert "unexpected: unexpected entry for full-v1 scenes package" in validate_script_package(script, repository_root, "EMBER", "series")
+    assert "unexpected: unexpected entry for scene-full scenes package" in validate_script_package(script, repository_root, "EMBER", "series")
 
 
 def test_build_story_index_validates_episode_inventory_and_all_cross_references(repository_root: Path, tmp_path: Path):
@@ -499,7 +499,7 @@ def test_build_story_index_reports_unreadable_scripts_directory(
     index, errors = build_story_index(story, scripts, repository_root)
 
     assert index is None
-    assert errors == [f"{scripts}: unable to inspect story-v2 scripts directory: denied"]
+    assert errors == [f"{scripts}: unable to inspect story scripts directory: denied"]
 
 
 def test_build_story_index_reports_malformed_concept_file_specifically(
@@ -529,5 +529,5 @@ def test_script_directory_oserror_is_a_diagnostic(
     assert validate_script_package(
         script, repository_root, "EMBER", "series"
     ) == [
-        f"{script}: unable to inspect story-v2 script package directory: denied"
+        f"{script}: unable to inspect story script package directory: denied"
     ]

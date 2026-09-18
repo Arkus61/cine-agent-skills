@@ -1,11 +1,11 @@
 {
   "skill": "creative-production-pipeline",
-  "version": "2.0",
+  "version": "0.3.0",
   "cases": [
     {
       "id": "contained-live-action-only",
       "project_id": "KEYLIGHT",
-      "brief": "A validated short-film story/script package and full-v1 scene package describe a night custodian in one building. The selected mode is live-action-only; no inspectable generated media or measurable media metadata is supplied.",
+      "brief": "A validated short-film story/script package and scene-full scene package describe a night custodian in one building. The selected mode is live-action-only; no inspectable generated media or measurable media metadata is supplied.",
       "observables": [
         "Uses the exact live-action-only inventory: production design, character look, VFX, media review, and manifest; creates neither animation plan nor media-prompt package.",
         "Validates the upstream story/script and scene packages before orchestration, preserves valid unaffected specialist records, and stops at the earliest invalid dependency if a prerequisite fails.",
@@ -15,7 +15,7 @@
     {
       "id": "ai-only-evidence-gate",
       "project_id": "LANTERN",
-      "brief": "A validated short-form story/script package and full-v1 scene package require an AI-only production package. Prompt sources are supplied, but no generated output, preview, waveform, or measurable metadata is accessible.",
+      "brief": "A validated short-form story/script package and scene-full scene package require an AI-only production package. Prompt sources are supplied, but no generated output, preview, waveform, or measurable metadata is accessible.",
       "observables": [
         "Uses the exact ai-only inventory: production design, character look, VFX, media-prompt package, media review, and manifest; creates no animation plan.",
         "Keeps prompt content and specialist semantics source-bound, preserves valid unaffected records, and does not invent media inspection or approval from prompt text or filenames.",

@@ -4,11 +4,12 @@ import re
 from pathlib import Path
 from typing import Any, Mapping
 
+from . import __version__
 from .artifacts import load_json_object, validate_artifact
 
 
-CORE_PROFILE = "core-v0.1"
-FULL_PROFILE = "full-v1"
+CORE_PROFILE = "scene-core"
+FULL_PROFILE = "scene-full"
 
 CORE_ARTIFACT_FILES = (
     ("scene-beats.json", "scene-beats"),
@@ -66,7 +67,7 @@ def resolve_scene_package_profile(package_dir: Path, requested: str = "auto") ->
 def validate_scene_package(
     package_dir: Path, root: Path, profile: str = "auto"
 ) -> list[str]:
-    """Validate a core-v0.1 or full-v1 scene package."""
+    """Validate a scene-core or scene-full scene package."""
     package = Path(package_dir)
     resolved_profile = resolve_scene_package_profile(package, profile)
     payloads: dict[str, Mapping[str, Any]] = {}
@@ -278,7 +279,7 @@ def _validate_manifest_contract(
     expected = [
         {
             "filename": filename,
-            "schema_version": "1.0",
+            "schema_version": __version__,
             "dependency_order": order,
         }
         for order, filename in enumerate(FULL_MANIFEST_ARTIFACTS, start=1)
@@ -286,7 +287,7 @@ def _validate_manifest_contract(
     if manifest["artifacts"] != expected:
         ordered_names = ", ".join(FULL_MANIFEST_ARTIFACTS)
         errors.append(
-            "package-manifest.json: artifacts must list the exact full-v1 "
+            "package-manifest.json: artifacts must list the exact scene-full "
             f"dependency order: {ordered_names}"
         )
 

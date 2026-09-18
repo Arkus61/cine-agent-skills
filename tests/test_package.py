@@ -7,7 +7,7 @@ from cine_skills.package import (
     resolve_scene_package_profile,
     validate_scene_package,
 )
-from tests.v1_fixtures import MANIFEST_ARTIFACTS, write_full_v1_package
+from tests.scene_full_fixtures import MANIFEST_ARTIFACTS, write_scene_full_package
 
 
 def write_json(path: Path, value: object) -> None:
@@ -27,7 +27,7 @@ def package_dir(tmp_path: Path) -> Path:
     write_json(
         package / "scene-beats.json",
         {
-            "schema_version": "1.0",
+            "schema_version": "0.3.0",
             "scene_id": "S01",
             "scene_objective": "Ninel wakes and orients herself.",
             "turn": "The quiet becomes threatening.",
@@ -47,7 +47,7 @@ def package_dir(tmp_path: Path) -> Path:
     write_json(
         package / "directing-plan.json",
         {
-            "schema_version": "1.0",
+            "schema_version": "0.3.0",
             "scene_id": "S01",
             "concept": "A waking mind finds danger in silence.",
             "point_of_view": "Ninel",
@@ -60,7 +60,7 @@ def package_dir(tmp_path: Path) -> Path:
     write_json(
         package / "blocking-plan.json",
         {
-            "schema_version": "1.0",
+            "schema_version": "0.3.0",
             "scene_id": "S01",
             "space": "A narrow cabin.",
             "axis": "The bunk-to-door line.",
@@ -81,7 +81,7 @@ def package_dir(tmp_path: Path) -> Path:
     write_json(
         package / "camera-movement-plan.json",
         {
-            "schema_version": "1.0",
+            "schema_version": "0.3.0",
             "scene_id": "S01",
             "movement_philosophy": "Let stillness create pressure.",
             "moves": [
@@ -106,7 +106,7 @@ def package_dir(tmp_path: Path) -> Path:
     write_json(
         package / "shot-list.json",
         {
-            "schema_version": "1.0",
+            "schema_version": "0.3.0",
             "scene_id": "S01",
             "assumptions": [],
             "shots": [
@@ -134,7 +134,7 @@ def package_dir(tmp_path: Path) -> Path:
 @pytest.fixture
 def full_package_dir(tmp_path: Path) -> Path:
     package = tmp_path / "full" / "S01"
-    write_full_v1_package(package)
+    write_scene_full_package(package)
     return package
 
 
@@ -143,33 +143,33 @@ def test_valid_package_passes(package_dir: Path, repository_root: Path) -> None:
 
 
 def test_auto_profile_keeps_legacy_package_compatible(package_dir: Path) -> None:
-    assert resolve_scene_package_profile(package_dir) == "core-v0.1"
+    assert resolve_scene_package_profile(package_dir) == "scene-core"
 
 
-def test_importing_v2_contracts_does_not_change_scene_profiles(
+def test_importing_layer_contracts_does_not_change_scene_profiles(
     repository_root: Path,
 ) -> None:
     from cine_skills import project_contracts
 
-    assert project_contracts.FULL_CREATIVE_PROFILE == "full-creative-v2"
+    assert project_contracts.FULL_CREATIVE_PROFILE == "full-creative"
     assert (
         resolve_scene_package_profile(
-            repository_root / "examples/ninel/scenes/S01"
+            repository_root / "examples/scene-core/scenes/S01"
         )
-        == "core-v0.1"
+        == "scene-core"
     )
     assert (
         resolve_scene_package_profile(
-            repository_root / "examples/ninel-v1/scenes/S01"
+            repository_root / "examples/scene-full/scenes/S01"
         )
-        == "full-v1"
+        == "scene-full"
     )
 
 
 def test_auto_profile_selects_full_when_manifest_exists(package_dir: Path) -> None:
     write_json(package_dir / "package-manifest.json", {})
 
-    assert resolve_scene_package_profile(package_dir) == "full-v1"
+    assert resolve_scene_package_profile(package_dir) == "scene-full"
 
 
 @pytest.mark.parametrize("entry_kind", ["directory", "broken-symlink"])
@@ -182,7 +182,7 @@ def test_auto_profile_does_not_downgrade_malformed_manifest_entry(
     else:
         manifest.symlink_to("missing-manifest-target.json")
 
-    assert resolve_scene_package_profile(package_dir) == "full-v1"
+    assert resolve_scene_package_profile(package_dir) == "scene-full"
     errors = validate_scene_package(package_dir, repository_root)
     assert any(
         error == "package-manifest.json: required file is missing"
@@ -211,11 +211,11 @@ def test_full_package_rejects_unexpected_entry(
         unexpected.mkdir()
 
     errors = validate_scene_package(
-        full_package_dir, repository_root, profile="full-v1"
+        full_package_dir, repository_root, profile="scene-full"
     )
 
     assert errors == [
-        "unexpected-generated-media: unexpected entry for full-v1 package"
+        "unexpected-generated-media: unexpected entry for scene-full package"
     ]
 
 
@@ -232,7 +232,7 @@ def test_full_package_reports_directory_inspection_error(
     monkeypatch.setattr(Path, "iterdir", deny_package_listing)
 
     errors = validate_scene_package(
-        full_package_dir, repository_root, profile="full-v1"
+        full_package_dir, repository_root, profile="scene-full"
     )
 
     assert errors == [
@@ -388,29 +388,29 @@ def test_package_rejects_uncovered_beat(
     assert any("S01-B02" in error and "uncovered beat" in error for error in errors)
 
 
-def test_valid_full_v1_package_passes_auto_and_explicit_profiles(
+def test_valid_scene_full_package_passes_auto_and_explicit_profiles(
     full_package_dir: Path, repository_root: Path
 ) -> None:
-    assert resolve_scene_package_profile(full_package_dir) == "full-v1"
+    assert resolve_scene_package_profile(full_package_dir) == "scene-full"
     assert validate_scene_package(full_package_dir, repository_root) == []
     assert (
-        validate_scene_package(full_package_dir, repository_root, profile="full-v1")
+        validate_scene_package(full_package_dir, repository_root, profile="scene-full")
         == []
     )
 
 
 @pytest.mark.parametrize("filename", ["source-scene.md", "lighting-plan.json"])
-def test_full_v1_package_reports_missing_canonical_file(
+def test_scene_full_package_reports_missing_canonical_file(
     full_package_dir: Path, repository_root: Path, filename: str
 ) -> None:
     (full_package_dir / filename).unlink()
 
-    errors = validate_scene_package(full_package_dir, repository_root, profile="full-v1")
+    errors = validate_scene_package(full_package_dir, repository_root, profile="scene-full")
 
     assert any(filename in error and "required file" in error for error in errors)
 
 
-def test_full_v1_package_rejects_mismatched_new_artifact_scene_id(
+def test_scene_full_package_rejects_mismatched_new_artifact_scene_id(
     full_package_dir: Path, repository_root: Path
 ) -> None:
     def change_scene(value: dict[str, object]) -> None:
@@ -428,7 +428,7 @@ def test_full_v1_package_rejects_mismatched_new_artifact_scene_id(
         change_scene,
     )
 
-    errors = validate_scene_package(full_package_dir, repository_root, profile="full-v1")
+    errors = validate_scene_package(full_package_dir, repository_root, profile="scene-full")
 
     assert any("sound-plan.json" in error and "scene_id" in error for error in errors)
 
@@ -444,7 +444,7 @@ def test_full_v1_package_rejects_mismatched_new_artifact_scene_id(
         ("continuity-plan.json", "items", "continuity_id", "S01-alt-CN001", "S01-CN###"),
     ],
 )
-def test_full_v1_package_rejects_malformed_category_ids(
+def test_scene_full_package_rejects_malformed_category_ids(
     full_package_dir: Path,
     repository_root: Path,
     filename: str,
@@ -458,7 +458,7 @@ def test_full_v1_package_rejects_malformed_category_ids(
         lambda value: value[collection][0].update({id_field: invalid_id}),
     )
 
-    errors = validate_scene_package(full_package_dir, repository_root, profile="full-v1")
+    errors = validate_scene_package(full_package_dir, repository_root, profile="scene-full")
 
     assert any(filename in error and expected in error for error in errors)
 
@@ -474,7 +474,7 @@ def test_full_v1_package_rejects_malformed_category_ids(
         ("continuity-plan.json", "items"),
     ],
 )
-def test_full_v1_package_rejects_duplicate_category_ids(
+def test_scene_full_package_rejects_duplicate_category_ids(
     full_package_dir: Path,
     repository_root: Path,
     filename: str,
@@ -489,7 +489,7 @@ def test_full_v1_package_rejects_duplicate_category_ids(
 
     rewrite_json(full_package_dir / filename, duplicate)
 
-    errors = validate_scene_package(full_package_dir, repository_root, profile="full-v1")
+    errors = validate_scene_package(full_package_dir, repository_root, profile="scene-full")
 
     assert any(filename in error and "duplicate" in error for error in errors)
 
@@ -508,7 +508,7 @@ def test_full_v1_package_rejects_duplicate_category_ids(
         ("continuity-plan.json", "items", "shot_ids", "S01-SH999", "unknown shot"),
     ],
 )
-def test_full_v1_package_rejects_dangling_new_references(
+def test_scene_full_package_rejects_dangling_new_references(
     full_package_dir: Path,
     repository_root: Path,
     filename: str,
@@ -526,7 +526,7 @@ def test_full_v1_package_rejects_dangling_new_references(
 
     rewrite_json(full_package_dir / filename, replace_reference)
 
-    errors = validate_scene_package(full_package_dir, repository_root, profile="full-v1")
+    errors = validate_scene_package(full_package_dir, repository_root, profile="scene-full")
 
     assert any(
         filename in error and dangling in error and expected_label in error
@@ -534,7 +534,7 @@ def test_full_v1_package_rejects_dangling_new_references(
     )
 
 
-def add_second_full_v1_shot(package: Path) -> None:
+def add_second_scene_full_shot(package: Path) -> None:
     def add_shot(value: dict[str, object]) -> None:
         shots = value["shots"]
         assert isinstance(shots, list)
@@ -554,17 +554,17 @@ def add_second_full_v1_shot(package: Path) -> None:
         "continuity-plan.json",
     ],
 )
-def test_full_v1_package_requires_every_shot_covered(
+def test_scene_full_package_requires_every_shot_covered(
     full_package_dir: Path, repository_root: Path, filename: str
 ) -> None:
-    add_second_full_v1_shot(full_package_dir)
+    add_second_scene_full_shot(full_package_dir)
 
-    errors = validate_scene_package(full_package_dir, repository_root, profile="full-v1")
+    errors = validate_scene_package(full_package_dir, repository_root, profile="scene-full")
 
     assert any(filename in error and "uncovered shot S01-SH002" in error for error in errors)
 
 
-def test_full_v1_package_allows_multiple_storyboard_panels_for_one_shot(
+def test_scene_full_package_allows_multiple_storyboard_panels_for_one_shot(
     full_package_dir: Path, repository_root: Path
 ) -> None:
     def add_panel(value: dict[str, object]) -> None:
@@ -578,13 +578,13 @@ def test_full_v1_package_allows_multiple_storyboard_panels_for_one_shot(
     rewrite_json(full_package_dir / "storyboard-plan.json", add_panel)
 
     assert (
-        validate_scene_package(full_package_dir, repository_root, profile="full-v1")
+        validate_scene_package(full_package_dir, repository_root, profile="scene-full")
         == []
     )
 
 
 @pytest.mark.parametrize("mutation", ["missing", "reordered", "extra"])
-def test_full_v1_package_rejects_changed_manifest_order(
+def test_scene_full_package_rejects_changed_manifest_order(
     full_package_dir: Path, repository_root: Path, mutation: str
 ) -> None:
     def mutate_manifest(value: dict[str, object]) -> None:
@@ -598,13 +598,13 @@ def test_full_v1_package_rejects_changed_manifest_order(
             artifacts.append(
                 {
                     "filename": "extra.json",
-                    "schema_version": "1.0",
+                    "schema_version": "0.3.0",
                     "dependency_order": len(MANIFEST_ARTIFACTS) + 1,
                 }
             )
 
     rewrite_json(full_package_dir / "package-manifest.json", mutate_manifest)
 
-    errors = validate_scene_package(full_package_dir, repository_root, profile="full-v1")
+    errors = validate_scene_package(full_package_dir, repository_root, profile="scene-full")
 
     assert any("package-manifest.json" in error and "artifact" in error for error in errors)

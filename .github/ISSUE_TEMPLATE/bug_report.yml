@@ -1,0 +1,59 @@
+name: Bug report
+description: Report a reproducible defect in validation, packaging, or runtime behavior
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please remove private project text, credentials, and generated media before posting.
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: 0.3.0 or e63a372
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Validation CLI
+        - Skill or schema contract
+        - Migration
+        - Optional runtime
+        - MCP boundary
+        - Documentation or CI
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Include the smallest safe command, input shape, and observed output.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checks
+      options:
+        - label: I removed secrets, private transcripts, personal data, and generated media.
+          required: true
+        - label: I searched existing issues and documentation for the same behavior.
+          required: true

@@ -1,12 +1,21 @@
-name: ci
+name: CI
 
 on:
   push:
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     strategy:
       matrix:
         python-version: ["3.11", "3.12"]
@@ -17,5 +26,20 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install -e '.[dev]'
       - run: make check
-      - run: make validate-core-example
-      - run: make validate-full-example
+      - run: make validate-scene-core-example
+      - run: make validate-scene-full-example
+      - run: make validate-story-example
+      - run: make validate-production-example
+      - run: make validate-post-example
+      - run: make validate-project-example
+
+  runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -e '.[dev,runtime]'
+      - run: make check-film-os

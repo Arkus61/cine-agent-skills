@@ -5,7 +5,7 @@ from cine_skills.artifacts import validate_artifact
 
 def valid_planned_vfx_post_plan() -> dict[str, object]:
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "GLASS",
         "unit_id": "GLASS-U01",
         "source_context": {

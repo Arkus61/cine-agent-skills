@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "0.3.0",
   "scene_id": "SCENE01",
   "assumptions": [
     "Take-level records and approved department values will be added during photography."

@@ -1,0 +1,12 @@
+enabled: false
+call_limits:
+  task: 2
+  alternatives: 3
+  tools: 10
+models:
+  small-context: []
+  difficult-decision: []
+  synthesis: []
+notes:
+  - Configure an existing local or user-owned provider explicitly before enabling calls.
+  - Transport attempts count toward the task limit; one layer owns retries.

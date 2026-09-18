@@ -8,6 +8,7 @@ import os
 from pathlib import Path, PurePosixPath
 import subprocess
 import tempfile
+import tomllib
 import zipfile
 
 
@@ -159,18 +160,33 @@ def build_archive(
     return hashlib.sha256(destination.read_bytes()).hexdigest()
 
 
+def default_archive_output(repository: Path) -> Path:
+    """Derive the archive name from the single package version source."""
+
+    root = Path(repository)
+    try:
+        metadata = tomllib.loads((root / "pyproject.toml").read_text(encoding="utf-8"))
+        version = metadata["project"]["version"]
+    except (OSError, tomllib.TOMLDecodeError, KeyError, TypeError) as exc:
+        raise ValueError(f"unable to read project.version: {exc}") from exc
+    if not isinstance(version, str) or not version:
+        raise ValueError("project.version must be a non-empty string")
+    return Path("dist") / f"cine-agent-skills-{version}.zip"
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path("."))
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("dist/cine-agent-skills-v2.0.0.zip"),
+        default=None,
     )
     parser.add_argument("--prefix", default="cine-agent-skills/")
     args = parser.parse_args(argv)
     try:
-        digest = build_archive(args.root, args.output, args.prefix)
+        output = args.output if args.output is not None else default_archive_output(args.root)
+        digest = build_archive(args.root, output, args.prefix)
     except (OSError, RuntimeError, ValueError) as exc:
         parser.error(str(exc))
     print(digest)

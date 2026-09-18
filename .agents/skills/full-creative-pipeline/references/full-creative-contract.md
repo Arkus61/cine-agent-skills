@@ -2,9 +2,9 @@
 
 ## Dependency order
 
-The orchestrator runs story and scripts first, then the preserved full-v1 scene preproduction call, then creative production, then postproduction. Postproduction is edit-first: edit, sound, music, VFX, color, titles/captions, mastering/QC.
+The orchestrator runs story and scripts first, then the preserved scene-full scene preproduction call, then creative production, then postproduction. Postproduction is edit-first: edit, sound, music, VFX, color, titles/captions, mastering/QC.
 
-After assembly and every repair, run `validate-project --profile full-creative-v2 --format json`. A failed layer invalidates only its transitive downstream references. Preserve valid unaffected artifacts and report deterministic errors.
+After assembly and every repair, run `validate-project --profile full-creative --format json`. A failed layer invalidates only its transitive downstream references. Preserve valid unaffected artifacts and report deterministic errors.
 
 ## Handoffs and evidence
 

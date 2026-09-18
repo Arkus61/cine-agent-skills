@@ -17,8 +17,8 @@
     "unresolved_questions"
   ],
   "properties": {
-    "release_version": {"const": "1.0.0"},
-    "profile": {"const": "full-v1"},
+    "release_version": {"const": "0.3.0"},
+    "profile": {"const": "scene-full"},
     "scene_id": {"$ref": "#/$defs/non_empty_string"},
     "source_file": {"const": "source-scene.md"},
     "artifacts": {
@@ -30,7 +30,7 @@
         "required": ["filename", "schema_version", "dependency_order"],
         "properties": {
           "filename": {"$ref": "#/$defs/non_empty_string"},
-          "schema_version": {"const": "1.0"},
+          "schema_version": {"const": "0.3.0"},
           "dependency_order": {"type": "integer", "minimum": 1}
         }
       }

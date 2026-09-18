@@ -1,4 +1,4 @@
-"""Validation and indexing for a complete full-creative-v2 project."""
+"""Validation and indexing for a complete full-creative project."""
 from __future__ import annotations
 
 from dataclasses import replace

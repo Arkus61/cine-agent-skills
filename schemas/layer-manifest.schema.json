@@ -32,18 +32,18 @@
     "unresolved_questions"
   ],
   "properties": {
-    "schema_version": {"const": "2.0"},
-    "release_version": {"const": "2.0.0"},
+    "schema_version": {"const": "0.3.0"},
+    "release_version": {"const": "0.3.0"},
     "project_id": {"$ref": "#/$defs/non_empty_string"},
     "layer": {
       "enum": ["story", "script", "production", "post"]
     },
     "profile": {
       "enum": [
-        "story-v2",
-        "production-v2",
-        "post-v2",
-        "full-creative-v2"
+        "story",
+        "production",
+        "post",
+        "full-creative"
       ]
     },
     "artifacts": {
@@ -61,7 +61,7 @@
         "properties": {
           "filename": {"$ref": "#/$defs/relative_path"},
           "schema_name": {"$ref": "#/$defs/non_empty_string"},
-          "schema_version": {"const": "2.0"},
+          "schema_version": {"const": "0.3.0"},
           "dependency_order": {"type": "integer", "minimum": 1}
         }
       }

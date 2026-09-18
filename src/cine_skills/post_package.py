@@ -1,4 +1,4 @@
-"""Validation for the exact post-v2 package boundary."""
+"""Validation for the exact post package boundary."""
 from __future__ import annotations
 
 from collections.abc import Mapping

@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.3.0",
+  "scene_id": "S01",
+  "concept": "Ninel learns each sign of life as if it may be an instruction planted by the room.",
+  "point_of_view": "Stay with Ninel's incomplete perception; never confirm the reflection anomaly independently.",
+  "performance_notes": [
+    "Treat the first breath as a deliberate experiment, not panic.",
+    "Test the monitor without displaying fear to the unseen system.",
+    "Ask Argo for facts while listening for what the pause conceals."
+  ],
+  "visual_strategy": [
+    "Begin with controlled geometry and very limited spatial information.",
+    "Allow the frame to widen only as Ninel gains agency.",
+    "Reveal the planet as an answer that enlarges the mystery rather than resolving it."
+  ],
+  "rhythm": "Mechanical countdown, abrupt chamber release, held reflection beat, then a longer conversational pause before the final reveal.",
+  "assumptions": ["The observation slit can be concealed until the ship rotates."]
+}

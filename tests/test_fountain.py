@@ -11,7 +11,7 @@ from cine_skills.fountain import (
 
 def valid_metadata() -> dict[str, object]:
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "EMBER",
         "unit_id": "EMBER-U01",
         "source_event_ids": ["EMBER-EV001", "EMBER-EV002"],

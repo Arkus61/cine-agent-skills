@@ -5,7 +5,7 @@ from cine_skills.artifacts import validate_artifact
 
 def valid_music_plan() -> dict[str, object]:
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "LANTERN",
         "unit_id": "LANTERN-U01",
         "project_format": "short",

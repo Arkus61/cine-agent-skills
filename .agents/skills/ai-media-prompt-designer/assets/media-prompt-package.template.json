@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0",
+  "schema_version": "0.3.0",
   "project_id": "PROJECT",
   "source_context": {
     "registries": {"character_ids": ["PROJECT-CH001"], "scene_ids": ["PROJECT-U01-S01"], "shot_ids": ["PROJECT-U01-S01-SH001"], "asset_ids": []},

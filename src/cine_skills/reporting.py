@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import json
 
+from . import __version__
+
 
 _SUCCESS_MESSAGES = {
     "validate": "Repository validation passed.",
@@ -22,6 +24,7 @@ def render_validation_report(
         payload: dict[str, object] = {
             "command": command,
             "errors": ordered_errors,
+            "system_version": __version__,
             "valid": not ordered_errors,
         }
         if profile is not None:

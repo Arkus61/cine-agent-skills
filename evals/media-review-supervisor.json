@@ -1,6 +1,6 @@
 {
   "skill": "media-review-supervisor",
-  "version": "2.0",
+  "version": "0.3.0",
   "cases": [
     {
       "id": "no-media-under-deadline",

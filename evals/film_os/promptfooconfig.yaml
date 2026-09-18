@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+description: Film OS 0.3.0 replay baseline (six fixed, sanitized cases)
+
+prompts:
+  - file://provider.py:build_prompt
+
+providers:
+  - id: file://provider.py
+    config:
+      mode: replay-estimate
+      variant: replay-baseline
+
+tests:
+  - path: file://provider.py:generate_cases
+
+defaultTest:
+  assert:
+    - type: python
+      value: file://assertions.py:get_assert

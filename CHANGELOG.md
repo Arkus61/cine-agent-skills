@@ -2,6 +2,16 @@
 
 All notable changes are recorded here.
 
+## 0.3.0 — 2026-09-18
+
+- Unified the active system, schema, template, evaluation, example, manifest, and report version at `0.3.0` (short label `0.3`).
+- Renamed active package profiles to `scene-core`, `scene-full`, `story`, `production`, `post`, and `full-creative`; generation-named CLI flags are rejected instead of hidden aliases.
+- Renamed worked example directories by function and added a version synchronization gate plus a `--version` CLI flag.
+- Added optional runtime slices for measurable telemetry, artifact dependency projection, freshness, append-only state, skill discovery, bounded context capsules, cache reuse, checked patches, evidence-bound decisions, model budgets, and scene execution plans.
+- Added resumable LangGraph execution, the standard MCP SDK boundary with bounded receipts, and a blocked source-bound Ninel pilot contract.
+- Added a one-artifact crash-recovery publish boundary with staged validation, exact base-digest checks, atomic replacement, and SQLite intent/receipt reconciliation.
+- Kept legacy migration history, stable identifiers, offline validation, and the existing Blender MCP boundary explicit; no custom Blender connector or media execution is included.
+
 ## 2.0.0 — 2026-09-15
 
 - Added the layered v2 planning core for story, screenplay, creative production, and postproduction, with deterministic `validate-project` integration checks.
