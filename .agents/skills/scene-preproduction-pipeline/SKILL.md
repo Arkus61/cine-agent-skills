@@ -1,11 +1,11 @@
 ---
 name: scene-preproduction-pipeline
-description: Use when a user provides one scripted scene or scene brief and needs a complete, validated full-v1 preproduction package with coordinated creative and production handoff.
+description: Use when a user provides one scripted scene or scene brief and needs a complete, validated scene-full preproduction package with coordinated creative and production handoff.
 ---
 
 # Scene Preproduction Pipeline
 
-Build one canonical thirteen-file `full-v1` package. Run specialist skills in dependency order, preserve stable identifiers, validate the package as a whole, and hand off only a passing result.
+Build one canonical thirteen-file `scene-full` package. Run specialist skills in dependency order, preserve stable identifiers, validate the package as a whole, and hand off only a passing result.
 
 ## Pipeline
 
@@ -21,11 +21,11 @@ Build one canonical thirteen-file `full-v1` package. Run specialist skills in de
 10. Use `$storyboard-designer` to create `storyboard-plan.json`.
 11. Use `$production-breakdown` to create `production-breakdown.json` from the source and all selected plans.
 12. Use `$continuity-supervisor` to create `continuity-plan.json` from the final shot-level plans.
-13. Assemble `package-manifest.json` last. Use release version `1.0.0`, package profile `full-v1`, and the exact eleven-artifact inventory in the contract.
+13. Assemble `package-manifest.json` last. Use release version `0.3.0`, package profile `scene-full`, and the exact eleven-artifact inventory in the contract.
 14. Validate the complete package:
 
 ```bash
-PYTHONPATH=src .venv/bin/python -m cine_skills validate-package projects/<project-slug>/scenes/<scene-id> --profile full-v1 --format json
+PYTHONPATH=src .venv/bin/python -m cine_skills validate-package projects/<project-slug>/scenes/<scene-id> --profile scene-full --format json
 ```
 
 15. If validation fails, repair the earliest invalid artifact in dependency order. Regenerate only its downstream dependants, then rewrite the manifest when any inventoried artifact changed and rerun the same command. Do not regenerate valid upstream artifacts.

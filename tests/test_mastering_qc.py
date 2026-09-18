@@ -105,7 +105,7 @@ def planned_mastering_plan() -> dict[str, object]:
             }
         )
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "LANTERN",
         "unit_id": "LANTERN-U01",
         "source_context": {

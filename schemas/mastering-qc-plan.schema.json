@@ -137,7 +137,7 @@
     }
   },
   "properties": {
-    "schema_version": {"const": "2.0"},
+    "schema_version": {"const": "0.3.0"},
     "project_id": {"$ref": "#/$defs/id"},
     "unit_id": {"$ref": "#/$defs/id"},
     "source_context": {

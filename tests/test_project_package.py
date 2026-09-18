@@ -14,7 +14,7 @@ from cine_skills.story_package import build_story_index
 @pytest.mark.parametrize("mutation", ["format", "character", "shot", "media", "segment"])
 def test_valid_ninel_rejects_cross_layer_mutation(tmp_path, repository_root, mutation):
     project = tmp_path / "project"
-    shutil.copytree(repository_root / "examples/ninel-v2", project)
+    shutil.copytree(repository_root / "examples/ninel", project)
     assert validate_project(project, repository_root) == []
     if mutation == "format":
         path = project / "creative-manifest.json"
@@ -41,7 +41,7 @@ def test_valid_ninel_rejects_cross_layer_mutation(tmp_path, repository_root, mut
 
 
 def test_ninel_project_index_retains_production_assets(repository_root):
-    index, errors = build_project_index(repository_root / "examples/ninel-v2", repository_root)
+    index, errors = build_project_index(repository_root / "examples/ninel", repository_root)
     assert errors == []
     assert index is not None
     assert {"NINEL-AS001", "NINEL-AS002", "NINEL-AS003", "NINEL-AS004"} <= index.asset_ids
@@ -81,8 +81,8 @@ def test_project_reports_format_mismatch_against_real_story(tmp_path, repository
     assert errors == []
     assert story is not None
     manifest = {
-        "schema_version": "2.0", "release_version": "2.0.0",
-        "profile": "full-creative-v2", "project_id": story.project_id,
+        "schema_version": "0.3.0", "release_version": "0.3.0",
+        "profile": "full-creative", "project_id": story.project_id,
         "project_format": "short", "production_modes": list(story.production_modes),
         "units": sorted(story.unit_ids),
         "layers": {"story": "story", "production": "production", "post": "post"},

@@ -34,9 +34,9 @@
     "unresolved_questions"
   ],
   "properties": {
-    "schema_version": {"const": "2.0"},
-    "release_version": {"const": "2.0.0"},
-    "profile": {"const": "full-creative-v2"},
+    "schema_version": {"const": "0.3.0"},
+    "release_version": {"const": "0.3.0"},
+    "profile": {"const": "full-creative"},
     "project_id": {"$ref": "#/$defs/non_empty_string"},
     "project_format": {
       "enum": [

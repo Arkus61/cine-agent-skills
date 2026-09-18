@@ -11,7 +11,7 @@
   "additionalProperties": false,
   "required": ["schema_version", "scene_id", "assumptions", "storyboard_intent", "panels"],
   "properties": {
-    "schema_version": {"const": "1.0"},
+    "schema_version": {"const": "0.3.0"},
     "scene_id": {"$ref": "#/$defs/non_empty_string"},
     "assumptions": {"type": "array", "items": {"$ref": "#/$defs/non_empty_string"}},
     "storyboard_intent": {"$ref": "#/$defs/non_empty_string"},

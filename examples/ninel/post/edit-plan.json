@@ -1,0 +1,118 @@
+{
+  "schema_version": "0.3.0",
+  "project_id": "NINEL",
+  "unit_id": "NINEL-E01",
+  "project_format": "series",
+  "source_context": {
+    "screenplay_metadata_reference": "scripts/NINEL-E01/screenplay-metadata.json",
+    "production_plan_references": [
+      "production/production-design-plan.json"
+    ],
+    "shots": [
+      {
+        "shot_id": "NINEL-E01-SC001-SH001",
+        "scene_id": "NINEL-E01-SC001",
+        "source_reference": "scripts/NINEL-E01/scenes/NINEL-E01-SC001/shot-list.json#/shots/0"
+      },
+      {
+        "shot_id": "NINEL-E01-SC001-SH002",
+        "scene_id": "NINEL-E01-SC001",
+        "source_reference": "scripts/NINEL-E01/scenes/NINEL-E01-SC001/shot-list.json#/shots/1"
+      }
+    ],
+    "media_items": [],
+    "timing_evidence": [],
+    "lock_decisions": []
+  },
+  "editorial_strategy": "Hold on Ninel\u2019s voluntary breath before opening attention to the room.",
+  "segments": [
+    {
+      "segment_id": "NINEL-E01-ED001",
+      "assembly_order": 1,
+      "source_shot_ids": [
+        "NINEL-E01-SC001-SH001"
+      ],
+      "source_media_ids": [],
+      "dramatic_purpose": "Make chosen agency visible.",
+      "in_out_intent": {
+        "entry": "Before the first inhale.",
+        "exit": "After the inhale."
+      },
+      "cut_motivation": [
+        {
+          "dimension": "story",
+          "rationale": "Move from voluntary breath to spatial awareness."
+        }
+      ],
+      "transition": {
+        "type": "cut",
+        "intent": "Preserve the causal link without decoration."
+      },
+      "eye_trace": "Keep attention on Ninel.",
+      "motion": "Determine cut motion after media inspection.",
+      "continuity": {
+        "mode": "continuity",
+        "intent": "Preserve the chamber-to-monitor axis."
+      },
+      "rhythm": "Duration remains planned.",
+      "dialogue_sound_bridge": {
+        "type": "none",
+        "intent": "Keep this statement synchronous for source clarity."
+      },
+      "temporal_treatment": {
+        "mode": "real-time",
+        "intent": "Preserve the order of awakening actions."
+      },
+      "alternatives": [],
+      "evidence_status": "planned",
+      "lock_status": "unlocked"
+    },
+    {
+      "segment_id": "NINEL-E01-ED002",
+      "assembly_order": 2,
+      "source_shot_ids": [
+        "NINEL-E01-SC001-SH002"
+      ],
+      "source_media_ids": [],
+      "dramatic_purpose": "Orient Ninel in the chamber.",
+      "in_out_intent": {
+        "entry": "As Ninel studies the room.",
+        "exit": "After the room is legible."
+      },
+      "cut_motivation": [
+        {
+          "dimension": "story",
+          "rationale": "Move from voluntary breath to spatial awareness."
+        }
+      ],
+      "transition": {
+        "type": "j-cut",
+        "intent": "Let the next verified statement motivate the image change."
+      },
+      "eye_trace": "Keep attention on Ninel.",
+      "motion": "Determine cut motion after media inspection.",
+      "continuity": {
+        "mode": "continuity",
+        "intent": "Preserve the chamber-to-monitor axis."
+      },
+      "rhythm": "Duration remains planned.",
+      "dialogue_sound_bridge": {
+        "type": "j-cut",
+        "intent": "Advance only supplied dialogue when it becomes available."
+      },
+      "temporal_treatment": {
+        "mode": "compression",
+        "intent": "Preserve the order of awakening actions."
+      },
+      "alternatives": [],
+      "evidence_status": "planned",
+      "lock_status": "unlocked"
+    }
+  ],
+  "assumptions": [
+    "This post package plans the first demonstration unit only."
+  ],
+  "uncertainties": [
+    "No media duration, motion or final timing has been inspected."
+  ]
+}

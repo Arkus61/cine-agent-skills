@@ -49,7 +49,7 @@ EXPECTED_SKILLS = V1_SKILLS | STORY_SPECIALIST_SKILLS | {
     "story-development-pipeline",
 } | PRODUCTION_SPECIALIST_SKILLS | PRODUCTION_PIPELINE_SKILLS | POSTPRODUCTION_SPECIALIST_SKILLS | POSTPRODUCTION_PIPELINE_SKILLS | FULL_PIPELINE_SKILLS
 
-CANONICAL_FULL_V1_FILES = (
+CANONICAL_SCENE_FULL_FILES = (
     "source-scene.md",
     "scene-beats.json",
     "directing-plan.json",
@@ -170,7 +170,7 @@ def test_postproduction_pipeline_eval_has_required_observables(repository_root: 
         assert required in observables
 
 
-def test_original_twelve_v1_skills_remain_the_preserved_base(repository_root: Path) -> None:
+def test_original_scene_skills_remain_the_preserved_base(repository_root: Path) -> None:
     root = repository_root / ".agents" / "skills"
     actual = {path.name for path in root.iterdir() if path.is_dir()}
 
@@ -531,7 +531,7 @@ def test_continuity_supervisor_bundle_is_complete(repository_root: Path) -> None
     }
 
 
-def test_scene_pipeline_specifies_the_full_v1_contract(repository_root: Path) -> None:
+def test_scene_pipeline_specifies_the_scene_full_contract(repository_root: Path) -> None:
     pipeline = repository_root / ".agents" / "skills" / "scene-preproduction-pipeline"
     skill_text = (pipeline / "SKILL.md").read_text(encoding="utf-8")
     contract_text = (pipeline / "references" / "pipeline-contract.md").read_text(
@@ -546,14 +546,14 @@ def test_scene_pipeline_specifies_the_full_v1_contract(repository_root: Path) ->
         )
     )
 
-    positions = [skill_text.index(filename) for filename in CANONICAL_FULL_V1_FILES]
+    positions = [skill_text.index(filename) for filename in CANONICAL_SCENE_FULL_FILES]
     assert positions == sorted(positions)
-    assert "--profile full-v1" in skill_text
+    assert "--profile scene-full" in skill_text
     assert "earliest" in skill_text.lower()
     assert "downstream" in skill_text.lower()
     assert "package-manifest.json" in contract_text
     assert "source-scene.md" in contract_text
-    assert "full-v1" in checklist_text
+    assert "scene-full" in checklist_text
 
     observables = " ".join(
         observable
@@ -563,7 +563,7 @@ def test_scene_pipeline_specifies_the_full_v1_contract(repository_root: Path) ->
     for required in (
         "thirteen",
         "dependency order",
-        "full-v1",
+        "scene-full",
         "downstream",
         "handoff",
     ):
@@ -724,7 +724,7 @@ def test_creative_production_pipeline_declares_dependency_order_and_modes(
     assert skill_text.index("validate-production") > positions[-1]
 
     assert "validated story/script package" in contract_text
-    assert "full-v1 scene package" in contract_text
+    assert "scene-full scene package" in contract_text
     for mode, expected, forbidden in (
         (
             "live-action-only",
@@ -847,14 +847,14 @@ def test_creative_production_pipeline_declares_stage_handoff_gates(
 
     expected_stages = {
         "Production design": (
-            ("validated story/script package", "validated full-v1 scene packages"),
+            ("validated story/script package", "validated scene-full scene packages"),
             "production-design-plan.json",
             "Production Designer",
             "continue",
             "validate-artifact production-design-plan",
         ),
         "Character look": (
-            ("validated story/script package", "validated full-v1 scene packages"),
+            ("validated story/script package", "validated scene-full scene packages"),
             "character-look-bible.json",
             "Character Look Designer",
             "continue",
@@ -897,7 +897,7 @@ def test_creative_production_pipeline_declares_stage_handoff_gates(
         ),
         "Validator": (
             ("production-manifest.json", "exact selected production modes"),
-            "production-v2 validation evidence",
+            "production validation evidence",
             "Production package validator",
             "ready-for-post",
             "validate-production",

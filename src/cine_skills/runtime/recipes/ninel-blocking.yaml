@@ -1,0 +1,59 @@
+system_version: "0.3.0"
+recipe_id: ninel-blocking-pilot
+status: blocked
+purpose: >-
+  Prepare an isolated, source-bound Ninel scene-blocking demonstration without
+  claiming a live Blender run, creative approval, or finished media.
+
+source:
+  project: examples/scene-full
+  scene_id: S01
+  package_root: scenes/S01
+  artifacts:
+    - scenes/S01/blocking-plan.json
+    - scenes/S01/camera-movement-plan.json
+    - scenes/S01/shot-list.json
+  source_digest_policy: raw-bytes
+
+shots:
+  - shot_id: S01-SH001
+    source_records:
+      - shot-list.json#/shots/0
+      - camera-movement-plan.json#/moves/0
+    dependency_branch: camera:S01-SH001
+  - shot_id: S01-SH004
+    source_records:
+      - shot-list.json#/shots/3
+      - camera-movement-plan.json#/moves/1
+    dependency_branch: camera:S01-SH004
+
+execution:
+  transport: standard-mcp
+  arbitrary_python: false
+  required_capability_intents:
+    - read_scene_metadata
+    - create_proxy_geometry
+    - create_camera_pose
+    - read_camera_state
+    - capture_reference_preview
+  modifying_actions_require:
+    - disposable_output_copy
+    - reviewed_numeric_transforms
+    - live_capability_receipt
+
+output:
+  root: .film-os-state/pilot/ninel-blocking
+  original_project_overwrite: false
+
+blocking_reasons:
+  - configured_server_identity_unavailable
+  - numeric_transforms_require_review
+
+evidence:
+  required_before_execution:
+    - configured_server_identity_and_transport
+    - capability_inventory_receipt
+    - coordinate_system_and_units
+    - frame_rate_and_frame_range
+    - reviewed_numeric_positions_and_orientations
+  missing_evidence_state: blocked

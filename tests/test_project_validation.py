@@ -19,8 +19,8 @@ def test_exact_entries_rejects_unexpected_directory(tmp_path):
     (package / "expected.json").write_text("{}", encoding="utf-8")
     (package / "generated-media").mkdir()
 
-    assert inspect_exact_entries(package, {"expected.json"}, "story-v2") == [
-        "generated-media: unexpected entry for story-v2 package"
+    assert inspect_exact_entries(package, {"expected.json"}, "story") == [
+        "generated-media: unexpected entry for story package"
     ]
 
 
@@ -35,8 +35,8 @@ def test_exact_entries_reports_unreadable_directory_without_traceback(
 
     monkeypatch.setattr(Path, "iterdir", denied)
 
-    assert inspect_exact_entries(package, {"expected.json"}, "story-v2") == [
-        f"{package}: unable to inspect story-v2 package directory: denied"
+    assert inspect_exact_entries(package, {"expected.json"}, "story") == [
+        f"{package}: unable to inspect story package directory: denied"
     ]
 
 
@@ -46,8 +46,8 @@ def test_layer_manifest_must_match_contract_order():
         ArtifactContract("b.json", "b", 2),
     )
     manifest = {"artifacts": [
-        {"filename": "b.json", "schema_name": "b", "schema_version": "2.0", "dependency_order": 1},
-        {"filename": "a.json", "schema_name": "a", "schema_version": "2.0", "dependency_order": 2},
+        {"filename": "b.json", "schema_name": "b", "schema_version": "0.3.0", "dependency_order": 1},
+        {"filename": "a.json", "schema_name": "a", "schema_version": "0.3.0", "dependency_order": 2},
     ]}
 
     assert validate_layer_manifest(manifest, contracts, "story-manifest.json") == [

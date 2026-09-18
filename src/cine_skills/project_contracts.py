@@ -3,10 +3,10 @@ from __future__ import annotations
 from collections.abc import Collection
 from dataclasses import dataclass
 
-STORY_PROFILE = "story-v2"
-PRODUCTION_PROFILE = "production-v2"
-POST_PROFILE = "post-v2"
-FULL_CREATIVE_PROFILE = "full-creative-v2"
+STORY_PROFILE = "story"
+PRODUCTION_PROFILE = "production"
+POST_PROFILE = "post"
+FULL_CREATIVE_PROFILE = "full-creative"
 
 PROJECT_FORMATS = (
     "feature", "short", "series", "documentary",

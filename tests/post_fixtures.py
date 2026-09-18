@@ -47,7 +47,7 @@ def valid_post_payloads() -> dict[str, dict[str, object]]:
 def write_post_package(directory: Path, *, extra: str | None = None) -> Path:
     directory.mkdir(parents=True, exist_ok=True)
     payloads = valid_post_payloads()
-    payloads["post-manifest.json"] = {"schema_version":"2.0", "release_version":"2.0.0", "project_id":PROJECT, "layer":"post", "profile":"post-v2", "artifacts":[{"filename":c.filename,"schema_name":c.schema_name,"schema_version":"2.0","dependency_order":c.dependency_order} for c in required_post_artifacts()], "validation_status":"valid", "unresolved_questions":[]}
+    payloads["post-manifest.json"] = {"schema_version":"0.3.0", "release_version":"0.3.0", "project_id":PROJECT, "layer":"post", "profile":"post", "artifacts":[{"filename":c.filename,"schema_name":c.schema_name,"schema_version":"0.3.0","dependency_order":c.dependency_order} for c in required_post_artifacts()], "validation_status":"valid", "unresolved_questions":[]}
     for name, payload in payloads.items(): (directory / name).write_text(json.dumps(payload), encoding="utf-8")
     if extra: (directory / extra).write_text("{}", encoding="utf-8")
     return directory

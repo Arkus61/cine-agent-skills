@@ -1,4 +1,4 @@
-# Full-v1 Pipeline Contract
+# Scene-Full Pipeline Contract
 
 ## Canonical dependency order
 
@@ -65,7 +65,7 @@ The source scene and manifest are package control files and therefore are not re
 Run:
 
 ```bash
-PYTHONPATH=src .venv/bin/python -m cine_skills validate-package <package-dir> --profile full-v1 --format json
+PYTHONPATH=src .venv/bin/python -m cine_skills validate-package <package-dir> --profile scene-full --format json
 ```
 
 The validator checks exact package membership, all twelve JSON schemas, one shared `scene_id`, identifier contracts, resolved beat and shot references, full coverage, and the manifest contract. A package is handoff-ready only when the command exits zero and returns `valid: true`.
@@ -81,7 +81,7 @@ When validation returns more than one error:
 3. regenerate only semantically affected downstream artifacts;
 4. preserve valid upstream artifacts and surviving identifiers;
 5. regenerate the manifest if any inventoried file changed;
-6. rerun the complete `full-v1` validation command.
+6. rerun the complete `scene-full` validation command.
 
 Repeat until it passes. A formatting-only schema repair does not trigger creative regeneration unless it changes meaning or a reference.
 
@@ -107,7 +107,7 @@ Never renumber surviving items because another item was removed. Assign the next
 
 For each unresolved conflict state the earlier decision, later contradiction, production impact, recommended resolution, and affected files. The final handoff states:
 
-- package path and `full-v1` profile;
+- package path and `scene-full` profile;
 - exact validation command, exit result, and `valid` result;
 - repairs and regenerated downstream files;
 - assumptions and uncertainties still requiring confirmation;

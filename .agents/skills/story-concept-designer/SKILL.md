@@ -37,7 +37,7 @@ Read the user brief and confirmed constraints. Keep supplied facts distinct from
 
 - Keep every string non-empty and every array non-empty and duplicate-free.
 - Give every supplied constraint a non-empty `statement` and `source_reference`; do not put that statement in `assumptions`.
-- Use `schema_version` exactly `"2.0"`; add no undeclared fields.
+- Use `schema_version` exactly `"0.3.0"`; add no undeclared fields.
 - Treat genre and structural models as options, never formulas.
 - Phrase nonfiction claims no more strongly than the available evidence.
 - Do not present an invented audience segment or creative hypothesis as research.

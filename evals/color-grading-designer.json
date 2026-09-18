@@ -1,6 +1,6 @@
 {
   "skill": "color-grading-designer",
-  "version": "2.0",
+  "version": "0.3.0",
   "cases": [
     {
       "id": "daylight-no-media",

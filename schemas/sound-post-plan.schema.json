@@ -87,7 +87,7 @@
     }
   },
   "properties": {
-    "schema_version": {"const": "2.0"},
+    "schema_version": {"const": "0.3.0"},
     "project_id": {"$ref": "#/$defs/positive_id"},
     "unit_id": {"$ref": "#/$defs/positive_id"},
     "project_format": {"enum": ["feature", "short", "series", "documentary", "commercial", "music-video", "short-form"]},

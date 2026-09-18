@@ -1,6 +1,6 @@
 {
   "skill": "story-development-pipeline",
-  "version": "2.0",
+  "version": "0.3.0",
   "cases": [
     {
       "id": "ninel-season-and-pilot",
@@ -9,7 +9,7 @@
       "observables": [
         "Creates every story and pilot script artifact in exact dependency order, including the series-only season-arc.json and both manifests.",
         "Selects the pilot only from the season episode inventory and preserves project, episode, event, character, world, scene, and Fountain metadata references.",
-        "Invokes validate-story literally and validates the script package, Fountain mapping, full-v1 scenes, and project index with current evidence.",
+        "Invokes validate-story literally and validates the script package, Fountain mapping, scene-full scenes, and project index with current evidence.",
         "Inspects screenplay.fountain before making any screenplay validity claim; a manifest or specialist assertion alone cannot pass the gate.",
         "Returns exactly ready-for-preproduction on complete passing evidence or blocked with errors and unresolved questions."
       ]

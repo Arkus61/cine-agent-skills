@@ -20,7 +20,7 @@
     "blocker": {"type": "object", "additionalProperties": false, "required": ["kind", "detail"], "properties": {"kind": {"enum": ["evidence", "subjective", "rights", "safety"]}, "detail": {"$ref": "#/$defs/text"}}}
   },
   "properties": {
-    "schema_version": {"const": "2.0"},
+    "schema_version": {"const": "0.3.0"},
     "project_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*$"},
     "package_status": {"enum": ["awaiting-media", "reviewed", "blocked"]},
     "source_context": {"type": "object", "additionalProperties": false, "required": ["registries", "prompt_packages"], "properties": {"registries": {"type": "object", "additionalProperties": false, "required": ["scene_ids", "shot_ids", "asset_ids"], "properties": {"character_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/text"}}, "scene_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/text"}}, "shot_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/text"}}, "asset_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/text"}}, "world_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/text"}}, "beat_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/text"}}, "sound_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/text"}}}}, "prompt_packages": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/prompt_package"}}}},

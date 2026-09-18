@@ -1,6 +1,6 @@
 {
   "skill": "scene-preproduction-pipeline",
-  "version": "1.0",
+  "version": "0.3.0",
   "cases": [
     {
       "id": "dialogue-pressure",
@@ -10,7 +10,7 @@
         "Creates all thirteen canonical files in one package and follows the exact dependency order.",
         "Uses stable scene-prefixed identifiers and labels missing layout, camera, and context details as assumptions.",
         "Builds pressure, counter-pressure, discovery, and locked-door beats without losing cross-artifact references.",
-        "Validates the complete package with the full-v1 profile and reports valid true before handoff.",
+        "Validates the complete package with the scene-full profile and reports valid true before handoff.",
         "If validation fails, repairs the earliest invalid artifact and regenerates only affected downstream files.",
         "Returns a handoff with the command, result, repairs, assumptions, conflicts, and human-review readiness."
       ]
@@ -23,7 +23,7 @@
         "Creates all thirteen canonical files in one package and follows the exact dependency order.",
         "Defines port, starboard, aft, bow, crane, and rescue-boat geography before coverage.",
         "Keeps blocking, shots, department needs, and continuity consistent with travel paths and the prop handoff.",
-        "Validates the complete package with the full-v1 profile and reports valid true before handoff.",
+        "Validates the complete package with the scene-full profile and reports valid true before handoff.",
         "If validation fails, repairs the earliest invalid artifact and regenerates only affected downstream files.",
         "Returns a handoff with safety assumptions, validation evidence, repairs, conflicts, and human-review readiness."
       ]
@@ -36,7 +36,7 @@
         "Creates all thirteen canonical files in one package and follows the exact dependency order.",
         "Preserves the radio voice and handprint ambiguity across every creative and production artifact.",
         "Labels unknown causes, layout, lighting method, and practical effects as assumptions or uncertainties.",
-        "Validates the complete package with the full-v1 profile and reports valid true before handoff.",
+        "Validates the complete package with the scene-full profile and reports valid true before handoff.",
         "If validation fails, repairs the earliest invalid artifact and regenerates only affected downstream files.",
         "Returns a handoff with the command, result, repairs, assumptions, conflicts, and human-review readiness."
       ]

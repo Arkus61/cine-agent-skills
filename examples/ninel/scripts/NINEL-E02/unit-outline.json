@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.3.0",
+  "project_id": "NINEL",
+  "project_format": "series",
+  "unit_id": "NINEL-E02",
+  "runtime_seconds": 30,
+  "runtime_basis": "Planned demonstration timing; no measured media.",
+  "unit_objective": "Ask Argo about the return.",
+  "structural_model": "Serial mystery",
+  "source_event_ids": [
+    "NINEL-EV002"
+  ],
+  "source_plotline_ids": [
+    "NINEL-PL01"
+  ],
+  "opening_hook": {
+    "scene_id": "NINEL-E02-SC001",
+    "promise": "A pulse interrupts the room.",
+    "function": "Orient the episode."
+  },
+  "scenes": [
+    {
+      "scene_id": "NINEL-E02-SC001",
+      "scene_index": 1,
+      "start_seconds": 0,
+      "end_seconds": 30,
+      "title": "The answer",
+      "summary": "Ask Argo about the return.",
+      "story_function": "Advance the mystery.",
+      "event_ids": [
+        "NINEL-EV002"
+      ],
+      "plotline_ids": [
+        "NINEL-PL01"
+      ],
+      "evidence_status": "not-applicable",
+      "retention_function": "Resolve the episode question."
+    }
+  ],
+  "event_coverage": [
+    {
+      "event_id": "NINEL-EV002",
+      "scene_ids": [
+        "NINEL-E02-SC001"
+      ],
+      "outcome": "Argo names a failure."
+    }
+  ],
+  "plotline_coverage": [
+    {
+      "plotline_id": "NINEL-PL01",
+      "scene_ids": [
+        "NINEL-E02-SC001"
+      ],
+      "advancement": "The diagnostic response advances."
+    }
+  ],
+  "emotional_turns": [
+    {
+      "scene_id": "NINEL-E02-SC001",
+      "from_state": "uncertainty",
+      "to_state": "resolve",
+      "change": "Ninel seeks an explanation."
+    }
+  ],
+  "act_outs": [],
+  "midpoint": null,
+  "climax": {
+    "scene_id": "NINEL-E02-SC001",
+    "function": "The diagnostic response changes."
+  },
+  "resolution": {
+    "scene_id": "NINEL-E02-SC001",
+    "outcome": "Argo names a failure.",
+    "unit_change": "The past becomes a question."
+  },
+  "forward_hook": null,
+  "format_plan": {
+    "mode": "series-episode",
+    "episode_position": "finale",
+    "local_resolution": "Resolve the local diagnostic response question.",
+    "season_dependencies": [
+      {
+        "dependency": "The diagnostic response plot continues.",
+        "carry_forward": "Carry the changed room status."
+      }
+    ]
+  },
+  "assumptions": [
+    "Demonstration adaptation of the legacy brief, not approved series canon."
+  ],
+  "uncertainties": []
+}

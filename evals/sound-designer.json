@@ -1,6 +1,6 @@
 {
   "skill": "sound-designer",
-  "version": "1.0",
+  "version": "0.3.0",
   "cases": [
     {
       "id": "ambiguous-medical-bay",

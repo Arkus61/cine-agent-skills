@@ -1,6 +1,6 @@
 {
   "skill": "character-arc-designer",
-  "version": "2.0",
+  "version": "0.3.0",
   "cases": [
     {
       "id": "ninel-serialized-ensemble",

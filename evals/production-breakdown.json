@@ -1,6 +1,6 @@
 {
   "skill": "production-breakdown",
-  "version": "1.0",
+  "version": "0.3.0",
   "cases": [
     {
       "id": "reflective-medical-bay",

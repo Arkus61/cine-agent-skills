@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private security report
+    url: https://github.com/Arkus61/cine-agent-skills/security/advisories/new
+    about: Do not publish exploitable details in a public issue.
+  - name: Documentation and active plan
+    url: https://github.com/Arkus61/cine-agent-skills/blob/main/docs/CONTINUE.md
+    about: Check the current verified checkpoint before opening a planning issue.

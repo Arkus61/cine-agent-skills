@@ -1,4 +1,4 @@
-"""Validation for exact production-v2 package inventories."""
+"""Validation for exact production package inventories."""
 
 from __future__ import annotations
 
@@ -329,7 +329,7 @@ def _review_errors(payload: Mapping[str, Any], upstream: ProjectIndex, asset_ids
 
 
 def validate_production_package(package_dir: Path, root: Path, production_modes: Collection[str], upstream: ProjectIndex, *, enforce_directory_name: bool = True) -> list[str]:
-    """Validate an exact production-v2 package against an authoritative index."""
+    """Validate an exact production package against an authoritative index."""
     package = Path(package_dir)
     try:
         contracts = required_production_artifacts(production_modes)

@@ -1,6 +1,6 @@
 {
   "skill": "ai-media-prompt-designer",
-  "version": "2.0",
+  "version": "0.3.0",
   "cases": [
     {
       "id": "lantern-hybrid-previs",

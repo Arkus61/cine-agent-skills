@@ -82,7 +82,7 @@
     "sound": {"type": "object", "additionalProperties": false, "required": ["sound_source", "event_or_bed", "perspective", "timing_and_decay"], "properties": {"sound_source": {"$ref": "#/$defs/claim"}, "event_or_bed": {"$ref": "#/$defs/claim"}, "perspective": {"$ref": "#/$defs/claim"}, "timing_and_decay": {"$ref": "#/$defs/claim"}}}
   },
   "properties": {
-    "schema_version": {"const": "2.0"},
+    "schema_version": {"const": "0.3.0"},
     "project_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*$"},
     "source_context": {
       "type": "object", "additionalProperties": false,

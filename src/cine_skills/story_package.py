@@ -1,4 +1,4 @@
-"""Validation for v2 story layers and screenplay unit packages."""
+"""Validation for story layers and screenplay unit packages."""
 
 from __future__ import annotations
 
@@ -32,7 +32,7 @@ SCRIPT_CONTRACTS = (
     ArtifactContract("screenplay.fountain", "fountain", 2),
     ArtifactContract("screenplay-metadata.json", "screenplay-metadata", 3),
     ArtifactContract("script-revision-plan.json", "script-revision-plan", 4),
-    ArtifactContract("scenes", "full-v1", 5),
+    ArtifactContract("scenes", "scene-full", 5),
     ArtifactContract("script-manifest.json", "layer-manifest", 6),
 )
 
@@ -211,7 +211,7 @@ def validate_script_package(
     project_id: str,
     project_format: str,
 ) -> list[str]:
-    """Validate one exact screenplay-unit package and its full-v1 scenes."""
+    """Validate one exact screenplay-unit package and its scene-full scenes."""
     script = Path(script_dir)
     expected_names = {contract.filename for contract in SCRIPT_CONTRACTS}
     inventory_errors = inspect_exact_entries(
@@ -313,7 +313,7 @@ def validate_script_package(
             and isinstance(mapping.get("scene_id"), str)
         }
         scene_inventory_errors = inspect_exact_entries(
-            scenes_dir, scene_ids, "full-v1 scenes"
+            scenes_dir, scene_ids, "scene-full scenes"
         )
         errors.extend(scene_inventory_errors)
         if not any("unable to inspect" in error for error in scene_inventory_errors):

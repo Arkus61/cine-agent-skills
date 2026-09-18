@@ -7,7 +7,7 @@
 - [ ] A series includes `season-arc.json` and selects units only from its episode inventory.
 - [ ] A non-series package has no `season-arc.json` and uses the canonical `<project>-U01` unit.
 - [ ] `story-manifest.json` lists the exact format-selected inventory in dependency order.
-- [ ] The literal `validate-story` command exits zero and its current output reports `valid: true` with profile `story-v2`.
+- [ ] The literal `validate-story` command exits zero and its current output reports `valid: true` with profile `story`.
 
 ## Each script unit
 
@@ -15,7 +15,7 @@
 - [ ] The outline belongs to the selected episode or canonical non-series unit and references only valid story IDs.
 - [ ] `screenplay.fountain` was inspected; every heading and unique character cue corresponds one-to-one with `screenplay-metadata.json`.
 - [ ] The revision plan diagnoses the actual draft, preserves approved constraints, and does not masquerade as an executed rewrite.
-- [ ] Every metadata scene has one valid full-v1 package under `scenes/<scene-id>/`.
+- [ ] Every metadata scene has one valid scene-full package under `scenes/<scene-id>/`.
 - [ ] The real script-package validator and full project-index validator both exit zero with no errors.
 
 ## Repair and handoff

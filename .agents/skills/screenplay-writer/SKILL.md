@@ -37,7 +37,7 @@ Read [screenplay-craft.md](references/screenplay-craft.md) for scene constructio
 
 `screenplay.fountain` must use a plain-text title page, uppercase standard `INT.`, `EXT.`, `INT./EXT.`, `EXT./INT.`, or `I/E.` headings, action, character cues, dialogue, sparing parentheticals, and transitions only when useful. The repository inspector extracts only ordered standard headings and normalized character cues; it is not a renderer.
 
-`screenplay-metadata.json` must be a strict schema-version `2.0` object containing:
+`screenplay-metadata.json` must be a strict schema-version `0.3.0` object containing:
 
 - exact `project_id`, `unit_id`, and source event inventory;
 - one unique mapping per scene with exact heading text, event and character references, location, objective, conflict, and turn;

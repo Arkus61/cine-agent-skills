@@ -251,7 +251,7 @@ def test_production_package_reports_inventory_and_malformed_json_without_traceba
 
     errors = validate_production_package(package, repository_root, ("live-action",), upstream)
     assert errors == sorted(errors)
-    assert "generated-media: unexpected entry for production-v2 package" in errors
+    assert "generated-media: unexpected entry for production package" in errors
     assert any(error.startswith("vfx-plan.json: invalid JSON") for error in errors)
 
 
@@ -272,7 +272,7 @@ def test_production_package_reports_wrong_file_type_and_unreadable_directory_saf
 
     monkeypatch.setattr(Path, "iterdir", denied)
     assert validate_production_package(package, repository_root, ("live-action",), upstream) == [
-        f"{package}: unable to inspect production-v2 package directory: denied"
+        f"{package}: unable to inspect production package directory: denied"
     ]
 
 

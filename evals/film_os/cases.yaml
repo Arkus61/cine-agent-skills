@@ -1,0 +1,80 @@
+suite: film-os-modernization
+system_version: 0.3.0
+source_mode: replay-estimate
+cases:
+  - id: task-capsule-one-scene
+    description: Compile a bounded capsule for one scene task.
+    kind: task_capsule
+    brief: Select the exact scene and skill references for one camera-movement task.
+    validation:
+      kind: scene-full
+      target: examples/scene-full/scenes/S01
+    expected:
+      context_status: ready
+      output_state: planned
+    synthetic_fault: null
+
+  - id: camera-revision
+    description: Revise one camera input and invalidate only its declared closure.
+    kind: camera_revision
+    brief: Change the first camera intent while preserving the independent shot branch.
+    validation:
+      kind: project
+      target: examples/ninel
+    expected:
+      affected_nodes:
+        - camera:S01-SH001
+        - preview:S01-SH001
+      unaffected_nodes:
+        - camera:S01-SH002
+    synthetic_fault: null
+
+  - id: character-look-two-scenes
+    description: Change one character look shared by two scene branches.
+    kind: character_look_change
+    brief: Update one character-look source and report both dependent scenes without inventing media evidence.
+    validation:
+      kind: project
+      target: examples/ninel
+    expected:
+      affected_nodes:
+        - character-look:NINEL-CH001
+        - scene:S01
+        - scene:S02
+    synthetic_fault: synthetic-shared-look-source
+
+  - id: unchanged-rerun
+    description: Re-run an unchanged deterministic task.
+    kind: unchanged_rerun
+    brief: Reuse the prior validated preparation and make zero model calls when all digests match.
+    validation:
+      kind: project
+      target: examples/ninel
+    expected:
+      model_calls: 0
+      cache: hit
+    synthetic_fault: null
+
+  - id: interrupted-run
+    description: Resume after a process interruption with a durable receipt.
+    kind: interrupted_run
+    brief: Resume the same run after an external receipt was journaled before checkpoint advancement.
+    validation:
+      kind: project
+      target: examples/ninel
+    expected:
+      outcome: resumed
+      external_action_count: 1
+    synthetic_fault: synthetic-process-stop-after-receipt
+
+  - id: missing-media
+    description: Keep missing media explicit and unapproved.
+    kind: missing_media
+    brief: Report a missing preview as awaiting-media without upgrading structure to approval.
+    validation:
+      kind: project
+      target: examples/ninel
+    expected:
+      outcome: awaiting-media
+      creative_approval: not-granted
+    synthetic_fault: synthetic-missing-preview

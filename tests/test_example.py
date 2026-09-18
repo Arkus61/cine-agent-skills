@@ -8,12 +8,12 @@ from cine_skills.package import validate_scene_package
 from cine_skills.project_package import validate_project
 
 
-def test_ninel_v2_project_validates(repository_root: Path) -> None:
-    assert validate_project(repository_root / "examples/ninel-v2", repository_root) == []
+def test_ninel_project_validates(repository_root: Path) -> None:
+    assert validate_project(repository_root / "examples/ninel", repository_root) == []
 
 
-def test_ninel_v2_declares_animation_ai_series(repository_root: Path) -> None:
-    project = repository_root / "examples/ninel-v2"
+def test_ninel_declares_animation_ai_series(repository_root: Path) -> None:
+    project = repository_root / "examples/ninel"
     manifest = json.loads((project / "creative-manifest.json").read_text())
     assert manifest["project_format"] == "series"
     assert set(manifest["production_modes"]) == {"animation", "ai"}
@@ -42,7 +42,7 @@ def test_production_layer_can_use_manifest_directory(repository_root, tmp_path):
     assert validate_production_package(package, repository_root, ("animation", "ai"), upstream, enforce_directory_name=False) == []
 
 
-FULL_V1_FILES = {
+SCENE_FULL_FILES = {
     "source-scene.md",
     "scene-beats.json",
     "directing-plan.json",
@@ -79,14 +79,14 @@ def test_ninel_example_artifacts_are_valid(
 
 
 def test_ninel_scene_package_is_valid(repository_root: Path) -> None:
-    package = repository_root / "examples" / "ninel" / "scenes" / "S01"
+    package = repository_root / "examples" / "scene-core" / "scenes" / "S01"
     assert validate_scene_package(package, repository_root) == []
 
 
-def test_ninel_v1_scene_package_is_valid(repository_root: Path) -> None:
-    package = repository_root / "examples" / "ninel-v1" / "scenes" / "S01"
-    assert {path.name for path in package.iterdir()} == FULL_V1_FILES
-    assert validate_scene_package(package, repository_root, profile="full-v1") == []
+def test_scene_full_package_is_valid(repository_root: Path) -> None:
+    package = repository_root / "examples" / "scene-full" / "scenes" / "S01"
+    assert {path.name for path in package.iterdir()} == SCENE_FULL_FILES
+    assert validate_scene_package(package, repository_root, profile="scene-full") == []
 
 
 @pytest.mark.parametrize(
@@ -102,7 +102,7 @@ def test_ninel_v1_scene_package_is_valid(repository_root: Path) -> None:
 def test_ninel_scene_package_matches_approved_pipeline_output(
     repository_root: Path, artifact_key: str, filename: str
 ) -> None:
-    package = repository_root / "examples" / "ninel" / "scenes" / "S01"
+    package = repository_root / "examples" / "scene-core" / "scenes" / "S01"
     aggregate = json.loads(
         (repository_root / "examples" / "ninel-pipeline-output.json").read_text(
             encoding="utf-8"

@@ -1,0 +1,82 @@
+{
+  "schema_version": "0.3.0",
+  "project_id": "NINEL",
+  "package_status": "awaiting-media",
+  "source_context": {
+    "registries": {
+      "scene_ids": [
+        "NINEL-E01-SC001",
+        "NINEL-E02-SC001"
+      ],
+      "shot_ids": [
+        "NINEL-E01-SC001-SH001",
+        "NINEL-E01-SC001-SH002",
+        "NINEL-E02-SC001-SH001",
+        "NINEL-E02-SC001-SH002"
+      ],
+      "asset_ids": [],
+      "character_ids": [
+        "NINEL-CH001"
+      ]
+    },
+    "prompt_packages": [
+      {
+        "prompt_id": "NINEL-MP001",
+        "upstream_references": [
+          {
+            "kind": "character",
+            "id": "NINEL-CH001"
+          },
+          {
+            "kind": "scene",
+            "id": "NINEL-E01-SC001"
+          },
+          {
+            "kind": "shot",
+            "id": "NINEL-E01-SC001-SH001"
+          },
+          {
+            "kind": "shot",
+            "id": "NINEL-E01-SC001-SH002"
+          },
+          {
+            "kind": "shot",
+            "id": "NINEL-E02-SC001-SH001"
+          },
+          {
+            "kind": "shot",
+            "id": "NINEL-E02-SC001-SH002"
+          }
+        ],
+        "acceptance_criteria": [
+          {
+            "criterion_id": "NINEL-AC001",
+            "statement": "The supplied start composition remains observable.",
+            "source_reference": "media-prompt-package.json#/prompts/NINEL-MP001/acceptance_criteria/0",
+            "dimension": "composition",
+            "required_evidence": "static-visible"
+          },
+          {
+            "criterion_id": "NINEL-AC002",
+            "statement": "The supplied identity anchors remain observable.",
+            "source_reference": "media-prompt-package.json#/prompts/NINEL-MP001/acceptance_criteria/1",
+            "dimension": "identity",
+            "required_evidence": "static-visible"
+          }
+        ]
+      }
+    ]
+  },
+  "missing_inputs": [
+    {
+      "kind": "media",
+      "detail": "No inspectable media has been supplied."
+    },
+    {
+      "kind": "criterion",
+      "detail": "Criteria await inspectable media."
+    }
+  ],
+  "blockers": [],
+  "items": []
+}

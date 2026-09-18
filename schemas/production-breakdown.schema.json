@@ -13,7 +13,7 @@
   "additionalProperties": false,
   "required": ["schema_version", "scene_id", "assumptions", "breakdown_scope", "items"],
   "properties": {
-    "schema_version": {"const": "1.0"},
+    "schema_version": {"const": "0.3.0"},
     "scene_id": {"$ref": "#/$defs/non_empty_string"},
     "assumptions": {"$ref": "#/$defs/string_array"},
     "breakdown_scope": {"$ref": "#/$defs/non_empty_string"},

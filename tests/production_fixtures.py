@@ -1,4 +1,4 @@
-"""Compact, literal production-v2 package fixtures."""
+"""Compact, literal production package fixtures."""
 
 from __future__ import annotations
 
@@ -193,16 +193,16 @@ def production_payloads(modes: tuple[str, ...]) -> dict[str, dict[str, object]]:
         payloads["media-review-report.json"] = review
     contracts = required_production_artifacts(modes)
     payloads["production-manifest.json"] = {
-        "schema_version": "2.0",
-        "release_version": "2.0.0",
+        "schema_version": "0.3.0",
+        "release_version": "0.3.0",
         "project_id": PROJECT_ID,
         "layer": "production",
-        "profile": "production-v2",
+        "profile": "production",
         "artifacts": [
             {
                 "filename": contract.filename,
                 "schema_name": contract.schema_name,
-                "schema_version": "2.0",
+                "schema_version": "0.3.0",
                 "dependency_order": contract.dependency_order,
             }
             for contract in contracts

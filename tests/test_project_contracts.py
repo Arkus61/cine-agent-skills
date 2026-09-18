@@ -14,8 +14,8 @@ def filenames(contracts):
     return tuple(item.filename for item in contracts)
 
 
-def test_v2_profiles_and_supported_variants_are_literal():
-    assert FULL_CREATIVE_PROFILE == "full-creative-v2"
+def test_profiles_and_supported_variants_are_literal():
+    assert FULL_CREATIVE_PROFILE == "full-creative"
     assert PROJECT_FORMATS == (
         "feature", "short", "series", "documentary",
         "commercial", "music-video", "short-form",

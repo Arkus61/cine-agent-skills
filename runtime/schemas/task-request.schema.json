@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cine-agent-skills.local/runtime/task-request.schema.json",
+  "type": "object",
+  "required": ["task_id", "skill_name", "project_id"],
+  "additionalProperties": true,
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "skill_name": {"type": "string", "minLength": 1},
+    "project_id": {"type": "string", "minLength": 1},
+    "target_nodes": {"type": "array", "items": {"type": "string"}},
+    "required_refs": {"type": "array", "items": {"type": "string"}},
+    "optional_refs": {"type": "array", "items": {"type": "string"}},
+    "continuity_refs": {"type": "array", "items": {"type": "string"}},
+    "budget_tokens": {"type": "integer", "minimum": 0}
+  }
+}

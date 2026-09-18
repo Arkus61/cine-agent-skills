@@ -24,7 +24,7 @@ Read [the pipeline contract](references/story-pipeline-contract.md) before selec
 7. For each selected unit, use `$episode-outline-builder` to create `unit-outline.json` from the valid story layer and, for series, the selected season episode.
 8. Use `$screenplay-writer` once to create the paired `screenplay.fountain` and `screenplay-metadata.json`. Keep the files separate.
 9. Use `$screenplay-reviser` to create `script-revision-plan.json` from the actual screenplay, metadata, outline, and applicable story contracts. A revision plan is not an executed rewrite.
-10. Use `$scene-preproduction-pipeline` for every metadata-declared scene to create the exact `scenes/<scene-id>/` full-v1 package.
+10. Use `$scene-preproduction-pipeline` for every metadata-declared scene to create the exact `scenes/<scene-id>/` scene-full package.
 11. Assemble `script-manifest.json` last in each unit directory. Validate every script package and the full story index with the real validators in the contract.
 12. On any error, find the earliest invalid dependency, invalidate its transitive downstream closure, regenerate only that closure, rebuild affected manifests, and rerun all affected gates.
 13. Hand off with status `ready-for-preproduction` only when current validation evidence passes. Otherwise hand off `blocked` with unresolved questions, errors, and the earliest repair decision.

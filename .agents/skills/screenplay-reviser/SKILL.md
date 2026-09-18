@@ -30,7 +30,7 @@ Read [screenplay-revision.md](references/screenplay-revision.md). Copy [the comp
 
 ## Contract gate
 
-- Use schema version `2.0`, the exact project/unit context, a unique source inventory, and exact positional diagnosis IDs: array index `N` uses `<unit>-RV{N+1:03d}`.
+- Use schema version `0.3.0`, the exact project/unit context, a unique source inventory, and exact positional diagnosis IDs: array index `N` uses `<unit>-RV{N+1:03d}`.
 - Every affected and evidence reference resolves to the source inventory. Evidence source IDs are unique within an item and cover exactly its affected IDs.
 - Priorities are unique, consecutive, and stored in plan order. Dependency impact never moves backward from a lower-level note to an upstream note.
 - Constraint IDs are unique and resolve. Every preservation reference has one exact structured check. Executable targets never intersect protected IDs; blocked targets surface the exact conflicts in `decision_request`.

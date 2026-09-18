@@ -42,7 +42,7 @@ ID_FIELD_CASES = [
 
 
 def load_ninel_artifact(repository_root: Path, filename: str) -> dict[str, object]:
-    path = repository_root / "examples" / "ninel" / "scenes" / "S01" / filename
+    path = repository_root / "examples" / "scene-core" / "scenes" / "S01" / filename
     payload = json.loads(path.read_text(encoding="utf-8"))
     assert isinstance(payload, dict)
     return payload
@@ -68,9 +68,9 @@ def replace_nested_value(
 
 def valid_creative_manifest() -> dict[str, object]:
     return {
-        "schema_version": "2.0",
-        "release_version": "2.0.0",
-        "profile": "full-creative-v2",
+        "schema_version": "0.3.0",
+        "release_version": "0.3.0",
+        "profile": "full-creative",
         "project_id": "NINEL",
         "project_format": "short",
         "production_modes": ["live-action"],
@@ -88,7 +88,7 @@ def valid_creative_manifest() -> dict[str, object]:
 def valid_edit_plan() -> dict[str, object]:
     """Return a hand-authored edit plan independent of the shipped template."""
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "LANTERN",
         "unit_id": "LANTERN-U01",
         "project_format": "documentary",
@@ -254,7 +254,7 @@ def valid_edit_plan() -> dict[str, object]:
 
 def valid_media_prompt_package() -> dict[str, object]:
     payload: dict[str, object] = {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "LANTERN",
         "source_context": {
             "registries": {
@@ -347,7 +347,7 @@ def valid_media_prompt_package() -> dict[str, object]:
 def valid_media_review_report() -> dict[str, object]:
     """A reviewed still with source-owned criteria and direct evidence."""
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "LANTERN",
         "package_status": "reviewed",
         "source_context": {
@@ -2043,7 +2043,7 @@ def test_media_prompt_package_allows_review_predicates_with_local_no_scope(
 
 def valid_story_concept() -> dict[str, object]:
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "NINEL",
         "project_format": "series",
         "production_modes": ["animation", "ai"],
@@ -2110,7 +2110,7 @@ def valid_production_design_plan() -> dict[str, object]:
         ["NINEL-AS001"],
     ]
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "NINEL",
         "source_context": {
             "world_ids": ["NINEL-LO001", "NINEL-WR001", "NINEL-WR002"],
@@ -2666,7 +2666,7 @@ def test_production_design_plan_file_reports_malformed_json_without_traceback(
 
 def valid_animation_plan() -> dict[str, object]:
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "MORROW",
         "source_context": {
             "character_ids": ["MORROW-CH001"],
@@ -4436,7 +4436,7 @@ def valid_character_look_bible() -> dict[str, object]:
     scene_id = "NINEL-E01-SC001"
     shots = [f"{scene_id}-SH001", f"{scene_id}-SH002"]
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "NINEL",
         "source_context": {
             "character_ids": ["NINEL-CH001"],
@@ -5826,7 +5826,7 @@ def test_character_look_bible_missing_schema_is_deterministic(tmp_path: Path) ->
 
 def valid_story_structure() -> dict[str, object]:
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "NINEL",
         "candidate_models": [
             {
@@ -5956,7 +5956,7 @@ def valid_story_structure() -> dict[str, object]:
 
 def valid_character_arcs() -> dict[str, object]:
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "NINEL",
         "characters": [
             {
@@ -6073,7 +6073,7 @@ def valid_character_arcs() -> dict[str, object]:
 
 def valid_world_bible() -> dict[str, object]:
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "NINEL",
         "scope": {
             "story_boundary": "The frontier settlement, its water tunnels, and the reachable hive margin during the opening serial arc.",
@@ -6936,16 +6936,16 @@ def test_layer_manifest_requires_ordered_relative_artifacts(
     repository_root: Path,
 ) -> None:
     payload = {
-        "schema_version": "2.0",
-        "release_version": "2.0.0",
+        "schema_version": "0.3.0",
+        "release_version": "0.3.0",
         "project_id": "NINEL",
         "layer": "story",
-        "profile": "story-v2",
+        "profile": "story",
         "artifacts": [
             {
                 "filename": "story-concept.json",
                 "schema_name": "story-concept",
-                "schema_version": "2.0",
+                "schema_version": "0.3.0",
                 "dependency_order": 1,
             }
         ],
@@ -6960,16 +6960,16 @@ def test_layer_manifest_rejects_nonpositive_dependency_order(
     repository_root: Path,
 ) -> None:
     payload = {
-        "schema_version": "2.0",
-        "release_version": "2.0.0",
+        "schema_version": "0.3.0",
+        "release_version": "0.3.0",
         "project_id": "NINEL",
         "layer": "story",
-        "profile": "story-v2",
+        "profile": "story",
         "artifacts": [
             {
                 "filename": "story-concept.json",
                 "schema_name": "story-concept",
-                "schema_version": "2.0",
+                "schema_version": "0.3.0",
                 "dependency_order": 0,
             }
         ],
@@ -7023,7 +7023,7 @@ def test_creative_manifest_rejects_duplicate_production_modes(
 
 def test_valid_shot_list_passes(repository_root: Path) -> None:
     payload = {
-        "schema_version": "1.0",
+        "schema_version": "0.3.0",
         "scene_id": "S01",
         "assumptions": [],
         "shots": [
@@ -7049,7 +7049,7 @@ def test_valid_shot_list_passes(repository_root: Path) -> None:
 
 
 def test_invalid_shot_list_reports_missing_required_fields(repository_root: Path) -> None:
-    payload = {"schema_version": "1.0", "scene_id": "S01", "shots": [{}]}
+    payload = {"schema_version": "0.3.0", "scene_id": "S01", "shots": [{}]}
 
     errors = validate_artifact("shot-list", payload, repository_root)
 
@@ -7090,7 +7090,7 @@ def test_standalone_id_fields_reject_terminal_newline(
 
 def test_blocking_plan_rejects_empty_beat_reference(repository_root: Path) -> None:
     payload = {
-        "schema_version": "1.0",
+        "schema_version": "0.3.0",
         "scene_id": "S01",
         "space": "A narrow cabin.",
         "axis": "The bunk-to-door line.",
@@ -7115,7 +7115,7 @@ def test_blocking_plan_rejects_empty_beat_reference(repository_root: Path) -> No
 
 def test_camera_movement_plan_rejects_empty_beat_reference(repository_root: Path) -> None:
     payload = {
-        "schema_version": "1.0",
+        "schema_version": "0.3.0",
         "scene_id": "S01",
         "movement_philosophy": "Let stillness create pressure.",
         "moves": [
@@ -7144,7 +7144,7 @@ def test_camera_movement_plan_rejects_empty_beat_reference(repository_root: Path
 
 def test_camera_movement_plan_rejects_malformed_move_id(repository_root: Path) -> None:
     payload = {
-        "schema_version": "1.0",
+        "schema_version": "0.3.0",
         "scene_id": "S01",
         "movement_philosophy": "Let stillness create pressure.",
         "moves": [
@@ -7173,7 +7173,7 @@ def test_camera_movement_plan_rejects_malformed_move_id(repository_root: Path) -
 
 def test_shot_list_rejects_empty_beat_reference(repository_root: Path) -> None:
     payload = {
-        "schema_version": "1.0",
+        "schema_version": "0.3.0",
         "scene_id": "S01",
         "assumptions": [],
         "shots": [
@@ -7202,7 +7202,7 @@ def test_shot_list_rejects_empty_beat_reference(repository_root: Path) -> None:
 
 def test_blocking_plan_allows_zero_moves_for_a_static_scene(repository_root: Path) -> None:
     payload = {
-        "schema_version": "1.0",
+        "schema_version": "0.3.0",
         "scene_id": "S01",
         "space": "A narrow cabin.",
         "axis": "The bunk-to-door line.",
@@ -7219,7 +7219,7 @@ def test_camera_movement_plan_allows_zero_moves_for_a_static_scene(
     repository_root: Path,
 ) -> None:
     payload = {
-        "schema_version": "1.0",
+        "schema_version": "0.3.0",
         "scene_id": "S01",
         "movement_philosophy": "Let stillness create pressure.",
         "moves": [],
@@ -7231,7 +7231,7 @@ def test_camera_movement_plan_allows_zero_moves_for_a_static_scene(
 
 def valid_visual_language_plan() -> dict[str, object]:
     return {
-        "schema_version": "1.0",
+        "schema_version": "0.3.0",
         "scene_id": "S01",
         "assumptions": ["Focal lengths are full-frame equivalents."],
         "aspect_ratio": "2.00:1",
@@ -7334,7 +7334,7 @@ def test_visual_language_rule_requires_traceable_purpose(
 
 def valid_lighting_plan() -> dict[str, object]:
     return {
-        "schema_version": "1.0",
+        "schema_version": "0.3.0",
         "scene_id": "S01",
         "assumptions": ["Final fixture package and exposure are confirmed at prelight."],
         "lighting_philosophy": "Let motivated ship sources yield to the planet reveal.",
@@ -7415,7 +7415,7 @@ def test_lighting_setup_requires_executable_safety_and_purpose(
 
 def valid_sound_plan() -> dict[str, object]:
     return {
-        "schema_version": "1.0",
+        "schema_version": "0.3.0",
         "scene_id": "S01",
         "assumptions": ["Final microphone and playback choices follow the location survey."],
         "sound_philosophy": "Let the ship feel quiet enough that breath becomes an act of agency.",
@@ -7510,7 +7510,7 @@ def test_sound_plan_rejects_prescribed_commercial_track(repository_root: Path) -
 
 def valid_storyboard_plan() -> dict[str, object]:
     return {
-        "schema_version": "1.0",
+        "schema_version": "0.3.0",
         "scene_id": "S01",
         "assumptions": ["Panels are textual instructions for a storyboard artist."],
         "storyboard_intent": "Keep the audience inside Ninel's incomplete perception.",
@@ -7621,7 +7621,7 @@ def test_storyboard_plan_rejects_embedded_or_generated_image_fields(
 
 def valid_production_breakdown() -> dict[str, object]:
     return {
-        "schema_version": "1.0",
+        "schema_version": "0.3.0",
         "scene_id": "S01",
         "assumptions": ["The chamber release method requires department confirmation."],
         "breakdown_scope": "Scene-level requirements traceable to the approved preproduction artifacts.",
@@ -7741,7 +7741,7 @@ def test_production_breakdown_rejects_budget_and_schedule_fields(
 
 def valid_continuity_plan() -> dict[str, object]:
     return {
-        "schema_version": "1.0",
+        "schema_version": "0.3.0",
         "scene_id": "S01",
         "assumptions": ["Take-level photographs and measurements are recorded during photography."],
         "continuity_strategy": "Track Ninel's chosen breath, right hand, eyeline, and axis change as observable states.",
@@ -7831,7 +7831,7 @@ def test_continuity_plan_rejects_unknown_category(repository_root: Path) -> None
 
 def valid_season_arc() -> dict[str, object]:
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "NINEL",
         "project_format": "series",
         "season_premise": "Ninel's route home becomes inseparable from stopping the hive beneath the settlement.",
@@ -8423,7 +8423,7 @@ def test_season_arc_finale_payoff_targets_final_episode(repository_root: Path) -
 def valid_unit_outline(project_format: str = "series") -> dict[str, object]:
     if project_format == "series":
         return {
-            "schema_version": "2.0",
+            "schema_version": "0.3.0",
             "project_id": "ALPINE",
             "project_format": "series",
             "unit_id": "ALPINE-E03",
@@ -8558,7 +8558,7 @@ def valid_unit_outline(project_format: str = "series") -> dict[str, object]:
         "short-form",
     }
     payload = {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "PULSE",
         "project_format": "short-form",
         "unit_id": "PULSE-U01",
@@ -9080,7 +9080,7 @@ def test_unit_outline_malformed_input_returns_diagnostics_without_traceback(
 
 def valid_screenplay_metadata() -> dict[str, object]:
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "EMBER",
         "unit_id": "EMBER-U01",
         "source_event_ids": ["EMBER-EV001", "EMBER-EV002"],
@@ -9284,7 +9284,7 @@ def test_screenplay_metadata_requires_payoff_event_and_scene_together(
 
 def valid_script_revision_plan() -> dict[str, object]:
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "FERRY",
         "unit_id": "FERRY-U01",
         "draft_version": "first-draft",
@@ -10050,7 +10050,7 @@ def test_script_revision_plan_rejects_check_without_preserved_reference(
 def valid_vfx_plan() -> dict[str, object]:
     """Compact literal fixture for one effect shot and one no-VFX shot."""
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "ORBIT",
         "source_context": {
             "scenes": [
@@ -12177,7 +12177,7 @@ def valid_sound_post_plan() -> dict[str, object]:
         items.append(item)
 
     return {
-        "schema_version": "2.0",
+        "schema_version": "0.3.0",
         "project_id": "LANTERN",
         "unit_id": "LANTERN-U01",
         "project_format": "short",

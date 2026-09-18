@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from tests.v1_fixtures import write_full_v1_package
+from tests.scene_full_fixtures import write_scene_full_package
 from tests.story_fixtures import write_json, write_story_package
 from tests.production_fixtures import (
     PROJECT_ID,
@@ -19,7 +19,7 @@ from tests.post_fixtures import write_post_package
 
 
 def test_validate_project_unknown_profile_is_malformed_invocation(repository_root: Path) -> None:
-    result = run_cli(repository_root, "validate-project", "examples/ninel-v2", "--profile", "unknown")
+    result = run_cli(repository_root, "validate-project", "examples/ninel", "--profile", "unknown")
     assert result.returncode == 2
     assert "invalid choice" in result.stderr
     assert "Traceback" not in result.stdout + result.stderr
@@ -42,7 +42,7 @@ def test_validate_post_json_report_is_valid_for_complete_package(
     assert result.returncode == 0, result.stdout + result.stderr
     assert result.stderr == ""
     assert json.loads(result.stdout) == {
-        "command": "validate-post", "errors": [], "profile": "post-v2", "valid": True
+        "command": "validate-post", "errors": [], "profile": "post", "system_version": "0.3.0", "valid": True
     }
 
 
@@ -111,8 +111,8 @@ def test_validate_production_json_report_is_literal_and_mode_repeated(
     assert result.returncode == 0, result.stdout + result.stderr
     assert result.stderr == ""
     assert result.stdout == (
-        '{"command":"validate-production","errors":[],"profile":"production-v2",'
-        '"valid":true}\n'
+        '{"command":"validate-production","errors":[],"profile":"production",'
+        '"system_version":"0.3.0","valid":true}\n'
     )
 
 
@@ -122,7 +122,7 @@ def test_validate_production_allows_manifest_selected_nested_layer(
     result = run_cli(
         repository_root,
         "validate-production",
-        "examples/ninel-v2/production",
+        "examples/ninel/production",
         "--root",
         str(repository_root),
         "--production-mode",
@@ -294,8 +294,8 @@ def test_validate_story_json_report_is_exact(repository_root: Path, tmp_path: Pa
     assert result.returncode == 0
     assert result.stderr == ""
     assert result.stdout == (
-        '{"command":"validate-story","errors":[],"profile":"story-v2",'
-        '"valid":true}\n'
+        '{"command":"validate-story","errors":[],"profile":"story",'
+        '"system_version":"0.3.0","valid":true}\n'
     )
 
 
@@ -338,7 +338,7 @@ def test_validate_story_malformed_json_has_no_traceback(
     assert_rejected_without_traceback(result, "story-concept.json", "invalid JSON")
     report = json.loads(result.stdout)
     assert report["command"] == "validate-story"
-    assert report["profile"] == "story-v2"
+    assert report["profile"] == "story"
     assert report["valid"] is False
 
 
@@ -390,13 +390,13 @@ def test_validate_story_malformed_invocation_exits_two_without_traceback(
             "validate-artifact",
             [
                 "SCHEMA_NAME=shot-list",
-                "ARTIFACT_FILE=examples/ninel/scenes/S01/shot-list.json",
+                "ARTIFACT_FILE=examples/scene-core/scenes/S01/shot-list.json",
             ],
             "Artifact validation passed.",
         ),
         (
             "validate-package",
-            ["PACKAGE_DIR=examples/ninel/scenes/S01"],
+            ["PACKAGE_DIR=examples/scene-core/scenes/S01"],
             "Scene package validation passed.",
         ),
     ],
@@ -416,8 +416,8 @@ def test_make_validation_targets_use_configured_python(
 @pytest.mark.parametrize(
     ("target", "expected_output"),
     [
-        ("validate-core-example", "Scene package validation passed."),
-        ("validate-full-example", '"profile": "full-v1"'),
+        ("validate-scene-core-example", "Scene package validation passed."),
+        ("validate-scene-full-example", '"profile": "scene-full"'),
     ],
 )
 def test_documented_example_targets_pass(
@@ -427,7 +427,7 @@ def test_documented_example_targets_pass(
 
     assert result.returncode == 0, result.stdout + result.stderr
     assert expected_output in result.stdout
-    if target == "validate-full-example":
+    if target == "validate-scene-full-example":
         assert '"valid": true' in result.stdout
 
 
@@ -435,16 +435,16 @@ def test_documented_example_targets_pass(
     ("package_dir", "expected_report"),
     [
         (
-            "examples/ninel/scenes/S01",
-            '{"command": "validate-package", "errors": [], "profile": "core-v0.1", "valid": true}\n',
+            "examples/scene-core/scenes/S01",
+            '{"command": "validate-package", "errors": [], "profile": "scene-core", "system_version": "0.3.0", "valid": true}\n',
         ),
         (
-            "examples/ninel-v1/scenes/S01",
-            '{"command": "validate-package", "errors": [], "profile": "full-v1", "valid": true}\n',
+            "examples/scene-full/scenes/S01",
+            '{"command": "validate-package", "errors": [], "profile": "scene-full", "system_version": "0.3.0", "valid": true}\n',
         ),
     ],
 )
-def test_canonical_packages_emit_literal_v1_json_reports(
+def test_canonical_packages_emit_literal_json_reports(
     repository_root: Path, package_dir: str, expected_report: str
 ) -> None:
     result = run_cli(
@@ -469,7 +469,7 @@ def test_validate_artifact_cli_accepts_valid_file(
     artifact_path.write_text(
         json.dumps(
             {
-                "schema_version": "1.0",
+                "schema_version": "0.3.0",
                 "scene_id": "S01",
                 "assumptions": [],
                 "shots": [
@@ -509,7 +509,7 @@ def write_valid_package(package: Path) -> None:
     package.mkdir()
     files = {
         "scene-beats.json": {
-            "schema_version": "1.0",
+            "schema_version": "0.3.0",
             "scene_id": "S01",
             "scene_objective": "Ninel wakes.",
             "turn": "Silence becomes threatening.",
@@ -526,7 +526,7 @@ def write_valid_package(package: Path) -> None:
             ],
         },
         "directing-plan.json": {
-            "schema_version": "1.0",
+            "schema_version": "0.3.0",
             "scene_id": "S01",
             "concept": "A waking mind finds danger in silence.",
             "point_of_view": "Ninel",
@@ -536,7 +536,7 @@ def write_valid_package(package: Path) -> None:
             "assumptions": [],
         },
         "blocking-plan.json": {
-            "schema_version": "1.0",
+            "schema_version": "0.3.0",
             "scene_id": "S01",
             "space": "A narrow cabin.",
             "axis": "The bunk-to-door line.",
@@ -546,14 +546,14 @@ def write_valid_package(package: Path) -> None:
             "assumptions": [],
         },
         "camera-movement-plan.json": {
-            "schema_version": "1.0",
+            "schema_version": "0.3.0",
             "scene_id": "S01",
             "movement_philosophy": "Let stillness create pressure.",
             "moves": [],
             "assumptions": [],
         },
         "shot-list.json": {
-            "schema_version": "1.0",
+            "schema_version": "0.3.0",
             "scene_id": "S01",
             "assumptions": [],
             "shots": [
@@ -1022,9 +1022,9 @@ def test_validate_package_json_report_is_machine_readable(
     result = run_cli(
         repository_root,
         "validate-package",
-        "examples/ninel/scenes/S01",
+        "examples/scene-core/scenes/S01",
         "--profile",
-        "core-v0.1",
+        "scene-core",
         "--format",
         "json",
     )
@@ -1033,7 +1033,8 @@ def test_validate_package_json_report_is_machine_readable(
     assert json.loads(result.stdout) == {
         "command": "validate-package",
         "errors": [],
-        "profile": "core-v0.1",
+        "profile": "scene-core",
+        "system_version": "0.3.0",
         "valid": True,
     }
 
@@ -1042,14 +1043,14 @@ def test_validate_full_package_json_report_is_machine_readable(
     tmp_path: Path, repository_root: Path
 ) -> None:
     package = tmp_path / "S01"
-    write_full_v1_package(package)
+    write_scene_full_package(package)
 
     result = run_cli(
         repository_root,
         "validate-package",
         str(package),
         "--profile",
-        "full-v1",
+        "scene-full",
         "--format",
         "json",
     )
@@ -1058,7 +1059,8 @@ def test_validate_full_package_json_report_is_machine_readable(
     assert json.loads(result.stdout) == {
         "command": "validate-package",
         "errors": [],
-        "profile": "full-v1",
+        "profile": "scene-full",
+        "system_version": "0.3.0",
         "valid": True,
     }
 
@@ -1084,7 +1086,7 @@ def test_validate_package_json_report_sorts_errors(
     payload = json.loads(result.stdout)
     assert result.returncode == 1
     assert payload["valid"] is False
-    assert payload["profile"] == "core-v0.1"
+    assert payload["profile"] == "scene-core"
     assert payload["errors"] == sorted(payload["errors"])
     assert len(payload["errors"]) == 2
 
@@ -1099,9 +1101,9 @@ def test_installed_console_entry_validates_core_package(
         [
             str(executable),
             "validate-package",
-            "examples/ninel/scenes/S01",
+            "examples/scene-core/scenes/S01",
             "--profile",
-            "core-v0.1",
+            "scene-core",
         ],
         cwd=repository_root,
         text=True,
