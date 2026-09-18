@@ -12,7 +12,7 @@ import os
 import re
 import tempfile
 from collections.abc import Callable, Mapping
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 from typing import Any
 
 from .state import append_event, read_events
@@ -58,7 +58,16 @@ def _safe_target(workspace: Path, relative_path: str) -> tuple[str, Path]:
         raise _UnsafePath("workspace must be an existing regular directory")
 
     relative = Path(relative_path)
-    if relative.is_absolute() or not relative.parts or ".." in relative.parts:
+    windows_relative = PureWindowsPath(relative_path)
+    if (
+        relative.is_absolute()
+        or relative.drive
+        or relative.root
+        or windows_relative.drive
+        or windows_relative.root
+        or not relative.parts
+        or ".." in relative.parts
+    ):
         raise _UnsafePath("relative_path must stay inside the workspace")
     if any(part in {"", "."} for part in relative.parts):
         raise _UnsafePath("relative_path contains an unsafe component")

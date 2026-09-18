@@ -305,6 +305,19 @@ def test_publish_validation_and_path_safety_preserve_original(tmp_path: Path) ->
     assert null_path["status"] == "blocked"
     assert null_path["reason"] == "unsafe-path"
 
+    for unsafe_path in (r"\outside.json", r"D:outside.json", r"D:\\outside.json"):
+        operation_suffix = unsafe_path.replace(":", "-").replace("\\", "_")
+        windows_path = _publish(
+            workspace,
+            unsafe_path,
+            b"candidate\n",
+            _digest(original),
+            database,
+            f"publish-{operation_suffix}",
+        )
+        assert windows_path["status"] == "blocked"
+        assert windows_path["reason"] == "unsafe-path"
+
 
 def test_publish_rechecks_bytes_after_staged_validation(tmp_path: Path) -> None:
     workspace = tmp_path / "workspace"
