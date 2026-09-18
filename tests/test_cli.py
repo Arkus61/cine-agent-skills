@@ -930,7 +930,7 @@ def test_validate_artifact_cli_reports_excessive_validation_nesting_as_json(
     )
     artifact = tmp_path / "artifact.json"
     artifact.write_text(
-        '{"value":' + "[" * 1_500 + "0" + "]" * 1_500 + "}",
+        '{"value":' + "[" * 500 + "0" + "]" * 500 + "}",
         encoding="utf-8",
     )
 
