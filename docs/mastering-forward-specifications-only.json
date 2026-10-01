@@ -1,0 +1,719 @@
+{
+  "schema_version": "2.0",
+  "project_id": "LANTERN",
+  "unit_id": "LANTERN-U01",
+  "source_context": {
+    "master_versions": [],
+    "current_master_version_id": null,
+    "title_items": [],
+    "sound_items": [],
+    "color_items": [],
+    "vfx_items": [],
+    "evidence": []
+  },
+  "checks": [
+    {
+      "check_id": "LANTERN-U01-QC001",
+      "category": "video-resolution",
+      "required": true,
+      "criterion": {
+        "metric": "video-resolution",
+        "state": "supplied",
+        "operator": "equals",
+        "expected_value": "1920x1080",
+        "units": "pixels",
+        "source_reference": "forward-input:LANTERN-specifications-only#resolution"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC002",
+      "category": "frame-rate",
+      "required": true,
+      "criterion": {
+        "metric": "frame-rate",
+        "state": "supplied",
+        "operator": "equals",
+        "expected_value": 24,
+        "units": "fps",
+        "source_reference": "forward-input:LANTERN-specifications-only#frame-rate"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC003",
+      "category": "aspect-ratio",
+      "required": true,
+      "criterion": {
+        "metric": "aspect-ratio",
+        "state": "supplied",
+        "operator": "equals",
+        "expected_value": "16:9",
+        "units": "ratio",
+        "source_reference": "forward-input:LANTERN-specifications-only#aspect-ratio"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC004",
+      "category": "duration",
+      "required": true,
+      "criterion": {
+        "metric": "duration",
+        "state": "supplied",
+        "operator": "equals",
+        "expected_value": 60,
+        "units": "seconds",
+        "source_reference": "forward-input:LANTERN-specifications-only#duration"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC005",
+      "category": "audio-channel-count",
+      "required": true,
+      "criterion": {
+        "metric": "audio-channel-count",
+        "state": "supplied",
+        "operator": "equals",
+        "expected_value": 2,
+        "units": "channels",
+        "source_reference": "forward-input:LANTERN-specifications-only#stereo"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC006",
+      "category": "audio-channel-layout",
+      "required": true,
+      "criterion": {
+        "metric": "audio-channel-layout",
+        "state": "supplied",
+        "operator": "equals",
+        "expected_value": "L,R",
+        "units": "layout",
+        "source_reference": "forward-input:LANTERN-specifications-only#stereo"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC007",
+      "category": "av-sync",
+      "required": true,
+      "criterion": {
+        "metric": "av-sync",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply synchronization tolerance and review protocol",
+        "units": null,
+        "source_reference": "forward-input:LANTERN-specifications-only#unresolved-sync"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC008",
+      "category": "missing-frames",
+      "required": true,
+      "criterion": {
+        "metric": "missing-frames",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply missing-frame acceptance policy",
+        "units": null,
+        "source_reference": "forward-input:LANTERN-specifications-only#unresolved-frame-integrity"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC009",
+      "category": "duplicate-frames",
+      "required": true,
+      "criterion": {
+        "metric": "duplicate-frames",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply duplicate-frame acceptance policy",
+        "units": null,
+        "source_reference": "forward-input:LANTERN-specifications-only#unresolved-frame-integrity"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC010",
+      "category": "black-frames",
+      "required": true,
+      "criterion": {
+        "metric": "black-frames",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply intentional-black definition and review policy",
+        "units": null,
+        "source_reference": "forward-input:LANTERN-specifications-only#unresolved-frame-integrity"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC011",
+      "category": "video-levels",
+      "required": true,
+      "criterion": {
+        "metric": "video-levels",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply destination video-level limits",
+        "units": null,
+        "source_reference": "forward-input:LANTERN-specifications-only#unresolved-video-levels"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC012",
+      "category": "audio-clipping",
+      "required": true,
+      "criterion": {
+        "metric": "audio-clipping",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply clipping test and acceptance policy",
+        "units": null,
+        "source_reference": "forward-input:LANTERN-specifications-only#unresolved-audio-quality"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC013",
+      "category": "audio-sample-peak",
+      "required": true,
+      "criterion": {
+        "metric": "audio-sample-peak",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply destination sample-peak threshold",
+        "units": "dBFS",
+        "source_reference": "forward-input:LANTERN-specifications-only#unresolved-audio-thresholds"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC014",
+      "category": "audio-true-peak",
+      "required": true,
+      "criterion": {
+        "metric": "audio-true-peak",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply destination true-peak threshold",
+        "units": "dBTP",
+        "source_reference": "forward-input:LANTERN-specifications-only#unresolved-audio-thresholds"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC015",
+      "category": "audio-loudness",
+      "required": true,
+      "criterion": {
+        "metric": "audio-loudness",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply destination loudness target",
+        "units": "LUFS",
+        "source_reference": "forward-input:LANTERN-specifications-only#unresolved-audio-thresholds"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC016",
+      "category": "captions-presence",
+      "required": true,
+      "criterion": {
+        "metric": "captions-presence",
+        "state": "supplied",
+        "operator": "present",
+        "expected_value": true,
+        "units": null,
+        "source_reference": "forward-input:LANTERN-specifications-only#ru-captions"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC017",
+      "category": "captions-accuracy",
+      "required": true,
+      "criterion": {
+        "metric": "captions-accuracy",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply the approved RU caption text and review protocol",
+        "units": null,
+        "source_reference": "forward-input:LANTERN-specifications-only#unresolved-caption-review"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC018",
+      "category": "titles-presence",
+      "required": true,
+      "criterion": {
+        "metric": "titles-presence",
+        "state": "supplied",
+        "operator": "present",
+        "expected_value": true,
+        "units": null,
+        "source_reference": "forward-input:LANTERN-specifications-only#opening-title"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC019",
+      "category": "title-safe",
+      "required": true,
+      "criterion": {
+        "metric": "title-safe",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply the destination safe-area requirement",
+        "units": null,
+        "source_reference": "forward-input:LANTERN-specifications-only#unresolved-title-review"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC020",
+      "category": "title-readability",
+      "required": true,
+      "criterion": {
+        "metric": "title-readability",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply title readability approval criteria",
+        "units": null,
+        "source_reference": "forward-input:LANTERN-specifications-only#unresolved-title-review"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC021",
+      "category": "compression-artifacts",
+      "required": true,
+      "criterion": {
+        "metric": "compression-artifacts",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply compression-artifact review criteria",
+        "units": null,
+        "source_reference": "forward-input:LANTERN-specifications-only#unresolved-artifact-review"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC022",
+      "category": "vfx-completion",
+      "required": true,
+      "criterion": {
+        "metric": "vfx-completion",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply approved final VFX references or completion record",
+        "units": null,
+        "source_reference": "forward-input:LANTERN-specifications-only#unresolved-vfx"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC023",
+      "category": "color-completion",
+      "required": true,
+      "criterion": {
+        "metric": "color-completion",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply approved color output and target display context",
+        "units": null,
+        "source_reference": "forward-input:LANTERN-specifications-only#unresolved-color"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    },
+    {
+      "check_id": "LANTERN-U01-QC024",
+      "category": "deliverable-integrity",
+      "required": true,
+      "criterion": {
+        "metric": "deliverable-integrity",
+        "state": "unresolved",
+        "operator": "review",
+        "expected_value": "Supply the required deliverable inventory and integrity procedure",
+        "units": null,
+        "source_reference": "forward-input:LANTERN-specifications-only#unresolved-deliverables"
+      },
+      "observed": {
+        "value": null,
+        "units": null,
+        "master_version_id": null,
+        "evidence_ids": []
+      },
+      "upstream_references": {
+        "title_item_ids": [],
+        "sound_item_ids": [],
+        "color_item_ids": [],
+        "vfx_item_ids": []
+      },
+      "result": "planned"
+    }
+  ],
+  "deliverables": [
+    {
+      "deliverable_id": "LANTERN-U01-DL001",
+      "kind": "picture-sound-master",
+      "required": true,
+      "status": "planned",
+      "master_version_id": null,
+      "source_reference": null,
+      "evidence_ids": []
+    },
+    {
+      "deliverable_id": "LANTERN-U01-DL002",
+      "kind": "captions",
+      "required": true,
+      "status": "planned",
+      "master_version_id": null,
+      "source_reference": null,
+      "evidence_ids": []
+    },
+    {
+      "deliverable_id": "LANTERN-U01-DL003",
+      "kind": "qc-report",
+      "required": true,
+      "status": "planned",
+      "master_version_id": null,
+      "source_reference": null,
+      "evidence_ids": []
+    }
+  ],
+  "approval": {
+    "state": "pending",
+    "master_version_id": null,
+    "scope": "delivery-master-and-qc",
+    "evidence_ids": []
+  },
+  "readiness": {
+    "state": "not-ready",
+    "required_check_ids": [
+      "LANTERN-U01-QC001",
+      "LANTERN-U01-QC002",
+      "LANTERN-U01-QC003",
+      "LANTERN-U01-QC004",
+      "LANTERN-U01-QC005",
+      "LANTERN-U01-QC006",
+      "LANTERN-U01-QC007",
+      "LANTERN-U01-QC008",
+      "LANTERN-U01-QC009",
+      "LANTERN-U01-QC010",
+      "LANTERN-U01-QC011",
+      "LANTERN-U01-QC012",
+      "LANTERN-U01-QC013",
+      "LANTERN-U01-QC014",
+      "LANTERN-U01-QC015",
+      "LANTERN-U01-QC016",
+      "LANTERN-U01-QC017",
+      "LANTERN-U01-QC018",
+      "LANTERN-U01-QC019",
+      "LANTERN-U01-QC020",
+      "LANTERN-U01-QC021",
+      "LANTERN-U01-QC022",
+      "LANTERN-U01-QC023",
+      "LANTERN-U01-QC024"
+    ],
+    "required_deliverable_ids": [
+      "LANTERN-U01-DL001",
+      "LANTERN-U01-DL002",
+      "LANTERN-U01-DL003"
+    ],
+    "rationale": "Only delivery specifications were supplied. No master, measurements, inspections, deliverable verification, or current-version approval exists; every required QC check remains planned."
+  },
+  "assumptions": [
+    "The supplied word stereo is frozen as a two-channel L,R delivery requirement; it is not evidence of any master channel count or layout.",
+    "RU captions and an opening title are required, but no exact upstream title/caption records were supplied for registration."
+  ],
+  "uncertainties": [
+    "The master identity, checksum, codec, container, display context, safe area, video levels, sync tolerance, frame-integrity policy, artifact policy, and deliverable inventory are unresolved.",
+    "Sample-peak, true-peak, and loudness thresholds are unresolved and no universal target is assumed.",
+    "Caption text, timing, accessibility accuracy, opening-title content, placement, and readability have not been inspected."
+  ]
+}

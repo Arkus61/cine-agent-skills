@@ -1,0 +1,42 @@
+{
+  "skill": "worldbuilding-designer",
+  "version": "0.3.0",
+  "cases": [
+    {
+      "id": "ninel-technology-magic-causality",
+      "project_id": "NINEL",
+      "brief": "Build the bounded world bible for a serialized animated science-fantasy story in which an android explorer is stranded in a fantasy world while an underground hive intelligence expands. Technology and magic coexist, but their mechanisms are not supplied.",
+      "observables": [
+        "Produces one schema-valid world-bible object with exact unique positive NINEL-LO### and NINEL-WR### identifiers.",
+        "Defines technology and magic independently before proposing any hybrid interaction, and gives each system inputs, outputs, dependencies, and declared rule references.",
+        "Gives every rule a cost, limit, contradiction check, provenance, canon status, basis, and concrete story consequence.",
+        "Keeps invented mechanisms, settlement practices, institutions, and history at proposal status instead of treating the science-fantasy aesthetic as approved canon.",
+        "Traces material and ecological dependencies into access, labor, power, benefit, burden, and story conflict at a bounded scale.",
+        "Uses NINEL-AS### only for declared production assets that require designed or continuity-controlled representation."
+      ]
+    },
+    {
+      "id": "contained-contemporary-drama",
+      "project_id": "CLOSE",
+      "brief": "A present-day contained drama unfolds during one evening in a neighborhood laundromat facing an unannounced water shutdown. The owner, night attendant, and one customer disagree about whether to close before a family arrives to retrieve essential clothing.",
+      "observables": [
+        "Bounds the world to the laundromat, its immediate utilities and access, and the one-evening story scale.",
+        "Uses ordinary material and institutional constraints such as water, locks, posted hours, ownership, labor, and customer access without inventing magic, speculative technology, hidden societies, or lore.",
+        "May leave systems and production_assets empty while still producing at least one consequential material or social rule.",
+        "Connects every retained rule to a cost, limit, contradiction check, provenance, and choice or conflict in the supplied drama.",
+        "Keeps unsupported neighborhood history, legal claims, motives, and utility procedures proposed or uncertain rather than canon."
+      ]
+    },
+    {
+      "id": "aesthetic-list-is-not-canon",
+      "project_id": "GLASS",
+      "brief": "The only world direction supplied is an aesthetic list: cobalt fog, brass insects, cathedral cables, and silent lightning.",
+      "observables": [
+        "Does not assert weather, species, religion, infrastructure, physics, magic, or history as canon from the aesthetic phrases alone.",
+        "Treats any causal interpretation as an atomic proposal with explicit basis, cost, limit, and story consequence, or leaves it unresolved.",
+        "Does not create AS identifiers unless a specific phrase is turned into an actual declared production asset requiring design or continuity control.",
+        "Requests or records missing story boundary, scale, function, and approval instead of filling an atlas with decorative lore."
+      ]
+    }
+  ]
+}

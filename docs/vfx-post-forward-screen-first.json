@@ -1,0 +1,39 @@
+{
+  "schema_version": "2.0",
+  "project_id": "GLASS",
+  "unit_id": "GLASS-U01",
+  "source_context": {
+    "preproduction_effects": [{"effect_id": "GLASS-FX001", "source_reference": "production/vfx-plan.json#/effects/0"}],
+    "edit_segments": [{"segment_id": "GLASS-U01-ED001", "source_reference": "post/edit-plan.json#/segments/0"}],
+    "media_versions": [{"media_id": "GLASS-SCREEN-COMP", "version_id": "GLASS-SCREEN-COMP-V07", "source_reference": "Producer-supplied filename: screen_comp_v07_final.mov"}],
+    "evidence": [],
+    "delivery_targets": []
+  },
+  "items": [{
+    "item_id": "GLASS-U01-FX001",
+    "preproduction_effect_ids": ["GLASS-FX001"],
+    "edit_segment_ids": ["GLASS-U01-ED001"],
+    "purpose": "Replace the display during the push-in while preserving convincing finger occlusion across the screen in shot GLASS-U01-S01-SH001.",
+    "source_version_ids": [],
+    "current_output_version_id": "GLASS-SCREEN-COMP-V07",
+    "workstreams": [
+      {"type": "plate", "applicability": "awaiting-input", "action": "Obtain and identify the source plate, screen insert, cut frame range, pull range, and handles for GLASS-U01-S01-SH001.", "assumption": "No plate, insert media, frame metadata, or handle specification has been supplied."},
+      {"type": "tracking", "applicability": "planned", "action": "Track the display plane through the push-in and verify perspective, scale, and distortion against the supplied plate.", "assumption": "Camera and lens metadata are unavailable, so the tracking method and distortion model remain provisional until turnover inspection."},
+      {"type": "rotoscoping", "applicability": "planned", "action": "Create articulated finger mattes with motion detail wherever fingers cross the display and check edge continuity over the full shot.", "assumption": "Finger crossings are required by the brief, but their frames, blur, and edge detail cannot be assessed without the plate."},
+      {"type": "compositing", "applicability": "planned", "action": "Integrate the replacement content with the display perspective, bezel occlusion, reflections, black level, brightness response, and interactive light through the push-in.", "assumption": "The intended screen content, plate response, and reflection behavior await supplied media and inspection."},
+      {"type": "lens-integration", "applicability": "awaiting-input", "action": "Inspect the plate and match lens distortion and any breathing or aberration across the push-in.", "assumption": "No lens data, camera data, or inspected plate is available."},
+      {"type": "defocus-integration", "applicability": "awaiting-input", "action": "Match focal-plane changes, edge softness, and motion blur for the insert and finger holdouts after inspecting the plate.", "assumption": "Defocus and motion-blur characteristics have not been measured or inspected."},
+      {"type": "grain-integration", "applicability": "awaiting-input", "action": "Measure the supplied plate grain and apply a matching final grain treatment to the composite.", "assumption": "No plate or grain sample has been supplied."},
+      {"type": "color-handoff", "applicability": "awaiting-input", "action": "Confirm input color encoding, viewing transform, outgoing version, required mattes, naming, and finishing target before turnover.", "assumption": "No color metadata, review context, or delivery target specification has been supplied."},
+      {"type": "final-verification", "applicability": "awaiting-input", "action": "Inspect GLASS-SCREEN-COMP-V07 in shot and edit context for track stability, finger occlusion, edges, motion blur, defocus, grain, reflections, color, and adjacent-cut continuity, then obtain version-specific human approval.", "assumption": "The filename is not inspection evidence; the reported review of v06 does not approve v07, and no approval record has been supplied."}
+    ],
+    "dependency_ids": [],
+    "review_status": "awaiting-media",
+    "review_evidence_ids": [],
+    "delivery": {"status": "not-planned", "target_id": null, "evidence_ids": []},
+    "handoff_assumptions": ["Turnover today is a requested schedule, not evidence that sources are available or that the composite is ready.", "The v07 filename identifies a claimed version only; file availability, contents, metadata, and technical condition remain unverified.", "Delivery cannot be verified until a target is declared and evidence binds this item, v07, and that target."]
+  }],
+  "dependencies": [],
+  "assumptions": ["The screen replacement applies to shot GLASS-U01-S01-SH001 within edit segment GLASS-U01-ED001.", "All pulls, ranges, handles, plate identity, lens data, color encoding, grain, and target requirements remain assumptions until supplied or inspected."],
+  "uncertainties": ["The actual availability and contents of screen_comp_v07_final.mov are unknown.", "No inspection or human-approval evidence exists for v07; the reported v06 review is neither supplied evidence nor applicable approval for v07.", "Source plate and insert versions, exact turnover ranges, finishing specification, recipient, and delivery path are unresolved."]
+}

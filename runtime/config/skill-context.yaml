@@ -1,0 +1,17 @@
+version: 1
+skills:
+  camera-movement-designer:
+    required_refs: []
+    conditional_refs:
+      - path: references/camera-movement-taxonomy.md
+        when: movement-family-selection
+  shot-list-builder:
+    required_refs: []
+    conditional_refs:
+      - path: references/coverage-continuity.md
+        when: dialogue-action-or-complex-geography
+  storyboard-designer:
+    required_refs: []
+    conditional_refs:
+      - path: references/textual-storyboards.md
+        when: panel-composition-or-continuity

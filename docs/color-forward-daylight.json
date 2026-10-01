@@ -1,0 +1,72 @@
+{
+  "schema_version": "2.0",
+  "project_id": "DAY",
+  "unit_id": "DAY-U01",
+  "source_context": {
+    "edit_segments": [
+      {"segment_id": "DAY-U01-ED001", "source_reference": "post/edit-plan.json#/segments/0"},
+      {"segment_id": "DAY-U01-ED002", "source_reference": "post/edit-plan.json#/segments/1"}
+    ],
+    "vfx_items": [],
+    "media_versions": [],
+    "metadata_records": [],
+    "evidence": []
+  },
+  "color_management": {
+    "input_policy": "Treat the filename's Log label only as a lead. Before normalization, obtain exact source versions and metadata that binds an input encoding to each segment; then test the interpretation against the images and scopes.",
+    "working_space": {"value": "scene-referred wide-gamut working space appropriate to the verified sources", "state": "proposed"},
+    "output_intent": "Preserve a scene-referred creative master and select an output transform only after a delivery display standard and viewing environment are declared."
+  },
+  "display_targets": [],
+  "items": [
+    {
+      "item_id": "DAY-U01-CL001",
+      "edit_segment_ids": ["DAY-U01-ED001"],
+      "vfx_item_ids": [],
+      "source_version_ids": [],
+      "graded_version_id": null,
+      "observed_input": {"state": "uninspected", "source_version_id": null, "findings": [], "evidence_ids": []},
+      "desired_look": "Make the sunlit exterior feel warm, open, and welcoming while retaining believable daylight color and natural complexion relationships.",
+      "input_encoding": {"value": "unknown", "state": "unknown", "metadata_record_ids": []},
+      "balance_and_matching": "After source identification and normalization, establish neutral and skin anchors from the wide shot; match overall daylight continuity to the shaded close-up while preserving the motivated sun-versus-shade difference.",
+      "exposure_and_contrast": "Inspect faces, bright sky or reflective surfaces, and deep exterior shadows before shaping a gentle contrast curve; retain highlight texture and open shadow detail rather than forcing a high-contrast result.",
+      "palette": {
+        "intent": "Favor restrained golden warmth in illuminated areas with credible sky and foliage separation, avoiding a uniform amber wash.",
+        "protected_colors": ["Protect natural skin hue and saturation.", "Protect recognizable sky, foliage, wardrobe, and neutral production colors."],
+        "selective_treatments": ["If inspection shows excessive warm spill on skin or neutrals, isolate and reduce it with soft, temporally stable selections.", "If needed, shape the bright background separately from faces while checking edges, noise, and texture."]
+      },
+      "vfx_handoff": "No VFX item is linked. If VFX enters later, require its render-space metadata and review black level, edges, grain, and highlight behavior in the exact graded output.",
+      "display_target_ids": [],
+      "trim_assumptions": ["No display-specific trim is planned until a target, viewing environment, and reviewed master exist."],
+      "match_state": "awaiting-media",
+      "evidence_ids": [],
+      "approval": {"state": "pending", "evidence_ids": []}
+    },
+    {
+      "item_id": "DAY-U01-CL002",
+      "edit_segment_ids": ["DAY-U01-ED002"],
+      "vfx_item_ids": [],
+      "source_version_ids": [],
+      "graded_version_id": null,
+      "observed_input": {"state": "uninspected", "source_version_id": null, "findings": [], "evidence_ids": []},
+      "desired_look": "Keep the shaded face close-up intimate and softly welcoming, with natural skin and enough cool shade character to preserve the change in lighting zone.",
+      "input_encoding": {"value": "unknown", "state": "unknown", "metadata_record_ids": []},
+      "balance_and_matching": "Once normalized, prioritize the face as the continuity anchor; reconcile exposure, complexion, neutrals, shadow density, and highlight behavior with the wide shot without neutralizing the shade's motivated coolness.",
+      "exposure_and_contrast": "Evaluate face placement and shadow texture on scopes and the intended display; use soft tonal shaping that avoids crushed facial shadows and preserves specular and background separation.",
+      "palette": {
+        "intent": "Carry the sequence's warmth mainly through healthy skin and gentle environmental accents while retaining cooler open-shade separation.",
+        "protected_colors": ["Protect natural complexion, lip hue, and subtle facial color variation.", "Protect recognizable eye, hair, wardrobe, and neutral colors."],
+        "selective_treatments": ["If inspection supports it, warm the face subtly without contaminating shaded neutrals.", "Use restrained local face/background separation only when selections remain natural and temporally stable."]
+      },
+      "vfx_handoff": "No VFX item is linked. If VFX enters later, require its render-space metadata and review integration on the exact graded output.",
+      "display_target_ids": [],
+      "trim_assumptions": ["Any lift, saturation, or highlight trim remains conditional on a declared display target and sequence review."],
+      "match_state": "awaiting-media",
+      "evidence_ids": [],
+      "approval": {"state": "pending", "evidence_ids": []}
+    }
+  ],
+  "story_arc": "Move from expansive sunlit warmth into a closer, cooler pocket of shade while keeping welcoming skin and daylight credibility stable; the change should feel motivated by location, not like an unintended color jump.",
+  "assumptions": ["The two edit references identify intended segments but do not supply inspectable media.", "The producer's filename-based Log claim is not treated as source metadata.", "Today's match-approval request is recorded as pending, not granted."],
+  "uncertainties": ["Exact source versions, input encodings, range, camera metadata, and baked-look status are unknown.", "No measured image state, inspection record, graded output version, delivery display standard, or viewing environment is available.", "Shot matching and approval require sequence inspection of a specific graded output and human approval evidence."]
+}

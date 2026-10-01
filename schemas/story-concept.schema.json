@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cine-agent-skills/story-concept.schema.json",
+  "title": "Story Concept",
+  "$defs": {
+    "non_empty_string": {
+      "type": "string",
+      "minLength": 1
+    },
+    "unique_non_empty_strings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    },
+    "supplied_constraint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statement", "source_reference"],
+      "properties": {
+        "statement": {"$ref": "#/$defs/non_empty_string"},
+        "source_reference": {"$ref": "#/$defs/non_empty_string"}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "project_format",
+    "production_modes",
+    "runtime_intent",
+    "audience_promise",
+    "premise",
+    "logline",
+    "central_dramatic_question",
+    "themes",
+    "genres",
+    "tone",
+    "world_scope",
+    "protagonist_focus",
+    "supplied_constraints",
+    "success_criteria",
+    "assumptions",
+    "uncertainties"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.3.0"},
+    "project_id": {"$ref": "#/$defs/non_empty_string"},
+    "project_format": {
+      "enum": [
+        "feature",
+        "short",
+        "series",
+        "documentary",
+        "commercial",
+        "music-video",
+        "short-form"
+      ]
+    },
+    "production_modes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "enum": ["live-action", "animation", "ai", "hybrid"]
+      },
+      "uniqueItems": true
+    },
+    "runtime_intent": {"$ref": "#/$defs/non_empty_string"},
+    "audience_promise": {"$ref": "#/$defs/non_empty_string"},
+    "premise": {"$ref": "#/$defs/non_empty_string"},
+    "logline": {"$ref": "#/$defs/non_empty_string"},
+    "central_dramatic_question": {"$ref": "#/$defs/non_empty_string"},
+    "themes": {"$ref": "#/$defs/unique_non_empty_strings"},
+    "genres": {"$ref": "#/$defs/unique_non_empty_strings"},
+    "tone": {"$ref": "#/$defs/unique_non_empty_strings"},
+    "world_scope": {"$ref": "#/$defs/non_empty_string"},
+    "protagonist_focus": {"$ref": "#/$defs/non_empty_string"},
+    "supplied_constraints": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/supplied_constraint"},
+      "uniqueItems": true
+    },
+    "success_criteria": {"$ref": "#/$defs/unique_non_empty_strings"},
+    "assumptions": {"$ref": "#/$defs/unique_non_empty_strings"},
+    "uncertainties": {"$ref": "#/$defs/unique_non_empty_strings"}
+  }
+}

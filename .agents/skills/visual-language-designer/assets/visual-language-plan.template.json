@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.3.0",
+  "scene_id": "SCENE01",
+  "assumptions": [
+    "Focal-length suggestions are full-frame equivalents until the camera format is confirmed."
+  ],
+  "aspect_ratio": "2.00:1",
+  "point_of_view": "Stay with the protagonist's incomplete perception.",
+  "palette": [
+    "charcoal",
+    "desaturated cyan",
+    "muted amber"
+  ],
+  "contrast": "Retain shadow detail while separating the subject from the environment.",
+  "texture": "Use clean optics and let one story-motivated surface carry organic texture.",
+  "lens_strategy": "Progress from compressed details to a restrained normal-wide view as geography becomes meaningful.",
+  "visual_motifs": [
+    "rectilinear geometry yielding to one organic form"
+  ],
+  "prohibited_defaults": [
+    "unmotivated handheld",
+    "decorative Dutch angles"
+  ],
+  "exceptions": [
+    "Break central symmetry only when the protagonist makes the first voluntary choice."
+  ],
+  "rules": [
+    {
+      "rule_id": "SCENE01-V01",
+      "beat_ids": [
+        "SCENE01-B01"
+      ],
+      "composition": "Hold the protagonist on the environment's central axis.",
+      "camera_height": "Begin at the environment's functional height and rise only with the protagonist.",
+      "dramatic_purpose": "Make a later break in geometry register as agency."
+    }
+  ]
+}

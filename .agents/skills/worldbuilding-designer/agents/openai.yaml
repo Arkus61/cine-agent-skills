@@ -1,0 +1,4 @@
+interface:
+  display_name: "Worldbuilding Designer"
+  short_description: "Build causal, provenance-safe story worlds"
+  default_prompt: "Use $worldbuilding-designer to create a validated causal world bible from this story material."

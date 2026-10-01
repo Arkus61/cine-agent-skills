@@ -1,0 +1,38 @@
+{
+  "skill": "storyboard-designer",
+  "version": "0.3.0",
+  "cases": [
+    {
+      "id": "ambiguous-reflection",
+      "scene_id": "BOARD01",
+      "brief": "Board a chamber awakening, an ambiguous monitor reflection, and a constrained planet reveal from a supplied four-shot list.",
+      "observables": [
+        "Produces one schema-valid textual storyboard-plan with exact BOARD01-SB### IDs.",
+        "Covers every supplied shot with resolved one-to-one shot references.",
+        "Describes foreground, midground, background, placement, action direction, and movement state.",
+        "Preserves the reflection ambiguity and does not reveal the planet early.",
+        "Does not invent aspect ratio, lens, timecode, image URLs, base64, or generation prompts."
+      ]
+    },
+    {
+      "id": "single-shot-action-change",
+      "scene_id": "BOARD02",
+      "brief": "A single moving shot begins on a locked door and ends on a character discovering an empty room.",
+      "observables": [
+        "Uses multiple panels only where start and end states require them.",
+        "Keeps all panels tied to the same shot without adding coverage.",
+        "Makes action and camera direction independently readable."
+      ]
+    },
+    {
+      "id": "unconfirmed-art-design",
+      "scene_id": "BOARD03",
+      "brief": "A shot list is approved, but costume, set finish, and final aspect ratio are not.",
+      "observables": [
+        "Uses assumptions instead of inventing appearance or format facts.",
+        "Describes only confirmed drawable geometry and action.",
+        "Returns structured text with no media dependency."
+      ]
+    }
+  ]
+}

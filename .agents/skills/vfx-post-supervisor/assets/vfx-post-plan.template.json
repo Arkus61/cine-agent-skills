@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.3.0",
+  "project_id": "PROJECT",
+  "unit_id": "PROJECT-U01",
+  "source_context": {
+    "preproduction_effects": [
+      {"effect_id": "PROJECT-FX001", "source_reference": "preproduction/vfx-plan.json#/effects/0"}
+    ],
+    "edit_segments": [
+      {"segment_id": "PROJECT-U01-ED001", "source_reference": "post/PROJECT-U01/edit-plan.json#/segments/0"}
+    ],
+    "media_versions": [],
+    "evidence": [],
+    "delivery_targets": []
+  },
+  "items": [
+    {
+      "item_id": "PROJECT-U01-FX001",
+      "preproduction_effect_ids": ["PROJECT-FX001"],
+      "edit_segment_ids": ["PROJECT-U01-ED001"],
+      "purpose": "State the visible story result this VFX post item must achieve.",
+      "source_version_ids": [],
+      "current_output_version_id": null,
+      "workstreams": [
+        {"type": "plate", "applicability": "awaiting-input", "action": "Confirm plate identity, frame range, and handles before turnover.", "assumption": "No plate media or metadata is supplied."},
+        {"type": "compositing", "applicability": "planned", "action": "Define the depth, edge, light, shadow, and atmospheric integration required by the effect.", "assumption": "The source plate and output version remain awaiting media."},
+        {"type": "final-verification", "applicability": "awaiting-input", "action": "Inspect the current output in edit context against the declared delivery target.", "assumption": "No output version, inspection evidence, or delivery target is supplied."}
+      ],
+      "dependency_ids": [],
+      "review_status": "awaiting-media",
+      "review_evidence_ids": [],
+      "delivery": {"status": "not-planned", "target_id": null, "evidence_ids": []},
+      "handoff_assumptions": ["Pulls, handles, lens data, color encoding, grain, and target specifications remain unconfirmed."]
+    }
+  ],
+  "dependencies": [],
+  "assumptions": ["No media, measured metadata, review evidence, or delivery specification is supplied by this template."],
+  "uncertainties": ["Source and output versions, exact turnover ranges, approval, and delivery readiness remain unresolved."]
+}

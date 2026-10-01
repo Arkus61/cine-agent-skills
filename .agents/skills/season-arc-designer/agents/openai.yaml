@@ -1,0 +1,4 @@
+interface:
+  display_name: "Season Arc Designer"
+  short_description: "Map series episodes into a cumulative season arc"
+  default_prompt: "Use $season-arc-designer to create a validated episode-by-episode season arc."

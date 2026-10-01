@@ -1,0 +1,4 @@
+interface:
+  display_name: "Production Designer"
+  short_description: "Plan traceable story-led production design"
+  default_prompt: "Use $production-designer to create a validated production design plan from these story and shot materials."

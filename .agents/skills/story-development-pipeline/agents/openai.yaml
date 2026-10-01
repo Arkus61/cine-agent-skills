@@ -1,0 +1,4 @@
+interface:
+  display_name: "Story Development Pipeline"
+  short_description: "Build and validate story and script packages"
+  default_prompt: "Use $story-development-pipeline to build a validated story and script package."

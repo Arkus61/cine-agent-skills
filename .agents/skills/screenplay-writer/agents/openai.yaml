@@ -1,0 +1,4 @@
+interface:
+  display_name: "Screenplay Writer"
+  short_description: "Draft Fountain scripts with traceable story metadata"
+  default_prompt: "Use $screenplay-writer to turn this approved unit outline into a Fountain screenplay and validated metadata."

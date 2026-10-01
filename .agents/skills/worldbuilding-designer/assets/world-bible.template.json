@@ -1,0 +1,128 @@
+{
+  "schema_version": "0.3.0",
+  "project_id": "PROJECT",
+  "scope": {
+    "story_boundary": "State the smallest world boundary that can affect the supplied story.",
+    "scales": ["State one active scale."],
+    "excluded_or_unknown": ["State one deliberately excluded or unresolved scale."]
+  },
+  "locations": [
+    {
+      "location_id": "PROJECT-LO001",
+      "name": "Story-facing location",
+      "scale": "State the location's practical scale.",
+      "story_function": "State the choice, conflict, evidence, or outcome this location enables.",
+      "material_conditions": ["State one physical, ecological, or infrastructure condition."],
+      "access_constraints": ["State who or what limits entry, movement, knowledge, or use."],
+      "canon_status": "proposal",
+      "provenance": "proposed",
+      "basis": "Trace the location to supplied material or label the creative proposal."
+    }
+  ],
+  "factions": [
+    {
+      "name": "Story-facing faction",
+      "objective": "State the result this organized group seeks.",
+      "resources": ["State one usable resource, capability, or form of legitimacy."],
+      "constraints": ["State one dependency or limit."],
+      "social_consequence": "State how the faction changes access, power, burden, or conflict.",
+      "canon_status": "proposal",
+      "provenance": "proposed",
+      "basis": "State why this faction is being proposed."
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Story-facing institution",
+      "authority": "State what the institution may decide, record, distribute, or enforce.",
+      "dependencies": ["State one material, informational, legal, or social dependency."],
+      "beneficiaries": ["State who gains from the institution's normal operation."],
+      "burdened_groups": ["State who carries cost, exclusion, exposure, or delay."],
+      "social_consequence": "State the resulting choice or conflict.",
+      "canon_status": "proposal",
+      "provenance": "proposed",
+      "basis": "State the supplied fact or proposal that supports this institution."
+    }
+  ],
+  "history": [
+    {
+      "event": "State one past event with an active present effect.",
+      "legacy": "State what present claim, infrastructure, memory, or behavior it changes.",
+      "evidence": "State whether the event is documented, remembered, disputed, or proposed.",
+      "canon_status": "proposal",
+      "provenance": "proposed",
+      "basis": "State the source or proposal basis."
+    }
+  ],
+  "cultures": [
+    {
+      "name": "Bounded cultural practice",
+      "values": ["State one value demonstrated through action."],
+      "norms": ["State one context-specific expected practice."],
+      "material_practices": ["State how the practice uses objects, places, labor, or resources."],
+      "internal_variation": ["State one disagreement, exception, or alternate interpretation within the group."],
+      "social_consequence": "State how the practice changes choice, status, access, or conflict.",
+      "canon_status": "proposal",
+      "provenance": "proposed",
+      "basis": "State the supplied fact or proposal basis without generalizing beyond it."
+    }
+  ],
+  "systems": [
+    {
+      "name": "Story-relevant system",
+      "system_type": "material",
+      "inputs": ["State one required input."],
+      "outputs": ["State one observable output."],
+      "dependencies": ["State one environmental, technical, social, or institutional dependency."],
+      "rule_ids": ["PROJECT-WR001"],
+      "canon_status": "proposal",
+      "provenance": "proposed",
+      "basis": "State why the system is required; omit systems entirely when none are needed."
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "PROJECT-WR001",
+      "name": "Observable world rule",
+      "system_type": "material",
+      "statement": "State one repeatable relation in observable terms.",
+      "cost": "State what use consumes, risks, damages, owes, exposes, or displaces.",
+      "limit": "State what the rule cannot do or where it stops.",
+      "contradiction_checks": [
+        {
+          "scenario": "State a later situation that would challenge this rule.",
+          "expected_behavior": "State what should happen if the rule still holds.",
+          "resolution": "State whether to revise the claim, preserve uncertainty, or propose an explicit approved change."
+        }
+      ],
+      "provenance": "proposed",
+      "canon_status": "proposal",
+      "basis": "Trace this rule to supplied evidence or label it as a proposal.",
+      "story_consequence": "State the choice, conflict, knowledge, risk, or outcome this rule changes."
+    }
+  ],
+  "terminology": [
+    {
+      "term": "working term",
+      "definition": "Define the observable condition this term names.",
+      "usage_boundary": "State what the term must not imply.",
+      "canon_status": "proposal",
+      "provenance": "inferred",
+      "basis": "State why stable working language is needed."
+    }
+  ],
+  "production_assets": [
+    {
+      "asset_id": "PROJECT-AS001",
+      "name": "Trackable production asset",
+      "asset_type": "prop",
+      "world_function": "State the asset's story-facing world function.",
+      "production_use": "State why it must be designed, built, generated, acquired, versioned, or continuity-controlled.",
+      "canon_status": "proposal",
+      "provenance": "proposed",
+      "basis": "State why this entity is an actual production asset rather than abstract lore."
+    }
+  ],
+  "assumptions": ["State one provisional interpretation or leave this array empty."],
+  "uncertainties": ["State one unresolved fact, range, mechanism, approval, or evidence gap."]
+}

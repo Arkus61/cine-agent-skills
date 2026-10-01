@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.3.0",
+  "project_id": "PROJECT",
+  "package_status": "reviewed",
+  "source_context": {
+    "registries": {"scene_ids": ["PROJECT-U01-S01"], "shot_ids": ["PROJECT-U01-S01-SH001"], "asset_ids": []},
+    "prompt_packages": [{
+      "prompt_id": "PROJECT-MP001",
+      "upstream_references": [{"kind": "scene", "id": "PROJECT-U01-S01"}, {"kind": "shot", "id": "PROJECT-U01-S01-SH001"}],
+      "acceptance_criteria": [{"criterion_id": "PROJECT-AC001", "statement": "The supplied composition remains observable.", "source_reference": "media-prompt-package.json#/prompts/PROJECT-MP001/acceptance_criteria/0", "dimension": "composition", "required_evidence": "static-visible"}]
+    }]
+  },
+  "missing_inputs": [],
+  "blockers": [],
+  "items": [{
+    "media_id": "PROJECT-MD001",
+    "status": "approved",
+    "prompt_id": "PROJECT-MP001",
+    "upstream_references": [{"kind": "scene", "id": "PROJECT-U01-S01"}, {"kind": "shot", "id": "PROJECT-U01-S01-SH001"}],
+    "inspected_input": {"input_id": "PROJECT-IN001", "modality": "still", "identity": "Replace with the inspected supplied input identity.", "fingerprint": "sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"},
+    "inspection_evidence": [{"evidence_id": "PROJECT-ME001", "input_id": "PROJECT-IN001", "criterion_id": "PROJECT-AC001", "kind": "direct-inspection", "observation": "Replace with a direct observation of the supplied input."}],
+    "criterion_outcomes": [{"criterion_id": "PROJECT-AC001", "outcome": "pass", "evidence_ids": ["PROJECT-ME001"]}],
+    "deviations": [],
+    "repair_scope": "none",
+    "reviewer_uncertainty": "State what the supplied modality cannot establish."
+  }]
+}

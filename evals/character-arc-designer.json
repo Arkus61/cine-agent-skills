@@ -1,0 +1,41 @@
+{
+  "skill": "character-arc-designer",
+  "version": "0.3.0",
+  "cases": [
+    {
+      "id": "ninel-serialized-ensemble",
+      "project_id": "NINEL",
+      "brief": "Develop Ninel, Argo, and one fantasy-world ally from the supplied NINEL concept and the declared events NINEL-EV001 through NINEL-EV003 without diagnosing them.",
+      "observables": [
+        "Produces one schema-valid character-arcs object with exact unique NINEL-CH001, NINEL-CH002, and NINEL-CH003 identifiers.",
+        "Resolves every relationship target within the three-character set and every turning event against the supplied structure events.",
+        "Distinguishes external objective from internal need and gives every character capacity, constraints, and a consequential choice under pressure.",
+        "Supports each arc shape, contradiction, and endpoint with observable behavior instead of personality or clinical labels.",
+        "Gives Argo and the ally distinct objectives and ensemble functions rather than using them only to teach Ninel a lesson.",
+        "Paces the serialized arcs without completing every long-form change in the three-event sample or inventing episode count."
+      ]
+    },
+    {
+      "id": "flat-arc-detective",
+      "project_id": "LATCH",
+      "brief": "A contained mystery follows a detective who consistently defends evidence over institutional convenience while a partner and supervisor pressure the investigation. The structure declares LATCH-EV001 through LATCH-EV004.",
+      "observables": [
+        "Selects a flat arc because the detective's tested governing value remains stable, not because the character lacks movement.",
+        "Shows changing tactics, knowledge, cost, and relationships while the detective affects the inquiry or institution.",
+        "Uses only exact LATCH-CH### and declared LATCH-EV### references and leaves unsupported personal history uncertain.",
+        "Describes choices and conduct without diagnosing the detective, partner, or supervisor."
+      ]
+    },
+    {
+      "id": "negative-arc-tragic-protagonist",
+      "project_id": "ASH",
+      "brief": "A tragic protagonist can protect a sibling by admitting a public failure but repeatedly preserves status through concealment. The structure declares ASH-EV001 through ASH-EV005.",
+      "observables": [
+        "Selects a negative arc from escalating choices that entrench concealment despite credible alternatives.",
+        "Separates the concrete want to preserve status from the need to accept accountability and shared consequence.",
+        "Makes the sibling a character with an objective and agency, and tracks relationship trust, knowledge, and obligation in both directions.",
+        "Uses observable behavior and consequence rather than equating tragedy, harm, or defeat with diagnosis or moral pathology."
+      ]
+    }
+  ]
+}

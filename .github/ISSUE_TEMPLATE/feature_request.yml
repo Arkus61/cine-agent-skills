@@ -1,0 +1,55 @@
+name: Feature request
+description: Propose a focused, evidence-bound improvement
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Prefer a small change with a clear activation trigger and deterministic acceptance test.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What production or engineering problem is currently blocked or expensive?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe the smallest useful behavior and its output contract.
+    validations:
+      required: true
+  - type: dropdown
+    id: profile
+    attributes:
+      label: Affected profile
+      options:
+        - scene-core
+        - scene-full
+        - story
+        - production
+        - post
+        - full-creative
+        - optional runtime
+        - documentation only
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Acceptance evidence
+      description: How should the change be tested, and what must remain explicitly unknown?
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checks
+      options:
+        - label: I checked that an existing community component cannot already provide this capability.
+          required: true
+        - label: I will preserve stable IDs, source attribution, and offline core validation.
+          required: true

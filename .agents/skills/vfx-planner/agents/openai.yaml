@@ -1,0 +1,4 @@
+interface:
+  display_name: "VFX Planner"
+  short_description: "Plan traceable shot-level visual effects"
+  default_prompt: "Use $vfx-planner to create a validated VFX plan from these scene, shot, camera, lighting, and performance materials."

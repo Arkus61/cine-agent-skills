@@ -1,0 +1,170 @@
+{
+  "scene_beats": {
+    "schema_version": "0.3.0",
+    "scene_id": "S01",
+    "scene_objective": "Ninel tries to establish what is real and whether the ship is telling her the truth.",
+    "turn": "Argo defines her awakening as a return from failure while the planet is revealed.",
+    "assumptions": ["The reflection anomaly is perceptual or system-generated and remains unresolved."],
+    "beats": [
+      {
+        "beat_id": "S01-B01",
+        "evidence": "Ninel wakes without breathing while a diagnostic countdown continues.",
+        "action": "orient",
+        "tactic": "imitate the biological sign she observes",
+        "value_shift": "inert to self-directed",
+        "visual_opportunity": "Breath becomes visible only after she chooses it."
+      },
+      {
+        "beat_id": "S01-B02",
+        "evidence": "Her reflection appears to continue looking after she turns away.",
+        "action": "verify",
+        "tactic": "test the image before it disappears",
+        "value_shift": "curiosity to distrust",
+        "visual_opportunity": "The monitor and real body briefly disagree."
+      },
+      {
+        "beat_id": "S01-B03",
+        "evidence": "Argo welcomes her back, withholds an answer, then calls the prior event a failure as the planet appears.",
+        "action": "interrogate",
+        "tactic": "force Argo to define her past",
+        "value_shift": "private uncertainty to external threat",
+        "visual_opportunity": "The world arrives in frame only when the answer makes it dangerous."
+      }
+    ]
+  },
+  "directing_plan": {
+    "schema_version": "0.3.0",
+    "scene_id": "S01",
+    "concept": "Ninel learns each sign of life as if it may be an instruction planted by the room.",
+    "point_of_view": "Stay with Ninel's incomplete perception; never confirm the reflection anomaly independently.",
+    "performance_notes": [
+      "Treat the first breath as a deliberate experiment, not panic.",
+      "Test the monitor without displaying fear to the unseen system.",
+      "Ask Argo for facts while listening for what the pause conceals."
+    ],
+    "visual_strategy": [
+      "Begin with controlled geometry and very limited spatial information.",
+      "Allow the frame to widen only as Ninel gains agency.",
+      "Reveal the planet as an answer that enlarges the mystery rather than resolving it."
+    ],
+    "rhythm": "Mechanical countdown, abrupt chamber release, held reflection beat, then a longer conversational pause before the final reveal.",
+    "assumptions": ["The observation slit can be concealed until the ship rotates."]
+  },
+  "blocking_plan": {
+    "schema_version": "0.3.0",
+    "scene_id": "S01",
+    "space": "Medical chamber at center, black monitor camera-right, observation slit behind the chamber, exit off camera-left.",
+    "axis": "Primary axis runs between Ninel and the monitor, later reoriented between Ninel and the observation slit through a shown turn.",
+    "positions": ["Ninel begins supine inside the chamber, head toward camera-right.", "Monitor is within seated reach but not directly facing her."],
+    "moves": [
+      {"beat_id": "S01-B01", "character": "Ninel", "start": "supine in chamber", "end": "seated on chamber edge", "motivation": "gain control of her body and locate the voice"},
+      {"beat_id": "S01-B02", "character": "Ninel", "start": "seated facing monitor", "end": "half-turned away, then still", "motivation": "test whether the reflection tracks her"},
+      {"beat_id": "S01-B03", "character": "Ninel", "start": "half-turned from monitor", "end": "facing observation slit", "motivation": "follow the changing light and confront the new world"}
+    ],
+    "continuity_rules": ["Show the body turn that reorients the axis.", "Keep Ninel's right hand on the chamber edge through the reflection beat.", "Planet light grows from behind her during Argo's pause."],
+    "assumptions": ["The set permits a visible 90-degree body turn without moving furniture."]
+  },
+  "camera_movement_plan": {
+    "schema_version": "0.3.0",
+    "scene_id": "S01",
+    "movement_philosophy": "The camera remains more controlled than Ninel and moves only when her understanding expands.",
+    "assumptions": ["A short slider or compact dolly can operate beside the chamber."],
+    "moves": [
+      {
+        "move_id": "S01-M01",
+        "beat_ids": ["S01-B01"],
+        "name_ru": "Медленный отъезд",
+        "name_en": "Slow dolly out",
+        "movement": "Translate straight back from Ninel as the chamber opens.",
+        "direction": "Backward along the chamber centerline.",
+        "speed": "Nearly imperceptible, beginning on her first voluntary breath.",
+        "framing": "Maintain Ninel centered while expanding from close-up to medium.",
+        "start": "Tight close-up through chamber glass.",
+        "end": "Medium view revealing the chamber edge and part of the monitor.",
+        "purpose": "Convert a sealed mechanical image into the first degree of agency and space.",
+        "ai_video_prompt": "Slow dolly out. Movement: camera translates straight backward from the chamber. Speed: nearly imperceptible, starting on the first breath. Framing: keep Ninel centered. Start: tight close-up through glass. End: controlled medium shot revealing the chamber edge and monitor."
+      },
+      {
+        "move_id": "S01-M02",
+        "beat_ids": ["S01-B03"],
+        "name_ru": "Плавная дуга",
+        "name_en": "Slow arc move",
+        "movement": "Arc around Ninel during her turn toward the observation slit.",
+        "direction": "Camera-left to camera-right around her front quarter.",
+        "speed": "Slow, synchronized with the ship rotation, ending before Argo's final word.",
+        "framing": "Hold a medium-close single and let the planet enter behind her shoulder.",
+        "start": "Ninel in profile with the slit hidden by the set edge.",
+        "end": "Three-quarter view with the planet behind her.",
+        "purpose": "Transfer the scene from internal uncertainty to an external world without abandoning her point of view.",
+        "ai_video_prompt": "Slow arc move. Movement: arc from camera-left to camera-right around Ninel's front quarter. Speed: slow and synchronized with the ship rotation. Framing: maintain a medium-close single. Start: profile with the observation slit hidden. End: three-quarter view as the blue-green planet enters behind her shoulder."
+      }
+    ]
+  },
+  "shot_list": {
+    "schema_version": "0.3.0",
+    "scene_id": "S01",
+    "assumptions": ["Lens values are full-frame-equivalent suggestions.", "The reflection effect is completed in postproduction."],
+    "shots": [
+      {
+        "shot_id": "S01-SH001",
+        "beat_ids": ["S01-B01"],
+        "size": "extreme-close-up",
+        "angle": "eye-level through chamber glass",
+        "lens_mm": 85,
+        "camera_support": "slider",
+        "movement": "slow dolly out beginning on voluntary breath",
+        "subject": "Ninel's eye and condensation on glass",
+        "action": "eye opens; she chooses to breathe after observing the frost",
+        "composition": "eye slightly below center with diagnostic reflection crossing the glass",
+        "dramatic_purpose": "present life as a learned action rather than an automatic fact",
+        "audio": "diagnostic countdown, chamber vibration, first dry inhale",
+        "continuity": ["Frost pattern matches the later wider angle.", "Countdown reaches seven on the inhale."]
+      },
+      {
+        "shot_id": "S01-SH002",
+        "beat_ids": ["S01-B01", "S01-B02"],
+        "size": "medium",
+        "angle": "slightly low eye-line neutral angle",
+        "lens_mm": 50,
+        "camera_support": "slider locked after move",
+        "movement": "complete the dolly out, then hold static",
+        "subject": "Ninel seated at the chamber edge with monitor background-right",
+        "action": "she sits, finds the reflection, turns away, then senses it still watching",
+        "composition": "controlled central geometry; monitor occupies a dark secondary plane",
+        "dramatic_purpose": "establish geography and let the anomaly occur inside one credible spatial relationship",
+        "audio": "chamber seal release, fabric movement, low ship hum",
+        "continuity": ["Right hand remains on chamber edge.", "Capture clean plate for monitor effect."]
+      },
+      {
+        "shot_id": "S01-SH003",
+        "beat_ids": ["S01-B02"],
+        "size": "insert",
+        "angle": "monitor surface at Ninel eye height",
+        "lens_mm": 75,
+        "camera_support": "tripod",
+        "movement": "static",
+        "subject": "black monitor reflection",
+        "action": "reflection appears to delay its turn, then the monitor clears",
+        "composition": "reflection occupies the center while real Ninel remains only as edge spill",
+        "dramatic_purpose": "offer evidence without confirming whether it is objective",
+        "audio": "ship hum drops slightly; no sting",
+        "continuity": ["Match Ninel's head angle from SH002.", "Record clean monitor and reflection passes."]
+      },
+      {
+        "shot_id": "S01-SH004",
+        "beat_ids": ["S01-B03"],
+        "size": "medium-close",
+        "angle": "eye-level three-quarter arc",
+        "lens_mm": 50,
+        "camera_support": "compact dolly or gimbal",
+        "movement": "slow arc synchronized with Ninel and ship rotation",
+        "subject": "Ninel with observation slit emerging behind her",
+        "action": "she questions Argo, follows the changing light, and faces the planet",
+        "composition": "begin profile with negative space ahead; end with planet behind her shoulder",
+        "dramatic_purpose": "turn withheld personal history into an external scale of danger",
+        "audio": "dialogue, deliberate pause, subtle structural groan during ship rotation",
+        "continuity": ["Show the axis reorientation during the move.", "Planet reaches final mark before the word 'failure'."]
+      }
+    ]
+  }
+}

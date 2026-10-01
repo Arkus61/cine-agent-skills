@@ -1,0 +1,32 @@
+{
+  "skill": "story-concept-designer",
+  "version": "0.3.0",
+  "cases": [
+    {
+      "id": "serialized-science-fantasy",
+      "project_id": "NINEL",
+      "brief": "An android explorer becomes stranded in a fantasy world while an underground hive intelligence expands. The target is a serialized animated AI production.",
+      "observables": [
+        "Produces one schema-valid story-concept object with schema_version 2.0 and project_id NINEL.",
+        "Uses project_format series and the distinct production modes animation and ai.",
+        "Persists the serialized, animation, and ai constraints in structured supplied_constraints entries with exact brief references rather than relabeling them as assumptions.",
+        "States an audience experience promise without claiming unsupported demographics, demand, or market research.",
+        "Separates a concise premise from the logline and central dramatic question.",
+        "Keeps episode count, runtime, and any proposed world or character details in assumptions or uncertainties instead of silently making them facts."
+      ]
+    },
+    {
+      "id": "closed-factory-documentary",
+      "project_id": "FACTORY",
+      "brief": "Develop a documentary concept about a factory that closed two years ago. Former workers disagree about why it closed; access to company records and the site is unconfirmed.",
+      "observables": [
+        "Uses project_format documentary and treats live-action production as supplied or explicitly provisional.",
+        "Persists the supplied closure timing, conflicting former-worker accounts, and unconfirmed access as correctly sourced constraints or uncertainties, never assumptions disguised as supplied facts.",
+        "Builds the premise and central question from the closure, conflicting testimony, records, and access rather than inventing an answer.",
+        "Lists disputed causation, records, site access, chronology, and participant access as uncertainties where applicable.",
+        "Allows workers, the place, the institution, or the inquiry to carry focus without forcing a lone hero, villain, or transformation arc.",
+        "Does not invent audience research, a target demographic, or market demand."
+      ]
+    }
+  ]
+}

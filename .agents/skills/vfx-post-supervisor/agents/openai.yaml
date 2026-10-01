@@ -1,0 +1,4 @@
+interface:
+  display_name: "VFX Post Supervisor"
+  short_description: "Plan version-bound VFX turnover, review, and delivery"
+  default_prompt: "Use $vfx-post-supervisor to create a validated VFX post plan from these VFX, edit, media, and review records."

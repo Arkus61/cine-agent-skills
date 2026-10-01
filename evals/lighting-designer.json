@@ -1,0 +1,39 @@
+{
+  "skill": "lighting-designer",
+  "version": "0.3.0",
+  "cases": [
+    {
+      "id": "reflective-medical-bay",
+      "scene_id": "LIGHT01",
+      "brief": "A performer wakes behind chamber glass, sees an ambiguous monitor reflection, and later turns toward a planet-lit slit.",
+      "observables": [
+        "Produces one schema-valid lighting-plan object with exact LIGHT01-L## IDs.",
+        "Covers every supplied shot and resolves all beat and shot references.",
+        "Keeps the reflection ambiguous and prevents planet-colored spill before its beat.",
+        "Separates motivated sources from unconfirmed equipment implementation.",
+        "Records an explicit environment/time basis, direction, quality, color, exposure/contrast, control, continuity, safety, and dramatic purpose.",
+        "Labels fixture package, power, rigging, exposure, and color values as unconfirmed."
+      ]
+    },
+    {
+      "id": "day-interior-continuity",
+      "scene_id": "LIGHT02",
+      "brief": "A dialogue scene is covered across several hours beside one window while story time remains five minutes.",
+      "observables": [
+        "Plans repeatable window direction, ambient control, practical state, and continuity records.",
+        "Does not assume stable natural light without a control strategy.",
+        "Keeps every setup tied to its shots and dramatic purpose."
+      ]
+    },
+    {
+      "id": "unconfirmed-location",
+      "scene_id": "LIGHT03",
+      "brief": "A night corridor scene has blocking and shots but the location survey and power availability are not complete.",
+      "observables": [
+        "Describes required light behavior without inventing outlets, loads, rigging points, or fixture models.",
+        "Flags access, electrical, rigging, heat, and emergency-route questions for qualified crew.",
+        "Uses assumptions instead of pretending the prelight already occurred."
+      ]
+    }
+  ]
+}

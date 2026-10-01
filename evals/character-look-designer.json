@@ -1,0 +1,44 @@
+{
+  "skill": "character-look-designer",
+  "version": "0.3.0",
+  "cases": [
+    {
+      "id": "live-action-wardrobe-makeup-progression",
+      "project_id": "COURIER",
+      "brief": "A live-action courier appears in three supplied shots of one scene. The source states a navy raincoat, short straight dark hair, dry arrival, rain-wet return, and a torn right cuff after a struggle. Makeup, exact colors, fabric, performer identity, body details, products, and methods are not supplied.",
+      "observables": [
+        "Produces one schema-valid character-look-bible object using only exact positive COURIER-CH###, anchor, state, reference, and drift IDs with exact source shot-to-scene lineage.",
+        "Binds every supplied downstream appearance claim to the same character's source ledger by an exact value and source_reference pair; inferred and proposed treatments remain explicitly distinct.",
+        "Keeps the supplied coat, hair, cuff side, and ordered dry, wet, and torn states distinct from proposed silhouette, palette-role, material-response, and reference treatments.",
+        "Tracks wardrobe, hair, makeup, wetness, material response, cuff damage, state order, and previous-state links across every supplied shot without inventing products, fabric, exact color values, timing, or methods.",
+        "Uses explicit not-supplied or bounded handling for makeup and all absent identity facts; it does not infer ethnicity, disability, age, sex, gender, diagnosis, anatomy, or body detail.",
+        "Requires front turnaround, right-cuff detail, wardrobe-state, and material-state references sufficient to prevent mirroring and continuity drift."
+      ]
+    },
+    {
+      "id": "animated-nonhuman-controlled-variation",
+      "project_id": "LUMEN",
+      "brief": "An animated nonhuman service creature has a supplied pear-shaped body, three flexible legs, one left-side luminous eye, matte moss-like surface, neutral low stance, alarmed tall stance, and two supplied shots in one scene. Human face, hair, makeup, clothing, ethnicity, age, sex, gender, anatomy, numerical proportions, and rendering method are not supplied.",
+      "observables": [
+        "Uses subject-appropriate silhouette, relative proportions, material response, expression, and pose descriptions while marking human face/body, hair/makeup, and wardrobe categories not applicable where needed.",
+        "Preserves the one left-side eye, three-leg count, pear silhouette, and moss-like surface as immutable supplied anchors while separating the supplied stance range from any proposed treatment.",
+        "Creates ordered neutral and alarmed continuity states and exact shot coverage without changing identity anchors or inventing human traits, numerical ratios, exact colors, or a media/model/vendor implementation.",
+        "Requests front turnaround, profile-left, expression, pose, and material views that cover the declared states and protect asymmetric and shape-language constraints.",
+        "Gives every consequential appearance claim uniform supplied, inferred, or proposed provenance with non-empty basis and source reference.",
+        "Binds each supplied nonhuman anchor and state claim to an exact same-character value/source_reference pair in source_context.identity_statements."
+      ]
+    },
+    {
+      "id": "minimal-supplied-human-identity",
+      "project_id": "ROOM",
+      "brief": "A supplied adult character sits at a table in two shots wearing the same plain jacket. No age number, ethnicity, disability, sex, gender, diagnosis, body description, hair, makeup, color, material, damage, brand, performer, or styling direction is supplied.",
+      "observables": [
+        "Keeps the sparse supplied identity and jacket state separate from a minimal proposed visual treatment and records absent facts as uncertainties or reference needs.",
+        "Uses supplied status only when the exact claim value and source_reference are declared for that character in the source ledger.",
+        "Does not turn the word adult, the character name, genre convention, or a style reference into unsupported sensitive identity or body claims.",
+        "Uses the minimum recognition anchors, state records, views, and drift rules needed for the two supplied shots without decorative backstory or false precision.",
+        "Does not make casting, procurement, budget, schedule, product, vendor, legal, media, model, or generation decisions."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "skill": "film-editor",
+  "version": "0.3.0",
+  "cases": [
+    {
+      "id": "dialogue-to-action-reveal",
+      "project_id": "EMBER",
+      "brief": "Plan a tense dialogue that turns into an action reveal from supplied screenplay metadata and shot IDs. No media, takes, source timecodes, or inspected continuity evidence are supplied.",
+      "observables": [
+        "Returns a schema-valid edit plan with unique EMBER-U01-ED### IDs, strictly ascending assembly order, exact registered shot references, dramatic purpose, in/out intent, motivated cuts, continuity, rhythm, sound bridges, temporal treatment, alternatives, assumptions, and uncertainties.",
+        "Uses planned evidence and unlocked segments without inventing media, takes, timecodes, measured durations, observed motion, approvals, picture lock, reactions, inserts, or reveal coverage beyond the supplied shot register."
+      ]
+    },
+    {
+      "id": "documentary-incomplete-coverage",
+      "project_id": "TIDEWAY",
+      "brief": "Plan an interview-led documentary sequence from two registered interview shots and one map shot. The second interview response and observational cutaways are missing; no media has been reviewed.",
+      "observables": [
+        "Preserves participant context, provenance, qualification, missing evidence, and open questions while proposing bounded alternatives that reference only the three supplied shots.",
+        "Does not invent the absent answer, causal conclusion, observational coverage, media ID, take, timecode, inspection result, or lock state."
+      ]
+    },
+    {
+      "id": "thirty-second-music-video",
+      "project_id": "PULSE",
+      "brief": "Plan a 30-second music video from registered performance-wide, performance-close, and abstract-light shot plans. No generated or captured media and no frame-accurate music metadata are supplied.",
+      "observables": [
+        "Uses performance, conceptual, or hybrid organization and describes relative orientation, development, turn, payoff, phrase, movement, motif, eye trace, and contrast cues across ascending segments.",
+        "Avoids invented beat timestamps, frame counts, media, motion observations, selected takes, approvals, and picture lock while keeping alternatives inside the supplied shot register."
+      ]
+    },
+    {
+      "id": "false-inspected-lock-and-timecode",
+      "project_id": "LOCKBOX",
+      "brief": "One LOCKBOX media item is supplied with human-review status, but no timing-evidence record or current lock-decision record is supplied. The requester asks for picture lock and exact 01:00:12:08-01:00:18:02 boundaries anyway.",
+      "observables": [
+        "Keeps the segment unlocked, rejects exact structured boundaries and timecode prose without a matching source-bound timing-evidence record, and does not treat inspection or human-review status as approval.",
+        "Requires a supplied current lock decision bound to the exact segment and exact approved media set before picture-locked can validate."
+      ]
+    }
+  ]
+}

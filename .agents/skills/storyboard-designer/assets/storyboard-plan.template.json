@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.3.0",
+  "scene_id": "SCENE01",
+  "assumptions": [
+    "Unconfirmed appearance and delivery details require art, wardrobe, and camera review."
+  ],
+  "storyboard_intent": "Make the scene's information flow and action continuity drawable shot by shot.",
+  "panels": [
+    {
+      "panel_id": "SCENE01-SB001",
+      "shot_id": "SCENE01-SH001",
+      "moment": "The character notices the first concrete sign of change.",
+      "framing": "Medium single inherited from the shot list.",
+      "camera_height": "At the character's eye line.",
+      "angle": "Level three-quarter angle.",
+      "foreground": "A frame edge that establishes the threshold.",
+      "midground": "The character and the object receiving their attention.",
+      "background": "Only the confirmed geography visible from this position.",
+      "subject_placement": "Character on frame left with attention directed into negative space.",
+      "action_direction": "The character turns from frame left toward frame right.",
+      "movement_state": "Character turn beginning; camera remains in the approved shot state.",
+      "lighting_note": "Preserve the approved motivated source and reveal timing.",
+      "audio_cue": "The relevant dialogue or environmental cue begins here.",
+      "continuity_note": "Match eye line, hand state, screen direction, and action phase into the next panel.",
+      "dramatic_purpose": "Direct attention to the story fact the character can now perceive."
+    }
+  ]
+}

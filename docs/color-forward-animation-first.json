@@ -1,0 +1,76 @@
+{
+  "schema_version": "2.0",
+  "project_id": "INK",
+  "unit_id": "INK-U01",
+  "source_context": {
+    "edit_segments": [
+      {"segment_id": "INK-U01-ED001", "source_reference": "post/edit-plan.json#/segments/0"},
+      {"segment_id": "INK-U01-ED002", "source_reference": "post/edit-plan.json#/segments/1"}
+    ],
+    "vfx_items": [
+      {"item_id": "INK-U01-FX001", "source_reference": "post/vfx-post-plan.json#/items/0"}
+    ],
+    "media_versions": [],
+    "metadata_records": [],
+    "evidence": []
+  },
+  "color_management": {
+    "input_policy": "Identify camera/editorial and VFX render encodings independently from metadata bound to exact source versions. Do not interpret the request for ACEScg as evidence that any input is ACEScg.",
+    "working_space": {"value": "ACEScg", "state": "proposed", "metadata_record_ids": []},
+    "output_intent": "Develop a scene-referred master with a proposed HDR display path; confirm transforms and any trim only after source/render metadata, an exact output version, and controlled display review are available."
+  },
+  "display_targets": [
+    {"target_id": "INK-DT001", "intent": "HDR", "standard": "p3-d65-st2084", "viewing_environment": "Proposed controlled HDR grading environment; mastering display capabilities and surround conditions remain to be declared.", "state": "proposed", "source_reference": "team request for HDR match; exact display specification not supplied"}
+  ],
+  "items": [
+    {
+      "item_id": "INK-U01-CL001",
+      "edit_segment_ids": ["INK-U01-ED001"],
+      "vfx_item_ids": ["INK-U01-FX001"],
+      "source_version_ids": [],
+      "graded_version_id": null,
+      "observed_input": {"state": "uninspected", "findings": [], "evidence_ids": []},
+      "desired_look": "Establish a cool, controlled industrial interior with dimensional metal and shadow detail, while keeping the character's cyan eyes and silver-white hair immediately recognizable.",
+      "input_encoding": {"value": "unknown", "state": "unknown", "metadata_record_ids": []},
+      "balance_and_matching": "After independent source and VFX normalization, balance neutral industrial anchors and character materials; create continuity into the doorway reveal while preserving its motivated warm transition.",
+      "exposure_and_contrast": "Inspect dark structure, metallic highlights, emissive cyan details, and hair before setting HDR contrast; preserve shadow texture, prevent hard highlight clipping, and avoid using unverified numeric peak targets.",
+      "palette": {
+        "intent": "Use restrained blue-cyan industrial ambience and neutral steel, reserving clean warm-cool separation for the doorway transition.",
+        "protected_colors": ["Protect the character's cyan eye hue, saturation hierarchy, and emissive readability.", "Protect silver-white hair neutrality, strand detail, and highlight separation."],
+        "selective_treatments": ["If required after inspection, isolate the eyes from global cyan compression while checking edge and temporal stability.", "Control color contamination in silver-white hair without neutralizing intentional environmental reflections."]
+      },
+      "vfx_handoff": "For INK-U01-FX001, obtain render-space, range, premultiplication, and configuration/version metadata. Review edges, matte contamination, black level, grain/noise, metallic and hair highlights, cyan-eye identity, gamut, and temporal stability on the exact graded output.",
+      "display_target_ids": ["INK-DT001"],
+      "trim_assumptions": ["HDR highlight, saturation, and shadow trims remain conditional on a declared mastering display, verified transforms, and review of the complete sequence."],
+      "match_state": "awaiting-media",
+      "evidence_ids": [],
+      "approval": {"state": "pending", "evidence_ids": []}
+    },
+    {
+      "item_id": "INK-U01-CL002",
+      "edit_segment_ids": ["INK-U01-ED002"],
+      "vfx_item_ids": [],
+      "source_version_ids": [],
+      "graded_version_id": null,
+      "observed_input": {"state": "uninspected", "findings": [], "evidence_ids": []},
+      "desired_look": "Let the warm doorway reveal open the palette and emotional space without breaking the cool industrial world or changing the character's defining colors.",
+      "input_encoding": {"value": "unknown", "state": "unknown", "metadata_record_ids": []},
+      "balance_and_matching": "After verified normalization, match character and industrial anchors to the interior shot; retain the doorway's warmer illumination as a narrative change rather than forcing neutral equivalence.",
+      "exposure_and_contrast": "Inspect doorway energy, adjacent shadow detail, eyes, and hair before shaping the HDR transition; retain highlight gradation and readable interior blacks without inventing mastering levels.",
+      "palette": {
+        "intent": "Introduce controlled amber-gold doorway light against retained cool industrial shadows, with clear but natural color separation.",
+        "protected_colors": ["Protect cyan eyes from shifting green or desaturating against the warm field.", "Protect silver-white hair from yellow contamination while retaining motivated warm edge light."],
+        "selective_treatments": ["If inspection shows spill obscuring character identity, selectively restrain warmth in eyes and hair with natural transitions.", "Shape doorway saturation or highlight color only as needed after checking gamut and temporal behavior."]
+      },
+      "vfx_handoff": "No VFX item is currently linked to this segment. If linkage changes, require exact render metadata and repeat integration review on the resulting graded version.",
+      "display_target_ids": ["INK-DT001"],
+      "trim_assumptions": ["Do not certify the warm reveal or an HDR trim until the exact output is reviewed on a declared HDR display path."],
+      "match_state": "awaiting-media",
+      "evidence_ids": [],
+      "approval": {"state": "pending", "evidence_ids": []}
+    }
+  ],
+  "story_arc": "Begin in a compressed cool industrial world, then open into a warm doorway reveal while cool shadows maintain world continuity. Cyan eyes and silver-white hair remain stable recognition anchors through the temperature and contrast change.",
+  "assumptions": ["ACEScg is a requested working-space proposal, not observed source or VFX render metadata.", "P3-D65 ST 2084 is a provisional HDR target chosen for planning and is not a declared delivery specification.", "The team's approved-match request is recorded as pending, not as evidence of approval."],
+  "uncertainties": ["No media, exact source or VFX versions, input/render metadata, inspection findings, or graded output exists.", "The mastering display capabilities, viewing surround, delivery gamut, luminance policy, transform/configuration versions, and trim requirements are unknown.", "Match approval requires inspection of both segments in sequence on the declared HDR path plus human approval evidence bound to that exact output."]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blocking Designer"
+  short_description: "Stage motivated movement and geography"
+  default_prompt: "Use $blocking-designer to stage the characters and preserve scene geography."

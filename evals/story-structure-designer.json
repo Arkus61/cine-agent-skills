@@ -1,0 +1,47 @@
+{
+  "skill": "story-structure-designer",
+  "version": "0.3.0",
+  "cases": [
+    {
+      "id": "ninel-serialized-science-fantasy",
+      "project_id": "NINEL",
+      "brief": "A serialized animated series about an android explorer stranded in a fantasy world while an underground hive intelligence expands.",
+      "observables": [
+        "Compares two or three candidates including Hero's Journey, Three-Act, and a plausible serial alternative against shared evidence.",
+        "Selects or hybridizes with a rationale, component-level compatibility, and intentional deviations rather than imposing a remembered formula.",
+        "Produces exact NINEL-PL##, NINEL-SQ##, and NINEL-EV### IDs with resolved setup/payoff and cross-collection references.",
+        "Explains renewable series pressure and varied retention or cliffhanger logic without inventing episode count or character/world canon."
+      ]
+    },
+    {
+      "id": "forty-five-second-commercial",
+      "project_id": "MEND",
+      "brief": "A 45-second commercial for a supplied repair service: a visibly cracked ceramic cup is restored while its owner prepares tea. No market research or performance claims are supplied.",
+      "observables": [
+        "Prioritizes compact orientation, demonstration or contrast, and credible payoff rather than a hero journey or season spine.",
+        "Maps a small event chain that fits 45 seconds and does not invent product claims.",
+        "Compares two or three candidates and records intentional compression or omitted conventional turns."
+      ]
+    },
+    {
+      "id": "mystery-short",
+      "project_id": "KEY",
+      "brief": "A 12-minute mystery short: a night concierge finds a returned key for a room the hotel has never had.",
+      "observables": [
+        "Routes toward fair information control, curiosity, reveal, or recontextualization with bounded red-herring risk.",
+        "Uses evidence-bearing events and an earned payoff rather than arbitrary concealment or serial cliffhanger logic.",
+        "Selects structure logic materially different from the commercial and Ninel series cases."
+      ]
+    },
+    {
+      "id": "performance-led-music-video",
+      "project_id": "PULSE",
+      "brief": "A performance-led music video in which one dancer and a live percussionist move from an empty rehearsal room into layered light and mirrored choreography; no dialogue or causal plot is required.",
+      "observables": [
+        "Routes from musical, performance, choreographic, energy, and motif evidence rather than forcing an antagonist or quest.",
+        "Selects a performance escalation, motif cycle, parallel, or associative structure materially different from the other cases.",
+        "Defines retention through musical and visual change and explicitly deviates from compulsory causal climax or cliffhanger logic."
+      ]
+    }
+  ]
+}

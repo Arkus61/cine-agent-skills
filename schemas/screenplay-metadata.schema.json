@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cine-agent-skills/screenplay-metadata.schema.json",
+  "title": "Screenplay Metadata",
+  "$defs": {
+    "non_empty_string": {"type": "string", "minLength": 1, "maxLength": 2000},
+    "project_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*$",
+      "maxLength": 128
+    },
+    "unit_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-(?:U|E)(?:0[1-9]|[1-9][0-9])$"
+    },
+    "scene_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-(?:U|E)(?:0[1-9]|[1-9][0-9])-SC(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+    },
+    "event_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-EV(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+    },
+    "character_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-CH(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+    },
+    "location_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*-LO(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+    },
+    "event_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/event_id"},
+      "uniqueItems": true
+    },
+    "character_ids": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/character_id"},
+      "uniqueItems": true
+    },
+    "scene_mapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scene_id", "heading", "event_ids", "character_ids", "location_id",
+        "objective", "conflict", "turn"
+      ],
+      "properties": {
+        "scene_id": {"$ref": "#/$defs/scene_id"},
+        "heading": {"$ref": "#/$defs/non_empty_string"},
+        "event_ids": {"$ref": "#/$defs/event_ids"},
+        "character_ids": {"$ref": "#/$defs/character_ids"},
+        "location_id": {"$ref": "#/$defs/location_id"},
+        "objective": {"$ref": "#/$defs/non_empty_string"},
+        "conflict": {"$ref": "#/$defs/non_empty_string"},
+        "turn": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "character_mapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["character_id", "cue"],
+      "properties": {
+        "character_id": {"$ref": "#/$defs/character_id"},
+        "cue": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "pattern": "^[A-Z0-9][A-Z0-9 ._'-]*$"
+        }
+      }
+    },
+    "location_mapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["location_id", "name"],
+      "properties": {
+        "location_id": {"$ref": "#/$defs/location_id"},
+        "name": {"$ref": "#/$defs/non_empty_string"}
+      }
+    },
+    "setup_payoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "setup_event_id", "setup_scene_id", "payoff_event_id",
+        "payoff_scene_id", "relationship"
+      ],
+      "properties": {
+        "setup_event_id": {"$ref": "#/$defs/event_id"},
+        "setup_scene_id": {"$ref": "#/$defs/scene_id"},
+        "payoff_event_id": {
+          "oneOf": [{"$ref": "#/$defs/event_id"}, {"type": "null"}]
+        },
+        "payoff_scene_id": {
+          "oneOf": [{"$ref": "#/$defs/scene_id"}, {"type": "null"}]
+        },
+        "relationship": {"$ref": "#/$defs/non_empty_string"}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "project_id", "unit_id", "source_event_ids",
+    "scene_mappings", "character_mappings", "location_mappings",
+    "setup_payoffs", "assumptions", "uncertainties"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.3.0"},
+    "project_id": {"$ref": "#/$defs/project_id"},
+    "unit_id": {"$ref": "#/$defs/unit_id"},
+    "source_event_ids": {"$ref": "#/$defs/event_ids"},
+    "scene_mappings": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 999,
+      "items": {"$ref": "#/$defs/scene_mapping"}
+    },
+    "character_mappings": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/character_mapping"}
+    },
+    "location_mappings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/location_mapping"}
+    },
+    "setup_payoffs": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/setup_payoff"}
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    },
+    "uncertainties": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    }
+  }
+}

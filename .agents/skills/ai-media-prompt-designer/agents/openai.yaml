@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Media Prompt Designer"
+  short_description: "Create source-bound vendor-neutral media prompts"
+  default_prompt: "Use $ai-media-prompt-designer to create a validated vendor-neutral media prompt package."

@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cine-agent-skills/visual-language-plan.schema.json",
+  "title": "Visual Language Plan",
+  "$defs": {
+    "beat_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+-B[0-9]{2,}(?![\\s\\S])"
+    },
+    "rule_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+-V[0-9]{2,}(?![\\s\\S])"
+    },
+    "non_empty_string": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scene_id",
+    "assumptions",
+    "aspect_ratio",
+    "point_of_view",
+    "palette",
+    "contrast",
+    "texture",
+    "lens_strategy",
+    "visual_motifs",
+    "prohibited_defaults",
+    "exceptions",
+    "rules"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.3.0"},
+    "scene_id": {"$ref": "#/$defs/non_empty_string"},
+    "assumptions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/non_empty_string"}
+    },
+    "aspect_ratio": {"$ref": "#/$defs/non_empty_string"},
+    "point_of_view": {"$ref": "#/$defs/non_empty_string"},
+    "palette": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    },
+    "contrast": {"$ref": "#/$defs/non_empty_string"},
+    "texture": {"$ref": "#/$defs/non_empty_string"},
+    "lens_strategy": {"$ref": "#/$defs/non_empty_string"},
+    "visual_motifs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    },
+    "prohibited_defaults": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    },
+    "exceptions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/non_empty_string"},
+      "uniqueItems": true
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "rule_id",
+          "beat_ids",
+          "composition",
+          "camera_height",
+          "dramatic_purpose"
+        ],
+        "properties": {
+          "rule_id": {"$ref": "#/$defs/rule_id"},
+          "beat_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"$ref": "#/$defs/beat_id"},
+            "uniqueItems": true
+          },
+          "composition": {"$ref": "#/$defs/non_empty_string"},
+          "camera_height": {"$ref": "#/$defs/non_empty_string"},
+          "dramatic_purpose": {"$ref": "#/$defs/non_empty_string"}
+        }
+      }
+    }
+  }
+}

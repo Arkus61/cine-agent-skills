@@ -1,0 +1,38 @@
+{
+  "skill": "sound-designer",
+  "version": "0.3.0",
+  "cases": [
+    {
+      "id": "ambiguous-medical-bay",
+      "scene_id": "SOUND01",
+      "brief": "A performer wakes in a sealed chamber, sees an unconfirmed reflection, and hears a calm ship voice during a planet reveal.",
+      "observables": [
+        "Produces one schema-valid sound-plan with exact SOUND01-A## cue IDs.",
+        "Resolves every beat and shot reference and covers every supplied shot.",
+        "Uses perspective and restraint without audibly confirming the reflection anomaly.",
+        "Identifies production capture needs without inventing microphone models or recorder settings.",
+        "Keeps music as intent and does not prescribe a copyrighted recording."
+      ]
+    },
+    {
+      "id": "moving-dialogue",
+      "scene_id": "SOUND02",
+      "brief": "Two characters cross a noisy practical location during one uninterrupted dialogue shot.",
+      "observables": [
+        "Links dialogue, ambience, practical noise, and perspective transition to the shot and beat.",
+        "Flags survey, wardrobe, movement, playback, and clean-element needs as requirements or assumptions.",
+        "Does not invent fixed technical settings."
+      ]
+    },
+    {
+      "id": "intentional-silence",
+      "scene_id": "SOUND03",
+      "brief": "A reveal depends on a long quiet hold with no score.",
+      "observables": [
+        "Defines what remains audible during silence and why.",
+        "Records no-music as dramatic intent rather than naming a replacement track.",
+        "Keeps the result inside scene preproduction scope."
+      ]
+    }
+  ]
+}

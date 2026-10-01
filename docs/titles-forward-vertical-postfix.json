@@ -1,0 +1,84 @@
+{
+  "schema_version": "2.0",
+  "project_id": "MOSAIC",
+  "unit_id": "MOSAIC-U01",
+  "source_context": {
+    "edit_segments": [
+      {"segment_id": "MOSAIC-U01-ED001", "source_reference": "docs/titles-forward-inputs.md#vertical — supplied host-introduction segment"},
+      {"segment_id": "MOSAIC-U01-ED002", "source_reference": "docs/titles-forward-inputs.md#vertical — supplied reaction segment"}
+    ],
+    "edit_versions": [],
+    "text_sources": [
+      {"text_source_id": "MOSAIC-TS001", "kind": "supplied-title", "text": "MOSAIC", "source_reference": "Project name in docs/titles-forward-inputs.md#vertical; display use remains an editorial proposal"},
+      {"text_source_id": "MOSAIC-TS002", "kind": "supplied-dialogue", "text": "Empezamos aquí.", "source_reference": "Spanish script line supplied in docs/titles-forward-inputs.md#vertical; not a performed transcript"},
+      {"text_source_id": "MOSAIC-TS003", "kind": "editorial-proposal", "text": "[Suena un timbre fuera de campo]", "source_reference": "Spanish accessibility wording proposed from the supplied offscreen-doorbell note in docs/titles-forward-inputs.md#vertical"}
+    ],
+    "timing_records": [],
+    "evidence": []
+  },
+  "items": [
+    {
+      "item_id": "MOSAIC-U01-TT001",
+      "type": "main-title",
+      "edit_segment_id": "MOSAIC-U01-ED001",
+      "text": {"content": "MOSAIC", "content_kind": "title", "state": "proposed", "text_source_id": "MOSAIC-TS001"},
+      "placement": {"region": "Lower-frame title zone, positioned only after checking faces, action, caption separation, and the actual platform UI overlay.", "safe_area_state": "proposed", "exception_rationale": null},
+      "timing": {"mode": "creative-intent", "intent": "Establish the title before the host caption competes for the lower frame; derive exact cue bounds from the supplied locked output timeline.", "timing_record_id": null},
+      "typography_intent": "A bold, compact, phone-readable main title with restrained motion; font and brand treatment remain unapproved proposals.",
+      "readability": {"contrast_strategy": "Check the whole title interval and relocate or add restrained backing when the changing image reduces separation.", "line_break_intent": "Keep the one-word title on one line if the reviewed 9:16 composition permits.", "reading_speed_target": null, "line_length_target": null, "specification_reference": null},
+      "language": null,
+      "speaker_identification": {"state": "not-applicable", "value": null},
+      "sound_description": {"state": "not-applicable", "value": null},
+      "presentation": {"mode": "burn-in", "assumption": "Designed title burn-in is provisional until the delivery specification and localization plan are supplied."},
+      "revision": "r001",
+      "approval": {"state": "pending", "evidence_ids": []}
+    },
+    {
+      "item_id": "MOSAIC-U01-TT002",
+      "type": "accessibility-caption",
+      "edit_segment_id": "MOSAIC-U01-ED001",
+      "text": {"content": "Empezamos aquí.", "content_kind": "dialogue", "state": "supplied", "text_source_id": "MOSAIC-TS002"},
+      "placement": {"region": "Prominent lower frame, moved as needed to protect the visible host, main title, important action, and verified platform controls.", "safe_area_state": "proposed", "exception_rationale": null},
+      "timing": {"mode": "creative-intent", "intent": "Follow the performed host phrase and nearby edit rhythm; set exact in/out points only from reviewed current audio and locked output-timeline metadata.", "timing_record_id": null},
+      "typography_intent": "High-legibility phone scale, consistent caption weight, and clear visual separation from the main title.",
+      "readability": {"contrast_strategy": "Review the entire cue over the changing picture and use relocation, outline, shadow, or backing only where necessary.", "line_break_intent": "Keep the short Spanish phrase on one line when verified composition permits; otherwise break at a semantic boundary.", "reading_speed_target": null, "line_length_target": null, "specification_reference": null},
+      "language": "es",
+      "speaker_identification": {"state": "proposed", "value": "Use the visible host context; add an explicit Spanish host label if actual-picture review finds the speaker unclear."},
+      "sound_description": {"state": "not-required", "value": null},
+      "presentation": {"mode": "either", "assumption": "Choose burn-in or sidecar after platform, accessibility, localization, and delivery requirements are supplied."},
+      "revision": "r001",
+      "approval": {"state": "pending", "evidence_ids": []}
+    },
+    {
+      "item_id": "MOSAIC-U01-TT003",
+      "type": "accessibility-caption",
+      "edit_segment_id": "MOSAIC-U01-ED002",
+      "text": {"content": "[Suena un timbre fuera de campo]", "content_kind": "nonspeech", "state": "proposed", "text_source_id": "MOSAIC-TS003"},
+      "placement": {"region": "Lower-frame caption zone adjusted after actual-picture review to preserve the reaction, faces, graphics, and platform controls.", "safe_area_state": "proposed", "exception_rationale": null},
+      "timing": {"mode": "creative-intent", "intent": "Associate the cue with the audible offscreen doorbell and reaction; exact bounds require reviewed current audio and locked output-timeline metadata.", "timing_record_id": null},
+      "typography_intent": "Match the dialogue-caption family while using the production's consistent nonspeech convention to distinguish the sound event.",
+      "readability": {"contrast_strategy": "Review the complete cue interval and adjust placement or support when the reaction shot changes contrast.", "line_break_intent": "Keep the bracketed description together when possible; if needed, break at a semantic boundary.", "reading_speed_target": null, "line_length_target": null, "specification_reference": null},
+      "language": "es",
+      "speaker_identification": {"state": "not-applicable", "value": null},
+      "sound_description": {"state": "proposed", "value": "Identify the sound as an offscreen doorbell in Spanish, subject to audio and accessibility review."},
+      "presentation": {"mode": "either", "assumption": "Choose burn-in or sidecar after platform, accessibility, localization, and delivery requirements are supplied."},
+      "revision": "r001",
+      "approval": {"state": "pending", "evidence_ids": []}
+    }
+  ],
+  "hierarchy_and_rhythm": "Make the title the dominant opening event, keep the supplied Spanish speech intact as the primary caption event, and separate the following doorbell as a nonspeech cue. Resolve competing lower-frame events and exact rhythm against the current 9:16 edit and audio.",
+  "credits_scope": {"state": "unresolved", "entries": [], "clearance_note": "No credit names, ordering, organizations, marks, legal text, or clearance evidence were supplied; none are invented or approved."},
+  "assumptions": [
+    "The brief is supplied provenance, not inspected media.",
+    "MOSAIC is proposed as display-title text from the project name, pending editorial confirmation.",
+    "The 9:16 format and phone viewing inform creative intent only.",
+    "The Spanish doorbell wording is an editorial accessibility proposal, not supplied dialogue or a verified transcript."
+  ],
+  "uncertainties": [
+    "No recording or performed transcript verifies the spoken line, speaker visibility, doorbell, or event order.",
+    "No locked edit, frame rate, output-timeline timing record, or lock decision supports exact timestamps.",
+    "No platform UI, delivery specification, brand font, license, or accessibility review establishes final placement and styling.",
+    "No exact current-item review and human-approval evidence exists, so every item remains pending.",
+    "Handoff requires current picture and audio, locked edit/version records, output-timeline metadata, delivery and platform specifications, typography guidance, language/accessibility review, and item-bound approval evidence."
+  ]
+}

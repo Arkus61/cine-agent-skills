@@ -1,0 +1,60 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+________________________ test_honest_nonspeech_proposal ________________________
+
+repository_root = PosixPath('/workspace/scratch/a2ddd87bdd55/baseline-a7d2e0a')
+
+    def test_honest_nonspeech_proposal(repository_root):
+        p=planned_titles_plan()
+        p['source_context']['text_sources'].append({'text_source_id':'SPARK-TS002','kind':'editorial-proposal','text':'[doorbell rings]','source_reference':'editorial/proposals.json#/0'})
+        p['items'][0]['text']={'content':'[doorbell rings]','state':'proposed','text_source_id':'SPARK-TS002'}
+        p['items'][0]['sound_description']={'state':'proposed','value':'doorbell rings'}
+>       assert errors(p,repository_root)==[]
+E       AssertionError: assert ['items.0.tex...ce reference'] == []
+E         
+E         Left contains one more item: 'items.0.text.text_source_id: dialogue caption requires a supplied-dialogue source reference'
+E         Use -v to get more diff
+
+tests/test_recovered_regressions.py:8: AssertionError
+________________ test_changed_accessibility_invalidates_review _________________
+
+repository_root = PosixPath('/workspace/scratch/a2ddd87bdd55/baseline-a7d2e0a')
+
+    def test_changed_accessibility_invalidates_review(repository_root):
+        p=approved_titles_plan();p['items'][0]['language']='fr'
+>       assert errors(p,repository_root)
+E       AssertionError: assert []
+E        +  where [] = errors({'schema_version': '2.0', 'project_id': 'SPARK', 'unit_id': 'SPARK-U01', 'source_context': {'edit_segments': [{'segmen...01', 'item_id': 'SPARK-U01-TT001', 'segment_id': 'SPARK-U01-ED001', 'edit_version_id': 'SPARK-EV003', ...}], ...}, ...}, PosixPath('/workspace/scratch/a2ddd87bdd55/baseline-a7d2e0a'))
+
+tests/test_recovered_regressions.py:12: AssertionError
+________________ test_unused_timing_cannot_target_other_segment ________________
+
+repository_root = PosixPath('/workspace/scratch/a2ddd87bdd55/baseline-a7d2e0a')
+
+    def test_unused_timing_cannot_target_other_segment(repository_root):
+        p=approved_titles_plan();c=p['source_context']
+        c['edit_segments'].append({'segment_id':'SPARK-U01-ED002','source_reference':'post/edit-plan.json#/segments/1'})
+        c['edit_versions'][0]['segment_ids'].append('SPARK-U01-ED002')
+        r=dict(c['timing_records'][0]);r['timing_record_id']='SPARK-TM002';r['segment_id']='SPARK-U01-ED002';c['timing_records'].append(r)
+>       assert errors(p,repository_root)
+E       AssertionError: assert []
+E        +  where [] = errors({'schema_version': '2.0', 'project_id': 'SPARK', 'unit_id': 'SPARK-U01', 'source_context': {'edit_segments': [{'segmen...02', 'item_id': 'SPARK-U01-TT001', 'segment_id': 'SPARK-U01-ED002', 'edit_version_id': 'SPARK-EV003', ...}], ...}, ...}, PosixPath('/workspace/scratch/a2ddd87bdd55/baseline-a7d2e0a'))
+
+tests/test_recovered_regressions.py:19: AssertionError
+_________________________ test_invalid_frame_component _________________________
+
+repository_root = PosixPath('/workspace/scratch/a2ddd87bdd55/baseline-a7d2e0a')
+
+    def test_invalid_frame_component(repository_root):
+        p=approved_titles_plan();p['source_context']['timing_records'][0]['start_timecode']='00:00:00:24'
+>       assert errors(p,repository_root)
+E       AssertionError: assert []
+E        +  where [] = errors({'schema_version': '2.0', 'project_id': 'SPARK', 'unit_id': 'SPARK-U01', 'source_context': {'edit_segments': [{'segmen...01', 'item_id': 'SPARK-U01-TT001', 'segment_id': 'SPARK-U01-ED001', 'edit_version_id': 'SPARK-EV003', ...}], ...}, ...}, PosixPath('/workspace/scratch/a2ddd87bdd55/baseline-a7d2e0a'))
+
+tests/test_recovered_regressions.py:23: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_recovered_regressions.py::test_honest_nonspeech_proposal - ...
+FAILED tests/test_recovered_regressions.py::test_changed_accessibility_invalidates_review
+FAILED tests/test_recovered_regressions.py::test_unused_timing_cannot_target_other_segment
+FAILED tests/test_recovered_regressions.py::test_invalid_frame_component - As...
+4 failed in 0.28s

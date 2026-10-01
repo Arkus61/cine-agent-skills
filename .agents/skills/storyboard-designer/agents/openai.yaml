@@ -1,0 +1,4 @@
+interface:
+  display_name: "Storyboard Designer"
+  short_description: "Turn shot lists into drawable storyboard panels"
+  default_prompt: "Use $storyboard-designer to create textual storyboard panels for this shot list."

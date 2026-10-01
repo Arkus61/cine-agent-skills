@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scene Preproduction Pipeline"
+  short_description: "Build a validated scene-full scene package"
+  default_prompt: "Use $scene-preproduction-pipeline to turn this scene into a complete validated scene-full preproduction package."

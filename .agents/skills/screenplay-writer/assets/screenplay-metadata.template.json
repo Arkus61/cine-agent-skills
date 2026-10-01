@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.3.0",
+  "project_id": "PROJECT",
+  "unit_id": "PROJECT-U01",
+  "source_event_ids": ["PROJECT-EV001", "PROJECT-EV002"],
+  "scene_mappings": [
+    {
+      "scene_id": "PROJECT-U01-SC001",
+      "heading": "EXT. TIDAL CAUSEWAY - DUSK",
+      "event_ids": ["PROJECT-EV001"],
+      "character_ids": ["PROJECT-CH001", "PROJECT-CH002"],
+      "location_id": "PROJECT-LO001",
+      "objective": "Rowan must pass the causeway before the tide covers it.",
+      "conflict": "The keeper delays her while concealing that the gate is still open.",
+      "turn": "Rowan gives up her tide map and crosses without permission."
+    },
+    {
+      "scene_id": "PROJECT-U01-SC002",
+      "heading": "INT. SIGNAL HOUSE - NIGHT",
+      "event_ids": ["PROJECT-EV002"],
+      "character_ids": ["PROJECT-CH001"],
+      "location_id": "PROJECT-LO002",
+      "objective": "Rowan must warn the fishing boats without a working lamp.",
+      "conflict": "Rising water and failed equipment remove the expected signal method.",
+      "turn": "She converts the survey pole into an audible warning."
+    }
+  ],
+  "character_mappings": [
+    {"character_id": "PROJECT-CH001", "cue": "ROWAN"},
+    {"character_id": "PROJECT-CH002", "cue": "KEEPER"}
+  ],
+  "location_mappings": [
+    {"location_id": "PROJECT-LO001", "name": "Tidal causeway"},
+    {"location_id": "PROJECT-LO002", "name": "Signal house"}
+  ],
+  "setup_payoffs": [
+    {
+      "setup_event_id": "PROJECT-EV001",
+      "setup_scene_id": "PROJECT-U01-SC001",
+      "payoff_event_id": "PROJECT-EV002",
+      "payoff_scene_id": "PROJECT-U01-SC002",
+      "relationship": "The survey pole carried across the causeway becomes the replacement warning signal."
+    }
+  ],
+  "assumptions": [],
+  "uncertainties": []
+}

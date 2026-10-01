@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.3.0",
+  "scene_id": "NINEL-E02-SC001",
+  "assumptions": [
+    "Take-level records are added during photography."
+  ],
+  "continuity_strategy": "Track chosen breath and chamber states.",
+  "items": [
+    {
+      "continuity_id": "NINEL-E02-SC001-CN001",
+      "shot_ids": [
+        "NINEL-E02-SC001-SH001",
+        "NINEL-E02-SC001-SH002"
+      ],
+      "category": "action",
+      "tracked_state": "Ninel starts still and ends seated.",
+      "required_transition": "The shot preserves the eye-open, inhale, and rise order.",
+      "reset_instruction": "Restore eye, body, chamber, and frost start states.",
+      "severity": "critical"
+    }
+  ]
+}

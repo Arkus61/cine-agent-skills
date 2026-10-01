@@ -1,0 +1,4 @@
+interface:
+  display_name: "Production Breakdown"
+  short_description: "Break scenes into department production needs"
+  default_prompt: "Use $production-breakdown to create a department-by-department scene breakdown."

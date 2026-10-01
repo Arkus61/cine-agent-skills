@@ -1,0 +1,76 @@
+{
+  "skill": "episode-outline-builder",
+  "version": "0.3.0",
+  "cases": [
+    {
+      "id": "feature-whole-script-unit",
+      "project_format": "feature",
+      "brief": "Outline the complete 96-minute chamber-drama feature assigned events FRAME-EV001 through FRAME-EV009 and plotlines FRAME-PL01 and FRAME-PL02.",
+      "observables": [
+        "Uses FRAME-U01 and a whole-script format plan rather than treating one sequence as the unit.",
+        "Covers every source event and plotline with exact unit-prefixed scene references.",
+        "Uses midpoint and climax only when they perform named changes in the selected upstream model."
+      ]
+    },
+    {
+      "id": "short-complete-authored-work",
+      "project_format": "short",
+      "brief": "Outline the complete eight-minute observational fiction short assigned STILL-EV001 through STILL-EV004 and STILL-PL01.",
+      "observables": [
+        "Uses STILL-U01 and a whole-script format plan with a proportionate compact movement.",
+        "Does not pad the short with feature-scale act machinery or an unapproved continuation hook.",
+        "Resolves the opening promise inside the supplied runtime."
+      ]
+    },
+    {
+      "id": "series-episode-dependencies",
+      "project_format": "series",
+      "brief": "Outline nonfinal episode ALPINE-E03 from its approved season assignment, exact source events, plotlines, local rescue responsibility, and continuing future-call inquiry.",
+      "observables": [
+        "Uses ALPINE-E03-SC### scene IDs matching ordered indexes and resolves all exact references.",
+        "Closes the assigned local rescue while preserving rather than inventing or spending season dependencies.",
+        "Places the forward hook after local resolution and connects it to a declared dependency."
+      ]
+    },
+    {
+      "id": "documentary-evidence-unit",
+      "project_format": "documentary",
+      "brief": "Outline a 12-minute unit about a harbor restoration audit using supplied meeting access, archival permit records, one already captured water test, and unresolved sampling results.",
+      "observables": [
+        "Uses a documentary-evidence format plan and marks every scene and evidence item as planned or discovered.",
+        "Treats access, testimony, archive, and pending results as evidence conditions rather than scripted outcomes.",
+        "Builds retention from verification and competing interpretation, not a predetermined reveal or villain edit."
+      ]
+    },
+    {
+      "id": "commercial-runtime-payoff",
+      "project_format": "commercial",
+      "brief": "Outline a 30-second approved bicycle-light demonstration spot with supplied visibility claims and end-card copy.",
+      "observables": [
+        "Uses a runtime-led format plan with explicit orientation and payoff deadlines inside 30 seconds.",
+        "Demonstrates only the supplied claim and leaves readable time after payoff for approved end information.",
+        "Does not force a three-act label or substitute the call to action for the promised demonstration."
+      ]
+    },
+    {
+      "id": "music-video-performance-arc",
+      "project_format": "music-video",
+      "brief": "Outline the complete 210-second music video from a supplied track map, performance concept, choreography changes, and recurring mirror motif.",
+      "observables": [
+        "Uses a runtime-led format plan and aligns scene changes with audible, performative, choreographic, or motif changes.",
+        "Defines a performance or visual payoff without inventing dialogue exposition or a compulsory protagonist quest.",
+        "Keeps every scene and payoff inside the exact track runtime."
+      ]
+    },
+    {
+      "id": "sixty-second-repair-reel",
+      "project_format": "short-form",
+      "brief": "Outline a 60-second vertical Reel showing a public-library repair cafe diagnose and repair one portable radio, then truthfully invite viewers to the next free clinic.",
+      "observables": [
+        "Uses a runtime-led format plan, immediately orients the failed radio, and delivers an audible before-after payoff within 60 seconds.",
+        "Sustains attention through visible diagnosis and progress rather than empty withholding or wait-for-it language.",
+        "Keeps the truthful invitation subordinate to the completed repair result and does not reproduce any Ninel material."
+      ]
+    }
+  ]
+}

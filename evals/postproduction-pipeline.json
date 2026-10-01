@@ -1,0 +1,24 @@
+{
+  "skill": "postproduction-pipeline",
+  "version": "0.3.0",
+  "cases": [
+    {
+      "id": "ninel-pilot-planned",
+      "project_id": "NINEL",
+      "brief": "A Ninel pilot has a validated production package but incomplete media evidence.",
+      "observables": [
+        "Uses edit-first order, then sound, music, VFX, color, titles/captions, and mastering/QC last.",
+        "Preserves planned and evidence states, invents no approvals, runs validate-post, and returns planned rather than false readiness."
+      ]
+    },
+    {
+      "id": "documentary-earliest-repair",
+      "project_id": "DOC",
+      "brief": "A documentary post package contains an invalid edit dependency and later downstream records.",
+      "observables": [
+        "Repairs the earliest invalid dependency, invalidates only its downstream closure, preserves valid unaffected records, and reruns validate-post.",
+        "Returns blocked while unresolved evidence remains; never promotes an old approval to ready-for-master-review."
+      ]
+    }
+  ]
+}
